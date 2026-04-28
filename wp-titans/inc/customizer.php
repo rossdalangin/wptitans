@@ -487,6 +487,33 @@ function wp_titans_customize_register( $wp_customize ) {
     $wp_customize->add_setting( 'wp_titans_contact_btn_url', array( 'default' => '#contact', 'sanitize_callback' => 'sanitize_text_field' ) );
     $wp_customize->add_control( 'wp_titans_contact_btn_url', array( 'label' => __( 'Submit Button URL (if not using form)', 'wp-titans' ), 'section' => 'wp_titans_contact' ) );
 
+    // --- Audit Section (Lead Magnet) ---
+    $wp_customize->add_section( 'wp_titans_audit', array(
+        'title'    => __( 'Audit Section (Lead Magnet)', 'wp-titans' ),
+        'priority' => 98,
+    ) );
+
+    $wp_customize->add_setting( 'wp_titans_audit_show', array( 'default' => true, 'sanitize_callback' => 'wp_validate_boolean' ) );
+    $wp_customize->add_control( 'wp_titans_audit_show', array( 'label' => __( 'Show Audit Section', 'wp-titans' ), 'section' => 'wp_titans_audit', 'type' => 'checkbox' ) );
+
+    $wp_customize->add_setting( 'wp_titans_audit_title', array( 'default' => 'Get a Free Website Authority Audit', 'sanitize_callback' => 'sanitize_text_field' ) );
+    $wp_customize->add_control( 'wp_titans_audit_title', array( 'label' => __( 'Audit Title', 'wp-titans' ), 'section' => 'wp_titans_audit' ) );
+
+    $wp_customize->add_setting( 'wp_titans_audit_desc', array( 'default' => 'We will manually review your current website and give you 3 actionable steps to increase your authority and conversions.', 'sanitize_callback' => 'sanitize_text_field' ) );
+    $wp_customize->add_control( 'wp_titans_audit_desc', array( 'label' => __( 'Audit Description', 'wp-titans' ), 'section' => 'wp_titans_audit', 'type' => 'textarea' ) );
+
+    // --- Layout & UX ---
+    $wp_customize->add_section( 'wp_titans_ux', array(
+        'title'    => __( 'Layout & UX', 'wp-titans' ),
+        'priority' => 25,
+    ) );
+
+    $wp_customize->add_setting( 'wp_titans_sticky_header', array( 'default' => true, 'sanitize_callback' => 'wp_validate_boolean' ) );
+    $wp_customize->add_control( 'wp_titans_sticky_header', array( 'label' => __( 'Sticky Header', 'wp-titans' ), 'section' => 'wp_titans_ux', 'type' => 'checkbox' ) );
+
+    $wp_customize->add_setting( 'wp_titans_back_to_top', array( 'default' => true, 'sanitize_callback' => 'wp_validate_boolean' ) );
+    $wp_customize->add_control( 'wp_titans_back_to_top', array( 'label' => __( 'Show Back to Top Button', 'wp-titans' ), 'section' => 'wp_titans_ux', 'type' => 'checkbox' ) );
+
 }
 add_action( 'customize_register', 'wp_titans_customize_register' );
 

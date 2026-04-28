@@ -96,7 +96,31 @@ get_header(); ?>
     </div>
 </section>
 
-<!-- 6. STATS BAR -->
+<!-- 6. PORTFOLIO SECTION -->
+<section id="portfolio" style="background: #000;">
+    <div class="reveal" style="text-align: center; margin-bottom: 4rem;">
+        <span class="tagline">Our Work</span>
+        <h2>Case Studies & Results</h2>
+    </div>
+    <div class="grid-cards">
+        <?php for ($i = 1; $i <= 3; $i++) :
+            $img = get_theme_mod("wp_titans_portfolio_img_$i", 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=600');
+            $title = get_theme_mod("wp_titans_portfolio_title_$i", 'Authority Website Case Study');
+            if (!$title) continue;
+        ?>
+        <div class="card reveal" style="padding: 0; overflow: hidden; border: none; background: transparent;">
+            <div style="position: relative; overflow: hidden; border-radius: 8px;">
+                <img src="<?php echo esc_url($img); ?>" alt="<?php echo esc_attr($title); ?>" style="width: 100%; transition: transform 0.5s;">
+                <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(to top, rgba(0,0,0,0.9), transparent); display: flex; align-items: flex-end; padding: 2rem; opacity: 1;">
+                    <h3 style="font-size: 1.3rem; margin: 0;"><?php echo esc_html($title); ?></h3>
+                </div>
+            </div>
+        </div>
+        <?php endfor; ?>
+    </div>
+</section>
+
+<!-- 7. STATS BAR -->
 <div id="stats" class="stats-bar">
     <?php for ($i = 1; $i <= 4; $i++) :
         $num = get_theme_mod("wp_titans_stat_num_$i");
@@ -110,7 +134,7 @@ get_header(); ?>
     <?php endfor; ?>
 </div>
 
-<!-- 7. TESTIMONIALS -->
+<!-- 8. TESTIMONIALS -->
 <section id="testimonials" style="background: #050505;">
     <div class="reveal" style="text-align: center; margin-bottom: 4rem;">
         <span class="tagline"><?php echo esc_html(get_theme_mod('wp_titans_testi_tagline', 'Trusted by Experts')); ?></span>
@@ -136,7 +160,26 @@ get_header(); ?>
     </div>
 </section>
 
-<!-- 8. FAQ -->
+<!-- 9. LEAD MAGNET: FREE AUDIT -->
+<?php if (get_theme_mod('wp_titans_audit_show', true)) : ?>
+<section id="free-audit" style="background: #D4AF37; color: black; padding: 6rem 10%;">
+    <div class="grid-2">
+        <div class="reveal">
+            <h2 style="color: black; margin-bottom: 1rem;"><?php echo esc_html(get_theme_mod('wp_titans_audit_title', 'Get a Free Website Authority Audit')); ?></h2>
+            <p style="color: rgba(0,0,0,0.8); font-size: 1.2rem;"><?php echo esc_html(get_theme_mod('wp_titans_audit_desc', 'We will manually review your current website and give you 3 actionable steps to increase your authority and conversions.')); ?></p>
+        </div>
+        <div class="reveal">
+            <form style="display: flex; gap: 1rem;">
+                <input type="url" placeholder="Your Website URL" required style="flex: 1; padding: 1.2rem; border-radius: 4px; border: none; font-family: inherit;">
+                <button type="submit" class="btn" style="background: black; color: white; border-radius: 4px;">Get My Audit</button>
+            </form>
+            <p style="font-size: 0.8rem; margin-top: 1rem; opacity: 0.7;">* No obligation. 100% manual review by our experts.</p>
+        </div>
+    </div>
+</section>
+<?php endif; ?>
+
+<!-- 10. FAQ -->
 <section id="faq">
     <div class="reveal" style="text-align: center; margin-bottom: 4rem;">
         <h2><?php echo esc_html(get_theme_mod('wp_titans_faq_main_title', 'Common Questions')); ?></h2>
@@ -160,7 +203,7 @@ get_header(); ?>
     </div>
 </section>
 
-<!-- 9. CONTACT -->
+<!-- 11. CONTACT -->
 <section id="contact" style="background: #080808;">
     <div class="grid-2">
         <div class="reveal">

@@ -8,7 +8,7 @@
 <body <?php body_class(); ?>>
 <?php wp_body_open(); ?>
 
-<nav id="navbar">
+<nav id="navbar" class="<?php echo get_theme_mod('wp_titans_sticky_header', true) ? 'sticky' : ''; ?>">
     <div class="logo">
         <?php
         $logo_img = get_theme_mod('wp_titans_logo_image', 'https://wordpresstitans.com/wp-content/uploads/2025/12/logogold.png');

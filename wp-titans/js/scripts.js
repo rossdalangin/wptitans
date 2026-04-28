@@ -3,6 +3,17 @@ window.addEventListener('scroll', () => {
     const nav = document.getElementById('navbar');
     if (window.scrollY > 50) nav.classList.add('scrolled');
     else nav.classList.remove('scrolled');
+
+    const btt = document.getElementById('back-to-top');
+    if (btt) {
+        if (window.scrollY > 300) {
+            btt.style.opacity = '1';
+            btt.style.visibility = 'visible';
+        } else {
+            btt.style.opacity = '0';
+            btt.style.visibility = 'hidden';
+        }
+    }
 });
 
 // FAQ Toggle

@@ -54,6 +54,12 @@
         &copy; <?php echo date('Y'); ?> <?php echo esc_html(get_theme_mod('wp_titans_logo_text', 'TITANS')); ?>. All rights reserved.
     </div>
 
+    <?php if (get_theme_mod('wp_titans_back_to_top', true)) : ?>
+    <a href="#" id="back-to-top" style="position: fixed; bottom: 30px; right: 30px; background: var(--primary); color: black; width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center; z-index: 999; opacity: 0; transition: var(--transition); visibility: hidden;">
+        <i class="fas fa-chevron-up"></i>
+    </a>
+    <?php endif; ?>
+
     <?php wp_footer(); ?>
 </body>
 </html>
