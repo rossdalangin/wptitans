@@ -116,6 +116,51 @@ function wp_titans_customize_register( $wp_customize ) {
         $wp_customize->add_control( "wp_titans_stat_label_$n", array( 'label' => "Stat $n Label", 'section' => 'wp_titans_stats' ) );
     }
 
+    // --- Process Section ---
+    $wp_customize->add_section( 'wp_titans_process', array(
+        'title'    => __( 'Process Section', 'wp-titans' ),
+        'priority' => 75,
+    ) );
+
+    $process_defaults = [
+        ['title' => 'Discovery', 'desc' => 'We analyze your market and identify your unique competitive edge.'],
+        ['title' => 'Design', 'desc' => 'We architect visual experiences that command attention and convert.'],
+        ['title' => 'Deployment', 'desc' => 'We launch high-performance systems with zero downtime.']
+    ];
+
+    for ($i = 0; $i < 3; $i++) {
+        $n = $i + 1;
+        $wp_customize->add_setting( "wp_titans_process_title_$n", array( 'default' => $process_defaults[$i]['title'], 'sanitize_callback' => 'sanitize_text_field' ) );
+        $wp_customize->add_control( "wp_titans_process_title_$n", array( 'label' => "Step $n Title", 'section' => 'wp_titans_process' ) );
+
+        $wp_customize->add_setting( "wp_titans_process_desc_$n", array( 'default' => $process_defaults[$i]['desc'], 'sanitize_callback' => 'sanitize_text_field' ) );
+        $wp_customize->add_control( "wp_titans_process_desc_$n", array( 'label' => "Step $n Description", 'section' => 'wp_titans_process', 'type' => 'textarea' ) );
+    }
+
+    // --- Testimonials Section ---
+    $wp_customize->add_section( 'wp_titans_testimonials', array(
+        'title'    => __( 'Testimonials Section', 'wp-titans' ),
+        'priority' => 78,
+    ) );
+
+    $testimonial_defaults = [
+        ['quote' => 'WordPress Titans transformed our digital presence from a template to a powerhouse.', 'author' => 'Alex Reed', 'role' => 'CEO, TechFlow'],
+        ['quote' => 'The attention to detail and performance optimization is unmatched in the industry.', 'author' => 'Sarah Chen', 'role' => 'Director, CreativeCore'],
+        ['quote' => 'Dominance is the right word. Our conversion rates have never been higher.', 'author' => 'Mark Volkov', 'role' => 'Founder, Volkov Global']
+    ];
+
+    for ($i = 0; $i < 3; $i++) {
+        $n = $i + 1;
+        $wp_customize->add_setting( "wp_titans_testi_quote_$n", array( 'default' => $testimonial_defaults[$i]['quote'], 'sanitize_callback' => 'sanitize_text_field' ) );
+        $wp_customize->add_control( "wp_titans_testi_quote_$n", array( 'label' => "Testimonial $n Quote", 'section' => 'wp_titans_testimonials', 'type' => 'textarea' ) );
+
+        $wp_customize->add_setting( "wp_titans_testi_author_$n", array( 'default' => $testimonial_defaults[$i]['author'], 'sanitize_callback' => 'sanitize_text_field' ) );
+        $wp_customize->add_control( "wp_titans_testi_author_$n", array( 'label' => "Testimonial $n Author", 'section' => 'wp_titans_testimonials' ) );
+
+        $wp_customize->add_setting( "wp_titans_testi_role_$n", array( 'default' => $testimonial_defaults[$i]['role'], 'sanitize_callback' => 'sanitize_text_field' ) );
+        $wp_customize->add_control( "wp_titans_testi_role_$n", array( 'label' => "Testimonial $n Role", 'section' => 'wp_titans_testimonials' ) );
+    }
+
     // --- News/Portfolio Section ---
     $wp_customize->add_section( 'wp_titans_portfolio', array(
         'title'    => __( 'Portfolio Section', 'wp-titans' ),

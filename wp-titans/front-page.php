@@ -16,7 +16,7 @@ get_header(); ?>
     </div>
 </section>
 
-<!-- 2. ABOUT SECTION (Philosophy) -->
+<!-- 2. ABOUT SECTION -->
 <section id="about">
     <div class="grid-about">
         <div class="reveal">
@@ -30,7 +30,26 @@ get_header(); ?>
     </div>
 </section>
 
-<!-- 3. SERVICES SECTION -->
+<!-- 3. PROCESS SECTION -->
+<section id="process" style="background: #050505;">
+    <span class="tagline">The Methodology</span>
+    <h2>Our Process</h2>
+    <div class="services-grid">
+        <?php for ($i = 1; $i <= 3; $i++) :
+            $title = get_theme_mod("wp_titans_process_title_$i");
+            $desc = get_theme_mod("wp_titans_process_desc_$i");
+            if (!$title) continue;
+        ?>
+        <div class="service-card reveal">
+            <h1 style="color: var(--primary); opacity: 0.2; font-size: 5rem; margin-bottom: 0;">0<?php echo $i; ?></h1>
+            <h3 style="margin-top: -2rem;"><?php echo esc_html($title); ?></h3>
+            <p><?php echo esc_html($desc); ?></p>
+        </div>
+        <?php endfor; ?>
+    </div>
+</section>
+
+<!-- 4. SERVICES SECTION -->
 <section id="services" style="background: #080808;">
     <span class="tagline">Service Units</span>
     <h2 style="font-size: 3rem;">Specialized Solutions</h2>
@@ -50,7 +69,7 @@ get_header(); ?>
     </div>
 </section>
 
-<!-- 4. STATS BAR -->
+<!-- 5. STATS BAR -->
 <div id="stats" class="stats-bar">
     <?php for ($i = 1; $i <= 4; $i++) :
         $num = get_theme_mod("wp_titans_stat_num_$i");
@@ -64,9 +83,30 @@ get_header(); ?>
     <?php endfor; ?>
 </div>
 
-<!-- 5. NEWS/PORTFOLIO -->
-<section id="news">
-    <h2>Intelligence Briefing</h2>
+<!-- 6. TESTIMONIALS -->
+<section id="testimonials">
+    <span class="tagline">Client Intelligence</span>
+    <h2>The Verdict</h2>
+    <div class="testimonials-grid reveal">
+        <?php for ($i = 1; $i <= 3; $i++) :
+            $quote = get_theme_mod("wp_titans_testi_quote_$i");
+            $author = get_theme_mod("wp_titans_testi_author_$i");
+            $role = get_theme_mod("wp_titans_testi_role_$i");
+            if (!$quote) continue;
+        ?>
+        <div class="testimonial-card">
+            <blockquote>"<?php echo esc_html($quote); ?>"</blockquote>
+            <div class="testimonial-author"><?php echo esc_html($author); ?></div>
+            <small style="color: var(--primary);"><?php echo esc_html($role); ?></small>
+        </div>
+        <?php endfor; ?>
+    </div>
+</section>
+
+<!-- 7. PORTFOLIO -->
+<section id="news" style="background: #080808;">
+    <span class="tagline">Case Reports</span>
+    <h2>Recent Portfolio</h2>
     <div class="news-grid">
         <?php for ($i = 1; $i <= 3; $i++) :
             $img = get_theme_mod("wp_titans_portfolio_img_$i");
@@ -85,7 +125,7 @@ get_header(); ?>
     </div>
 </section>
 
-<!-- 6. FAQ -->
+<!-- 8. FAQ -->
 <section id="faq" class="reveal">
     <h2 style="text-align: center;">Operational FAQ</h2>
     <div class="faq-wrap">
@@ -102,7 +142,7 @@ get_header(); ?>
     </div>
 </section>
 
-<!-- 7. CONTACT -->
+<!-- 9. CONTACT -->
 <section id="contact" class="reveal">
     <div class="grid-about">
         <div>
@@ -113,10 +153,10 @@ get_header(); ?>
                 <p><i class="fas fa-phone"></i> +1 (800) TITANS-1</p>
             </div>
         </div>
-        <form style="background: #111; padding: 3rem; border: 1px solid #222;">
-            <input type="text" placeholder="Your Name" style="width: 100%; padding: 1rem; margin-bottom: 1rem; background: #000; border: 1px solid #333; color: white;">
-            <input type="email" placeholder="Corporate Email" style="width: 100%; padding: 1rem; margin-bottom: 1rem; background: #000; border: 1px solid #333; color: white;">
-            <textarea rows="4" placeholder="Mission Requirements" style="width: 100%; padding: 1rem; margin-bottom: 1rem; background: #000; border: 1px solid #333; color: white;"></textarea>
+        <form style="background: #111; padding: 4rem; border: 1px solid var(--border-glass);">
+            <input type="text" placeholder="Your Name" style="width: 100%; padding: 1.2rem; margin-bottom: 1.5rem; background: #000; border: 1px solid #222; color: white;">
+            <input type="email" placeholder="Corporate Email" style="width: 100%; padding: 1.2rem; margin-bottom: 1.5rem; background: #000; border: 1px solid #222; color: white;">
+            <textarea rows="4" placeholder="Mission Requirements" style="width: 100%; padding: 1.2rem; margin-bottom: 1.5rem; background: #000; border: 1px solid #222; color: white;"></textarea>
             <button class="btn btn-primary" style="width: 100%;">Initialize Secure Line</button>
         </form>
     </div>
