@@ -147,9 +147,14 @@ get_header(); ?>
             $a = get_theme_mod("wp_titans_faq_a_$i");
             if (!$q) continue;
         ?>
-        <div class="reveal" style="margin-bottom: 2rem; border-bottom: 1px solid var(--border-glass); padding-bottom: 1.5rem;">
-            <h4 style="color: var(--primary); margin-bottom: 0.5rem;"><?php echo esc_html($q); ?></h4>
-            <p><?php echo esc_html($a); ?></p>
+        <div class="reveal faq-item" style="margin-bottom: 1.5rem; border-bottom: 1px solid var(--border-glass); padding-bottom: 1rem;">
+            <div class="faq-head" style="cursor: pointer; display: flex; justify-content: space-between; align-items: center;">
+                <h4 style="color: var(--primary); margin: 0; font-size: 1.2rem;"><?php echo esc_html($q); ?></h4>
+                <i class="fas fa-plus" style="font-size: 0.8rem; color: var(--primary); transition: transform 0.3s;"></i>
+            </div>
+            <div class="faq-body" style="max-height: 0; overflow: hidden; transition: all 0.4s ease-out; opacity: 0;">
+                <p style="padding-top: 1rem; margin: 0; color: var(--text-dim);"><?php echo esc_html($a); ?></p>
+            </div>
         </div>
         <?php endfor; ?>
     </div>

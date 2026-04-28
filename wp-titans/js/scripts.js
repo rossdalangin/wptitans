@@ -38,17 +38,19 @@ if (statsSection) {
 
     const startCount = () => {
         stats.forEach(num => {
-            const target = +num.getAttribute('data-target');
-            if (isNaN(target)) return;
+            const targetAttr = num.getAttribute('data-target');
+            const targetValue = parseInt(targetAttr);
+            if (isNaN(targetValue)) return;
+
             let count = 0;
-            const speed = target / 100;
+            const speed = targetValue / 100;
             const update = () => {
-                if (count < target) {
+                if (count < targetValue) {
                     count += speed;
-                    num.innerText = Math.ceil(count) + '+';
+                    num.innerText = Math.ceil(count) + (targetAttr.includes('+') ? '+' : (targetAttr.includes('%') ? '%' : ''));
                     setTimeout(update, 20);
                 } else {
-                    num.innerText = target + '+';
+                    num.innerText = targetAttr;
                 }
             }
             update();

@@ -3,7 +3,6 @@
 <head>
     <meta charset="<?php bloginfo( 'charset' ); ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
@@ -33,5 +32,5 @@
         ) );
         ?>
     </div>
-    <a href="#contact" class="btn btn-primary" style="padding: 0.7rem 1.5rem; font-size: 0.85rem;">Schedule Call</a>
+    <a href="<?php echo esc_url(get_theme_mod('wp_titans_hero_btn2_url', '#contact')); ?>" class="btn btn-primary" style="padding: 0.7rem 1.5rem; font-size: 0.85rem;"><?php echo esc_html(get_theme_mod('wp_titans_hero_btn2_text', 'Schedule Call')); ?></a>
 </nav>
