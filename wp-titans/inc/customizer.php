@@ -236,18 +236,30 @@ function wp_titans_customize_register( $wp_customize ) {
     ) );
 
     $portfolio_defaults = [
-        ['img' => 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=600', 'title' => 'Authority Website Case Study'],
-        ['img' => 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=600', 'title' => 'Consultant Brand Platform'],
-        ['img' => 'https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?auto=format&fit=crop&w=600', 'title' => 'High-Performance Landing Page'],
+        ['img' => 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=600', 'title' => 'Authority Website Case Study', 'cat' => 'Consulting'],
+        ['img' => 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=600', 'title' => 'Consultant Brand Platform', 'cat' => 'Coaching'],
+        ['img' => 'https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?auto=format&fit=crop&w=600', 'title' => 'High-Performance Landing Page', 'cat' => 'SaaS'],
+        ['img' => 'https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?auto=format&fit=crop&w=600', 'title' => 'Expert Authority Funnel', 'cat' => 'Marketing'],
+        ['img' => 'https://images.unsplash.com/photo-1557838923-2985c318be48?auto=format&fit=crop&w=600', 'title' => 'Professional Law Portfolio', 'cat' => 'Legal'],
+        ['img' => 'https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=600', 'title' => 'Medical Practice System', 'cat' => 'Healthcare'],
     ];
 
-    for ($i = 1; $i <= 3; $i++) {
+    for ($i = 1; $i <= 6; $i++) {
         $wp_customize->add_setting( "wp_titans_portfolio_img_$i", array( 'default' => $portfolio_defaults[$i-1]['img'], 'sanitize_callback' => 'esc_url_raw' ) );
         $wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, "wp_titans_portfolio_img_$i", array( 'label' => "Portfolio $i Image", 'section' => 'wp_titans_portfolio' ) ) );
 
         $wp_customize->add_setting( "wp_titans_portfolio_title_$i", array( 'default' => $portfolio_defaults[$i-1]['title'], 'sanitize_callback' => 'sanitize_text_field' ) );
         $wp_customize->add_control( "wp_titans_portfolio_title_$i", array( 'label' => "Portfolio $i Title", 'section' => 'wp_titans_portfolio' ) );
+
+        $wp_customize->add_setting( "wp_titans_portfolio_cat_$i", array( 'default' => $portfolio_defaults[$i-1]['cat'], 'sanitize_callback' => 'sanitize_text_field' ) );
+        $wp_customize->add_control( "wp_titans_portfolio_cat_$i", array( 'label' => "Portfolio $i Category", 'section' => 'wp_titans_portfolio' ) );
     }
+
+    $wp_customize->add_setting( 'wp_titans_portfolio_page_tagline', array( 'default' => 'Our Portfolio', 'sanitize_callback' => 'sanitize_text_field' ) );
+    $wp_customize->add_control( 'wp_titans_portfolio_page_tagline', array( 'label' => __( 'Portfolio Page Tagline', 'wp-titans' ), 'section' => 'wp_titans_page_headers' ) );
+
+    $wp_customize->add_setting( 'wp_titans_portfolio_page_title', array( 'default' => 'Success stories from the experts we work with.', 'sanitize_callback' => 'sanitize_text_field' ) );
+    $wp_customize->add_control( 'wp_titans_portfolio_page_title', array( 'label' => __( 'Portfolio Page Title', 'wp-titans' ), 'section' => 'wp_titans_page_headers', 'type' => 'textarea' ) );
 
     // --- FAQ Section ---
     $wp_customize->add_section( 'wp_titans_faq', array(
@@ -513,6 +525,18 @@ function wp_titans_customize_register( $wp_customize ) {
 
     $wp_customize->add_setting( 'wp_titans_back_to_top', array( 'default' => true, 'sanitize_callback' => 'wp_validate_boolean' ) );
     $wp_customize->add_control( 'wp_titans_back_to_top', array( 'label' => __( 'Show Back to Top Button', 'wp-titans' ), 'section' => 'wp_titans_ux', 'type' => 'checkbox' ) );
+
+    // --- Scripts & Analytics ---
+    $wp_customize->add_section( 'wp_titans_scripts', array(
+        'title'    => __( 'Scripts & Analytics', 'wp-titans' ),
+        'priority' => 110,
+    ) );
+
+    $wp_customize->add_setting( 'wp_titans_header_scripts', array( 'default' => '', 'sanitize_callback' => 'wp_kses_post' ) );
+    $wp_customize->add_control( 'wp_titans_header_scripts', array( 'label' => __( 'Header Scripts', 'wp-titans' ), 'description' => __( 'Add Google Analytics or FB Pixel code here.', 'wp-titans' ), 'section' => 'wp_titans_scripts', 'type' => 'textarea' ) );
+
+    $wp_customize->add_setting( 'wp_titans_footer_scripts', array( 'default' => '', 'sanitize_callback' => 'wp_kses_post' ) );
+    $wp_customize->add_control( 'wp_titans_footer_scripts', array( 'label' => __( 'Footer Scripts', 'wp-titans' ), 'description' => __( 'Add tracking scripts or chat widgets here.', 'wp-titans' ), 'section' => 'wp_titans_scripts', 'type' => 'textarea' ) );
 
 }
 add_action( 'customize_register', 'wp_titans_customize_register' );

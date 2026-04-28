@@ -60,6 +60,7 @@
     </a>
     <?php endif; ?>
 
+    <?php echo get_theme_mod('wp_titans_footer_scripts'); ?>
     <?php wp_footer(); ?>
 </body>
 </html>

@@ -73,6 +73,9 @@ function wp_titans_handle_setup() {
             'Contact Us' => array(
                 'template' => 'page-contact.php'
             ),
+            'Portfolio' => array(
+                'template' => 'page-portfolio.php'
+            ),
             'Authority Website System' => array(
                 'template' => 'page-authority.php'
             )

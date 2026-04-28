@@ -114,7 +114,7 @@ section {
 
 /* --- Navigation --- */
 nav {
-    position: fixed;
+    position: absolute;
     top: 0;
     width: 100%;
     padding: 1.5rem 10%;
@@ -123,6 +123,10 @@ nav {
     align-items: center;
     z-index: 1000;
     transition: var(--transition);
+}
+
+nav.sticky {
+    position: fixed;
 }
 
 nav.scrolled {
