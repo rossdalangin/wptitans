@@ -8,7 +8,7 @@ get_header(); ?>
 <section id="hero" class="hero">
     <div class="reveal">
         <h1><?php echo esc_html(get_theme_mod('wp_titans_hero_title', 'High-Performance WordPress Websites Designed to Win Trust and Generate Leads')); ?></h1>
-        <p><?php echo esc_html(get_theme_mod('wp_titans_hero_subtitle', 'We build Authority Websites for consultants, coaches, and service providers that position you as the expert and turn visitors into clients.')); ?></p>
+        <p><?php echo esc_html(get_theme_mod('wp_titans_hero_subtitle', 'We help serious businesses turn their website into a revenue-generating asset — not just an online brochure.')); ?></p>
         <div class="hero-btns">
             <a href="<?php echo esc_attr(get_theme_mod('wp_titans_hero_btn1_url', '#services')); ?>" class="btn btn-primary"><?php echo esc_html(get_theme_mod('wp_titans_hero_btn1_text', 'Our Solutions')); ?></a>
             <a href="<?php echo esc_attr(get_theme_mod('wp_titans_hero_btn2_url', '#contact')); ?>" class="btn btn-outline"><?php echo esc_html(get_theme_mod('wp_titans_hero_btn2_text', 'Schedule a Call')); ?></a>
@@ -42,13 +42,13 @@ get_header(); ?>
 <section id="about">
     <div class="grid-2">
         <div class="reveal">
-            <span class="tagline"><?php echo esc_html(get_theme_mod('wp_titans_about_tagline', 'OUR STORY')); ?></span>
-            <h2><?php echo esc_html(get_theme_mod('wp_titans_about_title', 'We help experts build websites that truly reflect their value.')); ?></h2>
-            <p><?php echo nl2br(esc_html(get_theme_mod('wp_titans_about_content', 'WordPress Titans began with one mission: to help experts build websites that truly reflect their value.'))); ?></p>
+            <span class="tagline"><?php echo esc_html(get_theme_mod('wp_titans_about_tagline', 'THE AUTHORITY SYSTEM™')); ?></span>
+            <h2><?php echo esc_html(get_theme_mod('wp_titans_about_title', 'Imagine a Website That Works Like Your Best Salesperson')); ?></h2>
+            <p><?php echo nl2br(esc_html(get_theme_mod('wp_titans_about_content', 'A modern authority website builds trust, converts leads, and grows your business—automatically. We design for business outcomes, not trends.'))); ?></p>
             <a href="<?php echo esc_attr(get_theme_mod('wp_titans_about_btn_url', '#contact')); ?>" class="btn btn-outline" style="margin-top: 2rem;"><?php echo esc_html(get_theme_mod('wp_titans_about_btn_text', 'Read More')); ?></a>
         </div>
         <div class="reveal">
-            <img src="<?php echo esc_url(get_theme_mod('wp_titans_about_image', 'https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=800')); ?>" alt="About Titans" style="border-radius: 8px; box-shadow: 0 20px 40px rgba(0,0,0,0.5);">
+            <img src="<?php echo esc_url(get_theme_mod('wp_titans_about_image', 'https://wordpresstitans.com/wp-content/uploads/2025/12/Screenshot-2025-12-06-001551.webp')); ?>" alt="About Titans" style="border-radius: 8px; box-shadow: 0 20px 40px rgba(0,0,0,0.5);">
         </div>
     </div>
 </section>

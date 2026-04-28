@@ -22,7 +22,7 @@ get_header(); ?>
         <div class="card reveal" style="text-align: center;">
             <i class="fas fa-envelope"></i>
             <h3>Email</h3>
-            <p><?php echo esc_html(get_theme_mod('wp_titans_contact_email', 'support@wordpresstitans.com')); ?></p>
+            <p><?php echo esc_html(get_theme_mod('wp_titans_contact_email', 'hello@wordpresstitans.com')); ?></p>
         </div>
         <div class="card reveal" style="text-align: center;">
             <i class="fas fa-location-dot"></i>

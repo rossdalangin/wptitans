@@ -8,7 +8,7 @@ get_header(); ?>
     <div class="reveal">
         <span class="tagline"><?php echo esc_html(get_theme_mod('wp_titans_process_page_tagline', 'Our Methodology')); ?></span>
         <h1><?php echo esc_html(get_theme_mod('wp_titans_process_page_title', 'Our proven 14-day Authority Website System™')); ?></h1>
-        <p><?php echo esc_html(get_theme_mod('wp_titans_process_page_subtitle', 'We give you clarity, high-converting design, and systems that help you attract more clients effortlessly.')); ?></p>
+        <p><?php echo esc_html(get_theme_mod('wp_titans_process_page_subtitle', 'A strategic, high-speed methodology to get your authority platform live.')); ?></p>
     </div>
 </section>
 

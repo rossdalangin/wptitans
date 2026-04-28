@@ -49,7 +49,7 @@ function wp_titans_customize_register( $wp_customize ) {
     $wp_customize->add_setting( 'wp_titans_hero_subtitle', array( 'default' => 'We help serious businesses turn their website into a revenue-generating asset — not just an online brochure.', 'sanitize_callback' => 'sanitize_text_field' ) );
     $wp_customize->add_control( 'wp_titans_hero_subtitle', array( 'label' => __( 'Hero Subtitle', 'wp-titans' ), 'section' => 'wp_titans_hero', 'type' => 'textarea' ) );
 
-    $wp_customize->add_setting( 'wp_titans_hero_bg', array( 'default' => 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=1920', 'sanitize_callback' => 'esc_url_raw' ) );
+    $wp_customize->add_setting( 'wp_titans_hero_bg', array( 'default' => 'https://images.unsplash.com/photo-1497215728101-856f4ea42174?auto=format&fit=crop&w=1920', 'sanitize_callback' => 'esc_url_raw' ) );
     $wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'wp_titans_hero_bg', array( 'label' => __( 'Hero Background Image', 'wp-titans' ), 'section' => 'wp_titans_hero' ) ) );
 
     $wp_customize->add_setting( 'wp_titans_hero_btn1_text', array( 'default' => 'Our Solutions', 'sanitize_callback' => 'sanitize_text_field' ) );
@@ -436,6 +436,20 @@ function wp_titans_customize_register( $wp_customize ) {
 
     $wp_customize->add_setting( 'wp_titans_auth_cta_desc', array( 'default' => 'Our Authority Website System™ is the fastest way to upgrade your professional image and start generating leads.', 'sanitize_callback' => 'sanitize_text_field' ) );
     $wp_customize->add_control( 'wp_titans_auth_cta_desc', array( 'label' => __( 'Auth CTA Desc', 'wp-titans' ), 'section' => 'wp_titans_authority_page', 'type' => 'textarea' ) );
+
+    // --- Theme Setup ---
+    $wp_customize->add_section( 'wp_titans_setup', array(
+        'title'    => __( 'Theme Setup', 'wp-titans' ),
+        'priority' => 10,
+    ) );
+
+    $wp_customize->add_setting( 'wp_titans_generate_pages', array( 'default' => false, 'sanitize_callback' => 'wp_validate_boolean' ) );
+    $wp_customize->add_control( 'wp_titans_generate_pages', array(
+        'label' => __( 'Generate Essential Pages', 'wp-titans' ),
+        'description' => __( 'Check this and Save to automatically create Home, Services, About, etc. with correct templates.', 'wp-titans' ),
+        'section' => 'wp_titans_setup',
+        'type' => 'checkbox'
+    ) );
 
     // --- Social Links ---
     $wp_customize->add_section( 'wp_titans_social', array(

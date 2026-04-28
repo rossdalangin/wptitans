@@ -2,7 +2,7 @@
         <div>
             <div class="footer-logo">
                 <?php
-                $logo_img = get_theme_mod('wp_titans_logo_image');
+                $logo_img = get_theme_mod('wp_titans_logo_image', 'https://wordpresstitans.com/wp-content/uploads/2025/12/logogold.png');
                 $logo_icon = get_theme_mod('wp_titans_logo_icon', 'fa-crown');
                 $logo_text = get_theme_mod('wp_titans_logo_text', 'TITANS');
 
@@ -40,7 +40,7 @@
                 <?php
                 $socials = ['facebook', 'linkedin', 'twitter', 'instagram'];
                 foreach ($socials as $social) :
-                    $url = get_theme_mod("wp_titans_social_$social");
+                    $url = get_theme_mod("wp_titans_social_$social", '#');
                     if ($url && $url !== '#') : ?>
                         <a href="<?php echo esc_url($url); ?>" class="social-link"><i class="fab fa-<?php echo esc_attr($social); ?>"></i></a>
                     <?php endif;

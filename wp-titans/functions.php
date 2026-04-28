@@ -49,3 +49,58 @@ function wp_titans_default_menu_callback() {
  * Customizer additions.
  */
 require get_template_directory() . '/inc/customizer.php';
+
+/**
+ * Handle Theme Auto-Setup from Customizer
+ */
+function wp_titans_handle_setup() {
+    if ( get_theme_mod( 'wp_titans_generate_pages', false ) ) {
+
+        $pages = array(
+            'Home' => array(
+                'template' => 'front-page.php',
+                'is_front' => true
+            ),
+            'Services' => array(
+                'template' => 'page-services.php'
+            ),
+            'The Process' => array(
+                'template' => 'page-process.php'
+            ),
+            'About Us' => array(
+                'template' => 'page-about.php'
+            ),
+            'Contact Us' => array(
+                'template' => 'page-contact.php'
+            ),
+            'Authority Website System' => array(
+                'template' => 'page-authority.php'
+            )
+        );
+
+        foreach ( $pages as $title => $data ) {
+            $existing = get_page_by_title( $title );
+            if ( ! $existing ) {
+                $page_id = wp_insert_post( array(
+                    'post_title'   => $title,
+                    'post_content' => '',
+                    'post_status'  => 'publish',
+                    'post_type'    => 'page',
+                ) );
+
+                if ( $page_id ) {
+                    update_post_meta( $page_id, '_wp_page_template', $data['template'] );
+
+                    if ( isset( $data['is_front'] ) && $data['is_front'] ) {
+                        update_option( 'show_on_front', 'page' );
+                        update_option( 'page_on_front', $page_id );
+                    }
+                }
+            }
+        }
+
+        // Reset the setting so it doesn't run every time
+        set_theme_mod( 'wp_titans_generate_pages', false );
+    }
+}
+add_action( 'customize_save_after', 'wp_titans_handle_setup' );

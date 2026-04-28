@@ -11,7 +11,7 @@
 <nav id="navbar">
     <div class="logo">
         <?php
-        $logo_img = get_theme_mod('wp_titans_logo_image');
+        $logo_img = get_theme_mod('wp_titans_logo_image', 'https://wordpresstitans.com/wp-content/uploads/2025/12/logogold.png');
         $logo_icon = get_theme_mod('wp_titans_logo_icon', 'fa-crown');
         $logo_text = get_theme_mod('wp_titans_logo_text', 'TITANS');
 
@@ -32,5 +32,5 @@
         ) );
         ?>
     </div>
-    <a href="<?php echo esc_url(get_theme_mod('wp_titans_hero_btn2_url', '#contact')); ?>" class="btn btn-primary" style="padding: 0.7rem 1.5rem; font-size: 0.85rem;"><?php echo esc_html(get_theme_mod('wp_titans_hero_btn2_text', 'Schedule Call')); ?></a>
+    <a href="<?php echo esc_url(get_theme_mod('wp_titans_hero_btn2_url', '#contact')); ?>" class="btn btn-primary" style="padding: 0.7rem 1.5rem; font-size: 0.85rem;"><?php echo esc_html(get_theme_mod('wp_titans_hero_btn2_text', 'Schedule a Call')); ?></a>
 </nav>

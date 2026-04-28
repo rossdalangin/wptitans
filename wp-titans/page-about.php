@@ -8,7 +8,7 @@ get_header(); ?>
     <div class="reveal">
         <span class="tagline"><?php echo esc_html(get_theme_mod('wp_titans_about_page_tagline', 'About WordPress Titans')); ?></span>
         <h1><?php echo esc_html(get_theme_mod('wp_titans_about_page_title', 'We help experts build websites that truly reflect their value.')); ?></h1>
-        <p><?php echo esc_html(get_theme_mod('wp_titans_about_page_subtitle', 'Positioning you as the trusted authority in your field.')); ?></p>
+        <p><?php echo esc_html(get_theme_mod('wp_titans_about_page_subtitle', 'Design for business outcomes, not just trends.')); ?></p>
     </div>
 </section>
 
@@ -22,7 +22,7 @@ get_header(); ?>
             </div>
         </div>
         <div class="reveal">
-            <img src="<?php echo esc_url(get_theme_mod('wp_titans_about_page_image', 'https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=800')); ?>" alt="Our Story" style="border-radius: 8px; box-shadow: 0 30px 60px rgba(212, 175, 55, 0.1);">
+            <img src="<?php echo esc_url(get_theme_mod('wp_titans_about_page_image', 'https://wordpresstitans.com/wp-content/uploads/2025/12/Screenshot-2025-12-06-001551.webp')); ?>" alt="Our Story" style="border-radius: 8px; box-shadow: 0 30px 60px rgba(212, 175, 55, 0.1);">
         </div>
     </div>
 </section>
@@ -56,7 +56,7 @@ get_header(); ?>
             <span class="tagline">Meet the Founder</span>
             <h2 style="font-size: 3rem;"><?php echo esc_html(get_theme_mod('wp_titans_founder_name', 'Ross Dalangin')); ?></h2>
             <div style="font-size: 1.1rem; color: var(--text-dim);">
-                <?php echo wp_kses_post(wpautop(get_theme_mod('wp_titans_founder_bio', "I’m Ross Dalangin — a web developer with over two decades of experience in WordPress, theme development, and business-focused design systems.\n\nI created the Authority Website System™ to give consultants and service providers a fast, strategic, and high-converting foundation for their online presence."))); ?>
+                <?php echo wp_kses_post(wpautop(get_theme_mod('wp_titans_founder_bio', 'I’m Ross Dalangin — a web developer with over two decades of experience in WordPress, theme development, and business-focused design systems.'))); ?>
             </div>
             <a href="#contact" class="btn btn-primary" style="margin-top: 2rem;">Work With Ross</a>
         </div>

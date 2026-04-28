@@ -232,6 +232,16 @@ h2 {
     transform: translateY(-10px);
 }
 
+/* FAQ Styles */
+.faq-item.active .faq-body {
+    max-height: 500px !important;
+    opacity: 1 !important;
+}
+
+.faq-item.active .faq-head i {
+    transform: rotate(45deg);
+}
+
 .card i {
     font-size: 3rem;
     color: var(--primary);
