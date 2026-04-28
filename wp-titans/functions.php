@@ -37,12 +37,11 @@ add_action( 'wp_enqueue_scripts', 'wp_titans_scripts' );
 /**
  * Default Menu Fallback
  */
-function wp_titans_default_menu() {
+function wp_titans_default_menu_callback() {
     echo '<a href="#hero">Home</a>';
-    echo '<a href="#about">Philosophy</a>';
+    echo '<a href="#about">About</a>';
     echo '<a href="#services">Services</a>';
-    echo '<a href="#stats">Metrics</a>';
-    echo '<a href="#news">Portfolio</a>';
+    echo '<a href="#process">Process</a>';
     echo '<a href="#contact">Contact</a>';
 }
 
