@@ -18,21 +18,33 @@
         </div>
         <div class="footer-links">
             <h4>Services</h4>
-            <ul>
-                <li><a href="#services">Authority System</a></li>
-                <li><a href="#services">Copywriting</a></li>
-                <li><a href="#services">Development</a></li>
-                <li><a href="#services">SEO</a></li>
-            </ul>
+            <?php
+            if ( has_nav_menu( 'footer-1' ) ) {
+                wp_nav_menu( array( 'theme_location' => 'footer-1', 'container' => false, 'items_wrap' => '<ul>%3$s</ul>' ) );
+            } else {
+                echo '<ul>
+                    <li><a href="#services">Authority System</a></li>
+                    <li><a href="#services">Copywriting</a></li>
+                    <li><a href="#services">Development</a></li>
+                    <li><a href="#services">SEO</a></li>
+                </ul>';
+            }
+            ?>
         </div>
         <div class="footer-links">
             <h4>Company</h4>
-            <ul>
-                <li><a href="#about">Our Story</a></li>
-                <li><a href="#process">The Process</a></li>
-                <li><a href="#contact">Contact</a></li>
-                <li><a href="#">Privacy Policy</a></li>
-            </ul>
+            <?php
+            if ( has_nav_menu( 'footer-2' ) ) {
+                wp_nav_menu( array( 'theme_location' => 'footer-2', 'container' => false, 'items_wrap' => '<ul>%3$s</ul>' ) );
+            } else {
+                echo '<ul>
+                    <li><a href="#about">Our Story</a></li>
+                    <li><a href="#process">The Process</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                </ul>';
+            }
+            ?>
         </div>
         <div class="footer-links">
             <h4>Connect</h4>

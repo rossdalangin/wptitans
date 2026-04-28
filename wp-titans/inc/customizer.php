@@ -117,6 +117,35 @@ function wp_titans_customize_register( $wp_customize ) {
     $wp_customize->add_setting( 'wp_titans_about_btn_url', array( 'default' => '#contact', 'sanitize_callback' => 'sanitize_text_field' ) );
     $wp_customize->add_control( 'wp_titans_about_btn_url', array( 'label' => __( 'About Button URL', 'wp-titans' ), 'section' => 'wp_titans_about' ) );
 
+    // --- Pricing Section ---
+    $wp_customize->add_section( 'wp_titans_pricing', array(
+        'title'    => __( 'Pricing & Packages', 'wp-titans' ),
+        'priority' => 65,
+    ) );
+
+    $wp_customize->add_setting( 'wp_titans_pricing_show', array( 'default' => true, 'sanitize_callback' => 'wp_validate_boolean' ) );
+    $wp_customize->add_control( 'wp_titans_pricing_show', array( 'label' => __( 'Show Pricing Table', 'wp-titans' ), 'section' => 'wp_titans_pricing', 'type' => 'checkbox' ) );
+
+    $pricing_defaults = [
+        ['name' => 'The Launchpad', 'price' => '$2,500', 'desc' => 'Perfect for solo experts.', 'features' => "✓ 3-Page Website\n✓ Mobile Responsive\n✓ 14-Day Delivery"],
+        ['name' => 'The Authority', 'price' => '$4,500', 'desc' => 'Our flagship system.', 'features' => "✓ 6-Page Website\n✓ Professional Copywriting\n✓ Lead Gen Funnel\n✓ SEO Optimization"],
+        ['name' => 'The Enterprise', 'price' => '$8,000+', 'desc' => 'For growing teams.', 'features' => "✓ Custom CRM Sync\n✓ Multi-Channel Setup\n✓ Priority Support\n✓ Content Strategy"]
+    ];
+
+    for ($i = 1; $i <= 3; $i++) {
+        $wp_customize->add_setting( "wp_titans_pricing_name_$i", array( 'default' => $pricing_defaults[$i-1]['name'], 'sanitize_callback' => 'sanitize_text_field' ) );
+        $wp_customize->add_control( "wp_titans_pricing_name_$i", array( 'label' => "Package $i Name", 'section' => 'wp_titans_pricing' ) );
+
+        $wp_customize->add_setting( "wp_titans_pricing_val_$i", array( 'default' => $pricing_defaults[$i-1]['price'], 'sanitize_callback' => 'sanitize_text_field' ) );
+        $wp_customize->add_control( "wp_titans_pricing_val_$i", array( 'label' => "Package $i Price", 'section' => 'wp_titans_pricing' ) );
+
+        $wp_customize->add_setting( "wp_titans_pricing_desc_$i", array( 'default' => $pricing_defaults[$i-1]['desc'], 'sanitize_callback' => 'sanitize_text_field' ) );
+        $wp_customize->add_control( "wp_titans_pricing_desc_$i", array( 'label' => "Package $i Subtitle", 'section' => 'wp_titans_pricing' ) );
+
+        $wp_customize->add_setting( "wp_titans_pricing_features_$i", array( 'default' => $pricing_defaults[$i-1]['features'], 'sanitize_callback' => 'wp_kses_post' ) );
+        $wp_customize->add_control( "wp_titans_pricing_features_$i", array( 'label' => "Package $i Features", 'section' => 'wp_titans_pricing', 'type' => 'textarea' ) );
+    }
+
     // --- Services Section ---
     $wp_customize->add_section( 'wp_titans_services', array(
         'title'    => __( 'Services Section', 'wp-titans' ),
@@ -474,6 +503,9 @@ function wp_titans_customize_register( $wp_customize ) {
         $wp_customize->add_setting( "wp_titans_social_$social", array( 'default' => '#', 'sanitize_callback' => 'esc_url_raw' ) );
         $wp_customize->add_control( "wp_titans_social_$social", array( 'label' => ucfirst($social) . " URL", 'section' => 'wp_titans_social' ) );
     }
+
+$wp_customize->add_setting( 'wp_titans_og_image', array( 'default' => '', 'sanitize_callback' => 'esc_url_raw' ) );
+$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'wp_titans_og_image', array( 'label' => __( 'Social Share Image (OG)', 'wp-titans' ), 'description' => __( 'Default image when sharing on social media.', 'wp-titans' ), 'section' => 'wp_titans_social' ) ) );
 
     // --- Contact Section ---
     $wp_customize->add_section( 'wp_titans_contact', array(

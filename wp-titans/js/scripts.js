@@ -1,3 +1,13 @@
+// Preloader
+window.addEventListener('load', () => {
+    const preloader = document.getElementById('preloader');
+    if (preloader) {
+        preloader.style.transition = 'opacity 0.6s ease-out';
+        preloader.style.opacity = '0';
+        setTimeout(() => preloader.style.display = 'none', 600);
+    }
+});
+
 // Navbar Scroll Effect
 window.addEventListener('scroll', () => {
     const nav = document.getElementById('navbar');
@@ -74,5 +84,20 @@ if (statsSection) {
             startCount();
             started = true;
         }
+    });
+}
+
+// Mobile Menu
+const mobileToggle = document.getElementById('mobile-toggle');
+const mobileOverlay = document.getElementById('mobile-menu-overlay');
+const mobileClose = document.getElementById('mobile-close');
+
+if (mobileToggle && mobileOverlay) {
+    mobileToggle.addEventListener('click', () => mobileOverlay.classList.add('active'));
+    mobileClose.addEventListener('click', () => mobileOverlay.classList.remove('active'));
+
+    // Close on link click
+    mobileOverlay.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => mobileOverlay.classList.remove('active'));
     });
 }

@@ -10,7 +10,9 @@ if ( ! function_exists( 'wp_titans_setup' ) ) :
         add_theme_support( 'customize-selective-refresh-widgets' );
 
         register_nav_menus( array(
-            'menu-1' => esc_html__( 'Primary', 'wp-titans' ),
+            'menu-1'   => esc_html__( 'Primary', 'wp-titans' ),
+            'footer-1' => esc_html__( 'Footer Services', 'wp-titans' ),
+            'footer-2' => esc_html__( 'Footer Company', 'wp-titans' ),
         ) );
     }
 endif;
@@ -78,6 +80,14 @@ function wp_titans_handle_setup() {
             ),
             'Authority Website System' => array(
                 'template' => 'page-authority.php'
+            ),
+            'Privacy Policy' => array(
+                'template' => 'page.php',
+                'content'  => 'Your privacy is important to us. This policy explains how we collect and use your data.'
+            ),
+            'Terms & Conditions' => array(
+                'template' => 'page.php',
+                'content'  => 'By using our services, you agree to the following terms...'
             )
         );
 
@@ -86,7 +96,7 @@ function wp_titans_handle_setup() {
             if ( ! $existing ) {
                 $page_id = wp_insert_post( array(
                     'post_title'   => $title,
-                    'post_content' => '',
+                    'post_content' => isset($data['content']) ? $data['content'] : '',
                     'post_status'  => 'publish',
                     'post_type'    => 'page',
                 ) );
