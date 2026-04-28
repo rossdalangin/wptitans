@@ -52,11 +52,29 @@ function wp_titans_customize_register( $wp_customize ) {
     $wp_customize->add_setting( 'wp_titans_hero_bg', array( 'default' => 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=1920', 'sanitize_callback' => 'esc_url_raw' ) );
     $wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'wp_titans_hero_bg', array( 'label' => __( 'Hero Background Image', 'wp-titans' ), 'section' => 'wp_titans_hero' ) ) );
 
+    $wp_customize->add_setting( 'wp_titans_hero_btn1_text', array( 'default' => 'Our Solutions', 'sanitize_callback' => 'sanitize_text_field' ) );
+    $wp_customize->add_control( 'wp_titans_hero_btn1_text', array( 'label' => __( 'Hero Button 1 Text', 'wp-titans' ), 'section' => 'wp_titans_hero' ) );
+
+    $wp_customize->add_setting( 'wp_titans_hero_btn1_url', array( 'default' => '#services', 'sanitize_callback' => 'sanitize_text_field' ) );
+    $wp_customize->add_control( 'wp_titans_hero_btn1_url', array( 'label' => __( 'Hero Button 1 URL', 'wp-titans' ), 'section' => 'wp_titans_hero' ) );
+
+    $wp_customize->add_setting( 'wp_titans_hero_btn2_text', array( 'default' => 'Schedule a Call', 'sanitize_callback' => 'sanitize_text_field' ) );
+    $wp_customize->add_control( 'wp_titans_hero_btn2_text', array( 'label' => __( 'Hero Button 2 Text', 'wp-titans' ), 'section' => 'wp_titans_hero' ) );
+
+    $wp_customize->add_setting( 'wp_titans_hero_btn2_url', array( 'default' => '#contact', 'sanitize_callback' => 'sanitize_text_field' ) );
+    $wp_customize->add_control( 'wp_titans_hero_btn2_url', array( 'label' => __( 'Hero Button 2 URL', 'wp-titans' ), 'section' => 'wp_titans_hero' ) );
+
     // --- Who We Work With Section ---
     $wp_customize->add_section( 'wp_titans_target', array(
         'title'    => __( 'Who We Work With', 'wp-titans' ),
         'priority' => 45,
     ) );
+
+    $wp_customize->add_setting( 'wp_titans_target_tagline', array( 'default' => 'Who We Work With', 'sanitize_callback' => 'sanitize_text_field' ) );
+    $wp_customize->add_control( 'wp_titans_target_tagline', array( 'label' => __( 'Section Tagline', 'wp-titans' ), 'section' => 'wp_titans_target' ) );
+
+    $wp_customize->add_setting( 'wp_titans_target_main_title', array( 'default' => 'Built for Experts', 'sanitize_callback' => 'sanitize_text_field' ) );
+    $wp_customize->add_control( 'wp_titans_target_main_title', array( 'label' => __( 'Section Title', 'wp-titans' ), 'section' => 'wp_titans_target' ) );
 
     $target_defaults = [
         ['icon' => 'fa-building', 'title' => 'Local Businesses', 'desc' => 'Helping local service providers dominate their market and capture high-intent leads.'],
@@ -94,11 +112,23 @@ function wp_titans_customize_register( $wp_customize ) {
     $wp_customize->add_setting( 'wp_titans_about_image', array( 'default' => 'https://wordpresstitans.com/wp-content/uploads/2025/12/Screenshot-2025-12-06-001551.webp', 'sanitize_callback' => 'esc_url_raw' ) );
     $wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'wp_titans_about_image', array( 'label' => __( 'About Image', 'wp-titans' ), 'section' => 'wp_titans_about' ) ) );
 
+    $wp_customize->add_setting( 'wp_titans_about_btn_text', array( 'default' => 'Read More', 'sanitize_callback' => 'sanitize_text_field' ) );
+    $wp_customize->add_control( 'wp_titans_about_btn_text', array( 'label' => __( 'About Button Text', 'wp-titans' ), 'section' => 'wp_titans_about' ) );
+
+    $wp_customize->add_setting( 'wp_titans_about_btn_url', array( 'default' => '#contact', 'sanitize_callback' => 'sanitize_text_field' ) );
+    $wp_customize->add_control( 'wp_titans_about_btn_url', array( 'label' => __( 'About Button URL', 'wp-titans' ), 'section' => 'wp_titans_about' ) );
+
     // --- Services Section ---
     $wp_customize->add_section( 'wp_titans_services', array(
         'title'    => __( 'Services Section', 'wp-titans' ),
         'priority' => 60,
     ) );
+
+    $wp_customize->add_setting( 'wp_titans_services_tagline', array( 'default' => 'Our Core Services', 'sanitize_callback' => 'sanitize_text_field' ) );
+    $wp_customize->add_control( 'wp_titans_services_tagline', array( 'label' => __( 'Section Tagline', 'wp-titans' ), 'section' => 'wp_titans_services' ) );
+
+    $wp_customize->add_setting( 'wp_titans_services_main_title', array( 'default' => 'High-Converting Solutions', 'sanitize_callback' => 'sanitize_text_field' ) );
+    $wp_customize->add_control( 'wp_titans_services_main_title', array( 'label' => __( 'Section Title', 'wp-titans' ), 'section' => 'wp_titans_services' ) );
 
     $services_defaults = [
         ['icon' => 'fa-briefcase', 'title' => 'Authority Website System™', 'desc' => 'A complete, conversion-focused website package designed to position you as the trusted authority.'],
@@ -149,6 +179,12 @@ function wp_titans_customize_register( $wp_customize ) {
         'priority' => 75,
     ) );
 
+    $wp_customize->add_setting( 'wp_titans_process_tagline', array( 'default' => 'The Authority System™', 'sanitize_callback' => 'sanitize_text_field' ) );
+    $wp_customize->add_control( 'wp_titans_process_tagline', array( 'label' => __( 'Section Tagline', 'wp-titans' ), 'section' => 'wp_titans_process' ) );
+
+    $wp_customize->add_setting( 'wp_titans_process_main_title', array( 'default' => 'Our 4-Step Process', 'sanitize_callback' => 'sanitize_text_field' ) );
+    $wp_customize->add_control( 'wp_titans_process_main_title', array( 'label' => __( 'Section Title', 'wp-titans' ), 'section' => 'wp_titans_process' ) );
+
     $process_defaults = [
         ['title' => 'Strategy & Positioning', 'desc' => 'We clarify your message, target audience, and offer — the foundation of authority.'],
         ['title' => 'Copywriting & Messaging', 'desc' => 'We craft high-converting content that communicates value and builds trust.'],
@@ -170,6 +206,12 @@ function wp_titans_customize_register( $wp_customize ) {
         'title'    => __( 'Testimonials Section', 'wp-titans' ),
         'priority' => 78,
     ) );
+
+    $wp_customize->add_setting( 'wp_titans_testi_tagline', array( 'default' => 'Trusted by Experts', 'sanitize_callback' => 'sanitize_text_field' ) );
+    $wp_customize->add_control( 'wp_titans_testi_tagline', array( 'label' => __( 'Section Tagline', 'wp-titans' ), 'section' => 'wp_titans_testimonials' ) );
+
+    $wp_customize->add_setting( 'wp_titans_testi_main_title', array( 'default' => 'Client Results', 'sanitize_callback' => 'sanitize_text_field' ) );
+    $wp_customize->add_control( 'wp_titans_testi_main_title', array( 'label' => __( 'Section Title', 'wp-titans' ), 'section' => 'wp_titans_testimonials' ) );
 
     $testimonial_defaults = [
         ['quote' => 'Booked 12 new consultations in the first month after launching my new website. Clients now see me as a real authority.', 'author' => 'Anna R.', 'role' => 'Business Consultant', 'img' => 'https://wordpresstitans.com/wp-content/uploads/2025/12/Screenshot-2025-12-06-003203.webp'],
@@ -219,6 +261,9 @@ function wp_titans_customize_register( $wp_customize ) {
         'priority' => 90,
     ) );
 
+    $wp_customize->add_setting( 'wp_titans_faq_main_title', array( 'default' => 'Common Questions', 'sanitize_callback' => 'sanitize_text_field' ) );
+    $wp_customize->add_control( 'wp_titans_faq_main_title', array( 'label' => __( 'Section Title', 'wp-titans' ), 'section' => 'wp_titans_faq' ) ) ;
+
     $faq_defaults = [
         ['q' => 'What is an Authority Website?', 'a' => 'An Authority Website is a strategic platform designed to position you as an expert and build immediate trust with your ideal clients.'],
         ['q' => 'How long does the process take?', 'a' => 'Our Authority Website System™ is a proven 14-day process from strategy to launch.'],
@@ -246,6 +291,27 @@ function wp_titans_customize_register( $wp_customize ) {
         $wp_customize->add_setting( "wp_titans_social_$social", array( 'default' => '#', 'sanitize_callback' => 'esc_url_raw' ) );
         $wp_customize->add_control( "wp_titans_social_$social", array( 'label' => ucfirst($social) . " URL", 'section' => 'wp_titans_social' ) );
     }
+
+    // --- Contact Section ---
+    $wp_customize->add_section( 'wp_titans_contact', array(
+        'title'    => __( 'Contact Section', 'wp-titans' ),
+        'priority' => 95,
+    ) );
+
+    $wp_customize->add_setting( 'wp_titans_contact_title', array( 'default' => 'Ready to Build Your Authority Website?', 'sanitize_callback' => 'sanitize_text_field' ) );
+    $wp_customize->add_control( 'wp_titans_contact_title', array( 'label' => __( 'Contact Title', 'wp-titans' ), 'section' => 'wp_titans_contact' ) );
+
+    $wp_customize->add_setting( 'wp_titans_contact_desc', array( 'default' => 'Let’s create a website that showcases your expertise and helps attract your ideal clients.', 'sanitize_callback' => 'sanitize_text_field' ) );
+    $wp_customize->add_control( 'wp_titans_contact_desc', array( 'label' => __( 'Contact Description', 'wp-titans' ), 'section' => 'wp_titans_contact', 'type' => 'textarea' ) );
+
+    $wp_customize->add_setting( 'wp_titans_contact_email', array( 'default' => 'hello@wordpresstitans.com', 'sanitize_callback' => 'sanitize_email' ) );
+    $wp_customize->add_control( 'wp_titans_contact_email', array( 'label' => __( 'Contact Email', 'wp-titans' ), 'section' => 'wp_titans_contact' ) );
+
+    $wp_customize->add_setting( 'wp_titans_contact_guarantee', array( 'default' => '14-Day Delivery Guaranteed', 'sanitize_callback' => 'sanitize_text_field' ) );
+    $wp_customize->add_control( 'wp_titans_contact_guarantee', array( 'label' => __( 'Guarantee Text', 'wp-titans' ), 'section' => 'wp_titans_contact' ) );
+
+    $wp_customize->add_setting( 'wp_titans_contact_btn_text', array( 'default' => 'Book a Strategy Call', 'sanitize_callback' => 'sanitize_text_field' ) );
+    $wp_customize->add_control( 'wp_titans_contact_btn_text', array( 'label' => __( 'Submit Button Text', 'wp-titans' ), 'section' => 'wp_titans_contact' ) );
 
 }
 add_action( 'customize_register', 'wp_titans_customize_register' );

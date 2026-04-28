@@ -10,8 +10,8 @@ get_header(); ?>
         <h1><?php echo esc_html(get_theme_mod('wp_titans_hero_title', 'High-Performance WordPress Websites Designed to Win Trust and Generate Leads')); ?></h1>
         <p><?php echo esc_html(get_theme_mod('wp_titans_hero_subtitle', 'We build Authority Websites for consultants, coaches, and service providers that position you as the expert and turn visitors into clients.')); ?></p>
         <div class="hero-btns">
-            <a href="#services" class="btn btn-primary">Our Solutions</a>
-            <a href="#contact" class="btn btn-outline">Schedule a Call</a>
+            <a href="<?php echo esc_attr(get_theme_mod('wp_titans_hero_btn1_url', '#services')); ?>" class="btn btn-primary"><?php echo esc_html(get_theme_mod('wp_titans_hero_btn1_text', 'Our Solutions')); ?></a>
+            <a href="<?php echo esc_attr(get_theme_mod('wp_titans_hero_btn2_url', '#contact')); ?>" class="btn btn-outline"><?php echo esc_html(get_theme_mod('wp_titans_hero_btn2_text', 'Schedule a Call')); ?></a>
         </div>
     </div>
 </section>
@@ -19,8 +19,8 @@ get_header(); ?>
 <!-- 2. WHO WE WORK WITH -->
 <section id="who-we-work-with" style="background: #050505;">
     <div class="reveal" style="text-align: center; margin-bottom: 4rem;">
-        <span class="tagline">Who We Work With</span>
-        <h2>Built for Experts</h2>
+        <span class="tagline"><?php echo esc_html(get_theme_mod('wp_titans_target_tagline', 'Who We Work With')); ?></span>
+        <h2><?php echo esc_html(get_theme_mod('wp_titans_target_main_title', 'Built for Experts')); ?></h2>
     </div>
     <div class="grid-cards">
         <?php for ($i = 1; $i <= 3; $i++) :
@@ -45,7 +45,7 @@ get_header(); ?>
             <span class="tagline"><?php echo esc_html(get_theme_mod('wp_titans_about_tagline', 'OUR STORY')); ?></span>
             <h2><?php echo esc_html(get_theme_mod('wp_titans_about_title', 'We help experts build websites that truly reflect their value.')); ?></h2>
             <p><?php echo nl2br(esc_html(get_theme_mod('wp_titans_about_content', 'WordPress Titans began with one mission: to help experts build websites that truly reflect their value.'))); ?></p>
-            <a href="#contact" class="btn btn-outline" style="margin-top: 2rem;">Read More</a>
+            <a href="<?php echo esc_attr(get_theme_mod('wp_titans_about_btn_url', '#contact')); ?>" class="btn btn-outline" style="margin-top: 2rem;"><?php echo esc_html(get_theme_mod('wp_titans_about_btn_text', 'Read More')); ?></a>
         </div>
         <div class="reveal">
             <img src="<?php echo esc_url(get_theme_mod('wp_titans_about_image', 'https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=800')); ?>" alt="About Titans" style="border-radius: 8px; box-shadow: 0 20px 40px rgba(0,0,0,0.5);">
@@ -56,8 +56,8 @@ get_header(); ?>
 <!-- 4. SERVICES SECTION -->
 <section id="services" style="background: #080808;">
     <div class="reveal" style="text-align: center; margin-bottom: 4rem;">
-        <span class="tagline">Our Core Services</span>
-        <h2>High-Converting Solutions</h2>
+        <span class="tagline"><?php echo esc_html(get_theme_mod('wp_titans_services_tagline', 'Our Core Services')); ?></span>
+        <h2><?php echo esc_html(get_theme_mod('wp_titans_services_main_title', 'High-Converting Solutions')); ?></h2>
     </div>
     <div class="grid-cards">
         <?php for ($i = 1; $i <= 6; $i++) :
@@ -78,8 +78,8 @@ get_header(); ?>
 <!-- 5. PROCESS SECTION -->
 <section id="process">
     <div class="reveal" style="text-align: center; margin-bottom: 4rem;">
-        <span class="tagline">The Authority System™</span>
-        <h2>Our 4-Step Process</h2>
+        <span class="tagline"><?php echo esc_html(get_theme_mod('wp_titans_process_tagline', 'The Authority System™')); ?></span>
+        <h2><?php echo esc_html(get_theme_mod('wp_titans_process_main_title', 'Our 4-Step Process')); ?></h2>
     </div>
     <div class="grid-cards">
         <?php for ($i = 1; $i <= 4; $i++) :
@@ -113,8 +113,8 @@ get_header(); ?>
 <!-- 7. TESTIMONIALS -->
 <section id="testimonials" style="background: #050505;">
     <div class="reveal" style="text-align: center; margin-bottom: 4rem;">
-        <span class="tagline">Trusted by Experts</span>
-        <h2>Client Results</h2>
+        <span class="tagline"><?php echo esc_html(get_theme_mod('wp_titans_testi_tagline', 'Trusted by Experts')); ?></span>
+        <h2><?php echo esc_html(get_theme_mod('wp_titans_testi_main_title', 'Client Results')); ?></h2>
     </div>
     <div class="grid-cards">
         <?php for ($i = 1; $i <= 3; $i++) :
@@ -139,7 +139,7 @@ get_header(); ?>
 <!-- 8. FAQ -->
 <section id="faq">
     <div class="reveal" style="text-align: center; margin-bottom: 4rem;">
-        <h2>Common Questions</h2>
+        <h2><?php echo esc_html(get_theme_mod('wp_titans_faq_main_title', 'Common Questions')); ?></h2>
     </div>
     <div style="max-width: 800px; margin: 0 auto;">
         <?php for ($i = 1; $i <= 4; $i++) :
@@ -159,11 +159,11 @@ get_header(); ?>
 <section id="contact" style="background: #080808;">
     <div class="grid-2">
         <div class="reveal">
-            <h2>Ready to Build Your Authority Website?</h2>
-            <p>Let’s create a website that showcases your expertise and helps attract your ideal clients.</p>
+            <h2><?php echo esc_html(get_theme_mod('wp_titans_contact_title', 'Ready to Build Your Authority Website?')); ?></h2>
+            <p><?php echo esc_html(get_theme_mod('wp_titans_contact_desc', 'Let’s create a website that showcases your expertise and helps attract your ideal clients.')); ?></p>
             <div style="margin-top: 3rem;">
-                <p><i class="fas fa-envelope" style="color: var(--primary); margin-right: 10px;"></i> hello@wordpresstitans.com</p>
-                <p><i class="fas fa-calendar-check" style="color: var(--primary); margin-right: 10px;"></i> 14-Day Delivery Guaranteed</p>
+                <p><i class="fas fa-envelope" style="color: var(--primary); margin-right: 10px;"></i> <?php echo esc_html(get_theme_mod('wp_titans_contact_email', 'hello@wordpresstitans.com')); ?></p>
+                <p><i class="fas fa-calendar-check" style="color: var(--primary); margin-right: 10px;"></i> <?php echo esc_html(get_theme_mod('wp_titans_contact_guarantee', '14-Day Delivery Guaranteed')); ?></p>
             </div>
         </div>
         <div class="reveal">
@@ -177,7 +177,7 @@ get_header(); ?>
                 <div style="margin-bottom: 1.5rem;">
                     <textarea rows="4" placeholder="Tell us about your business" style="width: 100%; padding: 1rem; background: #000; border: 1px solid #333; color: white;"></textarea>
                 </div>
-                <button class="btn btn-primary" style="width: 100%;">Book a Strategy Call</button>
+                <button class="btn btn-primary" style="width: 100%;"><?php echo esc_html(get_theme_mod('wp_titans_contact_btn_text', 'Book a Strategy Call')); ?></button>
             </form>
         </div>
     </div>
