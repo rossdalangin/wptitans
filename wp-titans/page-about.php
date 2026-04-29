@@ -6,9 +6,9 @@ get_header(); ?>
 
 <section class="page-header hero" style="min-height: 50vh;">
     <div class="reveal">
-        <span class="tagline"><?php echo esc_html(get_theme_mod('wp_titans_about_page_tagline', 'About WordPress Titans')); ?></span>
-        <h1><?php echo esc_html(get_theme_mod('wp_titans_about_page_title', 'We help experts build websites that truly reflect their value.')); ?></h1>
-        <p><?php echo esc_html(get_theme_mod('wp_titans_about_page_subtitle', 'Design for business outcomes, not just trends.')); ?></p>
+        <span class="tagline"><?php echo esc_html(wp_titans_get_mod('wp_titans_about_page_tagline')); ?></span>
+        <h1><?php echo esc_html(wp_titans_get_mod('wp_titans_about_page_title')); ?></h1>
+        <p><?php echo esc_html(wp_titans_get_mod('wp_titans_about_page_subtitle')); ?></p>
     </div>
 </section>
 
@@ -16,13 +16,13 @@ get_header(); ?>
     <div class="grid-2">
         <div class="reveal">
             <span class="tagline">OUR STORY</span>
-            <h2 style="font-size: 3rem;"><?php echo esc_html(get_theme_mod('wp_titans_about_story_title', 'Built on 20+ Years of Experience')); ?></h2>
+            <h2 style="font-size: 3rem;"><?php echo esc_html(wp_titans_get_mod('wp_titans_about_story_title')); ?></h2>
             <div style="font-size: 1.1rem; color: var(--text-dim);">
-                <?php echo wp_kses_post(wpautop(get_theme_mod('wp_titans_about_story_content', "WordPress Titans began with one mission: to help experts build websites that truly reflect their value.\n\nAfter 20+ years of building websites for all kinds of businesses, one thing became clear — most websites fail not because of design, but because they lack clarity, strategy, and authority positioning."))); ?>
+                <?php echo wp_kses_post(wpautop(wp_titans_get_mod('wp_titans_about_story_content'))); ?>
             </div>
         </div>
         <div class="reveal">
-            <img src="<?php echo esc_url(get_theme_mod('wp_titans_about_page_image', 'https://wordpresstitans.com/wp-content/uploads/2025/12/Screenshot-2025-12-06-001551.webp')); ?>" alt="Our Story" style="border-radius: 8px; box-shadow: 0 30px 60px rgba(212, 175, 55, 0.1);">
+            <img src="<?php echo esc_url(wp_titans_get_mod('wp_titans_about_page_image")); ?>" alt="Our Story" style="border-radius: 8px; box-shadow: 0 30px 60px rgba(212, 175, 55, 0.1);">
         </div>
     </div>
 </section>
@@ -35,8 +35,8 @@ get_header(); ?>
     <div class="grid-cards">
         <?php
         for ($i = 1; $i <= 4; $i++) :
-            $v_title = get_theme_mod("wp_titans_about_pillar_title_$i");
-            $v_desc = get_theme_mod("wp_titans_about_pillar_desc_$i");
+            $v_title = wp_titans_get_mod("wp_titans_about_pillar_title_$i");
+            $v_desc = wp_titans_get_mod("wp_titans_about_pillar_desc_$i");
             if (!$v_title) continue;
         ?>
         <div class="card reveal" style="border: 1px solid var(--border-glass);">
@@ -54,9 +54,9 @@ get_header(); ?>
     </div>
     <div class="grid-cards">
         <?php for ($i = 1; $i <= 3; $i++) :
-            $name = get_theme_mod("wp_titans_team_name_$i");
-            $role = get_theme_mod("wp_titans_team_role_$i");
-            $img = get_theme_mod("wp_titans_team_img_$i");
+            $name = wp_titans_get_mod("wp_titans_team_name_$i");
+            $role = wp_titans_get_mod("wp_titans_team_role_$i");
+            $img = wp_titans_get_mod("wp_titans_team_img_$i");
             if (!$name) continue;
         ?>
         <div class="card reveal" style="padding: 0; background: #050505; text-align: center; overflow: hidden; border: 1px solid var(--border-glass);">
@@ -73,13 +73,13 @@ get_header(); ?>
 <section id="founder" style="background: #050505;">
     <div class="grid-2">
         <div class="reveal" style="text-align: center;">
-            <img src="<?php echo esc_url(get_theme_mod('wp_titans_founder_image', 'https://wordpresstitans.com/wp-content/uploads/2025/07/pic-ross-dalangin.jpg')); ?>" alt="Founder" style="width: 400px; height: 400px; object-fit: cover; border-radius: 50%; margin: 0 auto; border: 5px solid var(--primary);">
+            <img src="<?php echo esc_url(wp_titans_get_mod("wp_titans_founder_image')); ?>" alt="Founder" style="width: 400px; height: 400px; object-fit: cover; border-radius: 50%; margin: 0 auto; border: 5px solid var(--primary);">
         </div>
         <div class="reveal">
             <span class="tagline">Meet the Founder</span>
-            <h2 style="font-size: 3rem;"><?php echo esc_html(get_theme_mod('wp_titans_founder_name', 'Ross Dalangin')); ?></h2>
+            <h2 style="font-size: 3rem;"><?php echo esc_html(wp_titans_get_mod('wp_titans_founder_name')); ?></h2>
             <div style="font-size: 1.1rem; color: var(--text-dim);">
-                <?php echo wp_kses_post(wpautop(get_theme_mod('wp_titans_founder_bio', 'I’m Ross Dalangin — a web developer with over two decades of experience in WordPress, theme development, and business-focused design systems.'))); ?>
+                <?php echo wp_kses_post(wpautop(wp_titans_get_mod('wp_titans_founder_bio'))); ?>
             </div>
             <a href="#contact" class="btn btn-primary" style="margin-top: 2rem;">Work With Ross</a>
         </div>

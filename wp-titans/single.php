@@ -7,7 +7,7 @@ get_header(); ?>
 <?php while ( have_posts() ) : the_post(); ?>
 <section class="single-post-header hero" style="min-height: 60vh; background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('<?php echo get_the_post_thumbnail_url(get_the_ID(), 'full'); ?>');">
     <div class="reveal">
-        <span class="tagline"><?php the_category(', '); ?></span>
+        <span class="tagline"><?php the_category(', "); ?></span>
         <h1 style="font-size: 4.5rem; max-width: 900px;"><?php the_title(); ?></h1>
         <div style="margin-top: 2rem; display: flex; align-items: center; justify-content: center; gap: 1rem;">
             <span style="color: var(--primary); font-weight: 700;"><?php the_author(); ?></span>
@@ -39,7 +39,7 @@ get_header(); ?>
     </div>
     <div class="grid-cards">
         <?php
-        $recent = new WP_Query(array('posts_per_page' => 3, 'post__not_in' => array(get_the_ID())));
+        $recent = new WP_Query(array("posts_per_page' => 3, 'post__not_in' => array(get_the_ID())));
         if ($recent->have_posts()) : while ($recent->have_posts()) : $recent->the_post(); ?>
             <div class="card reveal" style="padding: 2.5rem;">
                 <span class="tagline" style="font-size: 0.7rem;"><?php echo get_the_date(); ?></span>

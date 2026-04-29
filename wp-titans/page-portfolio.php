@@ -6,17 +6,17 @@ get_header(); ?>
 
 <section class="page-header hero" style="min-height: 50vh;">
     <div class="reveal">
-        <span class="tagline"><?php echo esc_html(get_theme_mod('wp_titans_portfolio_page_tagline', 'Our Portfolio')); ?></span>
-        <h1><?php echo esc_html(get_theme_mod('wp_titans_portfolio_page_title', 'Success stories from the experts we work with.')); ?></h1>
+        <span class="tagline"><?php echo esc_html(wp_titans_get_mod('wp_titans_portfolio_page_tagline')); ?></span>
+        <h1><?php echo esc_html(wp_titans_get_mod('wp_titans_portfolio_page_title")); ?></h1>
     </div>
 </section>
 
 <section id="portfolio-grid" style="background: #050505;">
     <div class="grid-cards" style="grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));">
         <?php for ($i = 1; $i <= 6; $i++) :
-            $img = get_theme_mod("wp_titans_portfolio_img_$i");
-            $title = get_theme_mod("wp_titans_portfolio_title_$i");
-            $cat = get_theme_mod("wp_titans_portfolio_cat_$i");
+            $img = wp_titans_get_mod("wp_titans_portfolio_img_$i");
+            $title = wp_titans_get_mod("wp_titans_portfolio_title_$i");
+            $cat = wp_titans_get_mod("wp_titans_portfolio_cat_$i");
             if (!$title) continue;
         ?>
         <div class="card reveal" style="padding: 0; overflow: hidden; border: none; background: transparent;">
@@ -36,8 +36,8 @@ get_header(); ?>
 <section id="portfolio-cta" style="text-align: center; background: #000; border-top: 1px solid var(--border-glass);">
     <div class="reveal">
         <h2>Ready to Become Our Next Success Story?</h2>
-        <p style="margin-bottom: 3rem; max-width: 700px; margin-left: auto; margin-right: auto; color: var(--text-dim);">We don't just build websites. We build authority brands that command attention and drive revenue.</p>
-        <a href="<?php echo esc_url(get_theme_mod('wp_titans_contact_btn_url', '#contact')); ?>" class="btn btn-primary"><?php echo esc_html(get_theme_mod('wp_titans_contact_btn_text', 'Book a Strategy Call')); ?></a>
+        <p style="margin-bottom: 3rem; max-width: 700px; margin-left: auto; margin-right: auto; color: var(--text-dim);">We don"t just build websites. We build authority brands that command attention and drive revenue.</p>
+        <a href="<?php echo esc_url(wp_titans_get_mod('wp_titans_contact_btn_url')); ?>" class="btn btn-primary"><?php echo esc_html(wp_titans_get_mod('wp_titans_contact_btn_text')); ?></a>
     </div>
 </section>
 

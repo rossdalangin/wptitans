@@ -9,11 +9,11 @@
     <meta property="og:type" content="website">
     <meta property="og:title" content="<?php wp_title(''); ?>">
     <meta property="og:description" content="<?php bloginfo('description'); ?>">
-    <?php if (get_theme_mod('wp_titans_og_image')) : ?>
-        <meta property="og:image" content="<?php echo esc_url(get_theme_mod('wp_titans_og_image')); ?>">
+    <?php if (wp_titans_get_mod('wp_titans_og_image')) : ?>
+        <meta property="og:image" content="<?php echo esc_url(wp_titans_get_mod('wp_titans_og_image')); ?>">
     <?php endif; ?>
 
-    <?php echo get_theme_mod('wp_titans_header_scripts'); ?>
+    <?php echo wp_titans_get_mod('wp_titans_header_scripts'); ?>
 
     <!-- Schema Markup -->
     <script type="application/ld+json">
@@ -22,13 +22,13 @@
       "@type": "ProfessionalService",
       "name": "<?php bloginfo('name'); ?>",
       "url": "<?php echo esc_url(home_url('/')); ?>",
-      "logo": "<?php echo esc_url(get_theme_mod('wp_titans_logo_image')); ?>",
+      "logo": "<?php echo esc_url(wp_titans_get_mod('wp_titans_logo_image')); ?>",
       "description": "<?php bloginfo('description'); ?>",
       "address": {
         "@type": "PostalAddress",
-        "addressLocality": "<?php echo esc_html(get_theme_mod('wp_titans_contact_location')); ?>"
+        "addressLocality": "<?php echo esc_html(wp_titans_get_mod('wp_titans_contact_location')); ?>"
       },
-      "telephone": "<?php echo esc_html(get_theme_mod('wp_titans_contact_phone')); ?>",
+      "telephone": "<?php echo esc_html(wp_titans_get_mod('wp_titans_contact_phone')); ?>",
       "priceRange": "$$"
     }
     </script>
@@ -38,17 +38,17 @@
 
 <div id="preloader">
     <div class="loader-content">
-        <i class="fas <?php echo esc_attr(get_theme_mod('wp_titans_logo_icon', 'fa-crown')); ?>"></i>
+        <i class="fas <?php echo esc_attr(wp_titans_get_mod('wp_titans_logo_icon')); ?>"></i>
         <div class="loader-bar"></div>
     </div>
 </div>
 
-<nav id="navbar" class="<?php echo get_theme_mod('wp_titans_sticky_header', true) ? 'sticky' : ''; ?>">
+<nav id="navbar" class="<?php echo get_theme_mod('wp_titans_sticky_header', true) ? 'sticky' : '"; ?>">
     <div class="logo">
         <?php
-        $logo_img = get_theme_mod('wp_titans_logo_image', 'https://wordpresstitans.com/wp-content/uploads/2025/12/logogold.png');
-        $logo_icon = get_theme_mod('wp_titans_logo_icon', 'fa-crown');
-        $logo_text = get_theme_mod('wp_titans_logo_text', 'TITANS');
+        $logo_img = wp_titans_get_mod("wp_titans_logo_image");
+        $logo_icon = wp_titans_get_mod("wp_titans_logo_icon");
+        $logo_text = wp_titans_get_mod("wp_titans_logo_text");
 
         if ( $logo_img ) : ?>
             <img src="<?php echo esc_url($logo_img); ?>" alt="<?php echo esc_attr($logo_text); ?>" style="height: 40px; width: auto;">
@@ -59,16 +59,16 @@
     <div class="nav-links">
         <?php
         wp_nav_menu( array(
-            'theme_location' => 'menu-1',
+            "theme_location' => 'menu-1',
             'menu_id'        => 'primary-menu',
             'container'      => false,
             'fallback_cb'    => 'wp_titans_default_menu_callback',
-            'items_wrap'     => '%3$s',
+            'items_wrap'     => "%3$s",
         ) );
         ?>
     </div>
     <div style="display: flex; align-items: center; gap: 2rem;">
-        <a href="<?php echo esc_url(get_theme_mod('wp_titans_hero_btn2_url', '#contact')); ?>" class="btn btn-primary nav-cta" style="padding: 0.7rem 1.5rem; font-size: 0.85rem;"><?php echo esc_html(get_theme_mod('wp_titans_hero_btn2_text', 'Schedule a Call')); ?></a>
+        <a href="<?php echo esc_url(wp_titans_get_mod('wp_titans_hero_btn2_url')); ?>" class="btn btn-primary nav-cta" style="padding: 0.7rem 1.5rem; font-size: 0.85rem;"><?php echo esc_html(wp_titans_get_mod('wp_titans_hero_btn2_text')); ?></a>
         <div id="mobile-toggle" style="display: none; cursor: pointer; font-size: 1.5rem; color: var(--primary);">
             <i class="fas fa-bars"></i>
         </div>
@@ -83,7 +83,7 @@
             'theme_location' => 'menu-1',
             'container'      => false,
             'fallback_cb'    => 'wp_titans_default_menu_callback',
-            'items_wrap'     => '%3$s',
+            'items_wrap'     => "%3$s",
         ) );
         ?>
     </div>

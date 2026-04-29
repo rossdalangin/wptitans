@@ -6,18 +6,18 @@ get_header(); ?>
 
 <section class="page-header hero" style="min-height: 50vh;">
     <div class="reveal">
-        <span class="tagline"><?php echo esc_html(get_theme_mod('wp_titans_services_page_tagline', 'Our Expertise')); ?></span>
-        <h1><?php echo esc_html(get_theme_mod('wp_titans_services_page_title', 'Done-for-you website solutions built for consultants, coaches, and service providers.')); ?></h1>
-        <p><?php echo esc_html(get_theme_mod('wp_titans_services_page_subtitle', 'Designed to convert, impress, and elevate your authority.')); ?></p>
+        <span class="tagline"><?php echo esc_html(wp_titans_get_mod('wp_titans_services_page_tagline')); ?></span>
+        <h1><?php echo esc_html(wp_titans_get_mod('wp_titans_services_page_title')); ?></h1>
+        <p><?php echo esc_html(wp_titans_get_mod('wp_titans_services_page_subtitle")); ?></p>
     </div>
 </section>
 
 <section id="all-services" style="background: #050505;">
     <div class="grid-cards">
         <?php for ($i = 1; $i <= 6; $i++) :
-            $icon = get_theme_mod("wp_titans_service_icon_$i");
-            $title = get_theme_mod("wp_titans_service_title_$i");
-            $desc = get_theme_mod("wp_titans_service_desc_$i");
+            $icon = wp_titans_get_mod("wp_titans_service_icon_$i");
+            $title = wp_titans_get_mod("wp_titans_service_title_$i");
+            $desc = wp_titans_get_mod("wp_titans_service_desc_$i");
             if (!$title) continue;
         ?>
         <div class="card reveal" style="padding: 4rem;">
@@ -26,10 +26,10 @@ get_header(); ?>
             <p style="font-size: 1.1rem; color: var(--text-dim); margin-bottom: 2rem;"><?php echo esc_html($desc); ?></p>
             <ul style="color: var(--text-dim); text-align: left; margin-bottom: 2rem;">
                 <?php
-                $points = get_theme_mod("wp_titans_service_points_$i", "✓ Custom design\n✓ SEO setup\n✓ Fast performance");
+                $points = wp_titans_get_mod("wp_titans_service_points_$i");
                 $points_arr = explode("\n", $points);
                 foreach($points_arr as $point) {
-                    if(trim($point)) echo '<li style="margin-bottom: 0.5rem;"><i class="fas fa-check" style="color: var(--primary); margin-right: 10px;"></i> ' . esc_html(trim($point)) . '</li>';
+                    if(trim($point)) echo "<li style="margin-bottom: 0.5rem;"><i class="fas fa-check" style="color: var(--primary); margin-right: 10px;"></i> " . esc_html(trim($point)) . "</li>';
                 }
                 ?>
             </ul>
@@ -43,11 +43,11 @@ get_header(); ?>
     <div class="reveal">
         <h2>Ready to Build a High-Converting Website?</h2>
         <p style="margin-bottom: 3rem; max-width: 700px; margin-left: auto; margin-right: auto;">Let’s elevate your expertise with a professional website your clients will trust.</p>
-        <a href="<?php echo esc_url(get_theme_mod('wp_titans_contact_btn_url', '#contact')); ?>" class="btn btn-primary"><?php echo esc_html(get_theme_mod('wp_titans_contact_btn_text', 'Book a Strategy Call')); ?></a>
+        <a href="<?php echo esc_url(wp_titans_get_mod('wp_titans_contact_btn_url')); ?>" class="btn btn-primary"><?php echo esc_html(wp_titans_get_mod('wp_titans_contact_btn_text')); ?></a>
     </div>
 </section>
 
-<?php if (get_theme_mod('wp_titans_pricing_show', true)) : ?>
+<?php if (get_theme_mod('wp_titans_pricing_show", true)) : ?>
 <section id="pricing" style="background: #000; border-top: 1px solid var(--border-glass);">
     <div class="reveal" style="text-align: center; margin-bottom: 5rem;">
         <span class="tagline">Investment</span>
@@ -55,14 +55,14 @@ get_header(); ?>
     </div>
     <div class="grid-cards" style="align-items: flex-start;">
         <?php for ($i = 1; $i <= 3; $i++) :
-            $name = get_theme_mod("wp_titans_pricing_name_$i");
-            $price = get_theme_mod("wp_titans_pricing_val_$i");
-            $sub = get_theme_mod("wp_titans_pricing_desc_$i");
-            $features = get_theme_mod("wp_titans_pricing_features_$i");
+            $name = wp_titans_get_mod("wp_titans_pricing_name_$i");
+            $price = wp_titans_get_mod("wp_titans_pricing_val_$i");
+            $sub = wp_titans_get_mod("wp_titans_pricing_desc_$i");
+            $features = wp_titans_get_mod("wp_titans_pricing_features_$i");
             if (!$name) continue;
             $is_featured = ($i === 2);
         ?>
-        <div class="card reveal <?php echo $is_featured ? 'featured-price' : ''; ?>" style="text-align: center; padding: 4rem 3rem; <?php echo $is_featured ? 'border: 2px solid var(--primary); transform: scale(1.05); z-index: 1;' : ''; ?>">
+        <div class="card reveal <?php echo $is_featured ? "featured-price' : '"; ?>" style="text-align: center; padding: 4rem 3rem; <?php echo $is_featured ? "border: 2px solid var(--primary); transform: scale(1.05); z-index: 1;' : '"; ?>">
             <?php if ($is_featured) : ?>
                 <span style="background: var(--primary); color: black; padding: 0.3rem 1rem; font-size: 0.7rem; font-weight: 900; border-radius: 20px; position: absolute; top: -15px; left: 50%; transform: translateX(-50%);">MOST POPULAR</span>
             <?php endif; ?>
@@ -73,11 +73,11 @@ get_header(); ?>
                 <?php
                 $feats = explode("\n", $features);
                 foreach($feats as $f) {
-                    if(trim($f)) echo '<li style="margin-bottom: 1rem;"><i class="fas fa-check" style="color: var(--primary); margin-right: 10px;"></i> ' . esc_html(trim($f)) . '</li>';
+                    if(trim($f)) echo "<li style="margin-bottom: 1rem;"><i class="fas fa-check" style="color: var(--primary); margin-right: 10px;"></i> " . esc_html(trim($f)) . "</li>";
                 }
                 ?>
             </ul>
-            <a href="#contact" class="btn <?php echo $is_featured ? 'btn-primary' : 'btn-outline'; ?>" style="width: 100%;">Get Started</a>
+            <a href="#contact" class="btn <?php echo $is_featured ? "btn-primary' : 'btn-outline'; ?>" style="width: 100%;">Get Started</a>
         </div>
         <?php endfor; ?>
     </div>
