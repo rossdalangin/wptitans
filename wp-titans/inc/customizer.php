@@ -533,6 +533,9 @@ function wp_titans_customize_register( $wp_customize ) {
     $wp_customize->add_setting( 'wp_titans_contact_btn_url', array( 'default' => wp_titans_get_default('wp_titans_contact_btn_url'), 'sanitize_callback' => 'wp_kses_post' ) );
     $wp_customize->add_control( 'wp_titans_contact_btn_url', array( 'label' => __( 'Submit Button URL (if not using form)', 'wp-titans' ), 'section' => 'wp_titans_contact' ) );
 
+    $wp_customize->add_setting( 'wp_titans_cf7_shortcode', array( 'default' => '', 'sanitize_callback' => 'wp_kses_post' ) );
+    $wp_customize->add_control( 'wp_titans_cf7_shortcode', array( 'label' => __( 'Contact Form 7 Shortcode', 'wp-titans' ), 'description' => __( 'Paste your CF7 shortcode here (e.g. [contact-form-7 id="123"])', 'wp-titans' ), 'section' => 'wp_titans_contact' ) );
+
     $wp_customize->add_section( 'wp_titans_audit', array(
         'title'    => __( 'Audit Section (Lead Magnet)', 'wp-titans' ),
         'priority' => 98,
@@ -674,6 +677,9 @@ function wp_titans_customize_register( $wp_customize ) {
 
     $wp_customize->add_setting( 'wp_titans_exit_desc', array( 'default' => 'Get our elite 14-day launch checklist before you go.', 'sanitize_callback' => 'wp_kses_post' ) );
     $wp_customize->add_control( 'wp_titans_exit_desc', array( 'label' => __( 'Modal Description', 'wp-titans' ), 'section' => 'wp_titans_leads', 'type' => 'textarea' ) );
+
+    $wp_customize->add_setting( 'wp_titans_exit_cf7_shortcode', array( 'default' => '', 'sanitize_callback' => 'wp_kses_post' ) );
+    $wp_customize->add_control( 'wp_titans_exit_cf7_shortcode', array( 'label' => __( 'Exit Intent CF7 Shortcode', 'wp-titans' ), 'section' => 'wp_titans_leads' ) );
 
 }
 add_action( 'customize_register', 'wp_titans_customize_register' );

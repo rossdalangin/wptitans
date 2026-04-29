@@ -382,18 +382,26 @@ get_header(); ?>
             </div>
         </div>
         <div class="reveal">
-            <form style="background: #111; padding: 3rem; border-radius: 8px; border: 1px solid var(--border-glass);">
-                <div style="margin-bottom: 1.5rem;">
-                    <input type="text" placeholder="Full Name" style="width: 100%; padding: 1rem; background: #000; border: 1px solid #333; color: white;">
-                </div>
-                <div style="margin-bottom: 1.5rem;">
-                    <input type="email" placeholder="Email Address" style="width: 100%; padding: 1rem; background: #000; border: 1px solid #333; color: white;">
-                </div>
-                <div style="margin-bottom: 1.5rem;">
-                    <textarea rows="4" placeholder="Tell us about your business" style="width: 100%; padding: 1rem; background: #000; border: 1px solid #333; color: white;"></textarea>
-                </div>
-                <button class="btn btn-primary" style="width: 100%;"><?php echo esc_html(wp_titans_get_mod("wp_titans_contact_btn_text")); ?></button>
-            </form>
+            <div style="background: #111; padding: 3rem; border-radius: 8px; border: 1px solid var(--border-glass);">
+                <?php
+                $cf7 = wp_titans_get_mod("wp_titans_cf7_shortcode");
+                if ($cf7) :
+                    echo do_shortcode($cf7);
+                else : ?>
+                <form>
+                    <div style="margin-bottom: 1.5rem;">
+                        <input type="text" placeholder="Full Name" style="width: 100%; padding: 1rem; background: #000; border: 1px solid #333; color: white;">
+                    </div>
+                    <div style="margin-bottom: 1.5rem;">
+                        <input type="email" placeholder="Email Address" style="width: 100%; padding: 1rem; background: #000; border: 1px solid #333; color: white;">
+                    </div>
+                    <div style="margin-bottom: 1.5rem;">
+                        <textarea rows="4" placeholder="Tell us about your business" style="width: 100%; padding: 1rem; background: #000; border: 1px solid #333; color: white;"></textarea>
+                    </div>
+                    <button class="btn btn-primary" style="width: 100%;"><?php echo esc_html(wp_titans_get_mod("wp_titans_contact_btn_text")); ?></button>
+                </form>
+                <?php endif; ?>
+            </div>
         </div>
     </div>
 </section>

@@ -33,6 +33,11 @@ get_header(); ?>
 
     <div class="reveal" style="max-width: 1000px; margin: 0 auto; background: #111; padding: 5rem; border-radius: 12px; border: 1px solid var(--border-glass);">
         <h2 style="text-align: center; margin-bottom: 3rem;">Send Us a Message</h2>
+        <?php
+        $cf7 = wp_titans_get_mod("wp_titans_cf7_shortcode");
+        if ($cf7) :
+            echo do_shortcode($cf7);
+        else : ?>
         <form class="contact-form-full">
             <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-bottom: 2rem;">
                 <input type="text" placeholder="Your Name *" required style="width: 100%; padding: 1.2rem; background: #000; border: 1px solid #333; color: white;">
@@ -69,6 +74,7 @@ get_header(); ?>
 
             <button type="submit" class="btn btn-primary" style="width: 100%; font-size: 1.2rem;">Get Your Free Consultation</button>
         </form>
+        <?php endif; ?>
     </div>
 </section>
 
