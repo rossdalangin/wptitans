@@ -37,12 +37,18 @@
 <body <?php body_class(); ?>>
 <?php wp_body_open(); ?>
 
+<?php if (wp_titans_get_mod("wp_titans_preloader_show")) : ?>
 <div id="preloader">
     <div class="loader-content">
         <i class="fas <?php echo esc_attr(wp_titans_get_mod("wp_titans_logo_icon")); ?>"></i>
         <div class="loader-bar"></div>
     </div>
 </div>
+<?php endif; ?>
+
+<?php if (wp_titans_get_mod("wp_titans_progress_bar")) : ?>
+<div id="reading-progress"></div>
+<?php endif; ?>
 
 <nav id="navbar" class="<?php echo wp_titans_get_mod("wp_titans_sticky_header") ? "sticky" : ""; ?>">
     <div class="logo">
