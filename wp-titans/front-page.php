@@ -5,7 +5,7 @@
 get_header(); ?>
 
 <!-- 1. HERO SECTION -->
-<section id="hero" class="hero" style="overflow: hidden;">
+<section id="hero" class="hero" style="overflow: hidden; padding-bottom: 15rem;">
     <?php if (wp_titans_get_mod("wp_titans_hero_video")) : ?>
         <video autoplay muted loop playsinline style="position: absolute; top: 50%; left: 50%; min-width: 100%; min-height: 100%; width: auto; height: auto; transform: translate(-50%, -50%); z-index: 0; object-fit: cover;">
             <source src="<?php echo esc_url(wp_titans_get_mod("wp_titans_hero_video")); ?>" type="video/mp4">
@@ -27,9 +27,20 @@ get_header(); ?>
             <a href="<?php echo esc_attr(wp_titans_get_mod("wp_titans_hero_btn2_url")); ?>" class="btn btn-outline"><?php echo esc_html(wp_titans_get_mod("wp_titans_hero_btn2_text")); ?></a>
         </div>
     </div>
+    <?php wp_titans_divider(); ?>
 </section>
 
-<!-- 2. TRUST BAR -->
+<!-- 2. AWARDS BAR -->
+<div id="awards-bar" style="background: #000; padding: 2rem 10%; display: flex; justify-content: center; align-items: center; gap: 3rem; flex-wrap: wrap; border-bottom: 1px solid var(--border-glass);">
+    <?php for ($i = 1; $i <= 4; $i++) :
+        $award = wp_titans_get_mod("wp_titans_award_img_$i");
+        if (!$award) continue;
+    ?>
+        <img loading="lazy" src="<?php echo esc_url($award); ?>" alt="Award" style="height: 50px; opacity: 0.4; transition: var(--transition);" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.4'">
+    <?php endfor; ?>
+</div>
+
+<!-- 3. TRUST BAR -->
 <section id="trust-bar" style="background: #050505; padding: 4rem 10%; border-bottom: 1px solid var(--border-glass);">
     <div class="reveal" style="text-align: center;">
         <p style="font-size: 0.8rem; text-transform: uppercase; letter-spacing: 2px; color: var(--text-dim); margin-bottom: 2.5rem;"><?php echo esc_html(wp_titans_get_mod("wp_titans_logos_title")); ?></p>
@@ -38,13 +49,13 @@ get_header(); ?>
                 $logo = wp_titans_get_mod("wp_titans_client_logo_$i");
                 if (!$logo) continue;
             ?>
-                <img src="<?php echo esc_url($logo); ?>" alt="Client Logo" style="height: 30px; filter: grayscale(100%); transition: var(--transition);" onmouseover="this.style.filter='grayscale(0%)'" onmouseout="this.style.filter='grayscale(100%)'">
+                <img loading="lazy" src="<?php echo esc_url($logo); ?>" alt="Client Logo" style="height: 30px; filter: grayscale(100%); transition: var(--transition);" onmouseover="this.style.filter='grayscale(0%)'" onmouseout="this.style.filter='grayscale(100%)'">
             <?php endfor; ?>
         </div>
     </div>
 </section>
 
-<!-- 3. WHO WE WORK WITH -->
+<!-- 4. WHO WE WORK WITH -->
 <section id="who-we-work-with" style="background: #000;">
     <div class="reveal" style="text-align: center; margin-bottom: 4rem;">
         <span class="tagline"><?php echo esc_html(wp_titans_get_mod("wp_titans_target_tagline")); ?></span>
@@ -66,7 +77,7 @@ get_header(); ?>
     </div>
 </section>
 
-<!-- 4. ABOUT SECTION -->
+<!-- 5. ABOUT SECTION -->
 <section id="about" style="background: #050505;">
     <div class="grid-2">
         <div class="reveal">
@@ -76,12 +87,12 @@ get_header(); ?>
             <a href="<?php echo esc_attr(wp_titans_get_mod("wp_titans_about_btn_url")); ?>" class="btn btn-outline" style="margin-top: 2rem;"><?php echo esc_html(wp_titans_get_mod("wp_titans_about_btn_text")); ?></a>
         </div>
         <div class="reveal">
-            <img src="<?php echo esc_url(wp_titans_get_mod("wp_titans_about_image")); ?>" alt="About Titans" style="border-radius: 8px; box-shadow: 0 20px 40px rgba(0,0,0,0.5);">
+            <img loading="lazy" src="<?php echo esc_url(wp_titans_get_mod("wp_titans_about_image")); ?>" alt="About Titans" style="border-radius: 8px; box-shadow: 0 20px 40px rgba(0,0,0,0.5);">
         </div>
     </div>
 </section>
 
-<!-- 5. SERVICES SECTION -->
+<!-- 6. SERVICES SECTION -->
 <section id="services" style="background: #080808;">
     <div class="reveal" style="text-align: center; margin-bottom: 4rem;">
         <span class="tagline"><?php echo esc_html(wp_titans_get_mod("wp_titans_services_tagline")); ?></span>
@@ -103,7 +114,7 @@ get_header(); ?>
     </div>
 </section>
 
-<!-- 6. PROCESS SECTION -->
+<!-- 7. PROCESS SECTION -->
 <section id="process">
     <div class="reveal" style="text-align: center; margin-bottom: 4rem;">
         <span class="tagline"><?php echo esc_html(wp_titans_get_mod("wp_titans_process_tagline")); ?></span>
@@ -124,7 +135,7 @@ get_header(); ?>
     </div>
 </section>
 
-<!-- 7. PORTFOLIO SECTION -->
+<!-- 8. PORTFOLIO SECTION -->
 <section id="portfolio" style="background: #000;">
     <div class="reveal" style="text-align: center; margin-bottom: 4rem;">
         <span class="tagline">Our Work</span>
@@ -138,7 +149,7 @@ get_header(); ?>
         ?>
         <div class="card reveal" style="padding: 0; overflow: hidden; border: none; background: transparent;">
             <div style="position: relative; overflow: hidden; border-radius: 8px;">
-                <img src="<?php echo esc_url($img); ?>" alt="<?php echo esc_attr($title); ?>" style="width: 100%; transition: transform 0.5s;">
+                <img loading="lazy" src="<?php echo esc_url($img); ?>" alt="<?php echo esc_attr($title); ?>" style="width: 100%; transition: transform 0.5s;">
                 <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(to top, rgba(0,0,0,0.9), transparent); display: flex; align-items: flex-end; padding: 2rem; opacity: 1;">
                     <h3 style="font-size: 1.3rem; margin: 0;"><?php echo esc_html($title); ?></h3>
                 </div>
@@ -148,7 +159,7 @@ get_header(); ?>
     </div>
 </section>
 
-<!-- 8. BEFORE & AFTER COMPARISON -->
+<!-- 9. BEFORE & AFTER COMPARISON -->
 <?php if (wp_titans_get_mod("wp_titans_comparison_show")) : ?>
 <section id="comparison" style="background: #000; border-top: 1px solid var(--border-glass);">
     <div class="reveal" style="text-align: center; margin-bottom: 5rem;">
@@ -165,9 +176,9 @@ get_header(); ?>
         <div class="reveal">
             <h3 style="font-size: 1.5rem; margin-bottom: 2rem; text-align: center;"><?php echo esc_html($title); ?></h3>
             <div class="ba-container" style="position: relative; width: 100%; aspect-ratio: 16/10; overflow: hidden; border-radius: 8px;">
-                <img src="<?php echo esc_url($after); ?>" alt="After" style="width: 100%; height: 100%; object-fit: cover;">
+                <img loading="lazy" src="<?php echo esc_url($after); ?>" alt="After" style="width: 100%; height: 100%; object-fit: cover;">
                 <div class="ba-overlay" style="position: absolute; top: 0; left: 0; width: 50%; height: 100%; overflow: hidden; border-right: 3px solid var(--primary);">
-                    <img src="<?php echo esc_url($before); ?>" alt="Before" style="width: 200%; height: 100%; object-fit: cover; max-width: none;">
+                    <img loading="lazy" src="<?php echo esc_url($before); ?>" alt="Before" style="width: 200%; height: 100%; object-fit: cover; max-width: none;">
                 </div>
                 <input type="range" min="0" max="100" value="50" class="ba-slider" style="position: absolute; -webkit-appearance: none; appearance: none; width: 100%; height: 100%; background: transparent; outline: none; margin: 0; cursor: pointer; top: 0; left: 0;">
             </div>
@@ -177,7 +188,7 @@ get_header(); ?>
 </section>
 <?php endif; ?>
 
-<!-- 9. STATS BAR -->
+<!-- 10. STATS BAR -->
 <div id="stats" class="stats-bar">
     <?php for ($i = 1; $i <= 4; $i++) :
         $num = wp_titans_get_mod("wp_titans_stat_num_$i");
@@ -191,7 +202,7 @@ get_header(); ?>
     <?php endfor; ?>
 </div>
 
-<!-- 10. NEWSLETTER SIGNUP -->
+<!-- 11. NEWSLETTER SIGNUP -->
 <?php if (wp_titans_get_mod("wp_titans_newsletter_show")) : ?>
 <section id="newsletter" style="background: #000; border-top: 1px solid var(--border-glass);">
     <div class="reveal" style="max-width: 900px; margin: 0 auto; background: #050505; padding: 5rem; border-radius: 12px; border: 1px solid #111; text-align: center;">
@@ -206,7 +217,7 @@ get_header(); ?>
 </section>
 <?php endif; ?>
 
-<!-- 11. RECENT INSIGHTS -->
+<!-- 12. RECENT INSIGHTS -->
 <?php if (wp_titans_get_mod("wp_titans_blog_show")) : ?>
 <section id="recent-insights" style="background: #000; border-top: 1px solid var(--border-glass);">
     <div class="reveal" style="text-align: center; margin-bottom: 5rem;">
@@ -237,7 +248,7 @@ get_header(); ?>
 </section>
 <?php endif; ?>
 
-<!-- 12. TESTIMONIALS -->
+<!-- 13. TESTIMONIALS -->
 <section id="testimonials" style="background: #050505;">
     <div class="reveal" style="text-align: center; margin-bottom: 4rem;">
         <span class="tagline"><?php echo esc_html(wp_titans_get_mod("wp_titans_testi_tagline")); ?></span>
@@ -254,7 +265,7 @@ get_header(); ?>
         ?>
         <div class="testimonial-card reveal <?php echo $testi_layout === 'slider' ? 'testi-slide' : ''; ?>">
             <?php if ($img) : ?>
-                <img src="<?php echo esc_url($img); ?>" alt="<?php echo esc_attr($author); ?>" style="width: 80px; height: 80px; border-radius: 50%; object-fit: cover; margin-bottom: 1.5rem; border: 2px solid var(--primary);">
+                <img loading="lazy" src="<?php echo esc_url($img); ?>" alt="<?php echo esc_attr($author); ?>" style="width: 80px; height: 80px; border-radius: 50%; object-fit: cover; margin-bottom: 1.5rem; border: 2px solid var(--primary);">
             <?php endif; ?>
             <blockquote>"<?php echo esc_html($quote); ?>"</blockquote>
             <div class="testimonial-author"><?php echo esc_html($author); ?></div>
@@ -264,7 +275,7 @@ get_header(); ?>
     </div>
 </section>
 
-<!-- 13. SUCCESS GUARANTEE -->
+<!-- 14. SUCCESS GUARANTEE -->
 <section id="success-guarantee" style="background: #000; text-align: center; padding: 6rem 10%; border-top: 1px solid var(--border-glass);">
     <div class="reveal" style="max-width: 800px; margin: 0 auto; background: #111; padding: 4rem; border-radius: 12px; border: 1px solid var(--primary);">
         <i class="fas fa-award" style="font-size: 3.5rem; color: var(--primary); margin-bottom: 2rem;"></i>
@@ -273,7 +284,7 @@ get_header(); ?>
     </div>
 </section>
 
-<!-- 14. LEAD MAGNET: FREE AUDIT -->
+<!-- 15. LEAD MAGNET: FREE AUDIT -->
 <?php if (wp_titans_get_mod("wp_titans_audit_show")) : ?>
 <section id="free-audit" style="background: #D4AF37; color: black; padding: 6rem 10%;">
     <div class="grid-2">
@@ -292,7 +303,7 @@ get_header(); ?>
 </section>
 <?php endif; ?>
 
-<!-- 15. FAQ -->
+<!-- 16. FAQ -->
 <section id="faq">
     <div class="reveal" style="text-align: center; margin-bottom: 4rem;">
         <h2><?php echo esc_html(wp_titans_get_mod("wp_titans_faq_main_title")); ?></h2>
@@ -316,7 +327,7 @@ get_header(); ?>
     </div>
 </section>
 
-<!-- 16. CONTACT -->
+<!-- 17. CONTACT -->
 <section id="contact" style="background: #080808;">
     <div class="grid-2">
         <div class="reveal">

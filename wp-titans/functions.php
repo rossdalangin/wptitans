@@ -63,6 +63,27 @@ function wp_titans_default_menu_callback() {
 require get_template_directory() . '/inc/customizer.php';
 
 /**
+ * SVG Section Dividers
+ */
+function wp_titans_divider() {
+    $style = wp_titans_get_mod("wp_titans_section_dividers");
+    if ($style === 'none') return;
+
+    echo '<div class="section-divider" style="position: absolute; bottom: 0; left: 0; width: 100%; overflow: hidden; line-height: 0; transform: rotate(180deg);">';
+    if ($style === 'wave') {
+        echo '<svg viewBox="0 0 1200 120" preserveAspectRatio="none" style="position: relative; display: block; width: calc(100% + 1.3px); height: 80px;">
+            <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" style="fill: var(--bg-dark); opacity: 0.1;"></path>
+            <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" style="fill: var(--primary); opacity: 0.05; transform: scaleX(-1);"></path>
+        </svg>';
+    } elseif ($style === 'slant') {
+        echo '<svg viewBox="0 0 1200 120" preserveAspectRatio="none" style="position: relative; display: block; width: calc(100% + 1.3px); height: 100px;">
+            <path d="M1200 120L0 16.48V0h1200v120z" style="fill: var(--bg-dark); opacity: 0.1;"></path>
+        </svg>';
+    }
+    echo '</div>';
+}
+
+/**
  * Simple Breadcrumbs
  */
 function wp_titans_breadcrumbs() {

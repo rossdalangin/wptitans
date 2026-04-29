@@ -16,7 +16,7 @@
                 $logo_text = wp_titans_get_mod("wp_titans_logo_text");
 
                 if ( $logo_img ) : ?>
-                    <img src="<?php echo esc_url($logo_img); ?>" alt="<?php echo esc_attr($logo_text); ?>" style="height: 40px; width: auto;">
+                    <img loading="lazy" src="<?php echo esc_url($logo_img); ?>" alt="<?php echo esc_attr($logo_text); ?>" style="height: 40px; width: auto;">
                 <?php else : ?>
                     <i class="fas <?php echo esc_attr($logo_icon); ?>"></i> <?php echo esc_html($logo_text); ?>
                 <?php endif; ?>
@@ -54,6 +54,21 @@
                 </ul>';
             }
             ?>
+        </div>
+        <div class="footer-links">
+            <h4>Recent Work</h4>
+            <div style="display: flex; flex-direction: column; gap: 1rem;">
+                <?php for ($i = 1; $i <= 3; $i++) :
+                    $img = wp_titans_get_mod("wp_titans_portfolio_img_$i");
+                    $title = wp_titans_get_mod("wp_titans_portfolio_title_$i");
+                    if (!$title) continue;
+                ?>
+                <a href="<?php echo get_permalink(get_page_by_path('portfolio')); ?>" style="display: flex; align-items: center; gap: 1rem; text-decoration: none;">
+                    <img loading="lazy" src="<?php echo esc_url($img); ?>" alt="" style="width: 50px; height: 50px; object-fit: cover; border-radius: 4px;">
+                    <span style="font-size: 0.8rem; line-height: 1.2; color: #888;"><?php echo esc_html($title); ?></span>
+                </a>
+                <?php endfor; ?>
+            </div>
         </div>
         <div class="footer-links">
             <h4>Connect</h4>

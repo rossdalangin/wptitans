@@ -37,7 +37,7 @@ get_header(); ?>
         ?>
         <div class="card reveal portfolio-item" data-category="<?php echo esc_attr($cat_slug); ?>" style="padding: 0; overflow: hidden; border: none; background: transparent;">
             <div style="position: relative; overflow: hidden; border-radius: 12px; aspect-ratio: 16/10;">
-                <img src="<?php echo esc_url($img); ?>" alt="<?php echo esc_attr($title); ?>" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);">
+                <img loading="lazy" src="<?php echo esc_url($img); ?>" alt="<?php echo esc_attr($title); ?>" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);">
                 <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(to top, rgba(0,0,0,0.95) 0%, rgba(0,0,0,0.4) 50%, transparent 100%); display: flex; flex-direction: column; justify-content: flex-end; padding: 3rem; opacity: 1;">
                     <span style="color: var(--primary); font-size: 0.8rem; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 0.5rem;"><?php echo esc_html($cat); ?></span>
                     <h3 style="font-size: 1.8rem; margin: 0; color: white;"><?php echo esc_html($title); ?></h3>

@@ -1,69 +1,47 @@
-# WordPress Titans Theme Documentation
+# WordPress Titans: The Ultimate Agency Theme
 
-Welcome to the **WordPress Titans** premium theme, designed specifically for high-performance web design and development agencies. This theme focuses on authority positioning, lead generation, and professional aesthetics.
+Welcome to the **WordPress Titans** definitive premium theme. Designed for elite web design and development agencies, this theme provides a high-performance, conversion-focused foundation to establish world-class authority.
 
-## Theme Overview
-
-WordPress Titans is a modern, responsive, and highly customizable theme. It uses the WordPress Customizer API to give you full control over your content without touching code.
-
-### Core Features
-- **Authority Positioning**: Designed specifically for consultants, coaches, and service providers.
-- **Conversion Focused**: Built-in lead capture forms and strategic call-to-action (CTA) placements.
-- **Customizer Powered**: 100% of front-page and internal page header content is manageable via `Appearance > Customize`.
-- **Modern Tech Stack**: Uses 'Syne' and 'Space Grotesk' Google Fonts for a premium agency feel.
+## Core Pillars
+- **Authority Positioning**: Specialized layouts for Case Studies, Project Discovery, and Flagship Service landing pages.
+- **Conversion Mastery**: Exit-intent modals, sticky mobile CTAs, multi-step qualification forms, and "Before & After" proof sliders.
+- **Visual Dominance**: Fluid typography, dark/light mode toggles, staggered reveal animations, and cinematic video backgrounds.
+- **No-Code Management**: 100% of content, visuals, and technical metadata (Schema/OG) manageable via the WordPress Customizer.
 
 ---
 
-## Page Hierarchy & Templates
+## Technical Features & Setup
 
-The theme includes specialized templates for all essential agency pages. When creating a new page in WordPress, select the appropriate **Template** in the Page Attributes section.
+### 1. The Setup Wizard
+To launch your agency site in seconds:
+1. Go to **Appearance > Customize > Theme Setup**.
+2. Check **"Generate Essential Pages"** and Publish.
+3. This will create 11 core pages (Home, Services, Process, Portfolio, etc.), assign their specialized templates, and build your primary navigation menu automatically.
 
-| Page Name | Template Name | Purpose |
-| :--- | :--- | :--- |
-| **Home** | `Front Page` | High-converting landing page with hero, services, process, and results. |
-| **Services** | `Services Page` | Detailed breakdown of your agency's core offerings. |
-| **Process** | `Process Page` | Step-by-step methodology explaining how you work. |
-| **About Us** | `About Page` | Agency story, core values, and founder biography. |
-| **Contact Us** | `Contact Page` | Full lead generation form and agency contact details. |
-| **Authority System**| `Authority Landing Page` | A specialized long-form landing page for your flagship service. |
-| **Blog** | `Default` | Professional editorial layout for insights and expertise. |
+### 2. High-Conversion Templates
+Assign these templates to their respective pages for maximum impact:
+- **Authority Landing Page**: For your flagship offer.
+- **Project Planner**: A 4-step multi-step qualification form.
+- **Book a Call**: Dedicated conversion page for strategy sessions.
+- **Case Study Page**: Deep-dive project showcases with performance metrics.
+- **Portfolio Page**: Dynamically filtered project grid.
+- **Service Detail**: Single service sales pages.
 
----
-
-## Menu Configuration
-
-To ensure your website is professional and easy to navigate, configure your menus as follows under `Appearance > Menus`.
-
-### 1. Header Menu (Primary)
-Assign this to the **Primary** location.
-- **Home**: Link to your homepage.
-- **Services**: Link to the page using the `Services Page` template.
-- **Process**: Link to the page using the `Process Page` template.
-- **About Us**: Link to the page using the `About Page` template.
-- **Blog**: Link to your posts page.
-- **Contact Us**: Link to the page using the `Contact Page` template.
-
-### 2. Footer Menu
-We recommend a two-column layout or a single list.
-- **Home**
-- **Services**
-- **Process**
-- **About Us**
-- **Privacy Policy**
-- **Terms & Conditions**
+### 3. Customizer Capabilities
+Navigate to **Appearance > Customize** to manage:
+- **Advanced Visuals**: Global border radius, hero overlay opacity, and secondary accent colors.
+- **Typography**: Fluid headlines and elite 18px base body font.
+- **Trust Elements**: Logo bars, award badges, and auto-playing testimonial sliders.
+- **SEO & Search**: Native JSON-LD Schema (Organization, Service, FAQ), Open Graph social metadata, and global meta descriptions.
 
 ---
 
-## Getting Started
-
-1. **Install Theme**: Upload the `wp-titans` folder to your `/wp-content/themes/` directory.
-2. **Activate**: Go to `Appearance > Themes` and activate **WordPress Titans**.
-3. **Install Plugins**: For the contact forms, we recommend installing the **Contact Form 7** or **WPForms** plugin. You can replace the static form HTML in the templates with your plugin's shortcode.
-4. **Configure Customizer**: Go to `Appearance > Customize` to set your logo, brand colors, and section content.
-4. **Auto-Setup**: To save time, go to `Appearance > Customize > Theme Setup`, check the "Generate Essential Pages" box, and click **Publish**. This will automatically create all pages (Home, Services, Process, About, Contact, Portfolio, etc.), assign their templates, and create a primary navigation menu for you.
-5. **Set Homepage**: If you didn't use Auto-Setup, go to `Settings > Reading` and set a static page for your homepage.
+## Developer & SEO Notes
+- **Lightweight Logic**: Powered by vanilla JavaScript (no jQuery dependency for core features) and optimized CSS variables.
+- **Performance**: Native `loading="lazy"` on all images and optimized asset enqueuing.
+- **SEO Ready**: Built-in FAQPage and ProfessionalService schema ensures rich search snippets without extra plugins.
 
 ---
 
-## Need Support?
-For any technical inquiries or customizations, please contact our support team at **support@wordpresstitans.com**.
+## Support
+For technical support or customization inquiries, please contact: **support@wordpresstitans.com**

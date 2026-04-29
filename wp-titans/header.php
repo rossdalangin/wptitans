@@ -52,7 +52,7 @@
         $logo_text = wp_titans_get_mod("wp_titans_logo_text");
 
         if ( $logo_img ) : ?>
-            <img src="<?php echo esc_url($logo_img); ?>" alt="<?php echo esc_attr($logo_text); ?>" style="height: 40px; width: auto;">
+            <img loading="lazy" src="<?php echo esc_url($logo_img); ?>" alt="<?php echo esc_attr($logo_text); ?>" style="height: 40px; width: auto;">
         <?php else : ?>
             <i class="fas <?php echo esc_attr($logo_icon); ?>"></i> <?php echo esc_html($logo_text); ?>
         <?php endif; ?>

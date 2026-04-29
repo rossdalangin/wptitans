@@ -404,7 +404,7 @@ footer {
     background: #000;
     border-top: 1px solid var(--border-glass);
     display: grid;
-    grid-template-columns: 2fr 1fr 1fr 1fr;
+    grid-template-columns: 2fr 1fr 1fr 1fr 1fr;
     gap: 4rem;
 }
 

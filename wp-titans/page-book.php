@@ -26,7 +26,7 @@ get_header(); ?>
                     </ul>
 
                     <div style="margin-top: 4rem; padding-top: 3rem; border-top: 1px solid #222; display: flex; align-items: center; gap: 2rem;">
-                        <img src="<?php echo esc_url(wp_titans_get_mod("wp_titans_founder_image")); ?>" alt="Ross" style="width: 80px; height: 80px; border-radius: 50%; border: 2px solid var(--primary);">
+                        <img loading="lazy" src="<?php echo esc_url(wp_titans_get_mod("wp_titans_founder_image")); ?>" alt="Ross" style="width: 80px; height: 80px; border-radius: 50%; border: 2px solid var(--primary);">
                         <div>
                             <p style="margin: 0; font-weight: 700; color: white;"> Ross Dalangin</p>
                             <small style="color: var(--text-dim);">Founder, WordPress Titans</small>

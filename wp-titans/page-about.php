@@ -22,7 +22,7 @@ get_header(); ?>
             </div>
         </div>
         <div class="reveal">
-            <img src="<?php echo esc_url(wp_titans_get_mod("wp_titans_about_page_image")); ?>" alt="Our Story" style="border-radius: 8px; box-shadow: 0 30px 60px rgba(212, 175, 55, 0.1);">
+            <img loading="lazy" src="<?php echo esc_url(wp_titans_get_mod("wp_titans_about_page_image")); ?>" alt="Our Story" style="border-radius: 8px; box-shadow: 0 30px 60px rgba(212, 175, 55, 0.1);">
         </div>
     </div>
 </section>
@@ -60,7 +60,7 @@ get_header(); ?>
             if (!$name) continue;
         ?>
         <div class="card reveal" style="padding: 0; background: #050505; text-align: center; overflow: hidden; border: 1px solid var(--border-glass);">
-            <img src="<?php echo esc_url($img); ?>" alt="<?php echo esc_attr($name); ?>" style="width: 100%; height: 300px; object-fit: cover;">
+            <img loading="lazy" src="<?php echo esc_url($img); ?>" alt="<?php echo esc_attr($name); ?>" style="width: 100%; height: 300px; object-fit: cover;">
             <div style="padding: 2.5rem;">
                 <h3 style="margin-bottom: 0.5rem; color: var(--primary);"><?php echo esc_html($name); ?></h3>
                 <p style="text-transform: uppercase; font-size: 0.8rem; letter-spacing: 2px; color: var(--text-dim);"><?php echo esc_html($role); ?></p>
@@ -73,7 +73,7 @@ get_header(); ?>
 <section id="founder" style="background: #050505;">
     <div class="grid-2">
         <div class="reveal" style="text-align: center;">
-            <img src="<?php echo esc_url(wp_titans_get_mod("wp_titans_founder_image")); ?>" alt="Founder" style="width: 400px; height: 400px; object-fit: cover; border-radius: 50%; margin: 0 auto; border: 5px solid var(--primary);">
+            <img loading="lazy" src="<?php echo esc_url(wp_titans_get_mod("wp_titans_founder_image")); ?>" alt="Founder" style="width: 400px; height: 400px; object-fit: cover; border-radius: 50%; margin: 0 auto; border: 5px solid var(--primary);">
         </div>
         <div class="reveal">
             <span class="tagline">Meet the Founder</span>
