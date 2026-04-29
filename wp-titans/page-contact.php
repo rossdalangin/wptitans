@@ -6,9 +6,9 @@ get_header(); ?>
 
 <section class="page-header hero" style="min-height: 50vh;">
     <div class="reveal">
-        <span class="tagline"><?php echo esc_html(wp_titans_get_mod('wp_titans_contact_page_tagline')); ?></span>
-        <h1><?php echo esc_html(wp_titans_get_mod('wp_titans_contact_page_title')); ?></h1>
-        <p><?php echo esc_html(wp_titans_get_mod('wp_titans_contact_page_subtitle')); ?></p>
+        <span class="tagline"><?php echo esc_html(wp_titans_get_mod("wp_titans_contact_page_tagline")); ?></span>
+        <h1><?php echo esc_html(wp_titans_get_mod("wp_titans_contact_page_title")); ?></h1>
+        <p><?php echo esc_html(wp_titans_get_mod("wp_titans_contact_page_subtitle")); ?></p>
     </div>
 </section>
 
@@ -17,17 +17,17 @@ get_header(); ?>
         <div class="card reveal" style="text-align: center;">
             <i class="fas fa-phone"></i>
             <h3>Phone</h3>
-            <p><?php echo esc_html(wp_titans_get_mod('wp_titans_contact_phone')); ?></p>
+            <p><?php echo esc_html(wp_titans_get_mod("wp_titans_contact_phone")); ?></p>
         </div>
         <div class="card reveal" style="text-align: center;">
             <i class="fas fa-envelope"></i>
             <h3>Email</h3>
-            <p><?php echo esc_html(wp_titans_get_mod('wp_titans_contact_email')); ?></p>
+            <p><?php echo esc_html(wp_titans_get_mod("wp_titans_contact_email")); ?></p>
         </div>
         <div class="card reveal" style="text-align: center;">
             <i class="fas fa-location-dot"></i>
             <h3>Location</h3>
-            <p><?php echo esc_html(wp_titans_get_mod('wp_titans_contact_location')); ?></p>
+            <p><?php echo esc_html(wp_titans_get_mod("wp_titans_contact_location")); ?></p>
         </div>
     </div>
 

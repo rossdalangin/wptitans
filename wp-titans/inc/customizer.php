@@ -500,14 +500,14 @@ add_action( 'customize_register', 'wp_titans_customize_register' );
  * Output Customizer CSS
  */
 function wp_titans_customizer_css() {
-    $heading_font = wp_titans_get_mod('wp_titans_heading_font');
-    $body_font = wp_titans_get_mod('wp_titans_body_font');
+    $heading_font = wp_titans_get_mod("wp_titans_heading_font");
+    $body_font = wp_titans_get_mod("wp_titans_body_font");
     ?>
     <style type="text/css">
         :root {
-            --primary: <?php echo wp_titans_get_mod('wp_titans_primary_color'); ?>;
+            --primary: <?php echo wp_titans_get_mod("wp_titans_primary_color"); ?>;
             --accent-glow: <?php
-                $primary = wp_titans_get_mod('wp_titans_primary_color');
+                $primary = wp_titans_get_mod("wp_titans_primary_color");
                 list($r, $g, $b) = sscanf($primary, "#%02x%02x%02x");
                 echo "rgba($r, $g, $b, 0.15)";
             ?>;
@@ -516,7 +516,7 @@ function wp_titans_customizer_css() {
         h1, h2, h3, h4, .btn, .nav-links a { font-family: '<?php echo esc_attr($heading_font); ?>', sans-serif; }
 
         .hero {
-            background-image: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url('<?php echo wp_titans_get_mod('wp_titans_hero_bg'); ?>');
+            background-image: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url('<?php echo wp_titans_get_mod("wp_titans_hero_bg"); ?>');
         }
         #free-audit { background-color: var(--primary) !important; }
         .testimonial-card, .btn-outline { border-color: var(--primary) !important; }

@@ -60,8 +60,8 @@ We recommend a two-column layout or a single list.
 2. **Activate**: Go to `Appearance > Themes` and activate **WordPress Titans**.
 3. **Install Plugins**: For the contact forms, we recommend installing the **Contact Form 7** or **WPForms** plugin. You can replace the static form HTML in the templates with your plugin's shortcode.
 4. **Configure Customizer**: Go to `Appearance > Customize` to set your logo, brand colors, and section content.
-4. **Create Pages**: Create the pages listed in the Hierarchy table and assign their respective templates.
-5. **Set Homepage**: Go to `Settings > Reading` and set a static page for your homepage.
+4. **Auto-Setup**: To save time, go to `Appearance > Customize > Theme Setup`, check the "Generate Essential Pages" box, and click **Publish**. This will automatically create all pages (Home, Services, Process, About, Contact, Portfolio, etc.), assign their templates, and create a primary navigation menu for you.
+5. **Set Homepage**: If you didn't use Auto-Setup, go to `Settings > Reading` and set a static page for your homepage.
 
 ---
 

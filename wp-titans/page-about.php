@@ -6,9 +6,9 @@ get_header(); ?>
 
 <section class="page-header hero" style="min-height: 50vh;">
     <div class="reveal">
-        <span class="tagline"><?php echo esc_html(wp_titans_get_mod('wp_titans_about_page_tagline')); ?></span>
-        <h1><?php echo esc_html(wp_titans_get_mod('wp_titans_about_page_title')); ?></h1>
-        <p><?php echo esc_html(wp_titans_get_mod('wp_titans_about_page_subtitle')); ?></p>
+        <span class="tagline"><?php echo esc_html(wp_titans_get_mod("wp_titans_about_page_tagline")); ?></span>
+        <h1><?php echo esc_html(wp_titans_get_mod("wp_titans_about_page_title")); ?></h1>
+        <p><?php echo esc_html(wp_titans_get_mod("wp_titans_about_page_subtitle")); ?></p>
     </div>
 </section>
 
@@ -16,13 +16,13 @@ get_header(); ?>
     <div class="grid-2">
         <div class="reveal">
             <span class="tagline">OUR STORY</span>
-            <h2 style="font-size: 3rem;"><?php echo esc_html(wp_titans_get_mod('wp_titans_about_story_title')); ?></h2>
+            <h2 style="font-size: 3rem;"><?php echo esc_html(wp_titans_get_mod("wp_titans_about_story_title")); ?></h2>
             <div style="font-size: 1.1rem; color: var(--text-dim);">
-                <?php echo wp_kses_post(wpautop(wp_titans_get_mod('wp_titans_about_story_content'))); ?>
+                <?php echo wp_kses_post(wpautop(wp_titans_get_mod("wp_titans_about_story_content"))); ?>
             </div>
         </div>
         <div class="reveal">
-            <img src="<?php echo esc_url(wp_titans_get_mod('wp_titans_about_page_image")); ?>" alt="Our Story" style="border-radius: 8px; box-shadow: 0 30px 60px rgba(212, 175, 55, 0.1);">
+            <img src="<?php echo esc_url(wp_titans_get_mod("wp_titans_about_page_image")); ?>" alt="Our Story" style="border-radius: 8px; box-shadow: 0 30px 60px rgba(212, 175, 55, 0.1);">
         </div>
     </div>
 </section>
@@ -73,13 +73,13 @@ get_header(); ?>
 <section id="founder" style="background: #050505;">
     <div class="grid-2">
         <div class="reveal" style="text-align: center;">
-            <img src="<?php echo esc_url(wp_titans_get_mod("wp_titans_founder_image')); ?>" alt="Founder" style="width: 400px; height: 400px; object-fit: cover; border-radius: 50%; margin: 0 auto; border: 5px solid var(--primary);">
+            <img src="<?php echo esc_url(wp_titans_get_mod("wp_titans_founder_image")); ?>" alt="Founder" style="width: 400px; height: 400px; object-fit: cover; border-radius: 50%; margin: 0 auto; border: 5px solid var(--primary);">
         </div>
         <div class="reveal">
             <span class="tagline">Meet the Founder</span>
-            <h2 style="font-size: 3rem;"><?php echo esc_html(wp_titans_get_mod('wp_titans_founder_name')); ?></h2>
+            <h2 style="font-size: 3rem;"><?php echo esc_html(wp_titans_get_mod("wp_titans_founder_name")); ?></h2>
             <div style="font-size: 1.1rem; color: var(--text-dim);">
-                <?php echo wp_kses_post(wpautop(wp_titans_get_mod('wp_titans_founder_bio'))); ?>
+                <?php echo wp_kses_post(wpautop(wp_titans_get_mod("wp_titans_founder_bio"))); ?>
             </div>
             <a href="#contact" class="btn btn-primary" style="margin-top: 2rem;">Work With Ross</a>
         </div>

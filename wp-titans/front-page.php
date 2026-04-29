@@ -7,11 +7,11 @@ get_header(); ?>
 <!-- 1. HERO SECTION -->
 <section id="hero" class="hero">
     <div class="reveal">
-        <h1><?php echo esc_html(wp_titans_get_mod('wp_titans_hero_title')); ?></h1>
-        <p><?php echo esc_html(wp_titans_get_mod('wp_titans_hero_subtitle')); ?></p>
+        <h1><?php echo esc_html(wp_titans_get_mod("wp_titans_hero_title")); ?></h1>
+        <p><?php echo esc_html(wp_titans_get_mod("wp_titans_hero_subtitle")); ?></p>
         <div class="hero-btns">
-            <a href="<?php echo esc_attr(wp_titans_get_mod('wp_titans_hero_btn1_url')); ?>" class="btn btn-primary"><?php echo esc_html(wp_titans_get_mod('wp_titans_hero_btn1_text')); ?></a>
-            <a href="<?php echo esc_attr(wp_titans_get_mod('wp_titans_hero_btn2_url')); ?>" class="btn btn-outline"><?php echo esc_html(wp_titans_get_mod('wp_titans_hero_btn2_text')); ?></a>
+            <a href="<?php echo esc_attr(wp_titans_get_mod("wp_titans_hero_btn1_url")); ?>" class="btn btn-primary"><?php echo esc_html(wp_titans_get_mod("wp_titans_hero_btn1_text")); ?></a>
+            <a href="<?php echo esc_attr(wp_titans_get_mod("wp_titans_hero_btn2_url")); ?>" class="btn btn-outline"><?php echo esc_html(wp_titans_get_mod("wp_titans_hero_btn2_text")); ?></a>
         </div>
     </div>
 </section>
@@ -19,13 +19,13 @@ get_header(); ?>
 <!-- 2. TRUST BAR -->
 <section id="trust-bar" style="background: #050505; padding: 4rem 10%; border-bottom: 1px solid var(--border-glass);">
     <div class="reveal" style="text-align: center;">
-        <p style="font-size: 0.8rem; text-transform: uppercase; letter-spacing: 2px; color: var(--text-dim); margin-bottom: 2.5rem;"><?php echo esc_html(wp_titans_get_mod('wp_titans_logos_title")); ?></p>
+        <p style="font-size: 0.8rem; text-transform: uppercase; letter-spacing: 2px; color: var(--text-dim); margin-bottom: 2.5rem;"><?php echo esc_html(wp_titans_get_mod("wp_titans_logos_title")); ?></p>
         <div style="display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 4rem; opacity: 0.6;">
             <?php for ($i = 1; $i <= 6; $i++) :
                 $logo = wp_titans_get_mod("wp_titans_client_logo_$i");
                 if (!$logo) continue;
             ?>
-                <img src="<?php echo esc_url($logo); ?>" alt="Client Logo" style="height: 30px; filter: grayscale(100%); transition: var(--transition);" onmouseover="this.style.filter="grayscale(0%)'" onmouseout="this.style.filter='grayscale(100%)'">
+                <img src="<?php echo esc_url($logo); ?>" alt="Client Logo" style="height: 30px; filter: grayscale(100%); transition: var(--transition);" onmouseover="this.style.filter='grayscale(0%)'" onmouseout="this.style.filter='grayscale(100%)'">
             <?php endfor; ?>
         </div>
     </div>
@@ -34,8 +34,8 @@ get_header(); ?>
 <!-- 3. WHO WE WORK WITH -->
 <section id="who-we-work-with" style="background: #000;">
     <div class="reveal" style="text-align: center; margin-bottom: 4rem;">
-        <span class="tagline"><?php echo esc_html(wp_titans_get_mod('wp_titans_target_tagline')); ?></span>
-        <h2><?php echo esc_html(wp_titans_get_mod('wp_titans_target_main_title")); ?></h2>
+        <span class="tagline"><?php echo esc_html(wp_titans_get_mod("wp_titans_target_tagline")); ?></span>
+        <h2><?php echo esc_html(wp_titans_get_mod("wp_titans_target_main_title")); ?></h2>
     </div>
     <div class="grid-cards">
         <?php for ($i = 1; $i <= 3; $i++) :
@@ -57,13 +57,13 @@ get_header(); ?>
 <section id="about" style="background: #050505;">
     <div class="grid-2">
         <div class="reveal">
-            <span class="tagline"><?php echo esc_html(wp_titans_get_mod("wp_titans_about_tagline')); ?></span>
-            <h2><?php echo esc_html(wp_titans_get_mod('wp_titans_about_title')); ?></h2>
-            <p><?php echo nl2br(esc_html(wp_titans_get_mod('wp_titans_about_content'))); ?></p>
-            <a href="<?php echo esc_attr(wp_titans_get_mod('wp_titans_about_btn_url')); ?>" class="btn btn-outline" style="margin-top: 2rem;"><?php echo esc_html(wp_titans_get_mod('wp_titans_about_btn_text')); ?></a>
+            <span class="tagline"><?php echo esc_html(wp_titans_get_mod("wp_titans_about_tagline")); ?></span>
+            <h2><?php echo esc_html(wp_titans_get_mod("wp_titans_about_title")); ?></h2>
+            <p><?php echo nl2br(esc_html(wp_titans_get_mod("wp_titans_about_content"))); ?></p>
+            <a href="<?php echo esc_attr(wp_titans_get_mod("wp_titans_about_btn_url")); ?>" class="btn btn-outline" style="margin-top: 2rem;"><?php echo esc_html(wp_titans_get_mod("wp_titans_about_btn_text")); ?></a>
         </div>
         <div class="reveal">
-            <img src="<?php echo esc_url(wp_titans_get_mod('wp_titans_about_image')); ?>" alt="About Titans" style="border-radius: 8px; box-shadow: 0 20px 40px rgba(0,0,0,0.5);">
+            <img src="<?php echo esc_url(wp_titans_get_mod("wp_titans_about_image")); ?>" alt="About Titans" style="border-radius: 8px; box-shadow: 0 20px 40px rgba(0,0,0,0.5);">
         </div>
     </div>
 </section>
@@ -71,8 +71,8 @@ get_header(); ?>
 <!-- 5. SERVICES SECTION -->
 <section id="services" style="background: #080808;">
     <div class="reveal" style="text-align: center; margin-bottom: 4rem;">
-        <span class="tagline"><?php echo esc_html(wp_titans_get_mod('wp_titans_services_tagline')); ?></span>
-        <h2><?php echo esc_html(wp_titans_get_mod('wp_titans_services_main_title")); ?></h2>
+        <span class="tagline"><?php echo esc_html(wp_titans_get_mod("wp_titans_services_tagline")); ?></span>
+        <h2><?php echo esc_html(wp_titans_get_mod("wp_titans_services_main_title")); ?></h2>
     </div>
     <div class="grid-cards">
         <?php for ($i = 1; $i <= 6; $i++) :
@@ -93,8 +93,8 @@ get_header(); ?>
 <!-- 6. PROCESS SECTION -->
 <section id="process">
     <div class="reveal" style="text-align: center; margin-bottom: 4rem;">
-        <span class="tagline"><?php echo esc_html(wp_titans_get_mod("wp_titans_process_tagline')); ?></span>
-        <h2><?php echo esc_html(wp_titans_get_mod('wp_titans_process_main_title")); ?></h2>
+        <span class="tagline"><?php echo esc_html(wp_titans_get_mod("wp_titans_process_tagline")); ?></span>
+        <h2><?php echo esc_html(wp_titans_get_mod("wp_titans_process_main_title")); ?></h2>
     </div>
     <div class="grid-cards">
         <?php for ($i = 1; $i <= 4; $i++) :
@@ -135,7 +135,7 @@ get_header(); ?>
     </div>
 </section>
 
-<!-- 7. STATS BAR -->
+<!-- 8. STATS BAR -->
 <div id="stats" class="stats-bar">
     <?php for ($i = 1; $i <= 4; $i++) :
         $num = wp_titans_get_mod("wp_titans_stat_num_$i");
@@ -149,11 +149,11 @@ get_header(); ?>
     <?php endfor; ?>
 </div>
 
-<!-- 8. TESTIMONIALS -->
+<!-- 9. TESTIMONIALS -->
 <section id="testimonials" style="background: #050505;">
     <div class="reveal" style="text-align: center; margin-bottom: 4rem;">
-        <span class="tagline"><?php echo esc_html(wp_titans_get_mod("wp_titans_testi_tagline')); ?></span>
-        <h2><?php echo esc_html(wp_titans_get_mod('wp_titans_testi_main_title")); ?></h2>
+        <span class="tagline"><?php echo esc_html(wp_titans_get_mod("wp_titans_testi_tagline")); ?></span>
+        <h2><?php echo esc_html(wp_titans_get_mod("wp_titans_testi_main_title")); ?></h2>
     </div>
     <div class="grid-cards">
         <?php for ($i = 1; $i <= 3; $i++) :
@@ -175,13 +175,13 @@ get_header(); ?>
     </div>
 </section>
 
-<!-- 9. LEAD MAGNET: FREE AUDIT -->
-<?php if (get_theme_mod("wp_titans_audit_show', true)) : ?>
+<!-- 10. LEAD MAGNET: FREE AUDIT -->
+<?php if (wp_titans_get_mod("wp_titans_audit_show")) : ?>
 <section id="free-audit" style="background: #D4AF37; color: black; padding: 6rem 10%;">
     <div class="grid-2">
         <div class="reveal">
-            <h2 style="color: black; margin-bottom: 1rem;"><?php echo esc_html(wp_titans_get_mod('wp_titans_audit_title')); ?></h2>
-            <p style="color: rgba(0,0,0,0.8); font-size: 1.2rem;"><?php echo esc_html(wp_titans_get_mod('wp_titans_audit_desc')); ?></p>
+            <h2 style="color: black; margin-bottom: 1rem;"><?php echo esc_html(wp_titans_get_mod("wp_titans_audit_title")); ?></h2>
+            <p style="color: rgba(0,0,0,0.8); font-size: 1.2rem;"><?php echo esc_html(wp_titans_get_mod("wp_titans_audit_desc")); ?></p>
         </div>
         <div class="reveal">
             <form style="display: flex; gap: 1rem;">
@@ -194,10 +194,10 @@ get_header(); ?>
 </section>
 <?php endif; ?>
 
-<!-- 10. FAQ -->
+<!-- 11. FAQ -->
 <section id="faq">
     <div class="reveal" style="text-align: center; margin-bottom: 4rem;">
-        <h2><?php echo esc_html(wp_titans_get_mod('wp_titans_faq_main_title")); ?></h2>
+        <h2><?php echo esc_html(wp_titans_get_mod("wp_titans_faq_main_title")); ?></h2>
     </div>
     <div style="max-width: 800px; margin: 0 auto;">
         <?php for ($i = 1; $i <= 4; $i++) :
@@ -218,15 +218,15 @@ get_header(); ?>
     </div>
 </section>
 
-<!-- 11. CONTACT -->
+<!-- 12. CONTACT -->
 <section id="contact" style="background: #080808;">
     <div class="grid-2">
         <div class="reveal">
-            <h2><?php echo esc_html(wp_titans_get_mod("wp_titans_contact_title')); ?></h2>
-            <p><?php echo esc_html(wp_titans_get_mod('wp_titans_contact_desc')); ?></p>
+            <h2><?php echo esc_html(wp_titans_get_mod("wp_titans_contact_title")); ?></h2>
+            <p><?php echo esc_html(wp_titans_get_mod("wp_titans_contact_desc")); ?></p>
             <div style="margin-top: 3rem;">
-                <p><i class="fas fa-envelope" style="color: var(--primary); margin-right: 10px;"></i> <?php echo esc_html(wp_titans_get_mod('wp_titans_contact_email')); ?></p>
-                <p><i class="fas fa-calendar-check" style="color: var(--primary); margin-right: 10px;"></i> <?php echo esc_html(wp_titans_get_mod('wp_titans_contact_guarantee')); ?></p>
+                <p><i class="fas fa-envelope" style="color: var(--primary); margin-right: 10px;"></i> <?php echo esc_html(wp_titans_get_mod("wp_titans_contact_email")); ?></p>
+                <p><i class="fas fa-calendar-check" style="color: var(--primary); margin-right: 10px;"></i> <?php echo esc_html(wp_titans_get_mod("wp_titans_contact_guarantee")); ?></p>
             </div>
         </div>
         <div class="reveal">
@@ -240,7 +240,7 @@ get_header(); ?>
                 <div style="margin-bottom: 1.5rem;">
                     <textarea rows="4" placeholder="Tell us about your business" style="width: 100%; padding: 1rem; background: #000; border: 1px solid #333; color: white;"></textarea>
                 </div>
-                <button class="btn btn-primary" style="width: 100%;"><?php echo esc_html(wp_titans_get_mod('wp_titans_contact_btn_text')); ?></button>
+                <button class="btn btn-primary" style="width: 100%;"><?php echo esc_html(wp_titans_get_mod("wp_titans_contact_btn_text")); ?></button>
             </form>
         </div>
     </div>

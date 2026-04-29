@@ -7,10 +7,10 @@ get_header(); ?>
 <section id="authority-hero" class="hero" style="min-height: 80vh; text-align: left; padding-left: 10%; padding-right: 10%;">
     <div class="reveal">
         <span class="tagline">The Flagship Solution</span>
-        <h1 style="font-size: 5.5rem; line-height: 1;"><?php echo esc_html(wp_titans_get_mod('wp_titans_auth_title')); ?></h1>
-        <p style="font-size: 1.5rem; max-width: 800px; margin-top: 2rem;"><?php echo esc_html(wp_titans_get_mod('wp_titans_auth_subtitle')); ?></p>
+        <h1 style="font-size: 5.5rem; line-height: 1;"><?php echo esc_html(wp_titans_get_mod("wp_titans_auth_title")); ?></h1>
+        <p style="font-size: 1.5rem; max-width: 800px; margin-top: 2rem;"><?php echo esc_html(wp_titans_get_mod("wp_titans_auth_subtitle")); ?></p>
         <div class="hero-btns" style="justify-content: flex-start; margin-top: 3rem;">
-            <a href="<?php echo esc_url(wp_titans_get_mod('wp_titans_contact_btn_url')); ?>" class="btn btn-primary"><?php echo esc_html(wp_titans_get_mod('wp_titans_contact_btn_text')); ?></a>
+            <a href="<?php echo esc_url(wp_titans_get_mod("wp_titans_contact_btn_url")); ?>" class="btn btn-primary"><?php echo esc_html(wp_titans_get_mod("wp_titans_contact_btn_text")); ?></a>
             <a href="#features" class="btn btn-outline">See What's Included</a>
         </div>
     </div>
@@ -42,7 +42,7 @@ get_header(); ?>
 
 <section id="features" style="background: #080808;">
     <div class="reveal" style="text-align: center; margin-bottom: 5rem;">
-        <span class="tagline">What"s Included</span>
+        <span class="tagline">What's Included</span>
         <h2>Everything You Need for Authority</h2>
     </div>
     <div class="grid-cards">
@@ -66,7 +66,7 @@ get_header(); ?>
     <div class="reveal">
         <i class="fas fa-shield-heart" style="font-size: 4rem; color: var(--primary); margin-bottom: 2rem;"></i>
         <h2>The 14-Day Delivery Guarantee</h2>
-        <p style="font-size: 1.2rem; max-width: 800px; margin: 0 auto; color: var(--text-dim);">If we don"t have your initial website draft ready for review within 14 days of receiving your content, we"ll give you a 50% discount on the total project cost. No excuses, just results.</p>
+        <p style="font-size: 1.2rem; max-width: 800px; margin: 0 auto; color: var(--text-dim);">If we don't have your initial website draft ready for review within 14 days of receiving your content, we'll give you a 50% discount on the total project cost. No excuses, just results.</p>
     </div>
 </section>
 
@@ -77,18 +77,18 @@ get_header(); ?>
     <div style="max-width: 800px; margin: 0 auto;">
         <?php
         $afaqs = [
-            ["q' => 'Is this a custom design or a template?', 'a' => 'While we use a proven authority framework, every design is customized to your brand, colors, and specific positioning. No two sites look identical.'],
+            ['q' => 'Is this a custom design or a template?', 'a' => 'While we use a proven authority framework, every design is customized to your brand, colors, and specific positioning. No two sites look identical.'],
             ['q' => 'What happens after the 14 days?', 'a' => 'We provide 30 days of post-launch support to ensure everything is running perfectly and to make any final minor adjustments.'],
-            ['q' => 'Do you handle the hosting?', 'a' => 'We can recommend the best high-performance hosting for WordPress or help you set it up on your existing provider."],
+            ['q' => 'Do you handle the hosting?', 'a' => 'We can recommend the best high-performance hosting for WordPress or help you set it up on your existing provider.'],
         ];
         foreach($afaqs as $af) : ?>
         <div class="reveal faq-item" style="margin-bottom: 1.5rem; border-bottom: 1px solid var(--border-glass); padding-bottom: 1rem;">
             <div class="faq-head" style="cursor: pointer; display: flex; justify-content: space-between; align-items: center;">
-                <h4 style="color: var(--primary); margin: 0;"><?php echo esc_html($af["q"]); ?></h4>
+                <h4 style="color: var(--primary); margin: 0;"><?php echo esc_html($af['q']); ?></h4>
                 <i class="fas fa-plus" style="font-size: 0.8rem; color: var(--primary);"></i>
             </div>
             <div class="faq-body" style="max-height: 0; overflow: hidden; transition: all 0.4s ease-out; opacity: 0;">
-                <p style="padding-top: 1rem; color: var(--text-dim);"><?php echo esc_html($af["a']); ?></p>
+                <p style="padding-top: 1rem; color: var(--text-dim);"><?php echo esc_html($af['a']); ?></p>
             </div>
         </div>
         <?php endforeach; ?>
@@ -97,9 +97,9 @@ get_header(); ?>
 
 <section id="auth-cta" style="background: linear-gradient(to bottom, #000, #050505); text-align: center;">
     <div class="reveal">
-        <h2 style="font-size: 4rem;"><?php echo esc_html(wp_titans_get_mod('wp_titans_auth_cta_title')); ?></h2>
-        <p style="font-size: 1.3rem; margin-bottom: 4rem; max-width: 800px; margin-left: auto; margin-right: auto;"><?php echo esc_html(wp_titans_get_mod('wp_titans_auth_cta_desc')); ?></p>
-        <a href="<?php echo esc_url(wp_titans_get_mod('wp_titans_contact_btn_url')); ?>" class="btn btn-primary" style="padding: 2rem 4rem; font-size: 1.2rem;"><?php echo esc_html(wp_titans_get_mod('wp_titans_contact_btn_text')); ?></a>
+        <h2 style="font-size: 4rem;"><?php echo esc_html(wp_titans_get_mod("wp_titans_auth_cta_title")); ?></h2>
+        <p style="font-size: 1.3rem; margin-bottom: 4rem; max-width: 800px; margin-left: auto; margin-right: auto;"><?php echo esc_html(wp_titans_get_mod("wp_titans_auth_cta_desc")); ?></p>
+        <a href="<?php echo esc_url(wp_titans_get_mod("wp_titans_contact_btn_url")); ?>" class="btn btn-primary" style="padding: 2rem 4rem; font-size: 1.2rem;"><?php echo esc_html(wp_titans_get_mod("wp_titans_contact_btn_text")); ?></a>
     </div>
 </section>
 

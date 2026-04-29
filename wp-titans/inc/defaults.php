@@ -76,7 +76,7 @@ function wp_titans_get_defaults() {
         'wp_titans_og_image' => '',
         'wp_titans_header_scripts' => '',
         'wp_titans_footer_scripts' => '',
-        'wp_titans_pricing_show" => true,
+        'wp_titans_pricing_show' => true,
     );
 }
 
@@ -84,146 +84,146 @@ function wp_titans_get_default( $key ) {
     $defaults = wp_titans_get_defaults();
 
     // Handle dynamic keys
-    if ( strpos( $key, "wp_titans_target_icon_" ) === 0 ) {
-        $i = (int) str_replace( "wp_titans_target_icon_', '", $key );
-        $d = [ "fa-building', 'fa-user-tie', 'fa-gavel" ];
-        return isset( $d[$i-1] ) ? $d[$i-1] : "";
+    if ( strpos( $key, 'wp_titans_target_icon_' ) === 0 ) {
+        $i = (int) str_replace( 'wp_titans_target_icon_', '', $key );
+        $d = [ 'fa-building', 'fa-user-tie', 'fa-gavel' ];
+        return isset( $d[$i-1] ) ? $d[$i-1] : '';
     }
-    if ( strpos( $key, "wp_titans_target_title_" ) === 0 ) {
-        $i = (int) str_replace( "wp_titans_target_title_', '", $key );
-        $d = [ "Local Businesses', 'Coaches & Consultants', 'Law Firms & Professional Services" ];
-        return isset( $d[$i-1] ) ? $d[$i-1] : "";
+    if ( strpos( $key, 'wp_titans_target_title_' ) === 0 ) {
+        $i = (int) str_replace( 'wp_titans_target_title_', '', $key );
+        $d = [ 'Local Businesses', 'Coaches & Consultants', 'Law Firms & Professional Services' ];
+        return isset( $d[$i-1] ) ? $d[$i-1] : '';
     }
-    if ( strpos( $key, "wp_titans_target_desc_" ) === 0 ) {
-        $i = (int) str_replace( "wp_titans_target_desc_', '", $key );
+    if ( strpos( $key, 'wp_titans_target_desc_' ) === 0 ) {
+        $i = (int) str_replace( 'wp_titans_target_desc_', '', $key );
         $d = [
-            "Helping local service providers dominate their market and capture high-intent leads.',
+            'Helping local service providers dominate their market and capture high-intent leads.',
             'Building authority-driven platforms that showcase your expertise and value.',
-            'Professional, high-trust designs built to convert high-value clients."
+            'Professional, high-trust designs built to convert high-value clients.'
         ];
-        return isset( $d[$i-1] ) ? $d[$i-1] : "";
+        return isset( $d[$i-1] ) ? $d[$i-1] : '';
     }
 
-    if ( strpos( $key, "wp_titans_service_icon_" ) === 0 ) {
-        $i = (int) str_replace( "wp_titans_service_icon_', '", $key );
-        $d = [ "fa-briefcase', 'fa-pen-fancy', 'fa-cog', 'fa-rocket', 'fa-tools', 'fa-chart-line" ];
-        return isset( $d[$i-1] ) ? $d[$i-1] : "";
+    if ( strpos( $key, 'wp_titans_service_icon_' ) === 0 ) {
+        $i = (int) str_replace( 'wp_titans_service_icon_', '', $key );
+        $d = [ 'fa-briefcase', 'fa-pen-fancy', 'fa-cog', 'fa-rocket', 'fa-tools', 'fa-chart-line' ];
+        return isset( $d[$i-1] ) ? $d[$i-1] : '';
     }
-    if ( strpos( $key, "wp_titans_service_title_" ) === 0 ) {
-        $i = (int) str_replace( "wp_titans_service_title_', '", $key );
-        $d = [ "Authority Website System™', 'Website Copywriting', 'Custom WordPress Development', 'SEO & Optimization', 'Website Maintenance', 'Funnel & Lead Gen Setup" ];
-        return isset( $d[$i-1] ) ? $d[$i-1] : "";
+    if ( strpos( $key, 'wp_titans_service_title_' ) === 0 ) {
+        $i = (int) str_replace( 'wp_titans_service_title_', '', $key );
+        $d = [ 'Authority Website System™', 'Website Copywriting', 'Custom WordPress Development', 'SEO & Optimization', 'Website Maintenance', 'Funnel & Lead Gen Setup' ];
+        return isset( $d[$i-1] ) ? $d[$i-1] : '';
     }
-    if ( strpos( $key, "wp_titans_service_desc_" ) === 0 ) {
-        $i = (int) str_replace( "wp_titans_service_desc_', '", $key );
+    if ( strpos( $key, 'wp_titans_service_desc_' ) === 0 ) {
+        $i = (int) str_replace( 'wp_titans_service_desc_', '', $key );
         $d = [
-            "A complete, conversion-focused website package designed to position you as the trusted authority.',
+            'A complete, conversion-focused website package designed to position you as the trusted authority.',
             'Strategic messaging crafted to connect with your ideal clients and drive conversions.',
             'Custom themes, tools, and systems tailored to your business model and scaling needs.',
             'Increase visibility, improve ranking, and generate organic leads with strategic SEO implementation.',
             'Reliable ongoing support to keep your site secure, updated, and performing at its best.',
-            'Automate your client acquisition with modern funnel systems designed for consultants."
+            'Automate your client acquisition with modern funnel systems designed for consultants.'
         ];
-        return isset( $d[$i-1] ) ? $d[$i-1] : "";
+        return isset( $d[$i-1] ) ? $d[$i-1] : '';
     }
 
-    if ( strpos( $key, "wp_titans_stat_num_" ) === 0 ) {
-        $i = (int) str_replace( "wp_titans_stat_num_', '", $key );
-        $d = [ "20+', '500+', '100%', '14" ];
-        return isset( $d[$i-1] ) ? $d[$i-1] : "";
+    if ( strpos( $key, 'wp_titans_stat_num_' ) === 0 ) {
+        $i = (int) str_replace( 'wp_titans_stat_num_', '', $key );
+        $d = [ '20+', '500+', '100%', '14' ];
+        return isset( $d[$i-1] ) ? $d[$i-1] : '';
     }
-    if ( strpos( $key, "wp_titans_stat_label_" ) === 0 ) {
-        $i = (int) str_replace( "wp_titans_stat_label_', '", $key );
-        $d = [ "Years Experience', 'Websites Built', 'Client Satisfaction', 'Day Delivery" ];
-        return isset( $d[$i-1] ) ? $d[$i-1] : "";
+    if ( strpos( $key, 'wp_titans_stat_label_' ) === 0 ) {
+        $i = (int) str_replace( 'wp_titans_stat_label_', '', $key );
+        $d = [ 'Years Experience', 'Websites Built', 'Client Satisfaction', 'Day Delivery' ];
+        return isset( $d[$i-1] ) ? $d[$i-1] : '';
     }
 
-    if ( strpos( $key, "wp_titans_process_title_" ) === 0 ) {
-        $i = (int) str_replace( "wp_titans_process_title_', '", $key );
-        $d = [ "Strategy & Positioning', 'Copywriting & Messaging', 'Design & Development', 'Launch & Optimization" ];
-        return isset( $d[$i-1] ) ? $d[$i-1] : "";
+    if ( strpos( $key, 'wp_titans_process_title_' ) === 0 ) {
+        $i = (int) str_replace( 'wp_titans_process_title_', '', $key );
+        $d = [ 'Strategy & Positioning', 'Copywriting & Messaging', 'Design & Development', 'Launch & Optimization' ];
+        return isset( $d[$i-1] ) ? $d[$i-1] : '';
     }
-    if ( strpos( $key, "wp_titans_process_desc_" ) === 0 ) {
-        $i = (int) str_replace( "wp_titans_process_desc_', '", $key );
+    if ( strpos( $key, 'wp_titans_process_desc_' ) === 0 ) {
+        $i = (int) str_replace( 'wp_titans_process_desc_', '', $key );
         $d = [
-            "We clarify your message, target audience, and offer — the foundation of authority.',
+            'We clarify your message, target audience, and offer — the foundation of authority.',
             'We craft high-converting content that communicates value and builds trust.',
             'A clean, modern, mobile-ready, SEO-optimized website built fast.',
-            'We support you for 30 days to refine and elevate your website’s performance."
+            'We support you for 30 days to refine and elevate your website’s performance.'
         ];
-        return isset( $d[$i-1] ) ? $d[$i-1] : "";
+        return isset( $d[$i-1] ) ? $d[$i-1] : '';
     }
 
-    if ( strpos( $key, "wp_titans_testi_img_" ) === 0 ) {
-        $i = (int) str_replace( "wp_titans_testi_img_', '", $key );
+    if ( strpos( $key, 'wp_titans_testi_img_' ) === 0 ) {
+        $i = (int) str_replace( 'wp_titans_testi_img_', '', $key );
         $d = [
-            "https://wordpresstitans.com/wp-content/uploads/2025/12/Screenshot-2025-12-06-003203.webp',
+            'https://wordpresstitans.com/wp-content/uploads/2025/12/Screenshot-2025-12-06-003203.webp',
             'https://wordpresstitans.com/wp-content/uploads/2025/12/Screenshot-2025-12-06-003923.webp',
-            'https://wordpresstitans.com/wp-content/uploads/2025/12/Screenshot-2025-12-06-003518.webp"
+            'https://wordpresstitans.com/wp-content/uploads/2025/12/Screenshot-2025-12-06-003518.webp'
         ];
-        return isset( $d[$i-1] ) ? $d[$i-1] : "";
+        return isset( $d[$i-1] ) ? $d[$i-1] : '';
     }
-    if ( strpos( $key, "wp_titans_testi_quote_" ) === 0 ) {
-        $i = (int) str_replace( "wp_titans_testi_quote_', '", $key );
+    if ( strpos( $key, 'wp_titans_testi_quote_' ) === 0 ) {
+        $i = (int) str_replace( 'wp_titans_testi_quote_', '', $key );
         $d = [
-            "Booked 12 new consultations in the first month after launching my new website. Clients now see me as a real authority.',
+            'Booked 12 new consultations in the first month after launching my new website. Clients now see me as a real authority.',
             'My site finally communicates my value. I now feel confident sending prospects to it — and they convert!',
-            'I’ve tried so many developers before, but this is the first time someone built a site that truly represents my expertise."
+            'I’ve tried so many developers before, but this is the first time someone built a site that truly represents my expertise.'
         ];
-        return isset( $d[$i-1] ) ? $d[$i-1] : "";
+        return isset( $d[$i-1] ) ? $d[$i-1] : '';
     }
-    if ( strpos( $key, "wp_titans_testi_author_" ) === 0 ) {
-        $i = (int) str_replace( "wp_titans_testi_author_', '", $key );
-        $d = [ "Anna R.', 'Michael D.', 'Atty. Clarisse P." ];
-        return isset( $d[$i-1] ) ? $d[$i-1] : "";
+    if ( strpos( $key, 'wp_titans_testi_author_' ) === 0 ) {
+        $i = (int) str_replace( 'wp_titans_testi_author_', '', $key );
+        $d = [ 'Anna R.', 'Michael D.', 'Atty. Clarisse P.' ];
+        return isset( $d[$i-1] ) ? $d[$i-1] : '';
     }
-    if ( strpos( $key, "wp_titans_testi_role_" ) === 0 ) {
-        $i = (int) str_replace( "wp_titans_testi_role_', '", $key );
-        $d = [ "Business Consultant', 'Leadership Coach', 'Legal Consultant" ];
-        return isset( $d[$i-1] ) ? $d[$i-1] : "";
+    if ( strpos( $key, 'wp_titans_testi_role_' ) === 0 ) {
+        $i = (int) str_replace( 'wp_titans_testi_role_', '', $key );
+        $d = [ 'Business Consultant', 'Leadership Coach', 'Legal Consultant' ];
+        return isset( $d[$i-1] ) ? $d[$i-1] : '';
     }
 
-    if ( strpos( $key, "wp_titans_portfolio_img_" ) === 0 ) {
-        $i = (int) str_replace( "wp_titans_portfolio_img_', '", $key );
+    if ( strpos( $key, 'wp_titans_portfolio_img_' ) === 0 ) {
+        $i = (int) str_replace( 'wp_titans_portfolio_img_', '', $key );
         $d = [
-            "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=600',
+            'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=600',
             'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=600',
             'https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?auto=format&fit=crop&w=600',
             'https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?auto=format&fit=crop&w=600',
             'https://images.unsplash.com/photo-1557838923-2985c318be48?auto=format&fit=crop&w=600',
-            'https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=600"
+            'https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=600'
         ];
-        return isset( $d[$i-1] ) ? $d[$i-1] : "";
+        return isset( $d[$i-1] ) ? $d[$i-1] : '';
     }
-    if ( strpos( $key, "wp_titans_portfolio_title_" ) === 0 ) {
-        $i = (int) str_replace( "wp_titans_portfolio_title_', '", $key );
-        $d = [ "Authority Website Case Study', 'Consultant Brand Platform', 'High-Performance Landing Page', 'Expert Authority Funnel', 'Professional Law Portfolio', 'Medical Practice System" ];
-        return isset( $d[$i-1] ) ? $d[$i-1] : "";
+    if ( strpos( $key, 'wp_titans_portfolio_title_' ) === 0 ) {
+        $i = (int) str_replace( 'wp_titans_portfolio_title_', '', $key );
+        $d = [ 'Authority Website Case Study', 'Consultant Brand Platform', 'High-Performance Landing Page', 'Expert Authority Funnel', 'Professional Law Portfolio', 'Medical Practice System' ];
+        return isset( $d[$i-1] ) ? $d[$i-1] : '';
     }
-    if ( strpos( $key, "wp_titans_portfolio_cat_" ) === 0 ) {
-        $i = (int) str_replace( "wp_titans_portfolio_cat_', '", $key );
-        $d = [ "Consulting', 'Coaching', 'SaaS', 'Marketing', 'Legal', 'Healthcare" ];
-        return isset( $d[$i-1] ) ? $d[$i-1] : "";
+    if ( strpos( $key, 'wp_titans_portfolio_cat_' ) === 0 ) {
+        $i = (int) str_replace( 'wp_titans_portfolio_cat_', '', $key );
+        $d = [ 'Consulting', 'Coaching', 'SaaS', 'Marketing', 'Legal', 'Healthcare' ];
+        return isset( $d[$i-1] ) ? $d[$i-1] : '';
     }
 
-    if ( strpos( $key, "wp_titans_faq_q_" ) === 0 ) {
-        $i = (int) str_replace( "wp_titans_faq_q_', '", $key );
-        $d = [ "What is an Authority Website?', 'How long does the process take?', 'Do I need to provide the copy?', 'Is the website mobile-friendly?" ];
-        return isset( $d[$i-1] ) ? $d[$i-1] : "";
+    if ( strpos( $key, 'wp_titans_faq_q_' ) === 0 ) {
+        $i = (int) str_replace( 'wp_titans_faq_q_', '', $key );
+        $d = [ 'What is an Authority Website?', 'How long does the process take?', 'Do I need to provide the copy?', 'Is the website mobile-friendly?' ];
+        return isset( $d[$i-1] ) ? $d[$i-1] : '';
     }
-    if ( strpos( $key, "wp_titans_faq_a_" ) === 0 ) {
-        $i = (int) str_replace( "wp_titans_faq_a_', '", $key );
+    if ( strpos( $key, 'wp_titans_faq_a_' ) === 0 ) {
+        $i = (int) str_replace( 'wp_titans_faq_a_', '', $key );
         $d = [
-            "An Authority Website is a strategic platform designed to position you as an expert and build immediate trust with your ideal clients.',
+            'An Authority Website is a strategic platform designed to position you as an expert and build immediate trust with your ideal clients.',
             'Our Authority Website System™ is a proven 14-day process from strategy to launch.',
             'No, we include professional copywriting as part of our Authority Website System™.',
-            'Yes, every website we build is fully responsive and optimized for all devices."
+            'Yes, every website we build is fully responsive and optimized for all devices.'
         ];
-        return isset( $d[$i-1] ) ? $d[$i-1] : "";
+        return isset( $d[$i-1] ) ? $d[$i-1] : '';
     }
 
-    if ( strpos( $key, "wp_titans_service_points_" ) === 0 ) {
-        $i = (int) str_replace( "wp_titans_service_points_', '", $key );
+    if ( strpos( $key, 'wp_titans_service_points_' ) === 0 ) {
+        $i = (int) str_replace( 'wp_titans_service_points_', '', $key );
         $d = [
             1 => "✓ Custom Authority Design\n✓ Strategic Messaging Blueprint\n✓ Professional Copywriting\n✓ Mobile & Desktop Optimized\n✓ Lead Gen Form Integration",
             2 => "✓ Targeted Sales Copy\n✓ Authority Positioning\n✓ Tone of Voice Development\n✓ Multi-Page Messaging\n✓ Conversion Focus",
@@ -232,126 +232,126 @@ function wp_titans_get_default( $key ) {
             5 => "✓ Security Monitoring\n✓ Regular Updates\n✓ Performance Audits\n✓ Priority Support\n✓ Daily Backups",
             6 => "✓ Landing Page Design\n✓ Email List Integration\n✓ Automation Setup\n✓ Analytics Tracking\n✓ A/B Testing Strategy"
         ];
-        return isset( $d[$i] ) ? $d[$i] : "";
+        return isset( $d[$i] ) ? $d[$i] : '';
     }
 
-    if ( strpos( $key, "wp_titans_process_page_step_title_" ) === 0 ) {
-        $i = (int) str_replace( "wp_titans_process_page_step_title_', '", $key );
+    if ( strpos( $key, 'wp_titans_process_page_step_title_' ) === 0 ) {
+        $i = (int) str_replace( 'wp_titans_process_page_step_title_', '', $key );
         $d = [
-            1 => "Strategy Call & Positioning',
+            1 => 'Strategy Call & Positioning',
             2 => 'Copywriting & Messaging Blueprint',
             3 => 'Website Design & Layout',
             4 => 'Development & Launch',
-            5 => 'Refinement & Growth"
+            5 => 'Refinement & Growth'
         ];
-        return isset( $d[$i] ) ? $d[$i] : "";
+        return isset( $d[$i] ) ? $d[$i] : '';
     }
-    if ( strpos( $key, "wp_titans_process_page_step_desc_" ) === 0 ) {
-        $i = (int) str_replace( "wp_titans_process_page_step_desc_', '", $key );
+    if ( strpos( $key, 'wp_titans_process_page_step_desc_' ) === 0 ) {
+        $i = (int) str_replace( 'wp_titans_process_page_step_desc_', '', $key );
         $d = [
-            1 => "We begin by understanding your business, ideal clients, strengths, and unique value.',
+            1 => 'We begin by understanding your business, ideal clients, strengths, and unique value.',
             2 => 'Our team writes compelling, conversion-focused content tailored to your audience.',
             3 => 'We transform your messaging into a clean, modern, strategic design built to position you as the expert.',
             4 => 'Your website becomes a fully functional, fast, SEO-ready system. We support you for 30 days post-launch.',
-            5 => 'Ongoing support to ensure your site continues to perform and grow with your business."
+            5 => 'Ongoing support to ensure your site continues to perform and grow with your business.'
         ];
-        return isset( $d[$i] ) ? $d[$i] : "";
+        return isset( $d[$i] ) ? $d[$i] : '';
     }
-    if ( strpos( $key, "wp_titans_process_page_step_icon_" ) === 0 ) {
-        $i = (int) str_replace( "wp_titans_process_page_step_icon_', '", $key );
-        $d = [ 1 => "fa-comments', 2 => 'fa-pen-nib', 3 => 'fa-drafting-pencil', 4 => 'fa-rocket', 5 => 'fa-chart-line" ];
-        return isset( $d[$i] ) ? $d[$i] : "fa-check";
+    if ( strpos( $key, 'wp_titans_process_page_step_icon_' ) === 0 ) {
+        $i = (int) str_replace( 'wp_titans_process_page_step_icon_', '', $key );
+        $d = [ 1 => 'fa-comments', 2 => 'fa-pen-nib', 3 => 'fa-drafting-pencil', 4 => 'fa-rocket', 5 => 'fa-chart-line' ];
+        return isset( $d[$i] ) ? $d[$i] : 'fa-check';
     }
 
-    if ( strpos( $key, "wp_titans_about_pillar_title_" ) === 0 ) {
-        $i = (int) str_replace( "wp_titans_about_pillar_title_', '", $key );
-        $d = [ "Clarity First', 'Design With Purpose', 'Simplicity Wins', 'Results Matter" ];
-        return isset( $d[$i-1] ) ? $d[$i-1] : "";
+    if ( strpos( $key, 'wp_titans_about_pillar_title_' ) === 0 ) {
+        $i = (int) str_replace( 'wp_titans_about_pillar_title_', '', $key );
+        $d = [ 'Clarity First', 'Design With Purpose', 'Simplicity Wins', 'Results Matter' ];
+        return isset( $d[$i-1] ) ? $d[$i-1] : '';
     }
-    if ( strpos( $key, "wp_titans_about_pillar_desc_" ) === 0 ) {
-        $i = (int) str_replace( "wp_titans_about_pillar_desc_', '", $key );
+    if ( strpos( $key, 'wp_titans_about_pillar_desc_' ) === 0 ) {
+        $i = (int) str_replace( 'wp_titans_about_pillar_desc_', '', $key );
         $d = [
-            "We believe clarity drives conversions. Every website begins with a clear message that resonates.',
+            'We believe clarity drives conversions. Every website begins with a clear message that resonates.',
             'We don’t design just to look good. We design to guide users toward trust and action.',
             'We eliminate the noise. No clutter. Just clean, strategic communication that gets results.',
-            'Everything we build supports trust, authority, and lead generation for your growth."
+            'Everything we build supports trust, authority, and lead generation for your growth.'
         ];
-        return isset( $d[$i-1] ) ? $d[$i-1] : "";
+        return isset( $d[$i-1] ) ? $d[$i-1] : '';
     }
 
-    if ( strpos( $key, "wp_titans_auth_feature_icon_" ) === 0 ) {
-        $i = (int) str_replace( "wp_titans_auth_feature_icon_', '", $key );
-        $d = [ "fa-pen-nib', 'fa-wand-magic-sparkles', 'fa-magnifying-glass-chart', 'fa-bolt', 'fa-shield-halved', 'fa-arrows-to-eye" ];
-        return isset( $d[$i-1] ) ? $d[$i-1] : "";
+    if ( strpos( $key, 'wp_titans_auth_feature_icon_' ) === 0 ) {
+        $i = (int) str_replace( 'wp_titans_auth_feature_icon_', '', $key );
+        $d = [ 'fa-pen-nib', 'fa-wand-magic-sparkles', 'fa-magnifying-glass-chart', 'fa-bolt', 'fa-shield-halved', 'fa-arrows-to-eye' ];
+        return isset( $d[$i-1] ) ? $d[$i-1] : '';
     }
-    if ( strpos( $key, "wp_titans_auth_feature_title_" ) === 0 ) {
-        $i = (int) str_replace( "wp_titans_auth_feature_title_', '", $key );
-        $d = [ "High-Converting Copywriting', 'Custom 5-Page Design', 'On-Page SEO Setup', 'Lightning Fast Performance', 'Security & SSL', 'Lead Capture System" ];
-        return isset( $d[$i-1] ) ? $d[$i-1] : "";
+    if ( strpos( $key, 'wp_titans_auth_feature_title_' ) === 0 ) {
+        $i = (int) str_replace( 'wp_titans_auth_feature_title_', '', $key );
+        $d = [ 'High-Converting Copywriting', 'Custom 5-Page Design', 'On-Page SEO Setup', 'Lightning Fast Performance', 'Security & SSL', 'Lead Capture System' ];
+        return isset( $d[$i-1] ) ? $d[$i-1] : '';
     }
-    if ( strpos( $key, "wp_titans_auth_feature_desc_" ) === 0 ) {
-        $i = (int) str_replace( "wp_titans_auth_feature_desc_', '", $key );
+    if ( strpos( $key, 'wp_titans_auth_feature_desc_' ) === 0 ) {
+        $i = (int) str_replace( 'wp_titans_auth_feature_desc_', '', $key );
         $d = [
-            "We write your homepage, about page, and service pages for maximum impact.',
+            'We write your homepage, about page, and service pages for maximum impact.',
             'Unique, modern design that sets you apart from generic templates.',
             'We optimize your site so your ideal clients can actually find you on Google.',
             'Technical optimization for near-instant load times on all devices.',
             'Full security lockdown and SSL certificate installation for trust.',
-            'Strategic forms and lead magnets to build your email list automatically."
+            'Strategic forms and lead magnets to build your email list automatically.'
         ];
-        return isset( $d[$i-1] ) ? $d[$i-1] : "";
+        return isset( $d[$i-1] ) ? $d[$i-1] : '';
     }
 
-    if ( strpos( $key, "wp_titans_pricing_name_" ) === 0 ) {
-        $i = (int) str_replace( "wp_titans_pricing_name_', '", $key );
-        $d = [ "The Launchpad', 'The Authority', 'The Enterprise" ];
-        return isset( $d[$i-1] ) ? $d[$i-1] : "";
+    if ( strpos( $key, 'wp_titans_pricing_name_' ) === 0 ) {
+        $i = (int) str_replace( 'wp_titans_pricing_name_', '', $key );
+        $d = [ 'The Launchpad', 'The Authority', 'The Enterprise' ];
+        return isset( $d[$i-1] ) ? $d[$i-1] : '';
     }
-    if ( strpos( $key, "wp_titans_pricing_val_" ) === 0 ) {
-        $i = (int) str_replace( "wp_titans_pricing_val_', '", $key );
-        $d = [ "$2,500', "$4,500", "$8,000+" ];
-        return isset( $d[$i-1] ) ? $d[$i-1] : '";
+    if ( strpos( $key, 'wp_titans_pricing_val_' ) === 0 ) {
+        $i = (int) str_replace( 'wp_titans_pricing_val_', '', $key );
+        $d = [ '$2,500', '$4,500', '$8,000+' ];
+        return isset( $d[$i-1] ) ? $d[$i-1] : '';
     }
-    if ( strpos( $key, "wp_titans_pricing_desc_" ) === 0 ) {
-        $i = (int) str_replace( "wp_titans_pricing_desc_', '", $key );
-        $d = [ "Perfect for solo experts.', 'Our flagship system.', 'For growing teams." ];
-        return isset( $d[$i-1] ) ? $d[$i-1] : "";
+    if ( strpos( $key, 'wp_titans_pricing_desc_' ) === 0 ) {
+        $i = (int) str_replace( 'wp_titans_pricing_desc_', '', $key );
+        $d = [ 'Perfect for solo experts.', 'Our flagship system.', 'For growing teams.' ];
+        return isset( $d[$i-1] ) ? $d[$i-1] : '';
     }
-    if ( strpos( $key, "wp_titans_pricing_features_" ) === 0 ) {
-        $i = (int) str_replace( "wp_titans_pricing_features_', '", $key );
+    if ( strpos( $key, 'wp_titans_pricing_features_' ) === 0 ) {
+        $i = (int) str_replace( 'wp_titans_pricing_features_', '', $key );
         $d = [
             "3-Page Website\nMobile Responsive\n14-Day Delivery",
             "6-Page Website\nProfessional Copywriting\nLead Gen Funnel\nSEO Optimization",
             "Custom CRM Sync\nMulti-Channel Setup\nPriority Support\nContent Strategy"
         ];
-        return isset( $d[$i-1] ) ? $d[$i-1] : "";
+        return isset( $d[$i-1] ) ? $d[$i-1] : '';
     }
 
-    if ( strpos( $key, "wp_titans_team_name_" ) === 0 ) {
-        $i = (int) str_replace( "wp_titans_team_name_', '", $key );
-        $d = [ "Alex Rivera', 'Sarah Chen', 'Marcus Thorne" ];
-        return isset( $d[$i-1] ) ? $d[$i-1] : "";
+    if ( strpos( $key, 'wp_titans_team_name_' ) === 0 ) {
+        $i = (int) str_replace( 'wp_titans_team_name_', '', $key );
+        $d = [ 'Alex Rivera', 'Sarah Chen', 'Marcus Thorne' ];
+        return isset( $d[$i-1] ) ? $d[$i-1] : '';
     }
-    if ( strpos( $key, "wp_titans_team_role_" ) === 0 ) {
-        $i = (int) str_replace( "wp_titans_team_role_', '", $key );
-        $d = [ "Lead Strategist', 'Creative Director', 'Technical Architect" ];
-        return isset( $d[$i-1] ) ? $d[$i-1] : "";
+    if ( strpos( $key, 'wp_titans_team_role_' ) === 0 ) {
+        $i = (int) str_replace( 'wp_titans_team_role_', '', $key );
+        $d = [ 'Lead Strategist', 'Creative Director', 'Technical Architect' ];
+        return isset( $d[$i-1] ) ? $d[$i-1] : '';
     }
-    if ( strpos( $key, "wp_titans_team_img_" ) === 0 ) {
-        $i = (int) str_replace( "wp_titans_team_img_', '", $key );
+    if ( strpos( $key, 'wp_titans_team_img_' ) === 0 ) {
+        $i = (int) str_replace( 'wp_titans_team_img_', '', $key );
         $d = [
-            "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=400',
+            'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=400',
             'https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=400',
-            'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=400"
+            'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=400'
         ];
-        return isset( $d[$i-1] ) ? $d[$i-1] : "";
+        return isset( $d[$i-1] ) ? $d[$i-1] : '';
     }
 
-    if ( strpos( $key, "wp_titans_social_' ) === 0 ) {
-        return '#";
+    if ( strpos( $key, 'wp_titans_social_' ) === 0 ) {
+        return '#';
     }
 
-    return isset( $defaults[$key] ) ? $defaults[$key] : "';
+    return isset( $defaults[$key] ) ? $defaults[$key] : '';
 }
 
 function wp_titans_get_mod( $key ) {
