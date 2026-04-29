@@ -13,7 +13,7 @@ function wp_titans_get_defaults() {
         'wp_titans_heading_font' => 'Syne',
         'wp_titans_body_font' => 'Space Grotesk',
         'wp_titans_hero_title' => 'Elite WordPress Systems Built for World-Class Authority',
-        'wp_titans_hero_subtitle' => 'We help serious businesses turn their website into a revenue-generating asset — not just an online brochure.',
+        'wp_titans_hero_subtitle' => 'We help world-class experts dominate their market through high-performance WordPress systems designed to scale influence and revenue.',
         'wp_titans_hero_bg' => 'https://images.unsplash.com/photo-1497215728101-856f4ea42174?auto=format&fit=crop&w=1920',
         'wp_titans_hero_btn1_text' => 'Our Solutions',
         'wp_titans_hero_btn1_url' => '#services',

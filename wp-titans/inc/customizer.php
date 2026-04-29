@@ -55,7 +55,7 @@ function wp_titans_customize_register( $wp_customize ) {
     $wp_customize->add_setting( 'wp_titans_hero_btn1_text', array( 'default' => wp_titans_get_default('wp_titans_hero_btn1_text'), 'sanitize_callback' => 'wp_kses_post' ) );
     $wp_customize->add_control( 'wp_titans_hero_btn1_text', array( 'label' => __( 'Hero Button 1 Text', 'wp-titans' ), 'section' => 'wp_titans_hero' ) );
 
-    $wp_customize->add_setting( 'wp_titans_hero_btn1_url', array( 'default' => wp_titans_get_default('wp_tit_hero_btn1_url'), 'sanitize_callback' => 'wp_kses_post' ) );
+    $wp_customize->add_setting( 'wp_titans_hero_btn1_url', array( 'default' => wp_titans_get_default('wp_titans_hero_btn1_url'), 'sanitize_callback' => 'wp_kses_post' ) );
     $wp_customize->add_control( 'wp_titans_hero_btn1_url', array( 'label' => __( 'Hero Button 1 URL', 'wp-titans' ), 'section' => 'wp_titans_hero' ) );
 
     $wp_customize->add_setting( 'wp_titans_hero_btn2_text', array( 'default' => wp_titans_get_default('wp_titans_hero_btn2_text'), 'sanitize_callback' => 'wp_kses_post' ) );
