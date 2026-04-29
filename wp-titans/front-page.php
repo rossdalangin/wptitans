@@ -117,8 +117,12 @@ get_header(); ?>
         <?php
         $front_services = new WP_Query(array('post_type' => 'service', 'posts_per_page' => 6));
         if ($front_services->have_posts()) : while ($front_services->have_posts()) : $front_services->the_post();
+            $badge = get_post_meta(get_the_ID(), 'service_badge', true);
         ?>
-        <div class="card reveal">
+        <div class="card reveal" style="position: relative;">
+            <?php if ($badge) : ?>
+                <span style="position: absolute; top: 1.5rem; right: 1.5rem; background: var(--primary); color: black; font-size: 0.65rem; font-weight: 800; padding: 0.3rem 0.8rem; border-radius: 50px; text-transform: uppercase; letter-spacing: 1px;"><?php echo esc_html($badge); ?></span>
+            <?php endif; ?>
             <?php if (has_post_thumbnail()) : the_post_thumbnail('thumbnail', array('style' => 'width: 50px; height: 50px; margin-bottom: 2rem; filter: grayscale(1);')); else : ?>
                 <i class="fas fa-cube"></i>
             <?php endif; ?>
@@ -174,24 +178,42 @@ get_header(); ?>
         <h2>Case Studies & Results</h2>
     </div>
     <div class="grid-cards">
-        <?php for ($i = 1; $i <= 3; $i++) :
-            $img = wp_titans_get_mod("wp_titans_portfolio_img_$i");
-            $title = wp_titans_get_mod("wp_titans_portfolio_title_$i");
-            $badge = wp_titans_get_mod("wp_titans_portfolio_badge_$i");
-            if (!$title) continue;
+        <?php
+        $front_portfolio = new WP_Query(array('post_type' => 'portfolio', 'posts_per_page' => 3));
+        if ($front_portfolio->have_posts()) : while ($front_portfolio->have_posts()) : $front_portfolio->the_post();
+            $badge = get_post_meta(get_the_ID(), 'portfolio_badge', true);
         ?>
         <div class="card reveal" style="padding: 0; overflow: hidden; border: none; background: transparent;">
             <div style="position: relative; overflow: hidden; border-radius: 8px;">
                 <?php if ($badge) : ?>
                     <span style="position: absolute; top: 1.5rem; right: 1.5rem; z-index: 10; background: var(--primary); color: black; font-size: 0.65rem; font-weight: 800; padding: 0.3rem 0.8rem; border-radius: 50px; text-transform: uppercase; letter-spacing: 1px;"><?php echo esc_html($badge); ?></span>
                 <?php endif; ?>
-                <img loading="lazy" src="<?php echo esc_url($img); ?>" alt="<?php echo esc_attr($title); ?>" style="width: 100%; transition: transform 0.5s;">
+                <?php if (has_post_thumbnail()) : the_post_thumbnail('large', array('style' => 'width: 100%; height: auto; transition: transform 0.5s;')); endif; ?>
                 <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(to top, rgba(0,0,0,0.9), transparent); display: flex; align-items: flex-end; padding: 2rem; opacity: 1;">
-                    <h3 style="font-size: 1.3rem; margin: 0;"><?php echo esc_html($title); ?></h3>
+                    <h3 style="font-size: 1.3rem; margin: 0; color: white;"><?php the_title(); ?></h3>
                 </div>
             </div>
         </div>
-        <?php endfor; ?>
+        <?php endwhile; wp_reset_postdata(); else : ?>
+            <?php for ($i = 1; $i <= 3; $i++) :
+                $img = wp_titans_get_mod("wp_titans_portfolio_img_$i");
+                $title = wp_titans_get_mod("wp_titans_portfolio_title_$i");
+                $badge = wp_titans_get_mod("wp_titans_portfolio_badge_$i");
+                if (!$title) continue;
+            ?>
+            <div class="card reveal" style="padding: 0; overflow: hidden; border: none; background: transparent;">
+                <div style="position: relative; overflow: hidden; border-radius: 8px;">
+                    <?php if ($badge) : ?>
+                        <span style="position: absolute; top: 1.5rem; right: 1.5rem; z-index: 10; background: var(--primary); color: black; font-size: 0.65rem; font-weight: 800; padding: 0.3rem 0.8rem; border-radius: 50px; text-transform: uppercase; letter-spacing: 1px;"><?php echo esc_html($badge); ?></span>
+                    <?php endif; ?>
+                    <img loading="lazy" src="<?php echo esc_url($img); ?>" alt="<?php echo esc_attr($title); ?>" style="width: 100%; transition: transform 0.5s;">
+                    <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(to top, rgba(0,0,0,0.9), transparent); display: flex; align-items: flex-end; padding: 2rem; opacity: 1;">
+                        <h3 style="font-size: 1.3rem; margin: 0; color: white;"><?php echo esc_html($title); ?></h3>
+                    </div>
+                </div>
+            </div>
+            <?php endfor; ?>
+        <?php endif; ?>
     </div>
 </section>
 

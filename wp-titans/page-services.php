@@ -14,28 +14,57 @@ get_header(); ?>
 
 <section id="all-services" style="background: #050505;">
     <div class="grid-cards">
-        <?php for ($i = 1; $i <= 6; $i++) :
-            $icon = wp_titans_get_mod("wp_titans_service_icon_$i");
-            $title = wp_titans_get_mod("wp_titans_service_title_$i");
-            $desc = wp_titans_get_mod("wp_titans_service_desc_$i");
-            if (!$title) continue;
+        <?php
+        $services_query = new WP_Query(array('post_type' => 'service', 'posts_per_page' => 12));
+        if ($services_query->have_posts()) : while ($services_query->have_posts()) : $services_query->the_post();
+            $points = get_post_meta(get_the_ID(), 'service_points', true);
         ?>
         <div class="card reveal" style="padding: 4rem;">
-            <i class="fas <?php echo esc_attr($icon); ?>"></i>
-            <h3 style="font-size: 2rem; margin-bottom: 1.5rem;"><?php echo esc_html($title); ?></h3>
-            <p style="font-size: 1.1rem; color: var(--text-dim); margin-bottom: 2rem;"><?php echo esc_html($desc); ?></p>
+            <?php if (has_post_thumbnail()) : the_post_thumbnail('thumbnail', array('style' => 'width: 50px; height: 50px; margin-bottom: 2rem; filter: grayscale(1);')); else : ?>
+                <i class="fas fa-cube"></i>
+            <?php endif; ?>
+            <h3 style="font-size: 2rem; margin-bottom: 1.5rem;"><?php the_title(); ?></h3>
+            <p style="font-size: 1.1rem; color: var(--text-dim); margin-bottom: 2rem;"><?php echo get_the_excerpt(); ?></p>
+            <?php if ($points) : ?>
             <ul style="color: var(--text-dim); text-align: left; margin-bottom: 2rem;">
                 <?php
-                $points = wp_titans_get_mod("wp_titans_service_points_$i");
                 $points_arr = explode("\n", $points);
                 foreach($points_arr as $point) {
                     if(trim($point)) echo '<li style="margin-bottom: 0.5rem;"><i class="fas fa-check" style="color: var(--primary); margin-right: 10px;"></i> ' . esc_html(trim($point)) . '</li>';
                 }
                 ?>
             </ul>
-            <a href="#contact" class="btn btn-outline">Enquire Now</a>
+            <?php endif; ?>
+            <a href="<?php the_permalink(); ?>" class="btn btn-outline">Learn More</a>
         </div>
-        <?php endfor; ?>
+        <?php endwhile; wp_reset_postdata(); else : ?>
+            <?php for ($i = 1; $i <= 6; $i++) :
+                $icon = wp_titans_get_mod("wp_titans_service_icon_$i");
+                $title = wp_titans_get_mod("wp_titans_service_title_$i");
+                $desc = wp_titans_get_mod("wp_titans_service_desc_$i");
+                $badge = wp_titans_get_mod("wp_titans_service_badge_$i");
+                if (!$title) continue;
+            ?>
+            <div class="card reveal" style="padding: 4rem; position: relative;">
+                <?php if ($badge) : ?>
+                    <span style="position: absolute; top: 1.5rem; right: 1.5rem; background: var(--primary); color: black; font-size: 0.65rem; font-weight: 800; padding: 0.3rem 0.8rem; border-radius: 50px; text-transform: uppercase; letter-spacing: 1px;"><?php echo esc_html($badge); ?></span>
+                <?php endif; ?>
+                <i class="fas <?php echo esc_attr($icon); ?>"></i>
+                <h3 style="font-size: 2rem; margin-bottom: 1.5rem;"><?php echo esc_html($title); ?></h3>
+                <p style="font-size: 1.1rem; color: var(--text-dim); margin-bottom: 2rem;"><?php echo esc_html($desc); ?></p>
+                <ul style="color: var(--text-dim); text-align: left; margin-bottom: 2rem;">
+                    <?php
+                    $points = wp_titans_get_mod("wp_titans_service_points_$i");
+                    $points_arr = explode("\n", $points);
+                    foreach($points_arr as $point) {
+                        if(trim($point)) echo '<li style="margin-bottom: 0.5rem;"><i class="fas fa-check" style="color: var(--primary); margin-right: 10px;"></i> ' . esc_html(trim($point)) . '</li>';
+                    }
+                    ?>
+                </ul>
+                <a href="#contact" class="btn btn-outline">Enquire Now</a>
+            </div>
+            <?php endfor; ?>
+        <?php endif; ?>
     </div>
 </section>
 
