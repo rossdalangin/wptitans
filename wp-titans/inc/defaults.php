@@ -80,6 +80,9 @@ function wp_titans_get_defaults() {
         'wp_titans_comparison_show' => true,
         'wp_titans_guarantee_title' => 'The Titans Promise',
         'wp_titans_guarantee_text'  => 'We don’t just build websites. We build your authority. If you aren’t 100% confident in your new professional image, we’ll work until you are.',
+        'wp_titans_card_bg'         => '#0a0a0a',
+        'wp_titans_border_radius'   => '8px',
+        'wp_titans_hero_opacity'    => 0.8,
     );
 }
 

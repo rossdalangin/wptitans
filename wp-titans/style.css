@@ -12,6 +12,7 @@ Text Domain: wp-titans
     --primary: #D4AF37; /* Gold */
     --bg-dark: #000000;
     --bg-card: #0a0a0a;
+    --radius: 8px;
     --bg-glass: rgba(10, 10, 10, 0.7);
     --text-main: #ffffff;
     --text-dim: #cccccc;

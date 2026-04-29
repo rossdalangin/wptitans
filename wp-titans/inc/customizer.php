@@ -37,6 +37,15 @@ function wp_titans_customize_register( $wp_customize ) {
     $wp_customize->add_setting( 'wp_titans_body_font', array( 'default' => wp_titans_get_default('wp_titans_body_font'), 'sanitize_callback' => 'wp_kses_post' ) );
     $wp_customize->add_control( 'wp_titans_body_font', array( 'label' => __( 'Body Font (Google Font Name)', 'wp-titans' ), 'section' => 'wp_titans_design', 'type' => 'text' ) );
 
+    $wp_customize->add_setting( 'wp_titans_card_bg', array( 'default' => '#0a0a0a', 'sanitize_callback' => 'sanitize_hex_color' ) );
+    $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'wp_titans_card_bg', array( 'label' => __( 'Card Background Color', 'wp-titans' ), 'section' => 'wp_titans_design' ) ) );
+
+    $wp_customize->add_setting( 'wp_titans_border_radius', array( 'default' => '8px', 'sanitize_callback' => 'sanitize_text_field' ) );
+    $wp_customize->add_control( 'wp_titans_border_radius', array( 'label' => __( 'Global Border Radius', 'wp-titans' ), 'section' => 'wp_titans_design' ) );
+
+    $wp_customize->add_setting( 'wp_titans_hero_opacity', array( 'default' => 0.8, 'sanitize_callback' => 'sanitize_text_field' ) );
+    $wp_customize->add_control( 'wp_titans_hero_opacity', array( 'label' => __( 'Hero Overlay Opacity (0-1)', 'wp-titans' ), 'section' => 'wp_titans_hero', 'type' => 'number', 'input_attrs' => array('step' => 0.1, 'min' => 0, 'max' => 1) ) );
+
     // --- Hero Section ---
     $wp_customize->add_section( 'wp_titans_hero', array(
         'title'    => __( 'Hero Section', 'wp-titans' ),
@@ -51,6 +60,9 @@ function wp_titans_customize_register( $wp_customize ) {
 
     $wp_customize->add_setting( 'wp_titans_hero_bg', array( 'default' => wp_titans_get_default('wp_titans_hero_bg'), 'sanitize_callback' => 'esc_url_raw' ) );
     $wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'wp_titans_hero_bg', array( 'label' => __( 'Hero Background Image', 'wp-titans' ), 'section' => 'wp_titans_hero' ) ) );
+
+    $wp_customize->add_setting( 'wp_titans_hero_video', array( 'default' => '', 'sanitize_callback' => 'esc_url_raw' ) );
+    $wp_customize->add_control( 'wp_titans_hero_video', array( 'label' => __( 'Hero Background Video URL (Direct MP4 link)', 'wp-titans' ), 'section' => 'wp_titans_hero', 'type' => 'text' ) );
 
     $wp_customize->add_setting( 'wp_titans_hero_btn1_text', array( 'default' => wp_titans_get_default('wp_titans_hero_btn1_text'), 'sanitize_callback' => 'wp_kses_post' ) );
     $wp_customize->add_control( 'wp_titans_hero_btn1_text', array( 'label' => __( 'Hero Button 1 Text', 'wp-titans' ), 'section' => 'wp_titans_hero' ) );
@@ -551,8 +563,13 @@ function wp_titans_customizer_css() {
         h1, h2, h3, h4, .btn, .nav-links a { font-family: '<?php echo esc_attr($heading_font); ?>', sans-serif; }
 
         .hero {
-            background-image: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url('<?php echo wp_titans_get_mod("wp_titans_hero_bg"); ?>');
+            background-image: linear-gradient(rgba(0,0,0,<?php echo wp_titans_get_mod("wp_titans_hero_opacity"); ?>), rgba(0,0,0,<?php echo wp_titans_get_mod("wp_titans_hero_opacity"); ?>)), url('<?php echo wp_titans_get_mod("wp_titans_hero_bg"); ?>');
         }
+        :root {
+            --bg-card: <?php echo wp_titans_get_mod("wp_titans_card_bg"); ?>;
+            --radius: <?php echo wp_titans_get_mod("wp_titans_border_radius"); ?>;
+        }
+        .card, .btn, #planner-container, .option-content, img, .ba-container { border-radius: var(--radius) !important; }
         #free-audit { background-color: var(--primary) !important; }
         .testimonial-card, .btn-outline { border-color: var(--primary) !important; }
         .stat-item h3, .tagline, .btn-outline { color: var(--primary) !important; }

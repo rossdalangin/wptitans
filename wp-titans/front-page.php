@@ -5,8 +5,13 @@
 get_header(); ?>
 
 <!-- 1. HERO SECTION -->
-<section id="hero" class="hero">
-    <div class="reveal">
+<section id="hero" class="hero" style="overflow: hidden;">
+    <?php if (wp_titans_get_mod("wp_titans_hero_video")) : ?>
+        <video autoplay muted loop playsinline style="position: absolute; top: 50%; left: 50%; min-width: 100%; min-height: 100%; width: auto; height: auto; transform: translate(-50%, -50%); z-index: 0; object-fit: cover;">
+            <source src="<?php echo esc_url(wp_titans_get_mod("wp_titans_hero_video")); ?>" type="video/mp4">
+        </video>
+    <?php endif; ?>
+    <div class="reveal" style="z-index: 1;">
         <h1><?php echo esc_html(wp_titans_get_mod("wp_titans_hero_title")); ?></h1>
         <p><?php echo esc_html(wp_titans_get_mod("wp_titans_hero_subtitle")); ?></p>
         <div class="hero-btns">

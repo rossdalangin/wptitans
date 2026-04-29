@@ -51,6 +51,14 @@ const observer = new IntersectionObserver((entries) => {
 
 document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
+// Staggered reveals for grids
+document.querySelectorAll('.grid-cards, .grid-2').forEach(grid => {
+    const items = grid.querySelectorAll('.reveal');
+    items.forEach((item, index) => {
+        item.style.transitionDelay = `${index * 0.15}s`;
+    });
+});
+
 // Stats Counter
 const statsSection = document.getElementById('stats');
 if (statsSection) {
