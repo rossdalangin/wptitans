@@ -191,7 +191,7 @@ nav.scrolled {
     opacity: 0.85;
 }
 
-.nav-links a:hover {
+.nav-links a:hover, .nav-links a.active {
     opacity: 1;
     color: var(--primary);
 }

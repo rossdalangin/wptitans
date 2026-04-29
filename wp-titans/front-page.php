@@ -191,7 +191,22 @@ get_header(); ?>
     <?php endfor; ?>
 </div>
 
-<!-- 10. RECENT INSIGHTS -->
+<!-- 10. NEWSLETTER SIGNUP -->
+<?php if (wp_titans_get_mod("wp_titans_newsletter_show")) : ?>
+<section id="newsletter" style="background: #000; border-top: 1px solid var(--border-glass);">
+    <div class="reveal" style="max-width: 900px; margin: 0 auto; background: #050505; padding: 5rem; border-radius: 12px; border: 1px solid #111; text-align: center;">
+        <i class="fas fa-envelope-open-text" style="font-size: 3rem; color: var(--primary); margin-bottom: 2rem;"></i>
+        <h2><?php echo esc_html(wp_titans_get_mod("wp_titans_newsletter_title")); ?></h2>
+        <p style="color: var(--text-dim); margin-bottom: 3rem;"><?php echo esc_html(wp_titans_get_mod("wp_titans_newsletter_desc")); ?></p>
+        <form style="display: flex; gap: 1rem; max-width: 500px; margin: 0 auto;">
+            <input type="email" placeholder="Your best email..." required style="flex: 1; padding: 1.2rem; background: #000; border: 1px solid #333; color: white; border-radius: 4px;">
+            <button type="submit" class="btn btn-primary" style="padding: 1.2rem 2.5rem;">Join</button>
+        </form>
+    </div>
+</section>
+<?php endif; ?>
+
+<!-- 11. RECENT INSIGHTS -->
 <?php if (wp_titans_get_mod("wp_titans_blog_show")) : ?>
 <section id="recent-insights" style="background: #000; border-top: 1px solid var(--border-glass);">
     <div class="reveal" style="text-align: center; margin-bottom: 5rem;">
@@ -222,7 +237,7 @@ get_header(); ?>
 </section>
 <?php endif; ?>
 
-<!-- 11. TESTIMONIALS -->
+<!-- 12. TESTIMONIALS -->
 <section id="testimonials" style="background: #050505;">
     <div class="reveal" style="text-align: center; margin-bottom: 4rem;">
         <span class="tagline"><?php echo esc_html(wp_titans_get_mod("wp_titans_testi_tagline")); ?></span>
@@ -249,7 +264,7 @@ get_header(); ?>
     </div>
 </section>
 
-<!-- 12. SUCCESS GUARANTEE -->
+<!-- 13. SUCCESS GUARANTEE -->
 <section id="success-guarantee" style="background: #000; text-align: center; padding: 6rem 10%; border-top: 1px solid var(--border-glass);">
     <div class="reveal" style="max-width: 800px; margin: 0 auto; background: #111; padding: 4rem; border-radius: 12px; border: 1px solid var(--primary);">
         <i class="fas fa-award" style="font-size: 3.5rem; color: var(--primary); margin-bottom: 2rem;"></i>
@@ -258,7 +273,7 @@ get_header(); ?>
     </div>
 </section>
 
-<!-- 13. LEAD MAGNET: FREE AUDIT -->
+<!-- 14. LEAD MAGNET: FREE AUDIT -->
 <?php if (wp_titans_get_mod("wp_titans_audit_show")) : ?>
 <section id="free-audit" style="background: #D4AF37; color: black; padding: 6rem 10%;">
     <div class="grid-2">
@@ -277,7 +292,7 @@ get_header(); ?>
 </section>
 <?php endif; ?>
 
-<!-- 14. FAQ -->
+<!-- 15. FAQ -->
 <section id="faq">
     <div class="reveal" style="text-align: center; margin-bottom: 4rem;">
         <h2><?php echo esc_html(wp_titans_get_mod("wp_titans_faq_main_title")); ?></h2>
@@ -301,7 +316,7 @@ get_header(); ?>
     </div>
 </section>
 
-<!-- 15. CONTACT -->
+<!-- 16. CONTACT -->
 <section id="contact" style="background: #080808;">
     <div class="grid-2">
         <div class="reveal">

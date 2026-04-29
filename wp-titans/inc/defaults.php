@@ -89,6 +89,9 @@ function wp_titans_get_defaults() {
         'wp_titans_gcta_title'      => 'Ready to build your authority?',
         'wp_titans_gcta_btn_text'   => 'Schedule a Strategy Call',
         'wp_titans_gcta_btn_url'    => '#contact',
+        'wp_titans_newsletter_show' => true,
+        'wp_titans_newsletter_title' => 'Join the Titan Circle',
+        'wp_titans_newsletter_desc' => 'Weekly insights on authority branding and high-performance WordPress systems.',
         'wp_titans_blog_show'       => true,
         'wp_titans_blog_title'      => 'Agency Insights',
     );

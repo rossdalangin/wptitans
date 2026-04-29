@@ -214,3 +214,37 @@ if (themeSwitch) {
         icon.classList.replace('fa-moon', 'fa-sun');
     }
 }
+
+// Reading Progress
+const readingBar = document.getElementById('reading-progress');
+if (readingBar) {
+    window.addEventListener('scroll', () => {
+        const pixels = window.pageYOffset;
+        const pageHeight = document.body.scrollHeight;
+        const viewHeight = window.innerHeight;
+        const percentage = (pixels / (pageHeight - viewHeight)) * 100;
+        readingBar.style.width = `${percentage}%`;
+    });
+}
+
+// ScrollSpy / Active Nav
+const sections = document.querySelectorAll('section[id]');
+const navLinks = document.querySelectorAll('.nav-links a');
+
+window.addEventListener('scroll', () => {
+    let current = "";
+    sections.forEach(section => {
+        const sectionTop = section.offsetTop;
+        const sectionHeight = section.clientHeight;
+        if (window.pageYOffset >= (sectionTop - sectionHeight / 3)) {
+            current = section.getAttribute('id');
+        }
+    });
+
+    navLinks.forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('href').includes(current)) {
+            link.classList.add('active');
+        }
+    });
+});

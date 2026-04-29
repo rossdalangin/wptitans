@@ -601,9 +601,18 @@ function wp_titans_customize_register( $wp_customize ) {
 
     // --- Lead Capture Section ---
     $wp_customize->add_section( 'wp_titans_leads', array(
-        'title'    => __( 'Exit-Intent Lead Capture', 'wp-titans' ),
+        'title'    => __( 'Lead Capture: Modals & Newsletters', 'wp-titans' ),
         'priority' => 99,
     ) );
+
+    $wp_customize->add_setting( 'wp_titans_newsletter_show', array( 'default' => true, 'sanitize_callback' => 'wp_validate_boolean' ) );
+    $wp_customize->add_control( 'wp_titans_newsletter_show', array( 'label' => __( 'Show Newsletter Section', 'wp-titans' ), 'section' => 'wp_titans_leads', 'type' => 'checkbox' ) );
+
+    $wp_customize->add_setting( 'wp_titans_newsletter_title', array( 'default' => 'Join the Titan Circle', 'sanitize_callback' => 'wp_kses_post' ) );
+    $wp_customize->add_control( 'wp_titans_newsletter_title', array( 'label' => __( 'Newsletter Title', 'wp-titans' ), 'section' => 'wp_titans_leads' ) );
+
+    $wp_customize->add_setting( 'wp_titans_newsletter_desc', array( 'default' => 'Weekly insights on authority branding and high-performance WordPress systems.', 'sanitize_callback' => 'wp_kses_post' ) );
+    $wp_customize->add_control( 'wp_titans_newsletter_desc', array( 'label' => __( 'Newsletter Description', 'wp-titans' ), 'section' => 'wp_titans_leads', 'type' => 'textarea' ) );
 
     $wp_customize->add_setting( 'wp_titans_exit_intent_show', array( 'default' => false, 'sanitize_callback' => 'wp_validate_boolean' ) );
     $wp_customize->add_control( 'wp_titans_exit_intent_show', array( 'label' => __( 'Enable Exit-Intent Modal', 'wp-titans' ), 'section' => 'wp_titans_leads', 'type' => 'checkbox' ) );

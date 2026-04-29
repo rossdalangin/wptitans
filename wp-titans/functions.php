@@ -122,6 +122,14 @@ function wp_titans_handle_setup() {
             'Terms & Conditions' => array(
                 'template' => 'page.php',
                 'content'  => 'By using our services, you agree to the following terms...'
+            ),
+            'Web Design Strategy' => array(
+                'template' => 'page-service-single.php',
+                'content'  => 'Our comprehensive web design strategy focuses on conversion and authority.'
+            ),
+            'Conversion Case Study' => array(
+                'template' => 'page-case-study.php',
+                'content'  => 'This case study outlines how we helped a client grow by 140%.'
             )
         );
 

@@ -5,6 +5,8 @@
 get_header(); ?>
 
 <?php while ( have_posts() ) : the_post(); ?>
+<div id="reading-progress" style="position: fixed; top: 0; left: 0; width: 0%; height: 4px; background: var(--primary); z-index: 2000; transition: width 0.1s ease;"></div>
+
 <section class="single-post-header hero" style="min-height: 60vh; background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('<?php echo get_the_post_thumbnail_url(get_the_ID(), 'full'); ?>');">
     <div class="reveal">
         <span class="tagline"><?php the_category(', '); ?></span>
@@ -22,6 +24,15 @@ get_header(); ?>
         <?php the_content(); ?>
     </div>
 
+    <div class="reveal" style="margin-top: 5rem; padding: 2rem 0; border-top: 1px solid var(--border-glass); border-bottom: 1px solid var(--border-glass); display: flex; align-items: center; gap: 2rem;">
+        <span style="font-weight: 700; text-transform: uppercase; font-size: 0.8rem; letter-spacing: 2px;">Share Insight:</span>
+        <div style="display: flex; gap: 1rem;">
+            <a href="https://www.linkedin.com/sharing/share-offsite/?url=<?php echo urlencode(get_permalink()); ?>" target="_blank" class="social-link" style="color: var(--primary);"><i class="fab fa-linkedin"></i></a>
+            <a href="https://twitter.com/intent/tweet?url=<?php echo urlencode(get_permalink()); ?>&text=<?php echo urlencode(get_the_title()); ?>" target="_blank" class="social-link" style="color: var(--primary);"><i class="fab fa-twitter"></i></a>
+            <a href="https://www.facebook.com/sharer/sharer.php?u=<?php echo urlencode(get_permalink()); ?>" target="_blank" class="social-link" style="color: var(--primary);"><i class="fab fa-facebook"></i></a>
+        </div>
+    </div>
+
     <div class="reveal" style="margin-top: 5rem; padding-top: 3rem; border-top: 1px solid var(--border-glass);">
         <?php
         if ( comments_open() || get_comments_number() ) :
@@ -32,14 +43,19 @@ get_header(); ?>
 </section>
 <?php endwhile; ?>
 
-<section id="more-insights" style="background: #050505; border-top: 1px solid var(--border-glass);">
+<section id="related-insights" style="background: #050505; border-top: 1px solid var(--border-glass);">
     <div class="reveal" style="text-align: center; margin-bottom: 4rem;">
-        <span class="tagline">Explore More</span>
-        <h2>Recent Insights</h2>
+        <span class="tagline">More Context</span>
+        <h2>Related Insights</h2>
     </div>
     <div class="grid-cards">
         <?php
-        $recent = new WP_Query(array('posts_per_page' => 3, 'post__not_in' => array(get_the_ID())));
+        $cats = wp_get_post_categories(get_the_ID());
+        $recent = new WP_Query(array(
+            'posts_per_page' => 3,
+            'post__not_in'   => array(get_the_ID()),
+            'category__in'   => $cats
+        ));
         if ($recent->have_posts()) : while ($recent->have_posts()) : $recent->the_post(); ?>
             <div class="card reveal" style="padding: 2.5rem;">
                 <span class="tagline" style="font-size: 0.7rem;"><?php echo get_the_date(); ?></span>
