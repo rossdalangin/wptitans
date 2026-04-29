@@ -102,6 +102,41 @@ function wp_titans_breadcrumbs() {
 }
 
 /**
+ * Register Custom Post Types
+ */
+function wp_titans_register_cpts() {
+    // Portfolio
+    register_post_type( 'portfolio', array(
+        'labels'      => array( 'name' => 'Portfolio', 'singular_name' => 'Portfolio Item' ),
+        'public'      => true,
+        'has_archive' => true,
+        'menu_icon'   => 'dashicons-portfolio',
+        'supports'    => array( 'title', 'editor', 'thumbnail', 'excerpt' ),
+        'show_in_rest' => true,
+    ) );
+    register_taxonomy( 'portfolio_cat', 'portfolio', array( 'label' => 'Categories', 'hierarchical' => true, 'show_in_rest' => true ) );
+
+    // Services
+    register_post_type( 'service', array(
+        'labels'      => array( 'name' => 'Services', 'singular_name' => 'Service' ),
+        'public'      => true,
+        'menu_icon'   => 'dashicons-admin-tools',
+        'supports'    => array( 'title', 'editor', 'thumbnail', 'excerpt' ),
+        'show_in_rest' => true,
+    ) );
+
+    // Team
+    register_post_type( 'team', array(
+        'labels'      => array( 'name' => 'Team', 'singular_name' => 'Team Member' ),
+        'public'      => true,
+        'menu_icon'   => 'dashicons-groups',
+        'supports'    => array( 'title', 'thumbnail', 'excerpt' ),
+        'show_in_rest' => true,
+    ) );
+}
+add_action( 'init', 'wp_titans_register_cpts' );
+
+/**
  * Handle Theme Auto-Setup from Customizer
  */
 function wp_titans_handle_setup() {

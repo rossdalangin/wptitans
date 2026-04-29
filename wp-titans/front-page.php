@@ -99,18 +99,35 @@ get_header(); ?>
         <h2><?php echo esc_html(wp_titans_get_mod("wp_titans_services_main_title")); ?></h2>
     </div>
     <div class="grid-cards">
-        <?php for ($i = 1; $i <= 6; $i++) :
-            $icon = wp_titans_get_mod("wp_titans_service_icon_$i");
-            $title = wp_titans_get_mod("wp_titans_service_title_$i");
-            $desc = wp_titans_get_mod("wp_titans_service_desc_$i");
-            if (!$title) continue;
+        <?php
+        $front_services = new WP_Query(array('post_type' => 'service', 'posts_per_page' => 6));
+        if ($front_services->have_posts()) : while ($front_services->have_posts()) : $front_services->the_post();
         ?>
         <div class="card reveal">
-            <i class="fas <?php echo esc_attr($icon); ?>"></i>
-            <h3><?php echo esc_html($title); ?></h3>
-            <p><?php echo esc_html($desc); ?></p>
+            <?php if (has_post_thumbnail()) : the_post_thumbnail('thumbnail', array('style' => 'width: 50px; height: 50px; margin-bottom: 2rem; filter: grayscale(1);')); else : ?>
+                <i class="fas fa-cube"></i>
+            <?php endif; ?>
+            <h3><?php the_title(); ?></h3>
+            <p><?php echo get_the_excerpt(); ?></p>
         </div>
-        <?php endfor; ?>
+        <?php endwhile; wp_reset_postdata(); else : ?>
+            <?php for ($i = 1; $i <= 6; $i++) :
+                $icon = wp_titans_get_mod("wp_titans_service_icon_$i");
+                $title = wp_titans_get_mod("wp_titans_service_title_$i");
+                $desc = wp_titans_get_mod("wp_titans_service_desc_$i");
+                $badge = wp_titans_get_mod("wp_titans_service_badge_$i");
+                if (!$title) continue;
+            ?>
+            <div class="card reveal" style="position: relative;">
+                <?php if ($badge) : ?>
+                    <span style="position: absolute; top: 1.5rem; right: 1.5rem; background: var(--primary); color: black; font-size: 0.65rem; font-weight: 800; padding: 0.3rem 0.8rem; border-radius: 50px; text-transform: uppercase; letter-spacing: 1px;"><?php echo esc_html($badge); ?></span>
+                <?php endif; ?>
+                <i class="fas <?php echo esc_attr($icon); ?>"></i>
+                <h3><?php echo esc_html($title); ?></h3>
+                <p><?php echo esc_html($desc); ?></p>
+            </div>
+            <?php endfor; ?>
+        <?php endif; ?>
     </div>
 </section>
 
@@ -145,10 +162,14 @@ get_header(); ?>
         <?php for ($i = 1; $i <= 3; $i++) :
             $img = wp_titans_get_mod("wp_titans_portfolio_img_$i");
             $title = wp_titans_get_mod("wp_titans_portfolio_title_$i");
+            $badge = wp_titans_get_mod("wp_titans_portfolio_badge_$i");
             if (!$title) continue;
         ?>
         <div class="card reveal" style="padding: 0; overflow: hidden; border: none; background: transparent;">
             <div style="position: relative; overflow: hidden; border-radius: 8px;">
+                <?php if ($badge) : ?>
+                    <span style="position: absolute; top: 1.5rem; right: 1.5rem; z-index: 10; background: var(--primary); color: black; font-size: 0.65rem; font-weight: 800; padding: 0.3rem 0.8rem; border-radius: 50px; text-transform: uppercase; letter-spacing: 1px;"><?php echo esc_html($badge); ?></span>
+                <?php endif; ?>
                 <img loading="lazy" src="<?php echo esc_url($img); ?>" alt="<?php echo esc_attr($title); ?>" style="width: 100%; transition: transform 0.5s;">
                 <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(to top, rgba(0,0,0,0.9), transparent); display: flex; align-items: flex-end; padding: 2rem; opacity: 1;">
                     <h3 style="font-size: 1.3rem; margin: 0;"><?php echo esc_html($title); ?></h3>

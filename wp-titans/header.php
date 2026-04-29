@@ -70,6 +70,9 @@
     </div>
     <div style="display: flex; align-items: center; gap: 2rem;">
         <a href="<?php echo esc_url(wp_titans_get_mod("wp_titans_hero_btn2_url")); ?>" class="btn btn-primary nav-cta" style="padding: 0.7rem 1.5rem; font-size: 0.85rem;"><?php echo esc_html(wp_titans_get_mod("wp_titans_hero_btn2_text")); ?></a>
+        <div id="search-toggle" style="cursor: pointer; font-size: 1.1rem; color: var(--primary);">
+            <i class="fas fa-search"></i>
+        </div>
         <?php if (wp_titans_get_mod("wp_titans_mode_toggle")) : ?>
             <div id="theme-switch" style="cursor: pointer; font-size: 1.2rem; color: var(--primary);">
                 <i class="fas fa-moon"></i>
@@ -82,6 +85,17 @@
 </nav>
 
 <?php wp_titans_breadcrumbs(); ?>
+
+<div id="search-overlay">
+    <div id="search-close"><i class="fas fa-times"></i></div>
+    <div class="search-container">
+        <form role="search" method="get" action="<?php echo esc_url(home_url('/')); ?>">
+            <input type="search" placeholder="Type to search insights..." value="<?php echo get_search_query(); ?>" name="s" id="search-input">
+            <button type="submit"><i class="fas fa-arrow-right"></i></button>
+        </form>
+        <p style="margin-top: 2rem; color: #444; font-family: 'Syne'; text-transform: uppercase; letter-spacing: 2px;">Press Enter to search</p>
+    </div>
+</div>
 
 <div id="mobile-menu-overlay">
     <div id="mobile-close"><i class="fas fa-times"></i></div>

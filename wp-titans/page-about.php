@@ -53,20 +53,41 @@ get_header(); ?>
         <h2>Our Core Team</h2>
     </div>
     <div class="grid-cards">
-        <?php for ($i = 1; $i <= 3; $i++) :
-            $name = wp_titans_get_mod("wp_titans_team_name_$i");
-            $role = wp_titans_get_mod("wp_titans_team_role_$i");
-            $img = wp_titans_get_mod("wp_titans_team_img_$i");
-            if (!$name) continue;
+        <?php
+        $team_query = new WP_Query(array('post_type' => 'team', 'posts_per_page' => 6));
+        if ($team_query->have_posts()) : while ($team_query->have_posts()) : $team_query->the_post();
+            $li = get_post_meta(get_the_ID(), 'linkedin_url', true);
         ?>
         <div class="card reveal" style="padding: 0; background: #050505; text-align: center; overflow: hidden; border: 1px solid var(--border-glass);">
-            <img loading="lazy" src="<?php echo esc_url($img); ?>" alt="<?php echo esc_attr($name); ?>" style="width: 100%; height: 300px; object-fit: cover;">
+            <?php if (has_post_thumbnail()) : the_post_thumbnail('large', array('style' => 'width: 100%; height: 300px; object-fit: cover;')); endif; ?>
             <div style="padding: 2.5rem;">
-                <h3 style="margin-bottom: 0.5rem; color: var(--primary);"><?php echo esc_html($name); ?></h3>
-                <p style="text-transform: uppercase; font-size: 0.8rem; letter-spacing: 2px; color: var(--text-dim);"><?php echo esc_html($role); ?></p>
+                <h3 style="margin-bottom: 0.5rem; color: var(--primary);"><?php the_title(); ?></h3>
+                <p style="text-transform: uppercase; font-size: 0.8rem; letter-spacing: 2px; color: var(--text-dim); margin-bottom: 1rem;"><?php echo get_the_excerpt(); ?></p>
+                <?php if ($li) : ?>
+                    <a href="<?php echo esc_url($li); ?>" target="_blank" style="color: var(--primary); font-size: 1.2rem;"><i class="fab fa-linkedin"></i></a>
+                <?php endif; ?>
             </div>
         </div>
-        <?php endfor; ?>
+        <?php endwhile; wp_reset_postdata(); else : ?>
+            <?php for ($i = 1; $i <= 3; $i++) :
+                $name = wp_titans_get_mod("wp_titans_team_name_$i");
+                $role = wp_titans_get_mod("wp_titans_team_role_$i");
+                $img = wp_titans_get_mod("wp_titans_team_img_$i");
+                $li = wp_titans_get_mod("wp_titans_team_li_$i");
+                if (!$name) continue;
+            ?>
+            <div class="card reveal" style="padding: 0; background: #050505; text-align: center; overflow: hidden; border: 1px solid var(--border-glass);">
+                <img loading="lazy" src="<?php echo esc_url($img); ?>" alt="<?php echo esc_attr($name); ?>" style="width: 100%; height: 300px; object-fit: cover;">
+                <div style="padding: 2.5rem;">
+                    <h3 style="margin-bottom: 0.5rem; color: var(--primary);"><?php echo esc_html($name); ?></h3>
+                    <p style="text-transform: uppercase; font-size: 0.8rem; letter-spacing: 2px; color: var(--text-dim); margin-bottom: 1rem;"><?php echo esc_html($role); ?></p>
+                    <?php if ($li && $li !== "#") : ?>
+                        <a href="<?php echo esc_url($li); ?>" target="_blank" style="color: var(--primary); font-size: 1.2rem;"><i class="fab fa-linkedin"></i></a>
+                    <?php endif; ?>
+                </div>
+            </div>
+            <?php endfor; ?>
+        <?php endif; ?>
     </div>
 </section>
 
@@ -81,7 +102,12 @@ get_header(); ?>
             <div style="font-size: 1.1rem; color: var(--text-dim);">
                 <?php echo wp_kses_post(wpautop(wp_titans_get_mod("wp_titans_founder_bio"))); ?>
             </div>
-            <a href="#contact" class="btn btn-primary" style="margin-top: 2rem;">Work With Ross</a>
+            <div style="margin-top: 2.5rem; display: flex; align-items: center; gap: 2rem;">
+                <a href="#contact" class="btn btn-primary">Work With <?php echo explode(' ', wp_titans_get_mod("wp_titans_founder_name"))[0]; ?></a>
+                <?php if (wp_titans_get_mod("wp_titans_founder_linkedin") !== "#") : ?>
+                    <a href="<?php echo esc_url(wp_titans_get_mod("wp_titans_founder_linkedin")); ?>" target="_blank" style="font-size: 1.5rem; color: var(--primary);"><i class="fab fa-linkedin"></i></a>
+                <?php endif; ?>
+            </div>
         </div>
     </div>
 </section>

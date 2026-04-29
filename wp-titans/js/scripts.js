@@ -193,6 +193,25 @@ if (exitModal) {
     exitClose.addEventListener('click', () => exitModal.style.display = 'none');
 }
 
+// Search Overlay
+const searchToggle = document.getElementById('search-toggle');
+const searchOverlay = document.getElementById('search-overlay');
+const searchClose = document.getElementById('search-close');
+const searchInput = document.getElementById('search-input');
+
+if (searchToggle && searchOverlay) {
+    searchToggle.addEventListener('click', () => {
+        searchOverlay.style.display = 'flex';
+        setTimeout(() => searchInput.focus(), 100);
+    });
+    searchClose.addEventListener('click', () => searchOverlay.style.display = 'none');
+
+    // ESC to close
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') searchOverlay.style.display = 'none';
+    });
+}
+
 // Theme Switch
 const themeSwitch = document.getElementById('theme-switch');
 if (themeSwitch) {

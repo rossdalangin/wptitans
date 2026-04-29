@@ -191,6 +191,9 @@ function wp_titans_customize_register( $wp_customize ) {
 
         $wp_customize->add_setting( "wp_titans_service_desc_$i", array( 'default' => wp_titans_get_default("wp_titans_service_desc_$i"), 'sanitize_callback' => 'wp_kses_post' ) );
         $wp_customize->add_control( "wp_titans_service_desc_$i", array( 'label' => "Service $i Desc", 'section' => 'wp_titans_services', 'type' => 'textarea' ) );
+
+        $wp_customize->add_setting( "wp_titans_service_badge_$i", array( 'default' => '', 'sanitize_callback' => 'wp_kses_post' ) );
+        $wp_customize->add_control( "wp_titans_service_badge_$i", array( 'label' => "Service $i Badge (e.g. Hot, New)", 'section' => 'wp_titans_services' ) );
     }
 
     // --- Client Logos Section ---
@@ -301,6 +304,9 @@ function wp_titans_customize_register( $wp_customize ) {
 
         $wp_customize->add_setting( "wp_titans_portfolio_cat_$i", array( 'default' => wp_titans_get_default("wp_titans_portfolio_cat_$i"), 'sanitize_callback' => 'wp_kses_post' ) );
         $wp_customize->add_control( "wp_titans_portfolio_cat_$i", array( 'label' => "Portfolio $i Category", 'section' => 'wp_titans_portfolio' ) );
+
+        $wp_customize->add_setting( "wp_titans_portfolio_badge_$i", array( 'default' => '', 'sanitize_callback' => 'wp_kses_post' ) );
+        $wp_customize->add_control( "wp_titans_portfolio_badge_$i", array( 'label' => "Portfolio $i Badge (e.g. Featured)", 'section' => 'wp_titans_portfolio' ) );
     }
 
     // --- Blog Section ---
@@ -412,6 +418,9 @@ function wp_titans_customize_register( $wp_customize ) {
 
         $wp_customize->add_setting( "wp_titans_team_img_$i", array( 'default' => wp_titans_get_default("wp_titans_team_img_$i"), 'sanitize_callback' => 'esc_url_raw' ) );
         $wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, "wp_titans_team_img_$i", array( 'label' => "Member $i Photo", 'section' => 'wp_titans_team' ) ) );
+
+        $wp_customize->add_setting( "wp_titans_team_li_$i", array( 'default' => '#', 'sanitize_callback' => 'esc_url_raw' ) );
+        $wp_customize->add_control( "wp_titans_team_li_$i", array( 'label' => "Member $i LinkedIn URL", 'section' => 'wp_titans_team' ) );
     }
 
     $wp_customize->add_section( 'wp_titans_founder', array(
@@ -427,6 +436,9 @@ function wp_titans_customize_register( $wp_customize ) {
 
     $wp_customize->add_setting( 'wp_titans_founder_bio', array( 'default' => wp_titans_get_default('wp_titans_founder_bio'), 'sanitize_callback' => 'wp_kses_post' ) );
     $wp_customize->add_control( 'wp_titans_founder_bio', array( 'label' => __( 'Founder Bio', 'wp-titans' ), 'section' => 'wp_titans_founder', 'type' => 'textarea' ) );
+
+    $wp_customize->add_setting( 'wp_titans_founder_linkedin', array( 'default' => '#', 'sanitize_callback' => 'esc_url_raw' ) );
+    $wp_customize->add_control( 'wp_titans_founder_linkedin', array( 'label' => __( 'Founder LinkedIn URL', 'wp-titans' ), 'section' => 'wp_titans_founder' ) );
 
     $wp_customize->add_setting( 'wp_titans_contact_page_tagline', array( 'default' => wp_titans_get_default('wp_titans_contact_page_tagline'), 'sanitize_callback' => 'wp_kses_post' ) );
     $wp_customize->add_control( 'wp_titans_contact_page_tagline', array( 'label' => __( 'Contact Page Tagline', 'wp-titans' ), 'section' => 'wp_titans_page_headers' ) );
