@@ -63,6 +63,24 @@ function wp_titans_default_menu_callback() {
 require get_template_directory() . '/inc/customizer.php';
 
 /**
+ * Simple Breadcrumbs
+ */
+function wp_titans_breadcrumbs() {
+    if ( is_front_page() ) return;
+
+    echo '<nav class="breadcrumbs" style="padding: 2rem 10% 0; font-size: 0.85rem; color: #555; font-family: \'Syne\'; text-transform: uppercase; letter-spacing: 1px;">';
+    echo '<a href="' . home_url() . '" style="color: var(--primary);">Home</a>';
+
+    if ( is_page() ) {
+        echo ' <span style="margin: 0 10px;">/</span> ' . get_the_title();
+    } elseif ( is_single() ) {
+        echo ' <span style="margin: 0 10px;">/</span> <a href="' . get_permalink(get_option('page_for_posts')) . '" style="color: var(--primary);">Insights</a>';
+        echo ' <span style="margin: 0 10px;">/</span> ' . get_the_title();
+    }
+    echo '</nav>';
+}
+
+/**
  * Handle Theme Auto-Setup from Customizer
  */
 function wp_titans_handle_setup() {

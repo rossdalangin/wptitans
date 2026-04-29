@@ -260,6 +260,40 @@ input:focus, textarea:focus, select:focus {
     box-shadow: 0 0 15px var(--accent-glow);
 }
 
+/* Plugin Form Compatibility */
+.wpcf7-form-control, .wpforms-field input, .wpforms-field textarea, .wpforms-field select {
+    width: 100% !important;
+    padding: 1.2rem !important;
+    background: #000 !important;
+    border: 1px solid #333 !important;
+    color: white !important;
+    border-radius: var(--radius) !important;
+    font-family: inherit !important;
+    font-size: 1rem !important;
+    transition: var(--transition) !important;
+}
+
+.wpcf7-submit, .wpforms-submit {
+    display: inline-block !important;
+    padding: 1.2rem 2.5rem !important;
+    border-radius: var(--radius) !important;
+    font-weight: 700 !important;
+    font-size: 0.95rem !important;
+    cursor: pointer !important;
+    transition: var(--transition) !important;
+    border: none !important;
+    text-align: center !important;
+    background-color: var(--primary) !important;
+    color: black !important;
+    width: 100% !important;
+}
+
+.wpcf7-submit:hover, .wpforms-submit:hover {
+    box-shadow: 0 0 25px var(--accent-glow) !important;
+    transform: translateY(-2px) !important;
+    background-color: #f1c40f !important;
+}
+
 /* --- Cards --- */
 .grid-cards {
     display: grid;

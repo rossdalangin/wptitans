@@ -81,6 +81,8 @@
     </div>
 </nav>
 
+<?php wp_titans_breadcrumbs(); ?>
+
 <div id="mobile-menu-overlay">
     <div id="mobile-close"><i class="fas fa-times"></i></div>
     <div class="mobile-nav-links">
