@@ -59,7 +59,7 @@ get_header(); ?>
             $li = get_post_meta(get_the_ID(), 'linkedin_url', true);
         ?>
         <div class="card reveal" style="padding: 0; background: #050505; text-align: center; overflow: hidden; border: 1px solid var(--border-glass);">
-            <?php if (has_post_thumbnail()) : the_post_thumbnail('large', array('style' => 'width: 100%; height: 300px; object-fit: cover;')); endif; ?>
+            <?php if (has_post_thumbnail()) : the_post_thumbnail('titan-team', array('style' => 'width: 100%; height: 300px; object-fit: cover;')); endif; ?>
             <div style="padding: 2.5rem;">
                 <h3 style="margin-bottom: 0.5rem; color: var(--primary);"><?php the_title(); ?></h3>
                 <p style="text-transform: uppercase; font-size: 0.8rem; letter-spacing: 2px; color: var(--text-dim); margin-bottom: 1rem;"><?php echo get_the_excerpt(); ?></p>

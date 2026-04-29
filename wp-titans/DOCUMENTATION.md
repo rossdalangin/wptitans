@@ -75,6 +75,7 @@ The theme includes a native toggle. You can enable/disable this in **Customizer 
 - **Schema**: Native JSON-LD Schema for `ProfessionalService` and `FAQPage` is injected automatically.
 - **Lazy Loading**: All theme images use native `loading="lazy"` for optimal PageSpeed scores.
 - **Fluid UI**: Typography and spacing use `clamp()` and variables for perfect rendering on any device.
+- **Optimized Assets**: Defined custom image sizes for Portfolio (`titan-portfolio`), Team (`titan-team`), and Testimonials (`titan-testimonial`) to ensure maximum speed and stability.
 
 ---
 

@@ -16,6 +16,10 @@ if ( ! function_exists( 'wp_titans_setup' ) ) :
             'footer-1' => esc_html__( 'Footer Services', 'wp-titans' ),
             'footer-2' => esc_html__( 'Footer Company', 'wp-titans' ),
         ) );
+
+        add_image_size( 'titan-portfolio', 800, 500, true );
+        add_image_size( 'titan-team', 400, 500, true );
+        add_image_size( 'titan-testimonial', 150, 150, true );
     }
 endif;
 add_action( 'after_setup_theme', 'wp_titans_setup' );
@@ -241,3 +245,70 @@ function wp_titans_handle_setup() {
     }
 }
 add_action( 'customize_save_after', 'wp_titans_handle_setup' );
+
+/**
+ * Handle Project Planner Submission (AJAX)
+ */
+function wp_titans_submit_planner() {
+    check_ajax_referer( 'wp_titans_nonce', 'security' );
+
+    $data = $_POST['form_data'];
+    $admin_email = get_option( 'admin_email' );
+    $subject = 'New Agency Project Plan Submission';
+
+    $message = "A new Project Plan has been submitted:\n\n";
+    foreach ( $data as $key => $value ) {
+        $message .= ucfirst( str_replace( '_', ' ', $key ) ) . ": " . sanitize_text_field( $value ) . "\n";
+    }
+
+    $headers = array( 'Content-Type: text/plain; charset=UTF-8' );
+
+    if ( wp_mail( $admin_email, $subject, $message, $headers ) ) {
+        wp_send_json_success( 'Plan received successfully!' );
+    } else {
+        wp_send_json_error( 'Failed to send plan. Please try again.' );
+    }
+}
+add_action( 'wp_ajax_submit_planner', 'wp_titans_submit_planner' );
+add_action( 'wp_ajax_nopriv_submit_planner', 'wp_titans_submit_planner' );
+
+/**
+ * Enqueue AJAX Nonce and URL
+ */
+function wp_titans_ajax_setup() {
+    wp_localize_script( 'wp-titans-scripts', 'wp_titans_ajax', array(
+        'url'   => admin_url( 'admin-ajax.php' ),
+        'nonce' => wp_create_nonce( 'wp_titans_nonce' )
+    ) );
+}
+add_action( 'wp_enqueue_scripts', 'wp_titans_ajax_setup', 20 );
+
+/**
+ * Custom Admin Dashboard Widget
+ */
+function wp_titans_dashboard_widget() {
+    wp_add_dashboard_widget(
+        'wp_titans_agency_overview',
+        'WordPress Titans Agency Control',
+        'wp_titans_dashboard_widget_content'
+    );
+}
+add_action( 'wp_dashboard_setup', 'wp_titans_dashboard_widget' );
+
+function wp_titans_dashboard_widget_content() {
+    ?>
+    <div style="text-align: center; padding: 10px;">
+        <i class="fas <?php echo esc_attr(wp_titans_get_mod("wp_titans_logo_icon")); ?>" style="font-size: 3rem; color: #D4AF37; margin-bottom: 20px;"></i>
+        <h3>Welcome, Titan.</h3>
+        <p>Your high-performance agency site is ready for action.</p>
+        <hr style="margin: 20px 0; border: 0; border-top: 1px solid #eee;">
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+            <a href="<?php echo admin_url('customize.php'); ?>" class="button button-primary">Theme Customizer</a>
+            <a href="<?php echo admin_url('edit.php?post_type=service'); ?>" class="button">Manage Services</a>
+            <a href="<?php echo admin_url('edit.php?post_type=portfolio'); ?>" class="button">Manage Portfolio</a>
+            <a href="<?php echo admin_url('customize.php?autofocus[section]=wp_titans_setup'); ?>" class="button">One-Click Setup</a>
+        </div>
+        <p style="margin-top: 20px;"><small>Need help? Check the <a href="<?php echo get_template_directory_uri(); ?>/DOCUMENTATION.md" target="_blank">Documentation</a>.</small></p>
+    </div>
+    <?php
+}

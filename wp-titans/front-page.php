@@ -27,6 +27,14 @@ get_header(); ?>
             <a href="<?php echo esc_attr(wp_titans_get_mod("wp_titans_hero_btn2_url")); ?>" class="btn btn-outline"><?php echo esc_html(wp_titans_get_mod("wp_titans_hero_btn2_text")); ?></a>
         </div>
     </div>
+
+    <div id="scroll-indicator" style="position: absolute; bottom: 3rem; left: 50%; transform: translateX(-50%); display: flex; flex-direction: column; align-items: center; gap: 1rem; opacity: 0.5;">
+        <span style="font-size: 0.65rem; text-transform: uppercase; letter-spacing: 3px; font-weight: 700; color: var(--text-dim);">Scroll to Explore</span>
+        <div style="width: 25px; height: 45px; border: 2px solid var(--primary); border-radius: 50px; position: relative;">
+            <div style="width: 3px; height: 8px; background: var(--primary); border-radius: 50px; position: absolute; top: 8px; left: 50%; transform: translateX(-50%); animation: scroll-dot 2s infinite;"></div>
+        </div>
+    </div>
+
     <?php wp_titans_divider(); ?>
 </section>
 

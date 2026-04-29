@@ -150,13 +150,41 @@ document.addEventListener('DOMContentLoaded', () => {
             currentStep++;
             updateStep();
         } else {
-            // Final submission
-            form.innerHTML = `<div style="text-align: center; padding: 4rem 0;">
-                <i class="fas fa-check-circle" style="font-size: 5rem; color: var(--primary); margin-bottom: 2rem;"></i>
-                <h2 style="font-size: 2.5rem; color: white;">Plan Received!</h2>
-                <p style="color: var(--text-dim); font-size: 1.2rem; margin-top: 1.5rem;">One of our strategists will review your goals and reach out within 24 hours.</p>
-            </div>`;
-            document.getElementById('planner-nav').style.display = 'none';
+            // Final submission via AJAX
+            const formData = new FormData(form);
+            const dataObj = {};
+            formData.forEach((value, key) => dataObj[key] = value);
+
+            nextBtn.disabled = true;
+            nextBtn.innerText = 'Sending...';
+
+            const ajaxData = new URLSearchParams();
+            ajaxData.append('action', 'submit_planner');
+            ajaxData.append('security', wp_titans_ajax.nonce);
+            for (const key in dataObj) {
+                ajaxData.append(`form_data[${key}]`, dataObj[key]);
+            }
+
+            fetch(wp_titans_ajax.url, {
+                method: 'POST',
+                body: ajaxData,
+                headers: { 'Content-Type': 'application/x-www-form-urlencoded' }
+            })
+            .then(res => res.json())
+            .then(response => {
+                if (response.success) {
+                    form.innerHTML = `<div style="text-align: center; padding: 4rem 0;">
+                        <i class="fas fa-check-circle" style="font-size: 5rem; color: var(--primary); margin-bottom: 2rem;"></i>
+                        <h2 style="font-size: 2.5rem; color: white;">Plan Received!</h2>
+                        <p style="color: var(--text-dim); font-size: 1.2rem; margin-top: 1.5rem;">One of our strategists will review your goals and reach out within 24 hours.</p>
+                    </div>`;
+                    document.getElementById('planner-nav').style.display = 'none';
+                } else {
+                    alert('Submission failed. Please check your details and try again.');
+                    nextBtn.disabled = false;
+                    nextBtn.innerText = 'Submit Plan';
+                }
+            });
         }
     });
 
