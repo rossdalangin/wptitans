@@ -1,3 +1,12 @@
+    <?php if (!is_front_page() && wp_titans_get_mod("wp_titans_gcta_show")) : ?>
+        <section id="global-cta" style="background: #080808; text-align: center; border-top: 1px solid var(--border-glass);">
+            <div class="reveal">
+                <h2 style="margin-bottom: 2.5rem;"><?php echo esc_html(wp_titans_get_mod("wp_titans_gcta_title")); ?></h2>
+                <a href="<?php echo esc_url(wp_titans_get_mod("wp_titans_gcta_btn_url")); ?>" class="btn btn-primary"><?php echo esc_html(wp_titans_get_mod("wp_titans_gcta_btn_text")); ?></a>
+            </div>
+        </section>
+    <?php endif; ?>
+
     <footer>
         <div>
             <div class="footer-logo">

@@ -70,6 +70,11 @@
     </div>
     <div style="display: flex; align-items: center; gap: 2rem;">
         <a href="<?php echo esc_url(wp_titans_get_mod("wp_titans_hero_btn2_url")); ?>" class="btn btn-primary nav-cta" style="padding: 0.7rem 1.5rem; font-size: 0.85rem;"><?php echo esc_html(wp_titans_get_mod("wp_titans_hero_btn2_text")); ?></a>
+        <?php if (wp_titans_get_mod("wp_titans_mode_toggle")) : ?>
+            <div id="theme-switch" style="cursor: pointer; font-size: 1.2rem; color: var(--primary);">
+                <i class="fas fa-moon"></i>
+            </div>
+        <?php endif; ?>
         <div id="mobile-toggle" style="display: none; cursor: pointer; font-size: 1.5rem; color: var(--primary);">
             <i class="fas fa-bars"></i>
         </div>

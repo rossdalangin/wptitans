@@ -83,6 +83,14 @@ function wp_titans_get_defaults() {
         'wp_titans_card_bg'         => '#0a0a0a',
         'wp_titans_border_radius'   => '8px',
         'wp_titans_hero_opacity'    => 0.8,
+        'wp_titans_404_title'       => 'Mission Compromised',
+        'wp_titans_404_text'        => 'The page you are looking for has been moved or deleted.',
+        'wp_titans_gcta_show'       => true,
+        'wp_titans_gcta_title'      => 'Ready to build your authority?',
+        'wp_titans_gcta_btn_text'   => 'Schedule a Strategy Call',
+        'wp_titans_gcta_btn_url'    => '#contact',
+        'wp_titans_blog_show'       => true,
+        'wp_titans_blog_title'      => 'Agency Insights',
     );
 }
 

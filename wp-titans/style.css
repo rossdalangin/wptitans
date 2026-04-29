@@ -16,6 +16,18 @@ Text Domain: wp-titans
     --bg-glass: rgba(10, 10, 10, 0.7);
     --text-main: #ffffff;
     --text-dim: #cccccc;
+}
+
+body.light-mode {
+    --bg-dark: #ffffff;
+    --bg-card: #f9f9f9;
+    --bg-glass: rgba(255, 255, 255, 0.9);
+    --text-main: #111111;
+    --text-dim: #555555;
+    --border-glass: rgba(0, 0, 0, 0.08);
+}
+
+:root {
     --accent-glow: rgba(212, 175, 55, 0.15);
     --transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
     --border-glass: rgba(255, 255, 255, 0.08);

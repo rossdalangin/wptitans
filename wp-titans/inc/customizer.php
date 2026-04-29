@@ -52,10 +52,10 @@ function wp_titans_customize_register( $wp_customize ) {
         'priority' => 40,
     ) );
 
-    $wp_customize->add_setting( 'wp_titans_hero_title', array( 'default' => wp_titans_get_default('wp_titans_hero_title'), 'sanitize_callback' => 'wp_kses_post' ) );
+    $wp_customize->add_setting( 'wp_titans_hero_title', array( 'default' => wp_titans_get_default('wp_titans_hero_title'), 'sanitize_callback' => 'wp_kses_post', 'transport' => 'postMessage' ) );
     $wp_customize->add_control( 'wp_titans_hero_title', array( 'label' => __( 'Hero Title', 'wp-titans' ), 'section' => 'wp_titans_hero', 'type' => 'textarea' ) );
 
-    $wp_customize->add_setting( 'wp_titans_hero_subtitle', array( 'default' => wp_titans_get_default('wp_titans_hero_subtitle'), 'sanitize_callback' => 'wp_kses_post' ) );
+    $wp_customize->add_setting( 'wp_titans_hero_subtitle', array( 'default' => wp_titans_get_default('wp_titans_hero_subtitle'), 'sanitize_callback' => 'wp_kses_post', 'transport' => 'postMessage' ) );
     $wp_customize->add_control( 'wp_titans_hero_subtitle', array( 'label' => __( 'Hero Subtitle', 'wp-titans' ), 'section' => 'wp_titans_hero', 'type' => 'textarea' ) );
 
     $wp_customize->add_setting( 'wp_titans_hero_bg', array( 'default' => wp_titans_get_default('wp_titans_hero_bg'), 'sanitize_callback' => 'esc_url_raw' ) );
@@ -101,6 +101,18 @@ function wp_titans_customize_register( $wp_customize ) {
         $wp_customize->add_setting( "wp_titans_target_desc_$i", array( 'default' => wp_titans_get_default("wp_titans_target_desc_$i"), 'sanitize_callback' => 'wp_kses_post' ) );
         $wp_customize->add_control( "wp_titans_target_desc_$i", array( 'label' => "Target $i Desc", 'section' => 'wp_titans_target', 'type' => 'textarea' ) );
     }
+
+    // --- 404 Page ---
+    $wp_customize->add_section( 'wp_titans_404_sec', array(
+        'title'    => __( '404 Page', 'wp-titans' ),
+        'priority' => 120,
+    ) );
+
+    $wp_customize->add_setting( 'wp_titans_404_title', array( 'default' => wp_titans_get_default('wp_titans_404_title'), 'sanitize_callback' => 'wp_kses_post' ) );
+    $wp_customize->add_control( 'wp_titans_404_title', array( 'label' => __( '404 Title', 'wp-titans' ), 'section' => 'wp_titans_404_sec' ) );
+
+    $wp_customize->add_setting( 'wp_titans_404_text', array( 'default' => wp_titans_get_default('wp_titans_404_text'), 'sanitize_callback' => 'wp_kses_post' ) );
+    $wp_customize->add_control( 'wp_titans_404_text', array( 'label' => __( '404 Message', 'wp-titans' ), 'section' => 'wp_titans_404_sec', 'type' => 'textarea' ) );
 
     // --- About Section ---
     $wp_customize->add_section( 'wp_titans_about', array(
@@ -270,6 +282,18 @@ function wp_titans_customize_register( $wp_customize ) {
         $wp_customize->add_setting( "wp_titans_portfolio_cat_$i", array( 'default' => wp_titans_get_default("wp_titans_portfolio_cat_$i"), 'sanitize_callback' => 'wp_kses_post' ) );
         $wp_customize->add_control( "wp_titans_portfolio_cat_$i", array( 'label' => "Portfolio $i Category", 'section' => 'wp_titans_portfolio' ) );
     }
+
+    // --- Blog Section ---
+    $wp_customize->add_section( 'wp_titans_blog_sec', array(
+        'title'    => __( 'Front Page: Recent Insights', 'wp-titans' ),
+        'priority' => 88,
+    ) );
+
+    $wp_customize->add_setting( 'wp_titans_blog_show', array( 'default' => true, 'sanitize_callback' => 'wp_validate_boolean' ) );
+    $wp_customize->add_control( 'wp_titans_blog_show', array( 'label' => __( 'Show Blog Section on Front Page', 'wp-titans' ), 'section' => 'wp_titans_blog_sec', 'type' => 'checkbox' ) );
+
+    $wp_customize->add_setting( 'wp_titans_blog_title', array( 'default' => 'Agency Insights', 'sanitize_callback' => 'wp_kses_post' ) );
+    $wp_customize->add_control( 'wp_titans_blog_title', array( 'label' => __( 'Blog Section Title', 'wp-titans' ), 'section' => 'wp_titans_blog_sec' ) );
 
     // --- FAQ Section ---
     $wp_customize->add_section( 'wp_titans_faq', array(
@@ -514,6 +538,24 @@ function wp_titans_customize_register( $wp_customize ) {
     $wp_customize->add_setting( 'wp_titans_back_to_top', array( 'default' => true, 'sanitize_callback' => 'wp_validate_boolean' ) );
     $wp_customize->add_control( 'wp_titans_back_to_top', array( 'label' => __( 'Show Back to Top Button', 'wp-titans' ), 'section' => 'wp_titans_ux', 'type' => 'checkbox' ) );
 
+    // --- Global CTA ---
+    $wp_customize->add_section( 'wp_titans_global_cta', array(
+        'title'    => __( 'Global Call to Action', 'wp-titans' ),
+        'priority' => 105,
+    ) );
+
+    $wp_customize->add_setting( 'wp_titans_gcta_show', array( 'default' => true, 'sanitize_callback' => 'wp_validate_boolean' ) );
+    $wp_customize->add_control( 'wp_titans_gcta_show', array( 'label' => __( 'Show Global CTA above Footer', 'wp-titans' ), 'section' => 'wp_titans_global_cta', 'type' => 'checkbox' ) );
+
+    $wp_customize->add_setting( 'wp_titans_gcta_title', array( 'default' => 'Ready to build your authority?', 'sanitize_callback' => 'wp_kses_post' ) );
+    $wp_customize->add_control( 'wp_titans_gcta_title', array( 'label' => __( 'CTA Title', 'wp-titans' ), 'section' => 'wp_titans_global_cta' ) );
+
+    $wp_customize->add_setting( 'wp_titans_gcta_btn_text', array( 'default' => 'Schedule a Strategy Call', 'sanitize_callback' => 'wp_kses_post' ) );
+    $wp_customize->add_control( 'wp_titans_gcta_btn_text', array( 'label' => __( 'Button Text', 'wp-titans' ), 'section' => 'wp_titans_global_cta' ) );
+
+    $wp_customize->add_setting( 'wp_titans_gcta_btn_url', array( 'default' => '#contact', 'sanitize_callback' => 'wp_kses_post' ) );
+    $wp_customize->add_control( 'wp_titans_gcta_btn_url', array( 'label' => __( 'Button URL', 'wp-titans' ), 'section' => 'wp_titans_global_cta' ) );
+
     // --- Before/After Section ---
     $wp_customize->add_section( 'wp_titans_comparison', array(
         'title'    => __( 'Before & After Comparison', 'wp-titans' ),
@@ -536,6 +578,9 @@ function wp_titans_customize_register( $wp_customize ) {
 
     $wp_customize->add_setting( 'wp_titans_mobile_cta', array( 'default' => true, 'sanitize_callback' => 'wp_validate_boolean' ) );
     $wp_customize->add_control( 'wp_titans_mobile_cta', array( 'label' => __( 'Show Floating Mobile CTA', 'wp-titans' ), 'section' => 'wp_titans_ux', 'type' => 'checkbox' ) );
+
+    $wp_customize->add_setting( 'wp_titans_mode_toggle', array( 'default' => true, 'sanitize_callback' => 'wp_validate_boolean' ) );
+    $wp_customize->add_control( 'wp_titans_mode_toggle', array( 'label' => __( 'Enable Dark/Light Mode Toggle', 'wp-titans' ), 'section' => 'wp_titans_ux', 'type' => 'checkbox' ) );
 
     $wp_customize->add_section( 'wp_titans_scripts', array(
         'title'    => __( 'Scripts & Analytics', 'wp-titans' ),

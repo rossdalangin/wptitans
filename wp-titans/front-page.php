@@ -191,7 +191,38 @@ get_header(); ?>
     <?php endfor; ?>
 </div>
 
-<!-- 10. TESTIMONIALS -->
+<!-- 10. RECENT INSIGHTS -->
+<?php if (wp_titans_get_mod("wp_titans_blog_show")) : ?>
+<section id="recent-insights" style="background: #000; border-top: 1px solid var(--border-glass);">
+    <div class="reveal" style="text-align: center; margin-bottom: 5rem;">
+        <span class="tagline">Agency Knowledge</span>
+        <h2><?php echo esc_html(wp_titans_get_mod("wp_titans_blog_title")); ?></h2>
+    </div>
+    <div class="grid-cards">
+        <?php
+        $recent_front = new WP_Query(array('posts_per_page' => 3));
+        if ($recent_front->have_posts()) : while ($recent_front->have_posts()) : $recent_front->the_post(); ?>
+            <div class="card reveal" style="padding: 0; background: #050505; border-radius: 8px; overflow: hidden;">
+                <?php if (has_post_thumbnail()) : ?>
+                    <div style="height: 200px; overflow: hidden;">
+                        <?php the_post_thumbnail('medium_large', array('style' => 'width: 100%; height: 100%; object-fit: cover;')); ?>
+                    </div>
+                <?php endif; ?>
+                <div style="padding: 2rem;">
+                    <span style="color: var(--primary); font-size: 0.75rem;"><?php echo get_the_date(); ?></span>
+                    <h3 style="font-size: 1.4rem; margin: 1rem 0;"><?php the_title(); ?></h3>
+                    <a href="<?php the_permalink(); ?>" style="color: var(--primary); font-weight: 700; font-size: 0.85rem;">Read Insight <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+        <?php endwhile; wp_reset_postdata(); endif; ?>
+    </div>
+    <div class="reveal" style="text-align: center; margin-top: 5rem;">
+        <a href="<?php echo get_permalink(get_option('page_for_posts')); ?>" class="btn btn-outline">Explore All Insights</a>
+    </div>
+</section>
+<?php endif; ?>
+
+<!-- 11. TESTIMONIALS -->
 <section id="testimonials" style="background: #050505;">
     <div class="reveal" style="text-align: center; margin-bottom: 4rem;">
         <span class="tagline"><?php echo esc_html(wp_titans_get_mod("wp_titans_testi_tagline")); ?></span>
@@ -218,7 +249,7 @@ get_header(); ?>
     </div>
 </section>
 
-<!-- 11. SUCCESS GUARANTEE -->
+<!-- 12. SUCCESS GUARANTEE -->
 <section id="success-guarantee" style="background: #000; text-align: center; padding: 6rem 10%; border-top: 1px solid var(--border-glass);">
     <div class="reveal" style="max-width: 800px; margin: 0 auto; background: #111; padding: 4rem; border-radius: 12px; border: 1px solid var(--primary);">
         <i class="fas fa-award" style="font-size: 3.5rem; color: var(--primary); margin-bottom: 2rem;"></i>
@@ -227,8 +258,7 @@ get_header(); ?>
     </div>
 </section>
 
-<!-- 12. LEAD MAGNET: FREE AUDIT -->
-<!-- 12. LEAD MAGNET: FREE AUDIT -->
+<!-- 13. LEAD MAGNET: FREE AUDIT -->
 <?php if (wp_titans_get_mod("wp_titans_audit_show")) : ?>
 <section id="free-audit" style="background: #D4AF37; color: black; padding: 6rem 10%;">
     <div class="grid-2">
@@ -247,7 +277,7 @@ get_header(); ?>
 </section>
 <?php endif; ?>
 
-<!-- 13. FAQ -->
+<!-- 14. FAQ -->
 <section id="faq">
     <div class="reveal" style="text-align: center; margin-bottom: 4rem;">
         <h2><?php echo esc_html(wp_titans_get_mod("wp_titans_faq_main_title")); ?></h2>
@@ -271,7 +301,7 @@ get_header(); ?>
     </div>
 </section>
 
-<!-- 14. CONTACT -->
+<!-- 15. CONTACT -->
 <section id="contact" style="background: #080808;">
     <div class="grid-2">
         <div class="reveal">
