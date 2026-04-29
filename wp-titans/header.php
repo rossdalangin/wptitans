@@ -14,6 +14,24 @@
     <?php endif; ?>
 
     <?php echo get_theme_mod('wp_titans_header_scripts'); ?>
+
+    <!-- Schema Markup -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ProfessionalService",
+      "name": "<?php bloginfo('name'); ?>",
+      "url": "<?php echo esc_url(home_url('/')); ?>",
+      "logo": "<?php echo esc_url(get_theme_mod('wp_titans_logo_image')); ?>",
+      "description": "<?php bloginfo('description'); ?>",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "<?php echo esc_html(get_theme_mod('wp_titans_contact_location')); ?>"
+      },
+      "telephone": "<?php echo esc_html(get_theme_mod('wp_titans_contact_phone')); ?>",
+      "priceRange": "$$"
+    }
+    </script>
 </head>
 <body <?php body_class(); ?>>
 <?php wp_body_open(); ?>

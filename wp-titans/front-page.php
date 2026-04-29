@@ -16,8 +16,23 @@ get_header(); ?>
     </div>
 </section>
 
-<!-- 2. WHO WE WORK WITH -->
-<section id="who-we-work-with" style="background: #050505;">
+<!-- 2. TRUST BAR -->
+<section id="trust-bar" style="background: #050505; padding: 4rem 10%; border-bottom: 1px solid var(--border-glass);">
+    <div class="reveal" style="text-align: center;">
+        <p style="font-size: 0.8rem; text-transform: uppercase; letter-spacing: 2px; color: var(--text-dim); margin-bottom: 2.5rem;"><?php echo esc_html(get_theme_mod('wp_titans_logos_title', 'Trusted by innovative teams worldwide')); ?></p>
+        <div style="display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 4rem; opacity: 0.6;">
+            <?php for ($i = 1; $i <= 6; $i++) :
+                $logo = get_theme_mod("wp_titans_client_logo_$i");
+                if (!$logo) continue;
+            ?>
+                <img src="<?php echo esc_url($logo); ?>" alt="Client Logo" style="height: 30px; filter: grayscale(100%); transition: var(--transition);" onmouseover="this.style.filter='grayscale(0%)'" onmouseout="this.style.filter='grayscale(100%)'">
+            <?php endfor; ?>
+        </div>
+    </div>
+</section>
+
+<!-- 3. WHO WE WORK WITH -->
+<section id="who-we-work-with" style="background: #000;">
     <div class="reveal" style="text-align: center; margin-bottom: 4rem;">
         <span class="tagline"><?php echo esc_html(get_theme_mod('wp_titans_target_tagline', 'Who We Work With')); ?></span>
         <h2><?php echo esc_html(get_theme_mod('wp_titans_target_main_title', 'Built for Experts')); ?></h2>
@@ -38,8 +53,8 @@ get_header(); ?>
     </div>
 </section>
 
-<!-- 3. ABOUT SECTION -->
-<section id="about">
+<!-- 4. ABOUT SECTION -->
+<section id="about" style="background: #050505;">
     <div class="grid-2">
         <div class="reveal">
             <span class="tagline"><?php echo esc_html(get_theme_mod('wp_titans_about_tagline', 'THE AUTHORITY SYSTEM™')); ?></span>
@@ -53,7 +68,7 @@ get_header(); ?>
     </div>
 </section>
 
-<!-- 4. SERVICES SECTION -->
+<!-- 5. SERVICES SECTION -->
 <section id="services" style="background: #080808;">
     <div class="reveal" style="text-align: center; margin-bottom: 4rem;">
         <span class="tagline"><?php echo esc_html(get_theme_mod('wp_titans_services_tagline', 'Our Core Services')); ?></span>
@@ -75,7 +90,7 @@ get_header(); ?>
     </div>
 </section>
 
-<!-- 5. PROCESS SECTION -->
+<!-- 6. PROCESS SECTION -->
 <section id="process">
     <div class="reveal" style="text-align: center; margin-bottom: 4rem;">
         <span class="tagline"><?php echo esc_html(get_theme_mod('wp_titans_process_tagline', 'The Authority System™')); ?></span>
@@ -96,7 +111,7 @@ get_header(); ?>
     </div>
 </section>
 
-<!-- 6. PORTFOLIO SECTION -->
+<!-- 7. PORTFOLIO SECTION -->
 <section id="portfolio" style="background: #000;">
     <div class="reveal" style="text-align: center; margin-bottom: 4rem;">
         <span class="tagline">Our Work</span>

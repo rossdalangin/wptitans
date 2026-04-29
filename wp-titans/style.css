@@ -345,7 +345,8 @@ footer {
     .hero h1 { font-size: 2.8rem; }
     .nav-links, .nav-cta { display: none; }
     #mobile-toggle { display: block !important; }
-    footer { grid-template-columns: 1fr; }
+    #mobile-cta-bar { display: block !important; }
+    footer { grid-template-columns: 1fr; padding-bottom: 8rem; } /* Extra space for sticky bar */
 }
 
 /* Mobile Overlay */

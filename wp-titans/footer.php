@@ -72,6 +72,12 @@
     </a>
     <?php endif; ?>
 
+    <?php if (get_theme_mod('wp_titans_mobile_cta', true)) : ?>
+    <div id="mobile-cta-bar" style="position: fixed; bottom: 0; left: 0; width: 100%; background: #111; border-top: 1px solid var(--primary); padding: 1rem 5%; z-index: 1500; display: none;">
+        <a href="<?php echo esc_url(get_theme_mod('wp_titans_hero_btn2_url', '#contact')); ?>" class="btn btn-primary" style="width: 100%; padding: 1rem;"><?php echo esc_html(get_theme_mod('wp_titans_hero_btn2_text', 'Schedule a Call')); ?></a>
+    </div>
+    <?php endif; ?>
+
     <?php echo get_theme_mod('wp_titans_footer_scripts'); ?>
     <?php wp_footer(); ?>
 </body>

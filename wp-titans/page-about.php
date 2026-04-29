@@ -47,6 +47,29 @@ get_header(); ?>
     </div>
 </section>
 
+<section id="agency-team" style="background: #000; border-top: 1px solid var(--border-glass);">
+    <div class="reveal" style="text-align: center; margin-bottom: 5rem;">
+        <span class="tagline">The Titans</span>
+        <h2>Our Core Team</h2>
+    </div>
+    <div class="grid-cards">
+        <?php for ($i = 1; $i <= 3; $i++) :
+            $name = get_theme_mod("wp_titans_team_name_$i");
+            $role = get_theme_mod("wp_titans_team_role_$i");
+            $img = get_theme_mod("wp_titans_team_img_$i");
+            if (!$name) continue;
+        ?>
+        <div class="card reveal" style="padding: 0; background: #050505; text-align: center; overflow: hidden; border: 1px solid var(--border-glass);">
+            <img src="<?php echo esc_url($img); ?>" alt="<?php echo esc_attr($name); ?>" style="width: 100%; height: 300px; object-fit: cover;">
+            <div style="padding: 2.5rem;">
+                <h3 style="margin-bottom: 0.5rem; color: var(--primary);"><?php echo esc_html($name); ?></h3>
+                <p style="text-transform: uppercase; font-size: 0.8rem; letter-spacing: 2px; color: var(--text-dim);"><?php echo esc_html($role); ?></p>
+            </div>
+        </div>
+        <?php endfor; ?>
+    </div>
+</section>
+
 <section id="founder" style="background: #050505;">
     <div class="grid-2">
         <div class="reveal" style="text-align: center;">
