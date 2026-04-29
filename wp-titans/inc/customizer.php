@@ -468,6 +468,18 @@ function wp_titans_customize_register( $wp_customize ) {
     $wp_customize->add_setting( 'wp_titans_audit_desc', array( 'default' => wp_titans_get_default('wp_titans_audit_desc'), 'sanitize_callback' => 'wp_kses_post' ) );
     $wp_customize->add_control( 'wp_titans_audit_desc', array( 'label' => __( 'Audit Description', 'wp-titans' ), 'section' => 'wp_titans_audit', 'type' => 'textarea' ) );
 
+    // --- Guarantee Section ---
+    $wp_customize->add_section( 'wp_titans_guarantee_sec', array(
+        'title'    => __( 'Success Guarantee', 'wp-titans' ),
+        'priority' => 97,
+    ) );
+
+    $wp_customize->add_setting( 'wp_titans_guarantee_title', array( 'default' => 'The Titans Promise', 'sanitize_callback' => 'wp_kses_post' ) );
+    $wp_customize->add_control( 'wp_titans_guarantee_title', array( 'label' => __( 'Guarantee Title', 'wp-titans' ), 'section' => 'wp_titans_guarantee_sec' ) );
+
+    $wp_customize->add_setting( 'wp_titans_guarantee_text', array( 'default' => 'We don’t just build websites. We build your authority. If you aren’t 100% confident in your new professional image, we’ll work until you are.', 'sanitize_callback' => 'wp_kses_post' ) );
+    $wp_customize->add_control( 'wp_titans_guarantee_text', array( 'label' => __( 'Guarantee Text', 'wp-titans' ), 'section' => 'wp_titans_guarantee_sec', 'type' => 'textarea' ) );
+
     $wp_customize->add_section( 'wp_titans_ux', array(
         'title'    => __( 'Layout & UX', 'wp-titans' ),
         'priority' => 25,
@@ -478,6 +490,26 @@ function wp_titans_customize_register( $wp_customize ) {
 
     $wp_customize->add_setting( 'wp_titans_back_to_top', array( 'default' => true, 'sanitize_callback' => 'wp_validate_boolean' ) );
     $wp_customize->add_control( 'wp_titans_back_to_top', array( 'label' => __( 'Show Back to Top Button', 'wp-titans' ), 'section' => 'wp_titans_ux', 'type' => 'checkbox' ) );
+
+    // --- Before/After Section ---
+    $wp_customize->add_section( 'wp_titans_comparison', array(
+        'title'    => __( 'Before & After Comparison', 'wp-titans' ),
+        'priority' => 81,
+    ) );
+
+    $wp_customize->add_setting( 'wp_titans_comparison_show', array( 'default' => true, 'sanitize_callback' => 'wp_validate_boolean' ) );
+    $wp_customize->add_control( 'wp_titans_comparison_show', array( 'label' => __( 'Show Comparison Section', 'wp-titans' ), 'section' => 'wp_titans_comparison', 'type' => 'checkbox' ) );
+
+    for ($i = 1; $i <= 2; $i++) {
+        $wp_customize->add_setting( "wp_titans_compare_before_$i", array( 'default' => '', 'sanitize_callback' => 'esc_url_raw' ) );
+        $wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, "wp_titans_compare_before_$i", array( 'label' => "Pair $i: BEFORE Image", 'section' => 'wp_titans_comparison' ) ) );
+
+        $wp_customize->add_setting( "wp_titans_compare_after_$i", array( 'default' => '', 'sanitize_callback' => 'esc_url_raw' ) );
+        $wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, "wp_titans_compare_after_$i", array( 'label' => "Pair $i: AFTER Image", 'section' => 'wp_titans_comparison' ) ) );
+
+        $wp_customize->add_setting( "wp_titans_compare_title_$i", array( 'default' => 'Project Transformation', 'sanitize_callback' => 'wp_kses_post' ) );
+        $wp_customize->add_control( "wp_titans_compare_title_$i", array( 'label' => "Pair $i Title", 'section' => 'wp_titans_comparison' ) );
+    }
 
     $wp_customize->add_setting( 'wp_titans_mobile_cta', array( 'default' => true, 'sanitize_callback' => 'wp_validate_boolean' ) );
     $wp_customize->add_control( 'wp_titans_mobile_cta', array( 'label' => __( 'Show Floating Mobile CTA', 'wp-titans' ), 'section' => 'wp_titans_ux', 'type' => 'checkbox' ) );
@@ -492,6 +524,9 @@ function wp_titans_customize_register( $wp_customize ) {
 
     $wp_customize->add_setting( 'wp_titans_footer_scripts', array( 'default' => wp_titans_get_default('wp_titans_footer_scripts'), 'sanitize_callback' => 'wp_kses_post' ) );
     $wp_customize->add_control( 'wp_titans_footer_scripts', array( 'label' => __( 'Footer Scripts', 'wp-titans' ), 'description' => __( 'Add tracking scripts or chat widgets here.', 'wp-titans' ), 'section' => 'wp_titans_scripts', 'type' => 'textarea' ) );
+
+    $wp_customize->add_setting( 'wp_titans_seo_desc', array( 'default' => 'High-performance WordPress agency helping experts build authority and generate leads.', 'sanitize_callback' => 'sanitize_text_field' ) );
+    $wp_customize->add_control( 'wp_titans_seo_desc', array( 'label' => __( 'Meta Description', 'wp-titans' ), 'description' => __( 'Fallback SEO description for the homepage.', 'wp-titans' ), 'section' => 'wp_titans_scripts', 'type' => 'textarea' ) );
 
 }
 add_action( 'customize_register', 'wp_titans_customize_register' );

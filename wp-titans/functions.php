@@ -80,6 +80,9 @@ function wp_titans_handle_setup() {
             'Portfolio' => array(
                 'template' => 'page-portfolio.php'
             ),
+            'Book a Strategy Call' => array(
+                'template' => 'page-book.php'
+            ),
             'Authority Website System' => array(
                 'template' => 'page-authority.php'
             ),
@@ -125,7 +128,7 @@ function wp_titans_handle_setup() {
         if ( ! $menu_exists ) {
             $menu_id = wp_create_nav_menu( $menu_name );
             foreach ( $created_page_ids as $title => $id ) {
-                if ( in_array($title, array('Home', 'Services', 'The Process', 'About Us', 'Contact Us')) ) {
+                if ( in_array($title, array('Home', 'Services', 'The Process', 'About Us', 'Contact Us', 'Book a Strategy Call')) ) {
                     wp_update_nav_menu_item( $menu_id, 0, array(
                         'menu-item-title'     => $title,
                         'menu-item-object'    => 'page',

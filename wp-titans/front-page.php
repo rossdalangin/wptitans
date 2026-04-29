@@ -135,7 +135,36 @@ get_header(); ?>
     </div>
 </section>
 
-<!-- 8. STATS BAR -->
+<!-- 8. BEFORE & AFTER COMPARISON -->
+<?php if (wp_titans_get_mod("wp_titans_comparison_show")) : ?>
+<section id="comparison" style="background: #000; border-top: 1px solid var(--border-glass);">
+    <div class="reveal" style="text-align: center; margin-bottom: 5rem;">
+        <span class="tagline">The Transformation</span>
+        <h2>Website Evolution</h2>
+    </div>
+    <div class="grid-2">
+        <?php for ($i = 1; $i <= 2; $i++) :
+            $before = wp_titans_get_mod("wp_titans_compare_before_$i");
+            $after = wp_titans_get_mod("wp_titans_compare_after_$i");
+            $title = wp_titans_get_mod("wp_titans_compare_title_$i");
+            if (!$before || !$after) continue;
+        ?>
+        <div class="reveal">
+            <h3 style="font-size: 1.5rem; margin-bottom: 2rem; text-align: center;"><?php echo esc_html($title); ?></h3>
+            <div class="ba-container" style="position: relative; width: 100%; aspect-ratio: 16/10; overflow: hidden; border-radius: 8px;">
+                <img src="<?php echo esc_url($after); ?>" alt="After" style="width: 100%; height: 100%; object-fit: cover;">
+                <div class="ba-overlay" style="position: absolute; top: 0; left: 0; width: 50%; height: 100%; overflow: hidden; border-right: 3px solid var(--primary);">
+                    <img src="<?php echo esc_url($before); ?>" alt="Before" style="width: 200%; height: 100%; object-fit: cover; max-width: none;">
+                </div>
+                <input type="range" min="0" max="100" value="50" class="ba-slider" style="position: absolute; -webkit-appearance: none; appearance: none; width: 100%; height: 100%; background: transparent; outline: none; margin: 0; cursor: pointer; top: 0; left: 0;">
+            </div>
+        </div>
+        <?php endfor; ?>
+    </div>
+</section>
+<?php endif; ?>
+
+<!-- 9. STATS BAR -->
 <div id="stats" class="stats-bar">
     <?php for ($i = 1; $i <= 4; $i++) :
         $num = wp_titans_get_mod("wp_titans_stat_num_$i");
@@ -149,7 +178,7 @@ get_header(); ?>
     <?php endfor; ?>
 </div>
 
-<!-- 9. TESTIMONIALS -->
+<!-- 10. TESTIMONIALS -->
 <section id="testimonials" style="background: #050505;">
     <div class="reveal" style="text-align: center; margin-bottom: 4rem;">
         <span class="tagline"><?php echo esc_html(wp_titans_get_mod("wp_titans_testi_tagline")); ?></span>
@@ -175,7 +204,17 @@ get_header(); ?>
     </div>
 </section>
 
-<!-- 10. LEAD MAGNET: FREE AUDIT -->
+<!-- 11. SUCCESS GUARANTEE -->
+<section id="success-guarantee" style="background: #000; text-align: center; padding: 6rem 10%; border-top: 1px solid var(--border-glass);">
+    <div class="reveal" style="max-width: 800px; margin: 0 auto; background: #111; padding: 4rem; border-radius: 12px; border: 1px solid var(--primary);">
+        <i class="fas fa-award" style="font-size: 3.5rem; color: var(--primary); margin-bottom: 2rem;"></i>
+        <h2 style="font-size: 2.5rem; margin-bottom: 1.5rem;"><?php echo esc_html(wp_titans_get_mod("wp_titans_guarantee_title")); ?></h2>
+        <p style="font-size: 1.25rem; color: var(--text-dim); line-height: 1.6;"><?php echo wp_kses_post(wp_titans_get_mod("wp_titans_guarantee_text")); ?></p>
+    </div>
+</section>
+
+<!-- 12. LEAD MAGNET: FREE AUDIT -->
+<!-- 12. LEAD MAGNET: FREE AUDIT -->
 <?php if (wp_titans_get_mod("wp_titans_audit_show")) : ?>
 <section id="free-audit" style="background: #D4AF37; color: black; padding: 6rem 10%;">
     <div class="grid-2">
@@ -194,7 +233,7 @@ get_header(); ?>
 </section>
 <?php endif; ?>
 
-<!-- 11. FAQ -->
+<!-- 13. FAQ -->
 <section id="faq">
     <div class="reveal" style="text-align: center; margin-bottom: 4rem;">
         <h2><?php echo esc_html(wp_titans_get_mod("wp_titans_faq_main_title")); ?></h2>
@@ -218,7 +257,7 @@ get_header(); ?>
     </div>
 </section>
 
-<!-- 12. CONTACT -->
+<!-- 14. CONTACT -->
 <section id="contact" style="background: #080808;">
     <div class="grid-2">
         <div class="reveal">

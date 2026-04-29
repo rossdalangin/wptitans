@@ -234,6 +234,19 @@ nav.scrolled {
     align-items: center;
 }
 
+/* --- Forms --- */
+input, textarea, select {
+    font-family: inherit;
+    font-size: 1rem;
+    transition: var(--transition);
+}
+
+input:focus, textarea:focus, select:focus {
+    border-color: var(--primary) !important;
+    outline: none;
+    box-shadow: 0 0 15px var(--accent-glow);
+}
+
 /* --- Cards --- */
 .grid-cards {
     display: grid;

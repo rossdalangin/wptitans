@@ -77,6 +77,9 @@ function wp_titans_get_defaults() {
         'wp_titans_header_scripts' => '',
         'wp_titans_footer_scripts' => '',
         'wp_titans_pricing_show' => true,
+        'wp_titans_comparison_show' => true,
+        'wp_titans_guarantee_title' => 'The Titans Promise',
+        'wp_titans_guarantee_text'  => 'We don’t just build websites. We build your authority. If you aren’t 100% confident in your new professional image, we’ll work until you are.',
     );
 }
 

@@ -101,3 +101,24 @@ if (mobileToggle && mobileOverlay) {
         link.addEventListener('click', () => mobileOverlay.classList.remove('active'));
     });
 }
+
+// Before/After Slider
+document.querySelectorAll('.ba-container').forEach(container => {
+    const slider = container.querySelector('.ba-slider');
+    const overlay = container.querySelector('.ba-overlay');
+    const beforeImg = overlay.querySelector('img');
+
+    slider.addEventListener('input', (e) => {
+        const value = e.target.value;
+        overlay.style.width = `${value}%`;
+        // Keep before image fixed relative to container
+        beforeImg.style.width = `${container.offsetWidth}px`;
+    });
+
+    // Handle resize
+    window.addEventListener('resize', () => {
+        beforeImg.style.width = `${container.offsetWidth}px`;
+    });
+    // Initial sync
+    beforeImg.style.width = `${container.offsetWidth}px`;
+});
