@@ -64,6 +64,9 @@ function wp_titans_customize_register( $wp_customize ) {
     $wp_customize->add_setting( 'wp_titans_hero_video', array( 'default' => '', 'sanitize_callback' => 'esc_url_raw' ) );
     $wp_customize->add_control( 'wp_titans_hero_video', array( 'label' => __( 'Hero Background Video URL (Direct MP4 link)', 'wp-titans' ), 'section' => 'wp_titans_hero', 'type' => 'text' ) );
 
+    $wp_customize->add_setting( 'wp_titans_hero_ticker', array( 'default' => 'Recent Results: $12k Lead Gen Funnel • 14-Day Authority Site Launch • Expert Brand Platform', 'sanitize_callback' => 'wp_kses_post' ) );
+    $wp_customize->add_control( 'wp_titans_hero_ticker', array( 'label' => __( 'Hero Ticker Text', 'wp-titans' ), 'section' => 'wp_titans_hero' ) );
+
     $wp_customize->add_setting( 'wp_titans_hero_btn1_text', array( 'default' => wp_titans_get_default('wp_titans_hero_btn1_text'), 'sanitize_callback' => 'wp_kses_post' ) );
     $wp_customize->add_control( 'wp_titans_hero_btn1_text', array( 'label' => __( 'Hero Button 1 Text', 'wp-titans' ), 'section' => 'wp_titans_hero' ) );
 
@@ -228,6 +231,14 @@ function wp_titans_customize_register( $wp_customize ) {
 
     $wp_customize->add_setting( 'wp_titans_testi_main_title', array( 'default' => wp_titans_get_default('wp_titans_testi_main_title'), 'sanitize_callback' => 'wp_kses_post' ) );
     $wp_customize->add_control( 'wp_titans_testi_main_title', array( 'label' => __( 'Section Title', 'wp-titans' ), 'section' => 'wp_titans_testimonials' ) );
+
+    $wp_customize->add_setting( 'wp_titans_testi_layout', array( 'default' => 'grid', 'sanitize_callback' => 'sanitize_text_field' ) );
+    $wp_customize->add_control( 'wp_titans_testi_layout', array(
+        'label' => __( 'Testimonials Layout', 'wp-titans' ),
+        'section' => 'wp_titans_testimonials',
+        'type' => 'select',
+        'choices' => array( 'grid' => 'Grid', 'slider' => 'Slider' )
+    ) );
 
     for ($i = 1; $i <= 3; $i++) {
         $wp_customize->add_setting( "wp_titans_testi_img_$i", array( 'default' => wp_titans_get_default("wp_titans_testi_img_$i"), 'sanitize_callback' => 'esc_url_raw' ) );
@@ -540,6 +551,24 @@ function wp_titans_customize_register( $wp_customize ) {
     $wp_customize->add_setting( 'wp_titans_seo_desc', array( 'default' => 'High-performance WordPress agency helping experts build authority and generate leads.', 'sanitize_callback' => 'sanitize_text_field' ) );
     $wp_customize->add_control( 'wp_titans_seo_desc', array( 'label' => __( 'Meta Description', 'wp-titans' ), 'description' => __( 'Fallback SEO description for the homepage.', 'wp-titans' ), 'section' => 'wp_titans_scripts', 'type' => 'textarea' ) );
 
+    $wp_customize->add_setting( 'wp_titans_custom_css', array( 'default' => '', 'sanitize_callback' => 'wp_kses_post' ) );
+    $wp_customize->add_control( 'wp_titans_custom_css', array( 'label' => __( 'Custom CSS', 'wp-titans' ), 'description' => __( 'Add custom CSS overrides here.', 'wp-titans' ), 'section' => 'wp_titans_design', 'type' => 'textarea' ) );
+
+    // --- Lead Capture Section ---
+    $wp_customize->add_section( 'wp_titans_leads', array(
+        'title'    => __( 'Exit-Intent Lead Capture', 'wp-titans' ),
+        'priority' => 99,
+    ) );
+
+    $wp_customize->add_setting( 'wp_titans_exit_intent_show', array( 'default' => false, 'sanitize_callback' => 'wp_validate_boolean' ) );
+    $wp_customize->add_control( 'wp_titans_exit_intent_show', array( 'label' => __( 'Enable Exit-Intent Modal', 'wp-titans' ), 'section' => 'wp_titans_leads', 'type' => 'checkbox' ) );
+
+    $wp_customize->add_setting( 'wp_titans_exit_title', array( 'default' => 'Wait! Don’t Leave Your Authority Behind.', 'sanitize_callback' => 'wp_kses_post' ) );
+    $wp_customize->add_control( 'wp_titans_exit_title', array( 'label' => __( 'Modal Title', 'wp-titans' ), 'section' => 'wp_titans_leads' ) );
+
+    $wp_customize->add_setting( 'wp_titans_exit_desc', array( 'default' => 'Get our elite 14-day launch checklist before you go.', 'sanitize_callback' => 'wp_kses_post' ) );
+    $wp_customize->add_control( 'wp_titans_exit_desc', array( 'label' => __( 'Modal Description', 'wp-titans' ), 'section' => 'wp_titans_leads', 'type' => 'textarea' ) );
+
 }
 add_action( 'customize_register', 'wp_titans_customize_register' );
 
@@ -573,6 +602,7 @@ function wp_titans_customizer_css() {
         #free-audit { background-color: var(--primary) !important; }
         .testimonial-card, .btn-outline { border-color: var(--primary) !important; }
         .stat-item h3, .tagline, .btn-outline { color: var(--primary) !important; }
+        <?php echo wp_titans_get_mod("wp_titans_custom_css"); ?>
     </style>
     <?php
 }

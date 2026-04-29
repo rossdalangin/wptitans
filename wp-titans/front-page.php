@@ -12,6 +12,14 @@ get_header(); ?>
         </video>
     <?php endif; ?>
     <div class="reveal" style="z-index: 1;">
+        <?php if (wp_titans_get_mod("wp_titans_hero_ticker")) : ?>
+            <div class="hero-ticker" style="margin-bottom: 2rem; background: rgba(255,255,255,0.05); padding: 0.8rem 2rem; border-radius: 50px; display: inline-block; border: 1px solid rgba(255,255,255,0.1);">
+                <p style="margin: 0; font-size: 0.85rem; letter-spacing: 1px; color: var(--primary); font-weight: 700; text-transform: uppercase;">
+                    <i class="fas fa-bolt" style="margin-right: 10px;"></i>
+                    <?php echo esc_html(wp_titans_get_mod("wp_titans_hero_ticker")); ?>
+                </p>
+            </div>
+        <?php endif; ?>
         <h1><?php echo esc_html(wp_titans_get_mod("wp_titans_hero_title")); ?></h1>
         <p><?php echo esc_html(wp_titans_get_mod("wp_titans_hero_subtitle")); ?></p>
         <div class="hero-btns">
@@ -189,7 +197,8 @@ get_header(); ?>
         <span class="tagline"><?php echo esc_html(wp_titans_get_mod("wp_titans_testi_tagline")); ?></span>
         <h2><?php echo esc_html(wp_titans_get_mod("wp_titans_testi_main_title")); ?></h2>
     </div>
-    <div class="grid-cards">
+    <?php $testi_layout = wp_titans_get_mod("wp_titans_testi_layout"); ?>
+    <div class="<?php echo $testi_layout === 'slider' ? 'testi-slider' : 'grid-cards'; ?>">
         <?php for ($i = 1; $i <= 3; $i++) :
             $img = wp_titans_get_mod("wp_titans_testi_img_$i");
             $quote = wp_titans_get_mod("wp_titans_testi_quote_$i");
@@ -197,7 +206,7 @@ get_header(); ?>
             $role = wp_titans_get_mod("wp_titans_testi_role_$i");
             if (!$quote) continue;
         ?>
-        <div class="testimonial-card reveal">
+        <div class="testimonial-card reveal <?php echo $testi_layout === 'slider' ? 'testi-slide' : ''; ?>">
             <?php if ($img) : ?>
                 <img src="<?php echo esc_url($img); ?>" alt="<?php echo esc_attr($author); ?>" style="width: 80px; height: 80px; border-radius: 50%; object-fit: cover; margin-bottom: 1.5rem; border: 2px solid var(--primary);">
             <?php endif; ?>

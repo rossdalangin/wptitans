@@ -78,6 +78,49 @@
     </div>
     <?php endif; ?>
 
+    <!-- FAQ Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        <?php
+        $faqs = [];
+        for ($i = 1; $i <= 4; $i++) {
+            $q = wp_titans_get_mod("wp_titans_faq_q_$i");
+            $a = wp_titans_get_mod("wp_titans_faq_a_$i");
+            if ($q && $a) {
+                $faqs[] = '{
+                  "@type": "Question",
+                  "name": "'.esc_js($q).'",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "'.esc_js($a).'"
+                  }
+                }';
+            }
+        }
+        echo implode(',', $faqs);
+        ?>
+      ]
+    }
+    </script>
+
+    <?php if (wp_titans_get_mod("wp_titans_exit_intent_show")) : ?>
+    <div id="exit-modal" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.9); z-index: 9999; display: none; align-items: center; justify-content: center; padding: 2rem;">
+        <div style="background: #111; max-width: 600px; padding: 4rem; border-radius: 12px; border: 2px solid var(--primary); text-align: center; position: relative;">
+            <div id="exit-close" style="position: absolute; top: 1rem; right: 1.5rem; cursor: pointer; font-size: 1.5rem; color: #444;">&times;</div>
+            <i class="fas fa-rocket" style="font-size: 3rem; color: var(--primary); margin-bottom: 2rem;"></i>
+            <h2 style="font-size: 2rem; margin-bottom: 1.5rem;"><?php echo wp_kses_post(wp_titans_get_mod("wp_titans_exit_title")); ?></h2>
+            <p style="color: var(--text-dim); margin-bottom: 3rem;"><?php echo wp_kses_post(wp_titans_get_mod("wp_titans_exit_desc")); ?></p>
+            <form style="display: flex; flex-direction: column; gap: 1rem;">
+                <input type="email" placeholder="Enter your email" required style="padding: 1.2rem; background: #000; border: 1px solid #333; color: white; border-radius: 4px;">
+                <button type="submit" class="btn btn-primary">Get the Checklist</button>
+            </form>
+        </div>
+    </div>
+    <?php endif; ?>
+
     <?php echo wp_titans_get_mod("wp_titans_footer_scripts"); ?>
     <?php wp_footer(); ?>
 </body>

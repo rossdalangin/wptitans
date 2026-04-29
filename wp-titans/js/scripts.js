@@ -130,3 +130,65 @@ document.querySelectorAll('.ba-container').forEach(container => {
     // Initial sync
     beforeImg.style.width = `${container.offsetWidth}px`;
 });
+
+// Portfolio Filtering
+const filterBtns = document.querySelectorAll('.filter-btn');
+const portfolioItems = document.querySelectorAll('.portfolio-item');
+
+if (filterBtns.length > 0) {
+    filterBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            const filter = btn.getAttribute('data-filter');
+
+            // UI Update
+            filterBtns.forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+
+            // Filtering logic
+            portfolioItems.forEach(item => {
+                const category = item.getAttribute('data-category');
+                if (filter === 'all' || filter === category) {
+                    item.style.display = 'block';
+                    setTimeout(() => {
+                        item.style.opacity = '1';
+                        item.style.transform = 'translateY(0)';
+                    }, 50);
+                } else {
+                    item.style.opacity = '0';
+                    item.style.transform = 'translateY(20px)';
+                    setTimeout(() => item.style.display = 'none', 400);
+                }
+            });
+        });
+    });
+}
+
+// Testimonial Slider
+const testiSlider = document.querySelector('.testi-slider');
+if (testiSlider) {
+    const slides = testiSlider.querySelectorAll('.testi-slide');
+    let currentSlide = 0;
+
+    const showSlide = (n) => {
+        slides.forEach(s => s.style.transform = `translateX(-${n * 100}%)`);
+    };
+
+    setInterval(() => {
+        currentSlide = (currentSlide + 1) % slides.length;
+        showSlide(currentSlide);
+    }, 5000);
+}
+
+// Exit Intent
+const exitModal = document.getElementById('exit-modal');
+const exitClose = document.getElementById('exit-close');
+if (exitModal) {
+    let shown = false;
+    document.addEventListener('mouseleave', (e) => {
+        if (e.clientY < 0 && !shown) {
+            exitModal.style.display = 'flex';
+            shown = true;
+        }
+    });
+    exitClose.addEventListener('click', () => exitModal.style.display = 'none');
+}
