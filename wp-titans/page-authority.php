@@ -95,12 +95,4 @@ get_header(); ?>
     </div>
 </section>
 
-<section id="auth-cta" style="background: linear-gradient(to bottom, #000, #050505); text-align: center;">
-    <div class="reveal">
-        <h2 style="font-size: 4rem;"><?php echo esc_html(wp_titans_get_mod("wp_titans_auth_cta_title")); ?></h2>
-        <p style="font-size: 1.3rem; margin-bottom: 4rem; max-width: 800px; margin-left: auto; margin-right: auto;"><?php echo esc_html(wp_titans_get_mod("wp_titans_auth_cta_desc")); ?></p>
-        <a href="<?php echo esc_url(wp_titans_get_mod("wp_titans_contact_btn_url")); ?>" class="btn btn-primary" style="padding: 2rem 4rem; font-size: 1.2rem;"><?php echo esc_html(wp_titans_get_mod("wp_titans_contact_btn_text")); ?></a>
-    </div>
-</section>
-
 <?php get_footer(); ?>

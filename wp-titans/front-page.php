@@ -92,6 +92,21 @@ get_header(); ?>
     </div>
 </section>
 
+<!-- 5b. NEWSLETTER SIGNUP -->
+<?php if (wp_titans_get_mod("wp_titans_newsletter_show")) : ?>
+<section id="newsletter" style="background: #000; border-top: 1px solid var(--border-glass);">
+    <div class="reveal" style="max-width: 900px; margin: 0 auto; background: #050505; padding: 5rem; border-radius: 12px; border: 1px solid #111; text-align: center;">
+        <i class="fas fa-envelope-open-text" style="font-size: 3rem; color: var(--primary); margin-bottom: 2rem;"></i>
+        <h2><?php echo esc_html(wp_titans_get_mod("wp_titans_newsletter_title")); ?></h2>
+        <p style="color: var(--text-dim); margin-bottom: 3rem;"><?php echo esc_html(wp_titans_get_mod("wp_titans_newsletter_desc")); ?></p>
+        <form style="display: flex; gap: 1rem; max-width: 500px; margin: 0 auto;">
+            <input type="email" placeholder="Your best email..." required style="flex: 1; padding: 1.2rem; background: #000; border: 1px solid #333; color: white; border-radius: 4px;">
+            <button type="submit" class="btn btn-primary" style="padding: 1.2rem 2.5rem;">Join</button>
+        </form>
+    </div>
+</section>
+<?php endif; ?>
+
 <!-- 6. SERVICES SECTION -->
 <section id="services" style="background: #080808;">
     <div class="reveal" style="text-align: center; margin-bottom: 4rem;">
@@ -180,6 +195,25 @@ get_header(); ?>
     </div>
 </section>
 
+<!-- 8b. LEAD MAGNET: FREE AUDIT -->
+<?php if (wp_titans_get_mod("wp_titans_audit_show")) : ?>
+<section id="free-audit" style="background: #D4AF37; color: black; padding: 6rem 10%;">
+    <div class="grid-2">
+        <div class="reveal">
+            <h2 style="color: black; margin-bottom: 1rem;"><?php echo esc_html(wp_titans_get_mod("wp_titans_audit_title")); ?></h2>
+            <p style="color: rgba(0,0,0,0.8); font-size: 1.2rem;"><?php echo esc_html(wp_titans_get_mod("wp_titans_audit_desc")); ?></p>
+        </div>
+        <div class="reveal">
+            <form style="display: flex; gap: 1rem;">
+                <input type="url" placeholder="Your Website URL" required style="flex: 1; padding: 1.2rem; border-radius: 4px; border: none; font-family: inherit;">
+                <button type="submit" class="btn" style="background: black; color: white; border-radius: 4px;">Get My Audit</button>
+            </form>
+            <p style="font-size: 0.8rem; margin-top: 1rem; opacity: 0.7;">* No obligation. 100% manual review by our experts.</p>
+        </div>
+    </div>
+</section>
+<?php endif; ?>
+
 <!-- 9. BEFORE & AFTER COMPARISON -->
 <?php if (wp_titans_get_mod("wp_titans_comparison_show")) : ?>
 <section id="comparison" style="background: #000; border-top: 1px solid var(--border-glass);">
@@ -222,21 +256,6 @@ get_header(); ?>
     </div>
     <?php endfor; ?>
 </div>
-
-<!-- 11. NEWSLETTER SIGNUP -->
-<?php if (wp_titans_get_mod("wp_titans_newsletter_show")) : ?>
-<section id="newsletter" style="background: #000; border-top: 1px solid var(--border-glass);">
-    <div class="reveal" style="max-width: 900px; margin: 0 auto; background: #050505; padding: 5rem; border-radius: 12px; border: 1px solid #111; text-align: center;">
-        <i class="fas fa-envelope-open-text" style="font-size: 3rem; color: var(--primary); margin-bottom: 2rem;"></i>
-        <h2><?php echo esc_html(wp_titans_get_mod("wp_titans_newsletter_title")); ?></h2>
-        <p style="color: var(--text-dim); margin-bottom: 3rem;"><?php echo esc_html(wp_titans_get_mod("wp_titans_newsletter_desc")); ?></p>
-        <form style="display: flex; gap: 1rem; max-width: 500px; margin: 0 auto;">
-            <input type="email" placeholder="Your best email..." required style="flex: 1; padding: 1.2rem; background: #000; border: 1px solid #333; color: white; border-radius: 4px;">
-            <button type="submit" class="btn btn-primary" style="padding: 1.2rem 2.5rem;">Join</button>
-        </form>
-    </div>
-</section>
-<?php endif; ?>
 
 <!-- 12. RECENT INSIGHTS -->
 <?php if (wp_titans_get_mod("wp_titans_blog_show")) : ?>
@@ -304,25 +323,6 @@ get_header(); ?>
         <p style="font-size: 1.25rem; color: var(--text-dim); line-height: 1.6;"><?php echo wp_kses_post(wp_titans_get_mod("wp_titans_guarantee_text")); ?></p>
     </div>
 </section>
-
-<!-- 15. LEAD MAGNET: FREE AUDIT -->
-<?php if (wp_titans_get_mod("wp_titans_audit_show")) : ?>
-<section id="free-audit" style="background: #D4AF37; color: black; padding: 6rem 10%;">
-    <div class="grid-2">
-        <div class="reveal">
-            <h2 style="color: black; margin-bottom: 1rem;"><?php echo esc_html(wp_titans_get_mod("wp_titans_audit_title")); ?></h2>
-            <p style="color: rgba(0,0,0,0.8); font-size: 1.2rem;"><?php echo esc_html(wp_titans_get_mod("wp_titans_audit_desc")); ?></p>
-        </div>
-        <div class="reveal">
-            <form style="display: flex; gap: 1rem;">
-                <input type="url" placeholder="Your Website URL" required style="flex: 1; padding: 1.2rem; border-radius: 4px; border: none; font-family: inherit;">
-                <button type="submit" class="btn" style="background: black; color: white; border-radius: 4px;">Get My Audit</button>
-            </form>
-            <p style="font-size: 0.8rem; margin-top: 1rem; opacity: 0.7;">* No obligation. 100% manual review by our experts.</p>
-        </div>
-    </div>
-</section>
-<?php endif; ?>
 
 <!-- 16. FAQ -->
 <section id="faq">

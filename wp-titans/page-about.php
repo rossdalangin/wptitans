@@ -103,9 +103,10 @@ get_header(); ?>
                 <?php echo wp_kses_post(wpautop(wp_titans_get_mod("wp_titans_founder_bio"))); ?>
             </div>
             <div style="margin-top: 2.5rem; display: flex; align-items: center; gap: 2rem;">
-                <a href="#contact" class="btn btn-primary">Work With <?php echo explode(' ', wp_titans_get_mod("wp_titans_founder_name"))[0]; ?></a>
                 <?php if (wp_titans_get_mod("wp_titans_founder_linkedin") !== "#") : ?>
-                    <a href="<?php echo esc_url(wp_titans_get_mod("wp_titans_founder_linkedin")); ?>" target="_blank" style="font-size: 1.5rem; color: var(--primary);"><i class="fab fa-linkedin"></i></a>
+                    <a href="<?php echo esc_url(wp_titans_get_mod("wp_titans_founder_linkedin")); ?>" target="_blank" style="font-size: 1.5rem; color: var(--primary); display: flex; align-items: center; gap: 10px; text-decoration: none; font-weight: 700; font-family: 'Syne'; text-transform: uppercase; font-size: 0.9rem; letter-spacing: 1px;">
+                        <i class="fab fa-linkedin" style="font-size: 1.5rem;"></i> Connect on LinkedIn
+                    </a>
                 <?php endif; ?>
             </div>
         </div>

@@ -76,12 +76,4 @@ get_header(); ?>
 </section>
 <?php endif; ?>
 
-<section id="cta-services" style="text-align: center; background: #000;">
-    <div class="reveal">
-        <h2>Ready to Build a High-Converting Website?</h2>
-        <p style="margin-bottom: 3rem; max-width: 700px; margin-left: auto; margin-right: auto;">Let’s elevate your expertise with a professional website your clients will trust.</p>
-        <a href="<?php echo esc_url(wp_titans_get_mod("wp_titans_contact_btn_url")); ?>" class="btn btn-primary"><?php echo esc_html(wp_titans_get_mod("wp_titans_contact_btn_text")); ?></a>
-    </div>
-</section>
-
 <?php get_footer(); ?>

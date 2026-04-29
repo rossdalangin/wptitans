@@ -74,14 +74,6 @@ get_header(); ?>
     </div>
 </section>
 
-<section id="portfolio-cta" style="text-align: center; background: #000; border-top: 1px solid var(--border-glass);">
-    <div class="reveal">
-        <h2>Ready to Become Our Next Success Story?</h2>
-        <p style="margin-bottom: 3rem; max-width: 700px; margin-left: auto; margin-right: auto; color: var(--text-dim);">We don"t just build websites. We build authority brands that command attention and drive revenue.</p>
-        <a href="<?php echo esc_url(wp_titans_get_mod("wp_titans_contact_btn_url")); ?>" class="btn btn-primary"><?php echo esc_html(wp_titans_get_mod("wp_titans_contact_btn_text")); ?></a>
-    </div>
-</section>
-
 <style>
 .card:hover img { transform: scale(1.1); }
 </style>
