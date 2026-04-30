@@ -776,6 +776,15 @@ function wp_titans_customize_register( $wp_customize ) {
     $wp_customize->add_setting( 'wp_titans_exit_cf7_shortcode', array( 'default' => '', 'sanitize_callback' => 'wp_kses_post' ) );
     $wp_customize->add_control( 'wp_titans_exit_cf7_shortcode', array( 'label' => __( 'Exit Intent CF7 Shortcode', 'wp-titans' ), 'section' => 'wp_titans_leads' ) );
 
+    $wp_customize->add_setting( 'wp_titans_downsell_show', array( 'default' => false, 'sanitize_callback' => 'wp_validate_boolean' ) );
+    $wp_customize->add_control( 'wp_titans_downsell_show', array( 'label' => __( 'Enable Downsell/Tripwire Offer', 'wp-titans' ), 'description' => __( 'Adds a secondary offer button to the exit modal.', 'wp-titans' ), 'section' => 'wp_titans_leads', 'type' => 'checkbox' ) );
+
+    $wp_customize->add_setting( 'wp_titans_downsell_text', array( 'default' => 'Just want the 14-day checklist? (Free)', 'sanitize_callback' => 'wp_kses_post' ) );
+    $wp_customize->add_control( 'wp_titans_downsell_text', array( 'label' => __( 'Downsell Button Text', 'wp-titans' ), 'section' => 'wp_titans_leads' ) );
+
+    $wp_customize->add_setting( 'wp_titans_downsell_url', array( 'default' => '#', 'sanitize_callback' => 'esc_url_raw' ) );
+    $wp_customize->add_control( 'wp_titans_downsell_url', array( 'label' => __( 'Downsell URL', 'wp-titans' ), 'section' => 'wp_titans_leads' ) );
+
     $wp_customize->add_setting( 'wp_titans_show_auth_notif', array( 'default' => false, 'sanitize_callback' => 'wp_validate_boolean' ) );
     $wp_customize->add_control( 'wp_titans_show_auth_notif', array( 'label' => __( 'Show Agency Authority Notifications', 'wp-titans' ), 'description' => __( 'Shows a periodic popup of recent completions and wins.', 'wp-titans' ), 'section' => 'wp_titans_leads', 'type' => 'checkbox' ) );
 

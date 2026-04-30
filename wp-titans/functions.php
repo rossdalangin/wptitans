@@ -199,6 +199,12 @@ function wp_titans_handle_setup() {
             ),
             'Free Authority Audit' => array(
                 'template' => 'page-audit.php'
+            ),
+            'Authority ROI Calculator' => array(
+                'template' => 'page-roi-calculator.php'
+            ),
+            'Client Portal' => array(
+                'template' => 'page-portal.php'
             )
         );
 

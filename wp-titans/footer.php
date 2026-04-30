@@ -167,6 +167,13 @@
                 <button type="submit" class="btn btn-primary">Get the Checklist</button>
             </form>
             <?php endif; ?>
+            <?php if (wp_titans_get_mod("wp_titans_downsell_show")) : ?>
+                <div style="margin-top: 2rem; padding-top: 2rem; border-top: 1px solid #222;">
+                    <a href="<?php echo esc_url(wp_titans_get_mod("wp_titans_downsell_url")); ?>" style="font-size: 0.85rem; color: var(--primary); font-family: 'Syne'; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; text-decoration: none;">
+                        <?php echo esc_html(wp_titans_get_mod("wp_titans_downsell_text")); ?>
+                    </a>
+                </div>
+            <?php endif; ?>
         </div>
     </div>
     <?php endif; ?>

@@ -1,0 +1,58 @@
+# TITAN AGENCY: PROPOSAL & CONTRACT TEMPLATES
+## Objective: Professional Closings & Master Service Agreements
+
+---
+
+### 1. THE "AUTHORITY BLUEPRINT" PROPOSAL (Copywriting)
+
+**Section 1: The Strategic Gap**
+"Based on our strategy call, we identified that your current digital presence is creating an 'Authority Gap.' While you are providing [Value] to your clients, your website communicates [Weakness]. We estimate this is costing you approximately [Calculated Loss from ROI Tool] in missed opportunities monthly."
+
+**Section 2: The Titan Solution™**
+"We will implement our signature 14-Day Authority System. This isn't just a redesign; it's a structural overhaul of your digital positioning.
+- Phase 1: Strategic Messaging Blueprint.
+- Phase 2: Cinematic Authority Design.
+- Phase 3: High-Performance Technical Deployment."
+
+**Section 3: The 14-Day Velocity Guarantee**
+"We understand your time is your most valuable asset. We guarantee a review-ready flagship platform in 14 days, or we automatically apply a 50% professional courtesy discount. We own the deadline so you can own the market."
+
+**Section 4: Investment**
+"Flagship Authority System: $[Price] (One-time)
+Optional Growth Retainer: $[Price]/mo"
+
+---
+
+### 2. MASTER SERVICES AGREEMENT (Condensed Contract)
+
+**Clause 1: Scope of Work**
+"Titan Agency agrees to perform the services detailed in the Authority Blueprint Proposal. Any work outside this scope will require a secondary Change Order agreement."
+
+**Clause 2: The 14-Day Clock**
+"The 14-day production period begins only upon receipt of all required client assets (Brand guidelines, professional headshots, and existing login credentials). Delays in asset delivery will pause the guarantee clock."
+
+**Clause 3: Payment Terms**
+"A 50% non-refundable commencement fee is required to secure the production slot. The remaining 50% is due upon successful launch and transfer of ownership."
+
+**Clause 4: Intellectual Property**
+"Upon final payment, the Client owns 100% of the custom theme, content, and branding developed during the project. Titan Agency retains the right to showcase the work in professional portfolios."
+
+**Clause 5: Support & Maintenance**
+"The project includes 30 days of post-launch technical support. Ongoing maintenance beyond 30 days requires enrollment in a Titan Care Plan."
+
+---
+
+### 3. THE "DEPOSIT SECURED" WELCOME EMAIL
+"Welcome to the Lab, [Name].
+
+Your production slot is officially secured for [Date].
+
+I have created your private **Client Command Center** here: [Link to Portal Page]
+
+Please log in and upload your initial assets. Our 14-day clock starts as soon as we have the keys to the kingdom.
+
+Let's build something world-class.
+
+Best,
+Ross
+Founder, Titan Agency"
