@@ -196,6 +196,9 @@ function wp_titans_handle_setup() {
             'Conversion Case Study' => array(
                 'template' => 'page-case-study.php',
                 'content'  => 'This case study outlines how we helped a client grow by 140%.'
+            ),
+            'Free Authority Audit' => array(
+                'template' => 'page-audit.php'
             )
         );
 
@@ -264,7 +267,11 @@ function wp_titans_submit_planner() {
 
     $message = "A new Project Plan has been submitted:\n\n";
     foreach ( $data as $key => $value ) {
-        $message .= ucfirst( str_replace( '_', ' ', $key ) ) . ": " . sanitize_text_field( $value ) . "\n";
+        if (is_array($value)) {
+            $message .= ucfirst( str_replace( '_', ' ', $key ) ) . ": " . implode(', ', array_map('sanitize_text_field', $value)) . "\n";
+        } else {
+            $message .= ucfirst( str_replace( '_', ' ', $key ) ) . ": " . sanitize_text_field( $value ) . "\n";
+        }
     }
 
     $headers = array( 'Content-Type: text/plain; charset=UTF-8' );

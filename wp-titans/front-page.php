@@ -263,11 +263,10 @@ get_header(); ?>
             <p style="color: rgba(0,0,0,0.8); font-size: 1.2rem;"><?php echo esc_html(wp_titans_get_mod("wp_titans_audit_desc")); ?></p>
         </div>
         <div class="reveal">
-            <form style="display: flex; gap: 1rem;">
-                <input type="url" placeholder="Your Website URL" required style="flex: 1; padding: 1.2rem; border-radius: 4px; border: none; font-family: inherit;">
-                <button type="submit" class="btn" style="background: black; color: white; border-radius: 4px;">Get My Audit</button>
-            </form>
-            <p style="font-size: 0.8rem; margin-top: 1rem; opacity: 0.7;">* No obligation. 100% manual review by our experts.</p>
+            <div style="display: flex; flex-direction: column; align-items: flex-start; gap: 2rem;">
+                <a href="<?php echo get_permalink(get_page_by_path('free-authority-audit')); ?>" class="btn" style="background: black; color: white; border-radius: 4px; padding: 1.5rem 3rem; font-size: 1.1rem;">Request Your 100% Manual Audit</a>
+                <p style="font-size: 0.8rem; opacity: 0.7;">* No obligation. Strategic review of positioning, speed, and conversion.</p>
+            </div>
         </div>
     </div>
 </section>

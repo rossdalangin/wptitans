@@ -17,40 +17,73 @@ get_header(); ?>
         <div class="reveal" style="max-width: 800px; margin: 0 auto;">
             <div id="planner-container" style="background: #111; padding: 5rem; border-radius: 12px; border: 1px solid var(--border-glass); position: relative;">
 
-                <div class="planner-progress" style="position: absolute; top: 0; left: 0; width: 100%; height: 4px; background: #222; border-top-left-radius: 12px; border-top-right-radius: 12px; overflow: hidden;">
-                    <div id="progress-fill" style="width: 25%; height: 100%; background: var(--primary); transition: width 0.4s ease;"></div>
+                <div class="planner-progress" style="position: absolute; top: 0; left: 0; width: 100%; height: 6px; background: #222; border-top-left-radius: 12px; border-top-right-radius: 12px; overflow: hidden;">
+                    <div id="progress-fill" style="width: 20%; height: 100%; background: var(--primary); transition: width 0.4s ease; box-shadow: 0 0 15px var(--primary);"></div>
                 </div>
 
                 <form id="multi-step-planner">
-                    <!-- Step 1: Project Type -->
+                    <!-- Step 1: Core Goal -->
                     <div class="planner-step active" data-step="1">
-                        <h2 style="font-size: 2rem; margin-bottom: 3rem;">What type of project is this?</h2>
+                        <h2 style="font-size: 2.2rem; margin-bottom: 3rem;">What is your primary focus?</h2>
                         <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem;">
                             <label class="option-card">
-                                <input type="radio" name="project_type" value="new" checked>
+                                <input type="radio" name="primary_goal" value="authority" checked>
                                 <div class="option-content">
-                                    <i class="fas fa-plus-circle"></i>
-                                    <span>New Authority Site</span>
+                                    <i class="fas fa-crown"></i>
+                                    <span>Establish Authority</span>
                                 </div>
                             </label>
                             <label class="option-card">
-                                <input type="radio" name="project_type" value="redesign">
+                                <input type="radio" name="primary_goal" value="leads">
                                 <div class="option-content">
-                                    <i class="fas fa-arrows-rotate"></i>
-                                    <span>Website Redesign</span>
+                                    <i class="fas fa-magnet"></i>
+                                    <span>Lead Generation</span>
+                                </div>
+                            </label>
+                            <label class="option-card">
+                                <input type="radio" name="primary_goal" value="revenue">
+                                <div class="option-content">
+                                    <i class="fas fa-chart-line"></i>
+                                    <span>Scale Revenue</span>
+                                </div>
+                            </label>
+                            <label class="option-card">
+                                <input type="radio" name="primary_goal" value="brand">
+                                <div class="option-content">
+                                    <i class="fas fa-gem"></i>
+                                    <span>Luxury Branding</span>
                                 </div>
                             </label>
                         </div>
                     </div>
 
-                    <!-- Step 2: Budget Range -->
+                    <!-- Step 2: Project Scope -->
                     <div class="planner-step" data-step="2" style="display: none;">
-                        <h2 style="font-size: 2rem; margin-bottom: 3rem;">Estimated investment budget?</h2>
+                        <h2 style="font-size: 2.2rem; margin-bottom: 3rem;">Which services do you need?</h2>
                         <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem;">
                             <label class="option-card">
-                                <input type="radio" name="budget" value="2500-5000">
-                                <div class="option-content"><span>$2.5k - $5k</span></div>
+                                <input type="checkbox" name="scope[]" value="design">
+                                <div class="option-content"><span>Web Design</span></div>
                             </label>
+                            <label class="option-card">
+                                <input type="checkbox" name="scope[]" value="copy">
+                                <div class="option-content"><span>Copywriting</span></div>
+                            </label>
+                            <label class="option-card">
+                                <input type="checkbox" name="scope[]" value="seo">
+                                <div class="option-content"><span>SEO Mastery</span></div>
+                            </label>
+                            <label class="option-card">
+                                <input type="checkbox" name="scope[]" value="funnel">
+                                <div class="option-content"><span>Sales Funnels</span></div>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Step 3: Investment -->
+                    <div class="planner-step" data-step="3" style="display: none;">
+                        <h2 style="font-size: 2.2rem; margin-bottom: 3rem;">Planned investment budget?</h2>
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem;">
                             <label class="option-card">
                                 <input type="radio" name="budget" value="5000-10000" checked>
                                 <div class="option-content"><span>$5k - $10k</span></div>
@@ -60,34 +93,47 @@ get_header(); ?>
                                 <div class="option-content"><span>$10k - $20k</span></div>
                             </label>
                             <label class="option-card">
-                                <input type="radio" name="budget" value="20000+">
-                                <div class="option-content"><span>$20k+ (Enterprise)</span></div>
+                                <input type="radio" name="budget" value="20000-50000">
+                                <div class="option-content"><span>$20k - $50k</span></div>
+                            </label>
+                            <label class="option-card">
+                                <input type="radio" name="budget" value="50000+">
+                                <div class="option-content"><span>$50k+ (Enterprise)</span></div>
                             </label>
                         </div>
                     </div>
 
-                    <!-- Step 3: Timeline -->
-                    <div class="planner-step" data-step="3" style="display: none;">
-                        <h2 style="font-size: 2rem; margin-bottom: 3rem;">How soon do you need to launch?</h2>
+                    <!-- Step 4: Velocity -->
+                    <div class="planner-step" data-step="4" style="display: none;">
+                        <h2 style="font-size: 2.2rem; margin-bottom: 3rem;">Desired launch velocity?</h2>
                         <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem;">
                             <label class="option-card">
                                 <input type="radio" name="timeline" value="immediate" checked>
-                                <div class="option-content"><span>ASAP (Elite 14-Day)</span></div>
+                                <div class="option-content">
+                                    <i class="fas fa-bolt"></i>
+                                    <span>Elite 14-Day</span>
+                                </div>
                             </label>
                             <label class="option-card">
-                                <input type="radio" name="timeline" value="1month">
-                                <div class="option-content"><span>Within 30 Days</span></div>
+                                <input type="radio" name="timeline" value="standard">
+                                <div class="option-content">
+                                    <i class="fas fa-calendar"></i>
+                                    <span>30-60 Days</span>
+                                </div>
                             </label>
                         </div>
                     </div>
 
-                    <!-- Step 4: Contact Info -->
-                    <div class="planner-step" data-step="4" style="display: none;">
-                        <h2 style="font-size: 2rem; margin-bottom: 3rem;">Where should we send your proposal?</h2>
+                    <!-- Step 5: Details -->
+                    <div class="planner-step" data-step="5" style="display: none;">
+                        <h2 style="font-size: 2.2rem; margin-bottom: 3rem;">Finalize Your Strategy</h2>
                         <div style="display: flex; flex-direction: column; gap: 2rem;">
-                            <input type="text" placeholder="Your Name" required style="width: 100%; padding: 1.5rem; background: #000; border: 1px solid #333; color: white; border-radius: 8px;">
-                            <input type="email" placeholder="Work Email" required style="width: 100%; padding: 1.5rem; background: #000; border: 1px solid #333; color: white; border-radius: 8px;">
-                            <textarea rows="4" placeholder="Briefly describe your business goals..." style="width: 100%; padding: 1.5rem; background: #000; border: 1px solid #333; color: white; border-radius: 8px;"></textarea>
+                            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem;">
+                                <input type="text" name="titan_name" placeholder="Full Name *" required style="width: 100%; padding: 1.5rem; background: #000; border: 1px solid #333; color: white; border-radius: 8px;">
+                                <input type="email" name="titan_email" placeholder="Work Email *" required style="width: 100%; padding: 1.5rem; background: #000; border: 1px solid #333; color: white; border-radius: 8px;">
+                            </div>
+                            <input type="url" name="titan_website" placeholder="Current Website URL (if any)" style="width: 100%; padding: 1.5rem; background: #000; border: 1px solid #333; color: white; border-radius: 8px;">
+                            <textarea name="titan_details" rows="4" placeholder="Tell us about your business vision..." style="width: 100%; padding: 1.5rem; background: #000; border: 1px solid #333; color: white; border-radius: 8px;"></textarea>
                         </div>
                     </div>
 
@@ -129,7 +175,7 @@ get_header(); ?>
 <script>
 document.addEventListener('DOMContentLoaded', () => {
     let currentStep = 1;
-    const totalSteps = 4;
+    const totalSteps = 5;
     const nextBtn = document.getElementById('next-step');
     const prevBtn = document.getElementById('prev-step');
     const progress = document.getElementById('progress-fill');

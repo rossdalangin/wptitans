@@ -62,6 +62,14 @@ get_header(); ?>
             </div>
         </div>
     </section>
+
+    <section id="service-guarantee" style="background: #050505; text-align: center; border-top: 1px solid var(--border-glass);">
+        <div class="reveal" style="max-width: 800px; margin: 0 auto; background: #111; padding: 4rem; border-radius: 12px; border: 1px solid var(--primary);">
+            <i class="fas fa-hand-holding-heart" style="font-size: 3.5rem; color: var(--primary); margin-bottom: 2rem;"></i>
+            <h2 style="font-size: 2.5rem; margin-bottom: 1.5rem;">The Titans Commitment</h2>
+            <p style="font-size: 1.25rem; color: var(--text-dim); line-height: 1.6;">We stand by the quality and strategic impact of our work. If this service doesn't meet the authority standards we've set for your brand, we'll iterate until it's perfect. No questions asked.</p>
+        </div>
+    </section>
 </main>
 
 <?php get_footer(); ?>
