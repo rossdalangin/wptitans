@@ -353,6 +353,18 @@ input:focus, textarea:focus, select:focus {
     margin-top: 4rem;
 }
 
+.grid-masonry {
+    columns: 2 400px;
+    column-gap: 2.5rem;
+    margin-top: 4rem;
+}
+
+.grid-masonry .portfolio-item {
+    break-inside: avoid;
+    margin-bottom: 2.5rem;
+    display: block;
+}
+
 .card {
     background: var(--bg-card);
     padding: 3rem;

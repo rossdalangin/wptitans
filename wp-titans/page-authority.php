@@ -16,6 +16,41 @@ get_header(); ?>
     </div>
 </section>
 
+<section id="system-comparison" style="background: #000; border-bottom: 1px solid var(--border-glass);">
+    <div class="reveal" style="text-align: center; margin-bottom: 5rem;">
+        <span class="tagline">The Difference</span>
+        <h2>System vs. Standard</h2>
+    </div>
+    <div class="reveal" style="max-width: 1000px; margin: 0 auto; overflow-x: auto;">
+        <table style="width: 100%; border-collapse: collapse; text-align: left; background: #050505; border-radius: 8px; border: 1px solid var(--border-glass);">
+            <thead>
+                <tr style="border-bottom: 2px solid var(--primary);">
+                    <th style="padding: 2rem; font-family: 'Syne'; font-size: 1.2rem;">Feature</th>
+                    <th style="padding: 2rem; font-family: 'Syne'; font-size: 1.2rem; color: var(--primary);">Titans System™</th>
+                    <th style="padding: 2rem; font-family: 'Syne'; font-size: 1.2rem; opacity: 0.5;">Standard Agency</th>
+                </tr>
+            </thead>
+            <tbody style="color: var(--text-dim);">
+                <?php
+                $comparisons = [
+                    ['f' => 'Launch Speed', 's' => 'Elite 14-Day Delivery', 'o' => '2-4 Months Average'],
+                    ['f' => 'Lead Gen Logic', 's' => 'Multi-Step Conversion Funnels', 'o' => 'Simple Contact Form'],
+                    ['f' => 'Performance', 's' => '90+ Core Web Vitals', 'o' => 'Plugin-Heavy & Slow'],
+                    ['f' => 'Positioning', 's' => 'Authority-First Strategy', 'o' => 'Generic "Portfolio" Look'],
+                    ['f' => 'Management', 's' => '100% No-Code Admin', 'o' => 'Hard-coded / Complex'],
+                ];
+                foreach ($comparisons as $row) : ?>
+                    <tr style="border-bottom: 1px solid #111;">
+                        <td style="padding: 1.5rem 2rem; font-weight: 700; color: white;"><?php echo $row['f']; ?></td>
+                        <td style="padding: 1.5rem 2rem; color: var(--primary); font-weight: 700;"><i class="fas fa-check-circle"></i> <?php echo $row['s']; ?></td>
+                        <td style="padding: 1.5rem 2rem; opacity: 0.5;"><i class="fas fa-times-circle"></i> <?php echo $row['o']; ?></td>
+                    </tr>
+                <?php endforeach; ?>
+            </tbody>
+        </table>
+    </div>
+</section>
+
 <section id="ideal-client" style="background: #050505;">
     <div class="grid-2">
         <div class="reveal">

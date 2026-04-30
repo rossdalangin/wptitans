@@ -59,7 +59,9 @@
 <?php endif; ?>
 
 <?php if (wp_titans_get_mod("wp_titans_custom_cursor")) : ?>
-    <div id="custom-cursor" style="position: fixed; width: 30px; height: 30px; border: 2px solid var(--primary); border-radius: 50%; pointer-events: none; z-index: 100000; transform: translate(-50%, -50%); transition: width 0.3s, height 0.3s, background 0.3s; display: none;"></div>
+    <div id="custom-cursor" style="position: fixed; width: 30px; height: 30px; border: 2px solid var(--primary); border-radius: 50%; pointer-events: none; z-index: 100000; transform: translate(-50%, -50%); transition: width 0.3s, height 0.3s, background 0.3s; display: flex; align-items: center; justify-content: center; overflow: hidden;">
+        <span id="cursor-text" style="font-size: 0.6rem; font-weight: 900; color: black; font-family: 'Syne'; text-transform: uppercase; letter-spacing: 1px; opacity: 0; transition: opacity 0.3s;"></span>
+    </div>
 <?php endif; ?>
 
 <?php if (wp_titans_get_mod("wp_titans_preloader_show")) : ?>

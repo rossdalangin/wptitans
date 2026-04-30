@@ -28,8 +28,17 @@ function wp_titans_customize_register( $wp_customize ) {
         'priority' => 20,
     ) );
 
+    $wp_customize->add_setting( 'wp_titans_design_preset', array( 'default' => 'gold', 'sanitize_callback' => 'sanitize_text_field' ) );
+    $wp_customize->add_control( 'wp_titans_design_preset', array(
+        'label' => __( 'Luxury Design Preset', 'wp-titans' ),
+        'description' => __( 'Changing this will update global colors instantly.', 'wp-titans' ),
+        'section' => 'wp_titans_design',
+        'type' => 'select',
+        'choices' => array( 'gold' => 'Titan Gold (Default)', 'sapphire' => 'Midnight Sapphire', 'emerald' => 'Emerald Luxury' )
+    ) );
+
     $wp_customize->add_setting( 'wp_titans_primary_color', array( 'default' => wp_titans_get_default('wp_titans_primary_color'), 'sanitize_callback' => 'sanitize_hex_color' ) );
-    $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'wp_titans_primary_color', array( 'label' => __( 'Primary Color (Gold)', 'wp-titans' ), 'section' => 'wp_titans_design' ) ) );
+    $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'wp_titans_primary_color', array( 'label' => __( 'Primary Color (Manual Override)', 'wp-titans' ), 'section' => 'wp_titans_design' ) ) );
 
     $wp_customize->add_setting( 'wp_titans_secondary_color', array( 'default' => '#B8860B', 'sanitize_callback' => 'sanitize_hex_color' ) );
     $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'wp_titans_secondary_color', array( 'label' => __( 'Secondary Accent', 'wp-titans' ), 'section' => 'wp_titans_design' ) ) );
@@ -301,6 +310,14 @@ function wp_titans_customize_register( $wp_customize ) {
     $wp_customize->add_section( 'wp_titans_portfolio', array(
         'title'    => __( 'Portfolio Section', 'wp-titans' ),
         'priority' => 80,
+    ) );
+
+    $wp_customize->add_setting( 'wp_titans_portfolio_layout', array( 'default' => 'grid', 'sanitize_callback' => 'sanitize_text_field' ) );
+    $wp_customize->add_control( 'wp_titans_portfolio_layout', array(
+        'label' => __( 'Portfolio Layout', 'wp-titans' ),
+        'section' => 'wp_titans_portfolio',
+        'type' => 'select',
+        'choices' => array( 'grid' => 'Standard Grid', 'masonry' => 'Masonry' )
     ) );
 
     for ($i = 1; $i <= 6; $i++) {
@@ -722,10 +739,19 @@ add_action( 'customize_register', 'wp_titans_customize_register' );
 function wp_titans_customizer_css() {
     $heading_font = wp_titans_get_mod("wp_titans_heading_font");
     $body_font = wp_titans_get_mod("wp_titans_body_font");
+    $preset = wp_titans_get_mod("wp_titans_design_preset");
+    $primary = wp_titans_get_mod("wp_titans_primary_color");
+
+    if ($preset === 'sapphire') {
+        $primary = '#3498db';
+    } elseif ($preset === 'emerald') {
+        $primary = '#2ecc71';
+    }
+
     ?>
     <style type="text/css">
         :root {
-            --primary: <?php echo wp_titans_get_mod("wp_titans_primary_color"); ?>;
+            --primary: <?php echo $primary; ?>;
             --secondary: <?php echo wp_titans_get_mod('wp_titans_secondary_color'); ?>;
             --accent-glow: <?php
                 $primary = wp_titans_get_mod("wp_titans_primary_color");

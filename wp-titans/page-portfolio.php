@@ -27,7 +27,8 @@ get_header(); ?>
         </div>
     </div>
 
-    <div class="grid-cards" id="portfolio-items" style="grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));">
+    <?php $p_layout = wp_titans_get_mod("wp_titans_portfolio_layout"); ?>
+    <div class="<?php echo $p_layout === 'masonry' ? 'grid-masonry' : 'grid-cards'; ?>" id="portfolio-items">
         <?php
         $portfolio_query = new WP_Query(array('post_type' => 'portfolio', 'posts_per_page' => 12));
         if ($portfolio_query->have_posts()) : while ($portfolio_query->have_posts()) : $portfolio_query->the_post();

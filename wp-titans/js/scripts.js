@@ -41,23 +41,30 @@ document.querySelectorAll('.faq-head').forEach(item => {
 
 // Custom Cursor
 const cursor = document.getElementById('custom-cursor');
+const cursorText = document.getElementById('cursor-text');
 if (cursor) {
     document.addEventListener('mousemove', (e) => {
-        cursor.style.display = 'block';
+        cursor.style.display = 'flex';
         cursor.style.left = `${e.clientX}px`;
         cursor.style.top = `${e.clientY}px`;
     });
 
     document.querySelectorAll('a, button, #theme-switch, #search-toggle').forEach(el => {
         el.addEventListener('mouseenter', () => {
-            cursor.style.width = '60px';
-            cursor.style.height = '60px';
-            cursor.style.background = 'rgba(212, 175, 55, 0.1)';
+            cursor.style.width = '80px';
+            cursor.style.height = '80px';
+            cursor.style.background = 'var(--primary)';
+
+            if (el.classList.contains('portfolio-item') || el.closest('.portfolio-item') || el.closest('.card')) {
+                cursorText.innerText = 'VIEW';
+                cursorText.style.opacity = '1';
+            }
         });
         el.addEventListener('mouseleave', () => {
             cursor.style.width = '30px';
             cursor.style.height = '30px';
             cursor.style.background = 'transparent';
+            cursorText.style.opacity = '0';
         });
     });
 }
