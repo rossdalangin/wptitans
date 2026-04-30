@@ -3,15 +3,27 @@
 <head>
     <meta charset="<?php bloginfo( 'charset' ); ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="<?php echo esc_attr(wp_titans_get_mod("wp_titans_seo_desc")); ?>">
+    <?php
+    $seo_desc = wp_titans_get_mod("wp_titans_seo_desc");
+    if (is_singular()) {
+        $post_desc = get_the_excerpt();
+        if ($post_desc) $seo_desc = $post_desc;
+    }
+    ?>
+    <meta name="description" content="<?php echo esc_attr($seo_desc); ?>">
     <?php wp_head(); ?>
 
     <!-- Open Graph Metadata -->
-    <meta property="og:type" content="website">
+    <meta property="og:type" content="<?php echo is_singular() ? 'article' : 'website'; ?>">
     <meta property="og:title" content="<?php wp_title(""); ?>">
-    <meta property="og:description" content="<?php bloginfo("description"); ?>">
-    <?php if (wp_titans_get_mod("wp_titans_og_image")) : ?>
-        <meta property="og:image" content="<?php echo esc_url(wp_titans_get_mod("wp_titans_og_image")); ?>">
+    <meta property="og:description" content="<?php echo esc_attr($seo_desc); ?>">
+    <?php
+    $og_img = wp_titans_get_mod("wp_titans_og_image");
+    if (is_singular() && has_post_thumbnail()) {
+        $og_img = get_the_post_thumbnail_url(get_the_ID(), 'large');
+    }
+    if ($og_img) : ?>
+        <meta property="og:image" content="<?php echo esc_url($og_img); ?>">
     <?php endif; ?>
 
     <?php echo wp_titans_get_mod("wp_titans_header_scripts"); ?>
@@ -36,6 +48,15 @@
 </head>
 <body <?php body_class(); ?>>
 <?php wp_body_open(); ?>
+
+<?php if (wp_titans_get_mod("wp_titans_top_bar_show")) : ?>
+<div id="top-announcement-bar" style="background: var(--primary); color: black; padding: 0.6rem 10%; text-align: center; font-size: 0.75rem; font-weight: 800; text-transform: uppercase; letter-spacing: 1px; position: relative; z-index: 2001; font-family: 'Syne';">
+    <a href="<?php echo esc_url(wp_titans_get_mod("wp_titans_top_bar_url")); ?>" style="text-decoration: none;">
+        <?php echo esc_html(wp_titans_get_mod("wp_titans_top_bar_text")); ?>
+        <i class="fas fa-arrow-right" style="margin-left: 10px;"></i>
+    </a>
+</div>
+<?php endif; ?>
 
 <?php if (wp_titans_get_mod("wp_titans_custom_cursor")) : ?>
     <div id="custom-cursor" style="position: fixed; width: 30px; height: 30px; border: 2px solid var(--primary); border-radius: 50%; pointer-events: none; z-index: 100000; transform: translate(-50%, -50%); transition: width 0.3s, height 0.3s, background 0.3s; display: none;"></div>

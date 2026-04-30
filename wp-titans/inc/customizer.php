@@ -73,6 +73,14 @@ function wp_titans_customize_register( $wp_customize ) {
     $wp_customize->add_setting( 'wp_titans_hero_video', array( 'default' => '', 'sanitize_callback' => 'esc_url_raw' ) );
     $wp_customize->add_control( 'wp_titans_hero_video', array( 'label' => __( 'Hero Background Video URL (Direct MP4 link)', 'wp-titans' ), 'section' => 'wp_titans_hero', 'type' => 'text' ) );
 
+    $wp_customize->add_setting( 'wp_titans_hero_align', array( 'default' => 'center', 'sanitize_callback' => 'sanitize_text_field' ) );
+    $wp_customize->add_control( 'wp_titans_hero_align', array(
+        'label' => __( 'Hero Alignment', 'wp-titans' ),
+        'section' => 'wp_titans_hero',
+        'type' => 'select',
+        'choices' => array( 'center' => 'Center', 'left' => 'Left' )
+    ) );
+
     $wp_customize->add_setting( 'wp_titans_hero_ticker', array( 'default' => 'Recent Results: $12k Lead Gen Funnel • 14-Day Authority Site Launch • Expert Brand Platform', 'sanitize_callback' => 'wp_kses_post' ) );
     $wp_customize->add_control( 'wp_titans_hero_ticker', array( 'label' => __( 'Hero Ticker Text', 'wp-titans' ), 'section' => 'wp_titans_hero' ) );
 
@@ -578,6 +586,15 @@ function wp_titans_customize_register( $wp_customize ) {
 
     $wp_customize->add_setting( 'wp_titans_back_to_top', array( 'default' => true, 'sanitize_callback' => 'wp_validate_boolean' ) );
     $wp_customize->add_control( 'wp_titans_back_to_top', array( 'label' => __( 'Show Back to Top Button', 'wp-titans' ), 'section' => 'wp_titans_ux', 'type' => 'checkbox' ) );
+
+    $wp_customize->add_setting( 'wp_titans_top_bar_show', array( 'default' => false, 'sanitize_callback' => 'wp_validate_boolean' ) );
+    $wp_customize->add_control( 'wp_titans_top_bar_show', array( 'label' => __( 'Show Strategic Top Bar', 'wp-titans' ), 'section' => 'wp_titans_ux', 'type' => 'checkbox' ) );
+
+    $wp_customize->add_setting( 'wp_titans_top_bar_text', array( 'default' => 'Join our elite 14-day launch workshop - Limited spots available', 'sanitize_callback' => 'wp_kses_post' ) );
+    $wp_customize->add_control( 'wp_titans_top_bar_text', array( 'label' => __( 'Top Bar Text', 'wp-titans' ), 'section' => 'wp_titans_ux' ) );
+
+    $wp_customize->add_setting( 'wp_titans_top_bar_url', array( 'default' => '#', 'sanitize_callback' => 'esc_url_raw' ) );
+    $wp_customize->add_control( 'wp_titans_top_bar_url', array( 'label' => __( 'Top Bar URL', 'wp-titans' ), 'section' => 'wp_titans_ux' ) );
 
     // --- Global CTA ---
     $wp_customize->add_section( 'wp_titans_global_cta', array(

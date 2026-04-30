@@ -5,13 +5,14 @@
 get_header(); ?>
 
 <!-- 1. HERO SECTION -->
-<section id="hero" class="hero" style="overflow: hidden; padding-bottom: 15rem;">
+<?php $h_align = wp_titans_get_mod("wp_titans_hero_align"); ?>
+<section id="hero" class="hero" style="overflow: hidden; padding-bottom: 15rem; align-items: <?php echo $h_align === 'left' ? 'flex-start' : 'center'; ?>; text-align: <?php echo esc_attr($h_align); ?>;">
     <?php if (wp_titans_get_mod("wp_titans_hero_video")) : ?>
         <video autoplay muted loop playsinline style="position: absolute; top: 50%; left: 50%; min-width: 100%; min-height: 100%; width: auto; height: auto; transform: translate(-50%, -50%); z-index: 0; object-fit: cover;">
             <source src="<?php echo esc_url(wp_titans_get_mod("wp_titans_hero_video")); ?>" type="video/mp4">
         </video>
     <?php endif; ?>
-    <div class="reveal" style="z-index: 1;">
+    <div class="reveal" style="z-index: 1; <?php echo $h_align === 'left' ? 'margin-left: 0;' : ''; ?>">
         <?php if (wp_titans_get_mod("wp_titans_hero_ticker")) : ?>
             <div class="hero-ticker" style="margin-bottom: 2rem; background: rgba(255,255,255,0.05); padding: 0.8rem 2rem; border-radius: 50px; display: inline-block; border: 1px solid rgba(255,255,255,0.1);">
                 <p style="margin: 0; font-size: 0.85rem; letter-spacing: 1px; color: var(--primary); font-weight: 700; text-transform: uppercase;">
