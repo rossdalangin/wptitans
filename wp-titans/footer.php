@@ -100,6 +100,21 @@
     </a>
     <?php endif; ?>
 
+    <?php if (wp_titans_get_mod("wp_titans_fab_show")) : ?>
+    <div id="fab-container" style="position: fixed; bottom: 100px; right: 30px; z-index: 1000; display: flex; flex-direction: column; align-items: center; gap: 1rem;">
+        <div id="fab-label" style="background: var(--primary); color: black; padding: 0.5rem 1rem; border-radius: 4px; font-size: 0.7rem; font-weight: 800; font-family: 'Syne'; text-transform: uppercase; letter-spacing: 1px; opacity: 0; transform: translateX(20px); transition: var(--transition); pointer-events: none;">
+            <?php echo esc_html(wp_titans_get_mod("wp_titans_fab_text")); ?>
+        </div>
+        <a href="<?php echo esc_url(wp_titans_get_mod("wp_titans_fab_url")); ?>" id="fab-button" style="background: #000; color: var(--primary); width: 60px; height: 60px; border-radius: 50%; border: 2px solid var(--primary); display: flex; align-items: center; justify-content: center; font-size: 1.4rem; box-shadow: 0 10px 30px rgba(0,0,0,0.5); transition: var(--transition);">
+            <i class="fas <?php echo esc_attr(wp_titans_get_mod("wp_titans_fab_icon")); ?>"></i>
+        </a>
+    </div>
+    <style>
+        #fab-container:hover #fab-label { opacity: 1; transform: translateX(0); }
+        #fab-button:hover { background: var(--primary); color: black; transform: scale(1.1) rotate(5deg); }
+    </style>
+    <?php endif; ?>
+
     <?php if (wp_titans_get_mod("wp_titans_mobile_cta")) : ?>
     <div id="mobile-cta-bar" style="position: fixed; bottom: 0; left: 0; width: 100%; background: #111; border-top: 1px solid var(--primary); padding: 1rem 5%; z-index: 1500; display: none;">
         <a href="<?php echo esc_url(wp_titans_get_mod("wp_titans_hero_btn2_url")); ?>" class="btn btn-primary" style="width: 100%; padding: 1rem;"><?php echo esc_html(wp_titans_get_mod("wp_titans_hero_btn2_text")); ?></a>

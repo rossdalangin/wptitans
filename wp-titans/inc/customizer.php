@@ -642,6 +642,18 @@ function wp_titans_customize_register( $wp_customize ) {
     $wp_customize->add_setting( 'wp_titans_back_to_top', array( 'default' => true, 'sanitize_callback' => 'wp_validate_boolean' ) );
     $wp_customize->add_control( 'wp_titans_back_to_top', array( 'label' => __( 'Show Back to Top Button', 'wp-titans' ), 'section' => 'wp_titans_ux', 'type' => 'checkbox' ) );
 
+    $wp_customize->add_setting( 'wp_titans_fab_show', array( 'default' => false, 'sanitize_callback' => 'wp_validate_boolean' ) );
+    $wp_customize->add_control( 'wp_titans_fab_show', array( 'label' => __( 'Enable Floating Action Button (FAB)', 'wp-titans' ), 'section' => 'wp_titans_ux', 'type' => 'checkbox' ) );
+
+    $wp_customize->add_setting( 'wp_titans_fab_text', array( 'default' => 'Get a Quote', 'sanitize_callback' => 'wp_kses_post' ) );
+    $wp_customize->add_control( 'wp_titans_fab_text', array( 'label' => __( 'FAB Label Text', 'wp-titans' ), 'section' => 'wp_titans_ux' ) );
+
+    $wp_customize->add_setting( 'wp_titans_fab_url', array( 'default' => '#contact', 'sanitize_callback' => 'esc_url_raw' ) );
+    $wp_customize->add_control( 'wp_titans_fab_url', array( 'label' => __( 'FAB Target URL', 'wp-titans' ), 'section' => 'wp_titans_ux' ) );
+
+    $wp_customize->add_setting( 'wp_titans_fab_icon', array( 'default' => 'fa-comment-dots', 'sanitize_callback' => 'sanitize_text_field' ) );
+    $wp_customize->add_control( 'wp_titans_fab_icon', array( 'label' => __( 'FAB Icon (FontAwesome)', 'wp-titans' ), 'section' => 'wp_titans_ux' ) );
+
     $wp_customize->add_setting( 'wp_titans_top_bar_show', array( 'default' => false, 'sanitize_callback' => 'wp_validate_boolean' ) );
     $wp_customize->add_control( 'wp_titans_top_bar_show', array( 'label' => __( 'Show Strategic Top Bar', 'wp-titans' ), 'section' => 'wp_titans_ux', 'type' => 'checkbox' ) );
 
@@ -716,6 +728,14 @@ function wp_titans_customize_register( $wp_customize ) {
         'section' => 'wp_titans_design',
         'type' => 'select',
         'choices' => array( 'solid' => 'Solid Luxury', 'glass' => 'Glass Luxury (Frosted)' )
+    ) );
+
+    $wp_customize->add_setting( 'wp_titans_glass_intensity', array( 'default' => 15, 'sanitize_callback' => 'absint' ) );
+    $wp_customize->add_control( 'wp_titans_glass_intensity', array(
+        'label' => __( 'Glass Blur Intensity (px)', 'wp-titans' ),
+        'section' => 'wp_titans_design',
+        'type' => 'number',
+        'input_attrs' => array('min' => 0, 'max' => 50)
     ) );
 
     $wp_customize->add_setting( 'wp_titans_header_btn_text', array( 'default' => 'Strategy Call', 'sanitize_callback' => 'wp_kses_post' ) );
@@ -839,11 +859,13 @@ function wp_titans_customizer_css() {
             --bg-card: <?php echo wp_titans_get_mod("wp_titans_card_bg"); ?>;
             --radius: <?php echo wp_titans_get_mod("wp_titans_border_radius"); ?>;
         }
-        <?php if (wp_titans_get_mod("wp_titans_design_mode") === 'glass') : ?>
+        <?php if (wp_titans_get_mod("wp_titans_design_mode") === 'glass') :
+            $blur = wp_titans_get_mod("wp_titans_glass_intensity");
+        ?>
         .card, #masthead.scrolled, #planner-container, .option-content {
             background: var(--bg-glass) !important;
-            backdrop-filter: blur(15px) !important;
-            -webkit-backdrop-filter: blur(15px) !important;
+            backdrop-filter: blur(<?php echo $blur; ?>px) !important;
+            -webkit-backdrop-filter: blur(<?php echo $blur; ?>px) !important;
             border: 1px solid rgba(255,255,255,0.1) !important;
         }
         <?php endif; ?>

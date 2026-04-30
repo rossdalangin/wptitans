@@ -104,7 +104,7 @@ const observer = new IntersectionObserver((entries) => {
     });
 }, observerOptions);
 
-document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+document.querySelectorAll('.reveal, .img-reveal').forEach(el => observer.observe(el));
 
 // Staggered reveals for grids
 document.querySelectorAll('.grid-cards, .grid-2').forEach(grid => {

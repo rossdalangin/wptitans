@@ -143,6 +143,15 @@ function wp_titans_register_cpts() {
         'supports'    => array( 'title', 'thumbnail', 'excerpt' ),
         'show_in_rest' => true,
     ) );
+
+    // Resources
+    register_post_type( 'resource', array(
+        'labels'      => array( 'name' => 'Resources', 'singular_name' => 'Resource' ),
+        'public'      => true,
+        'menu_icon'   => 'dashicons-media-document',
+        'supports'    => array( 'title', 'editor', 'thumbnail', 'excerpt' ),
+        'show_in_rest' => true,
+    ) );
 }
 add_action( 'init', 'wp_titans_register_cpts' );
 
@@ -205,6 +214,9 @@ function wp_titans_handle_setup() {
             ),
             'Client Portal' => array(
                 'template' => 'page-portal.php'
+            ),
+            'Resource Center' => array(
+                'template' => 'page-resources.php'
             )
         );
 

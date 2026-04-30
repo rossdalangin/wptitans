@@ -123,7 +123,7 @@ get_header(); ?>
             <p><?php echo nl2br(esc_html(wp_titans_get_mod("wp_titans_about_content"))); ?></p>
             <a href="<?php echo esc_attr(wp_titans_get_mod("wp_titans_about_btn_url")); ?>" class="btn btn-outline" style="margin-top: 2rem;"><?php echo esc_html(wp_titans_get_mod("wp_titans_about_btn_text")); ?></a>
         </div>
-        <div class="reveal">
+        <div class="img-reveal">
             <img loading="lazy" src="<?php echo esc_url(wp_titans_get_mod("wp_titans_about_image")); ?>" alt="About Titans" style="border-radius: 8px; box-shadow: 0 20px 40px rgba(0,0,0,0.5);">
         </div>
     </div>

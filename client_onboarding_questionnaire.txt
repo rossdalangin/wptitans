@@ -1,0 +1,35 @@
+# CLIENT ONBOARDING QUESTIONNAIRE: TITAN AUTHORITY SYSTEM
+## Objective: Facilitate 14-Day Velocity & Absolute Clarity
+
+---
+
+### SECTION 1: BUSINESS IDENTITY & POSITIONING
+1. **The 'Why'**: In one sentence, why do you do what you do beyond making money?
+2. **The Ideal Client**: Describe the person you want to work with most. What keeps them up at night?
+3. **The Core Offer**: What is the primary product or service you want this website to sell?
+4. **The Expert Status**: What unique experience or result qualifies you as an 'Authority' in your field?
+
+### SECTION 2: CONVERSION & GOALS
+5. **The Primary Action**: When a user lands on your home page, what is the SINGLE action you want them to take? (e.g., Book a Call, Download Guide, Buy Now).
+6. **The Current 'Friction'**: What is the biggest objection you hear from prospects before they hire you?
+7. **Lead Magnets**: Do you have an existing guide, checklist, or workshop we should feature?
+
+### SECTION 3: VISUAL BRANDING & AESTHETIC
+8. **Brand Voice**: If your brand was a car, what would it be and why? (e.g., Tesla = Innovative/Minimalist, Rolls Royce = Traditional Luxury).
+9. **Primary Competitors**: List 2-3 websites you admire (or compete with). What do you like/dislike about them?
+10. **Key Assets**: Do you have professional photography, brand guidelines, and logos ready for deployment?
+
+### SECTION 4: TECHNICAL REQUIREMENTS
+11. **Existing Infrastructure**: List your current domain provider, hosting, and any CRM you use (HubSpot, Mailchimp, etc.).
+12. **Third-Party Integrations**: Do you need specific tools linked? (Calendly, SavvyCal, Stripe, MemberPress).
+
+### SECTION 5: THE 14-DAY COMMITMENT
+13. **Final Assets**: To hit our 14-day delivery guarantee, we require all high-resolution images and final content copies by [Date]. Are you able to meet this deadline?
+
+---
+
+### NEXT STEPS:
+- **Strategic Blueprint Call**: Scheduled for [Date].
+- **Launch Date Target**: [Date].
+
+*Success is built on clarity. Let's build your authority.*
