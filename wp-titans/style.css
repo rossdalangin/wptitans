@@ -207,7 +207,7 @@ nav.scrolled {
     background-size: cover;
     background-position: center;
     position: relative;
-    padding: 0 10%;
+    padding: 15rem 10% 8rem; /* Increased top padding to avoid header overlap */
 }
 
 .hero h1 {
@@ -505,6 +505,7 @@ footer {
 
 @media (max-width: 768px) {
     section { padding: 5rem 5%; }
+    .hero { padding-top: 12rem; }
     .hero h1 { font-size: 2.8rem; }
     .nav-links, .nav-cta { display: none; }
     #mobile-toggle { display: block !important; }

@@ -4,7 +4,7 @@
  */
 get_header(); ?>
 
-<section id="authority-hero" class="hero" style="min-height: 80vh; text-align: left; padding-left: 10%; padding-right: 10%;">
+<section id="authority-hero" class="hero" style="min-height: 80vh; text-align: left; padding-top: 15rem;">
     <div class="reveal">
         <span class="tagline">The Flagship Solution</span>
         <h1 style="font-size: 5.5rem; line-height: 1;"><?php echo esc_html(wp_titans_get_mod("wp_titans_auth_title")); ?></h1>

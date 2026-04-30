@@ -4,7 +4,7 @@
  */
 get_header(); ?>
 
-<main style="padding-top: 15vh; background: #000;">
+<main style="padding-top: 10rem; background: #000;">
     <section id="booking-hero" style="text-align: center; padding-bottom: 5rem;">
         <div class="reveal">
             <span class="tagline">Final Step</span>

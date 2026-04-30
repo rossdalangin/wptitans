@@ -4,7 +4,7 @@
  */
 get_header(); ?>
 
-<main style="padding-top: 15vh; background: #000; min-height: 100vh;">
+<main style="padding-top: 10rem; background: #000; min-height: 100vh;">
     <section id="audit-header" style="text-align: center; padding-bottom: 5rem;">
         <div class="reveal">
             <span class="tagline">Authority Scan</span>
