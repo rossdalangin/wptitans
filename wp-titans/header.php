@@ -45,9 +45,28 @@
       "priceRange": "$$"
     }
     </script>
+
+    <?php if (is_page_template('page-service-single.php')) : ?>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "serviceType": "<?php the_title(); ?>",
+      "provider": {
+        "@type": "LocalBusiness",
+        "name": "<?php bloginfo("name"); ?>"
+      },
+      "description": "<?php echo esc_js(get_the_excerpt()); ?>"
+    }
+    </script>
+    <?php endif; ?>
 </head>
 <body <?php body_class(); ?>>
 <?php wp_body_open(); ?>
+
+<?php if (wp_titans_get_mod("wp_titans_mouse_glow")) : ?>
+    <div id="mouse-glow" style="position: fixed; top: 0; left: 0; width: 600px; height: 600px; background: radial-gradient(circle, var(--accent-glow) 0%, transparent 70%); border-radius: 50%; pointer-events: none; z-index: 0; transform: translate(-50%, -50%); opacity: 0; transition: opacity 1s;"></div>
+<?php endif; ?>
 
 <?php if (wp_titans_get_mod("wp_titans_noise_overlay")) : ?>
 <div id="noise-overlay" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: 9999; pointer-events: none; opacity: 0.05; background-image: url('data:image/svg+xml,%3Csvg viewBox=%220 0 200 200%22 xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cfilter id=%22noiseFilter%22%3E%3CfeTurbulence type=%22fractalNoise%22 baseFrequency=%220.65%22 numOctaves=%223%22 stitchTiles=%22stitch%22/%3E%3C/filter%3E%3Crect width=%22100%25%22 height=%22100%25%22 filter=%22url(%23noiseFilter)%22/%3E%3C/svg%3E');"></div>

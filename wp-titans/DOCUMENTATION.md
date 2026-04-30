@@ -72,10 +72,17 @@ You can add labels like "HOT", "NEW", or "FEATURED" to your services and portfol
 The theme includes a native toggle. You can enable/disable this in **Customizer > Layout & UX**. User preferences are saved via `localStorage`.
 
 ### Performance & SEO
-- **Schema**: Native JSON-LD Schema for `ProfessionalService` and `FAQPage` is injected automatically.
+- **Schema**: Native JSON-LD Schema for `ProfessionalService`, `Service`, and `FAQPage` is injected automatically based on the page type.
 - **Lazy Loading**: All theme images use native `loading="lazy"` for optimal PageSpeed scores.
 - **Fluid UI**: Typography and spacing use `clamp()` and variables for perfect rendering on any device.
 - **Optimized Assets**: Defined custom image sizes for Portfolio (`titan-portfolio`), Team (`titan-team`), and Testimonials (`titan-testimonial`) to ensure maximum speed and stability.
+
+### Interactive Mastery
+- **Design Presets**: Switch between Titan Gold, Midnight Sapphire, and Emerald Luxury in **Customizer > Visual Style**.
+- **Design Modes**: Toggle between "Solid" and "Glass Luxury" (Glassmorphism) in **Visual Style**.
+- **Elite Motion**: Magnetic buttons, mouse-follow glow effects, and cinematic scroll indicators are built-in and manageable via **Customizer > Layout & UX**.
+- **Project Planner**: A high-converting 5-step AJAX discovery engine that qualifies leads instantly.
+- **Results Ticker**: Auto-scrolling social proof bar on the homepage.
 
 ---
 

@@ -73,11 +73,20 @@ get_header(); ?>
     <div class="reveal" style="text-align: center; margin-bottom: 5rem;">
         <span class="tagline">Investment</span>
         <h2>Agency Packages</h2>
+
+        <div id="pricing-toggle-container" style="display: flex; justify-content: center; align-items: center; gap: 1.5rem; margin-top: 3rem;">
+            <span style="font-weight: 700; color: var(--text-dim);">One-Time</span>
+            <div id="pricing-toggle" style="width: 60px; height: 30px; background: #222; border-radius: 50px; cursor: pointer; position: relative; border: 1px solid var(--border-glass);">
+                <div class="toggle-switch" style="width: 24px; height: 24px; background: var(--primary); border-radius: 50%; position: absolute; top: 2px; left: 3px; transition: var(--transition);"></div>
+            </div>
+            <span style="font-weight: 700; color: var(--text-main);">Monthly</span>
+        </div>
     </div>
     <div class="grid-cards" style="align-items: flex-start;">
         <?php for ($i = 1; $i <= 3; $i++) :
             $name = wp_titans_get_mod("wp_titans_pricing_name_$i");
-            $price = wp_titans_get_mod("wp_titans_pricing_val_$i");
+            $price_one = wp_titans_get_mod("wp_titans_pricing_val_$i");
+            $price_monthly = wp_titans_get_mod("wp_titans_pricing_monthly_$i");
             $sub = wp_titans_get_mod("wp_titans_pricing_desc_$i");
             $features = wp_titans_get_mod("wp_titans_pricing_features_$i");
             if (!$name) continue;
@@ -88,7 +97,14 @@ get_header(); ?>
                 <span style="background: var(--primary); color: black; padding: 0.3rem 1rem; font-size: 0.7rem; font-weight: 900; border-radius: 20px; position: absolute; top: -15px; left: 50%; transform: translateX(-50%);">MOST POPULAR</span>
             <?php endif; ?>
             <h3 style="font-size: 1.5rem; margin-bottom: 0.5rem;"><?php echo esc_html($name); ?></h3>
-            <div style="font-size: 3rem; font-weight: 800; color: var(--primary); margin: 1.5rem 0;"><?php echo esc_html($price); ?></div>
+
+            <div class="price-val one-time-price" style="font-size: 3rem; font-weight: 800; color: var(--primary); margin: 1.5rem 0; display: block;"><?php echo esc_html($price_one); ?></div>
+            <?php if ($price_monthly) : ?>
+                <div class="price-val monthly-price" style="font-size: 3rem; font-weight: 800; color: var(--primary); margin: 1.5rem 0; display: none;"><?php echo esc_html($price_monthly); ?><small style="font-size: 1rem; color: var(--text-dim);">/mo</small></div>
+            <?php else : ?>
+                <div class="price-val monthly-price" style="font-size: 3rem; font-weight: 800; color: var(--primary); margin: 1.5rem 0; display: none;">POA</div>
+            <?php endif; ?>
+
             <p style="color: var(--text-dim); margin-bottom: 2.5rem;"><?php echo esc_html($sub); ?></p>
             <ul style="text-align: left; color: var(--text-dim); margin-bottom: 3rem; font-size: 0.95rem;">
                 <?php

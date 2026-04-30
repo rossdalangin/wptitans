@@ -134,6 +134,19 @@
     }
     </script>
 
+    <?php if (wp_titans_get_mod("wp_titans_show_auth_notif")) : ?>
+    <div id="auth-notification" style="position: fixed; bottom: 30px; left: 30px; background: #111; border: 1px solid var(--primary); padding: 1.5rem 2rem; border-radius: 8px; z-index: 998; display: flex; align-items: center; gap: 1.5rem; transform: translateY(200%); transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1); box-shadow: 0 10px 30px rgba(0,0,0,0.5);">
+        <div style="background: var(--primary); color: black; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+            <i class="fas fa-check"></i>
+        </div>
+        <div>
+            <p id="notif-text" style="margin: 0; font-size: 0.85rem; font-weight: 700; color: white;">New Project Completed</p>
+            <small id="notif-sub" style="color: var(--text-dim); font-size: 0.75rem;">Authority System Launch</small>
+        </div>
+        <div id="notif-close" style="cursor: pointer; color: #444; font-size: 1.2rem; margin-left: 1rem;">&times;</div>
+    </div>
+    <?php endif; ?>
+
     <?php if (wp_titans_get_mod("wp_titans_exit_intent_show")) : ?>
     <div id="exit-modal" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.9); z-index: 9999; display: none; align-items: center; justify-content: center; padding: 2rem;">
         <div style="background: #111; max-width: 600px; padding: 4rem; border-radius: 12px; border: 2px solid var(--primary); text-align: center; position: relative;">

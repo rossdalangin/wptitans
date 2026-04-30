@@ -69,6 +69,16 @@ if (cursor) {
     });
 }
 
+// Mouse Glow
+const mouseGlow = document.getElementById('mouse-glow');
+if (mouseGlow) {
+    document.addEventListener('mousemove', (e) => {
+        mouseGlow.style.opacity = '1';
+        mouseGlow.style.left = `${e.clientX}px`;
+        mouseGlow.style.top = `${e.clientY}px`;
+    });
+}
+
 // Magnetic Buttons
 document.querySelectorAll('.btn-primary, .btn-outline').forEach(btn => {
     btn.addEventListener('mousemove', (e) => {
@@ -277,6 +287,60 @@ if (themeSwitch) {
         document.body.classList.add('light-mode');
         icon.classList.replace('fa-moon', 'fa-sun');
     }
+}
+
+// Pricing Toggle
+const pricingToggle = document.getElementById('pricing-toggle');
+if (pricingToggle) {
+    const switchEl = pricingToggle.querySelector('.toggle-switch');
+    const oneTimePrices = document.querySelectorAll('.one-time-price');
+    const monthlyPrices = document.querySelectorAll('.monthly-price');
+    let isMonthly = false;
+
+    pricingToggle.addEventListener('click', () => {
+        isMonthly = !isMonthly;
+        if (isMonthly) {
+            switchEl.style.left = '33px';
+            oneTimePrices.forEach(p => p.style.display = 'none');
+            monthlyPrices.forEach(p => p.style.display = 'block');
+        } else {
+            switchEl.style.left = '3px';
+            oneTimePrices.forEach(p => p.style.display = 'block');
+            monthlyPrices.forEach(p => p.style.display = 'none');
+        }
+    });
+}
+
+// Authority Notifications
+const authNotif = document.getElementById('auth-notification');
+if (authNotif) {
+    const messages = [
+        { t: "New Project Completed", s: "SaaS Authority System Launch" },
+        { t: "Strategy Call Booked", s: "Growth Audit for Real Estate" },
+        { t: "Success Story", s: "+140% Lead Growth in 30 Days" },
+        { t: "New Client Secured", s: "Enterprise Web Infrastructure" }
+    ];
+    let msgIdx = 0;
+
+    const showNotif = () => {
+        const msg = messages[msgIdx];
+        document.getElementById('notif-text').innerText = msg.t;
+        document.getElementById('notif-sub').innerText = msg.s;
+
+        authNotif.style.transform = 'translateY(0)';
+
+        setTimeout(() => {
+            authNotif.style.transform = 'translateY(200%)';
+            msgIdx = (msgIdx + 1) % messages.length;
+        }, 6000);
+    };
+
+    setTimeout(showNotif, 4000);
+    setInterval(showNotif, 25000);
+
+    document.getElementById('notif-close').addEventListener('click', () => {
+        authNotif.style.display = 'none';
+    });
 }
 
 // Reading Progress

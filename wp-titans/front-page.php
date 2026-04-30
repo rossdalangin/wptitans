@@ -346,6 +346,28 @@ get_header(); ?>
 </section>
 <?php endif; ?>
 
+<!-- 12b. SOCIAL FEED -->
+<section id="social-grid" style="background: #000; border-top: 1px solid var(--border-glass);">
+    <div class="reveal" style="text-align: center; margin-bottom: 5rem;">
+        <span class="tagline">Follow the Journey</span>
+        <h2>Inside the Titan Lab</h2>
+    </div>
+    <div class="grid-cards" style="grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1rem;">
+        <?php for($i=1; $i<=4; $i++) : ?>
+            <div class="reveal" style="aspect-ratio: 1/1; background: #050505; border: 1px solid var(--border-glass); overflow: hidden; position: relative;">
+                <img src="https://images.unsplash.com/photo-1497215728101-856f4ea42174?auto=format&fit=crop&w=400" alt="Social Post" style="width: 100%; height: 100%; object-fit: cover; opacity: 0.5; transition: var(--transition);">
+                <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; opacity: 0; transition: var(--transition);" class="social-hover">
+                    <i class="fab fa-instagram" style="font-size: 2rem; color: var(--primary);"></i>
+                </div>
+            </div>
+        <?php endfor; ?>
+    </div>
+    <style>
+        #social-grid div:hover img { opacity: 0.2; transform: scale(1.1); }
+        #social-grid div:hover .social-hover { opacity: 1; }
+    </style>
+</section>
+
 <!-- 13. TESTIMONIALS -->
 <section id="testimonials" style="background: #050505;">
     <div class="reveal" style="text-align: center; margin-bottom: 4rem;">
