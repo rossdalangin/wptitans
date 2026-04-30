@@ -408,18 +408,21 @@ get_header(); ?>
             <div style="background: #111; padding: 3rem; border-radius: 8px; border: 1px solid var(--border-glass);">
                 <?php
                 $cf7 = wp_titans_get_mod("wp_titans_cf7_shortcode");
+                $form_action = wp_titans_get_mod("wp_titans_contact_form_action");
+                $form_method = wp_titans_get_mod("wp_titans_contact_form_method");
+
                 if ($cf7) :
                     echo do_shortcode($cf7);
                 else : ?>
-                <form>
+                <form action="<?php echo esc_url($form_action); ?>" method="<?php echo esc_attr($form_method); ?>">
                     <div style="margin-bottom: 1.5rem;">
-                        <input type="text" placeholder="Full Name" style="width: 100%; padding: 1rem; background: #000; border: 1px solid #333; color: white;">
+                        <input type="text" name="titan_name" placeholder="Full Name" style="width: 100%; padding: 1rem; background: #000; border: 1px solid #333; color: white;">
                     </div>
                     <div style="margin-bottom: 1.5rem;">
-                        <input type="email" placeholder="Email Address" style="width: 100%; padding: 1rem; background: #000; border: 1px solid #333; color: white;">
+                        <input type="email" name="titan_email" placeholder="Email Address" style="width: 100%; padding: 1rem; background: #000; border: 1px solid #333; color: white;">
                     </div>
                     <div style="margin-bottom: 1.5rem;">
-                        <textarea rows="4" placeholder="Tell us about your business" style="width: 100%; padding: 1rem; background: #000; border: 1px solid #333; color: white;"></textarea>
+                        <textarea name="titan_message" rows="4" placeholder="Tell us about your business" style="width: 100%; padding: 1rem; background: #000; border: 1px solid #333; color: white;"></textarea>
                     </div>
                     <button class="btn btn-primary" style="width: 100%;"><?php echo esc_html(wp_titans_get_mod("wp_titans_contact_btn_text")); ?></button>
                 </form>

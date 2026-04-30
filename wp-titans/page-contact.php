@@ -35,20 +35,23 @@ get_header(); ?>
         <h2 style="text-align: center; margin-bottom: 3rem;">Send Us a Message</h2>
         <?php
         $cf7 = wp_titans_get_mod("wp_titans_cf7_shortcode");
+        $form_action = wp_titans_get_mod("wp_titans_contact_form_action");
+        $form_method = wp_titans_get_mod("wp_titans_contact_form_method");
+
         if ($cf7) :
             echo do_shortcode($cf7);
         else : ?>
-        <form class="contact-form-full">
+        <form action="<?php echo esc_url($form_action); ?>" method="<?php echo esc_attr($form_method); ?>" class="contact-form-full">
             <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-bottom: 2rem;">
-                <input type="text" placeholder="Your Name *" required style="width: 100%; padding: 1.2rem; background: #000; border: 1px solid #333; color: white;">
-                <input type="text" placeholder="Business Name *" required style="width: 100%; padding: 1.2rem; background: #000; border: 1px solid #333; color: white;">
+                <input type="text" name="titan_name" placeholder="Your Name *" required style="width: 100%; padding: 1.2rem; background: #000; border: 1px solid #333; color: white;">
+                <input type="text" name="titan_business" placeholder="Business Name *" required style="width: 100%; padding: 1.2rem; background: #000; border: 1px solid #333; color: white;">
             </div>
             <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-bottom: 2rem;">
-                <input type="email" placeholder="Email Address *" required style="width: 100%; padding: 1.2rem; background: #000; border: 1px solid #333; color: white;">
-                <input type="tel" placeholder="Phone Number" style="width: 100%; padding: 1.2rem; background: #000; border: 1px solid #333; color: white;">
+                <input type="email" name="titan_email" placeholder="Email Address *" required style="width: 100%; padding: 1.2rem; background: #000; border: 1px solid #333; color: white;">
+                <input type="tel" name="titan_phone" placeholder="Phone Number" style="width: 100%; padding: 1.2rem; background: #000; border: 1px solid #333; color: white;">
             </div>
             <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-bottom: 2rem;">
-                <select style="width: 100%; padding: 1.2rem; background: #000; border: 1px solid #333; color: white;">
+                <select name="titan_industry" style="width: 100%; padding: 1.2rem; background: #000; border: 1px solid #333; color: white;">
                     <option value="">Select your industry...</option>
                     <option>Consulting</option>
                     <option>Coaching</option>
@@ -56,14 +59,14 @@ get_header(); ?>
                     <option>Healthcare</option>
                     <option>Other</option>
                 </select>
-                <select style="width: 100%; padding: 1.2rem; background: #000; border: 1px solid #333; color: white;">
+                <select name="titan_timeline" style="width: 100%; padding: 1.2rem; background: #000; border: 1px solid #333; color: white;">
                     <option value="">Desired Timeline...</option>
                     <option>Immediate</option>
                     <option>1-2 Months</option>
                     <option>Planning Phase</option>
                 </select>
             </div>
-            <textarea rows="6" placeholder="Tell us about your project details..." style="width: 100%; padding: 1.2rem; background: #000; border: 1px solid #333; color: white; margin-bottom: 2rem;"></textarea>
+            <textarea name="titan_details" rows="6" placeholder="Tell us about your project details..." style="width: 100%; padding: 1.2rem; background: #000; border: 1px solid #333; color: white; margin-bottom: 2rem;"></textarea>
 
             <div style="margin-bottom: 3rem;">
                 <label style="display: flex; align-items: center; gap: 1rem; cursor: pointer; color: var(--text-dim);">

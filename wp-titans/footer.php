@@ -143,11 +143,14 @@
             <p style="color: var(--text-dim); margin-bottom: 3rem;"><?php echo wp_kses_post(wp_titans_get_mod("wp_titans_exit_desc")); ?></p>
             <?php
             $exit_cf7 = wp_titans_get_mod("wp_titans_exit_cf7_shortcode");
+            $exit_action = wp_titans_get_mod("wp_titans_exit_form_action");
+            $exit_method = wp_titans_get_mod("wp_titans_exit_form_method");
+
             if ($exit_cf7) :
                 echo do_shortcode($exit_cf7);
             else : ?>
-            <form style="display: flex; flex-direction: column; gap: 1rem;">
-                <input type="email" placeholder="Enter your email" required style="padding: 1.2rem; background: #000; border: 1px solid #333; color: white; border-radius: 4px;">
+            <form action="<?php echo esc_url($exit_action); ?>" method="<?php echo esc_attr($exit_method); ?>" style="display: flex; flex-direction: column; gap: 1rem;">
+                <input type="email" name="titan_lead_email" placeholder="Enter your email" required style="padding: 1.2rem; background: #000; border: 1px solid #333; color: white; border-radius: 4px;">
                 <button type="submit" class="btn btn-primary">Get the Checklist</button>
             </form>
             <?php endif; ?>

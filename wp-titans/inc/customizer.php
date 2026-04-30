@@ -536,6 +536,12 @@ function wp_titans_customize_register( $wp_customize ) {
     $wp_customize->add_setting( 'wp_titans_cf7_shortcode', array( 'default' => '', 'sanitize_callback' => 'wp_kses_post' ) );
     $wp_customize->add_control( 'wp_titans_cf7_shortcode', array( 'label' => __( 'Contact Form 7 Shortcode', 'wp-titans' ), 'description' => __( 'Paste your CF7 shortcode here (e.g. [contact-form-7 id="123"])', 'wp-titans' ), 'section' => 'wp_titans_contact' ) );
 
+    $wp_customize->add_setting( 'wp_titans_contact_form_action', array( 'default' => '', 'sanitize_callback' => 'esc_url_raw' ) );
+    $wp_customize->add_control( 'wp_titans_contact_form_action', array( 'label' => __( 'Custom Form Action URL', 'wp-titans' ), 'description' => __( 'Used if CF7 shortcode is empty.', 'wp-titans' ), 'section' => 'wp_titans_contact' ) );
+
+    $wp_customize->add_setting( 'wp_titans_contact_form_method', array( 'default' => 'POST', 'sanitize_callback' => 'sanitize_text_field' ) );
+    $wp_customize->add_control( 'wp_titans_contact_form_method', array( 'label' => __( 'Custom Form Method', 'wp-titans' ), 'section' => 'wp_titans_contact', 'type' => 'select', 'choices' => array('POST' => 'POST', 'GET' => 'GET') ) );
+
     $wp_customize->add_section( 'wp_titans_audit', array(
         'title'    => __( 'Audit Section (Lead Magnet)', 'wp-titans' ),
         'priority' => 98,
@@ -683,6 +689,12 @@ function wp_titans_customize_register( $wp_customize ) {
 
     $wp_customize->add_setting( 'wp_titans_exit_cf7_shortcode', array( 'default' => '', 'sanitize_callback' => 'wp_kses_post' ) );
     $wp_customize->add_control( 'wp_titans_exit_cf7_shortcode', array( 'label' => __( 'Exit Intent CF7 Shortcode', 'wp-titans' ), 'section' => 'wp_titans_leads' ) );
+
+    $wp_customize->add_setting( 'wp_titans_exit_form_action', array( 'default' => '', 'sanitize_callback' => 'esc_url_raw' ) );
+    $wp_customize->add_control( 'wp_titans_exit_form_action', array( 'label' => __( 'Exit Form Action URL', 'wp-titans' ), 'section' => 'wp_titans_leads' ) );
+
+    $wp_customize->add_setting( 'wp_titans_exit_form_method', array( 'default' => 'POST', 'sanitize_callback' => 'sanitize_text_field' ) );
+    $wp_customize->add_control( 'wp_titans_exit_form_method', array( 'label' => __( 'Exit Form Method', 'wp-titans' ), 'section' => 'wp_titans_leads', 'type' => 'select', 'choices' => array('POST' => 'POST', 'GET' => 'GET') ) );
 
 }
 add_action( 'customize_register', 'wp_titans_customize_register' );
