@@ -312,3 +312,36 @@ function wp_titans_dashboard_widget_content() {
     </div>
     <?php
 }
+
+/**
+ * Custom Login Stylization
+ */
+function wp_titans_login_style() {
+    $primary = wp_titans_get_mod("wp_titans_primary_color");
+    $logo = wp_titans_get_mod("wp_titans_logo_image");
+    ?>
+    <style type="text/css">
+        body.login { background-color: #000; color: #fff; }
+        #login h1 a, .login h1 a {
+            background-image: url('<?php echo esc_url($logo); ?>');
+            height: 100px; width: 320px; background-size: contain; background-repeat: no-repeat; padding-bottom: 30px;
+            pointer-events: none;
+        }
+        .login form { background: #111; border: 1px solid #222; border-radius: 8px; box-shadow: 0 20px 40px rgba(0,0,0,0.5); }
+        .login label { color: #aaa; font-family: 'Syne', sans-serif; text-transform: uppercase; letter-spacing: 1px; font-size: 0.7rem; }
+        .login input[type="text"], .login input[type="password"] { background: #000; border: 1px solid #333; color: white; border-radius: 4px; }
+        .wp-core-ui .button-primary { background: <?php echo $primary; ?>; border-color: <?php echo $primary; ?>; color: #000; font-weight: 800; text-transform: uppercase; }
+        .wp-core-ui .button-primary:hover { background: #f1c40f; border-color: #f1c40f; }
+        .login #nav a, .login #backtoblog a { color: <?php echo $primary; ?> !important; }
+    </style>
+    <?php
+}
+add_action( 'login_enqueue_scripts', 'wp_titans_login_style' );
+
+/**
+ * White Label Admin Footer
+ */
+function wp_titans_admin_footer() {
+    echo '<span id="footer-thankyou">Built for Titans by <a href="https://wordpresstitans.com" target="_blank" style="color: #D4AF37; font-weight: 700;">WordPress Titans</a>.</span>';
+}
+add_filter( 'admin_footer_text', 'wp_titans_admin_footer' );

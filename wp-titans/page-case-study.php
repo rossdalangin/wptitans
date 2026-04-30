@@ -37,6 +37,17 @@ get_header(); ?>
                 <div style="color: var(--text-dim); font-size: 1.15rem; line-height: 1.8;">
                     <?php the_content(); ?>
                 </div>
+
+                <div class="reveal" style="margin-top: 4rem; display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem;">
+                    <div style="background: #111; padding: 2rem; border-radius: 8px; border-left: 3px solid var(--primary);">
+                        <h4 style="font-size: 0.8rem; text-transform: uppercase; color: #555; margin-bottom: 0.5rem;">Launch Speed</h4>
+                        <p style="font-size: 1.5rem; font-weight: 800; color: white;">14 Days</p>
+                    </div>
+                    <div style="background: #111; padding: 2rem; border-radius: 8px; border-left: 3px solid var(--primary);">
+                        <h4 style="font-size: 0.8rem; text-transform: uppercase; color: #555; margin-bottom: 0.5rem;">ROI Performance</h4>
+                        <p style="font-size: 1.5rem; font-weight: 800; color: white;">+240% Growth</p>
+                    </div>
+                </div>
             </div>
             <div class="reveal">
                 <div style="background: #111; padding: 4rem; border-radius: 12px; border: 1px solid var(--border-glass);">

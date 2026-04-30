@@ -37,6 +37,10 @@
 <body <?php body_class(); ?>>
 <?php wp_body_open(); ?>
 
+<?php if (wp_titans_get_mod("wp_titans_custom_cursor")) : ?>
+    <div id="custom-cursor" style="position: fixed; width: 30px; height: 30px; border: 2px solid var(--primary); border-radius: 50%; pointer-events: none; z-index: 100000; transform: translate(-50%, -50%); transition: width 0.3s, height 0.3s, background 0.3s; display: none;"></div>
+<?php endif; ?>
+
 <?php if (wp_titans_get_mod("wp_titans_preloader_show")) : ?>
 <div id="preloader">
     <div class="loader-content">

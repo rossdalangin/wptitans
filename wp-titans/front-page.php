@@ -48,6 +48,21 @@ get_header(); ?>
     <?php endfor; ?>
 </div>
 
+<!-- 2b. RESULTS TICKER -->
+<div id="results-ticker-bar" style="background: var(--primary); padding: 1.2rem 0; overflow: hidden; white-space: nowrap; border-bottom: 1px solid rgba(0,0,0,0.1); color: black;">
+    <div class="ticker-content" style="display: inline-block; animation: ticker-scroll 30s linear infinite; font-family: 'Syne'; font-weight: 800; text-transform: uppercase; font-size: 0.85rem; letter-spacing: 2px;">
+        <?php
+        $ticker_items = [
+            'ROI-Driven Systems', '$1.2M+ Client Revenue Generated', 'Elite 14-Day Launch', 'High-Performance WordPress',
+            'Strategic SEO Mastery', 'Conversion Optimized UI/UX', 'World-Class Authority Branding',
+            'ROI-Driven Systems', '$1.2M+ Client Revenue Generated', 'Elite 14-Day Launch', 'High-Performance WordPress'
+        ];
+        foreach($ticker_items as $ti) : ?>
+            <span style="margin: 0 4rem;"><i class="fas fa-bolt" style="margin-right: 15px;"></i> <?php echo esc_html($ti); ?></span>
+        <?php endforeach; ?>
+    </div>
+</div>
+
 <!-- 3. TRUST BAR -->
 <section id="trust-bar" style="background: #050505; padding: 4rem 10%; border-bottom: 1px solid var(--border-glass);">
     <div class="reveal" style="text-align: center;">

@@ -39,6 +39,29 @@ document.querySelectorAll('.faq-head').forEach(item => {
     });
 });
 
+// Custom Cursor
+const cursor = document.getElementById('custom-cursor');
+if (cursor) {
+    document.addEventListener('mousemove', (e) => {
+        cursor.style.display = 'block';
+        cursor.style.left = `${e.clientX}px`;
+        cursor.style.top = `${e.clientY}px`;
+    });
+
+    document.querySelectorAll('a, button, #theme-switch, #search-toggle').forEach(el => {
+        el.addEventListener('mouseenter', () => {
+            cursor.style.width = '60px';
+            cursor.style.height = '60px';
+            cursor.style.background = 'rgba(212, 175, 55, 0.1)';
+        });
+        el.addEventListener('mouseleave', () => {
+            cursor.style.width = '30px';
+            cursor.style.height = '30px';
+            cursor.style.background = 'transparent';
+        });
+    });
+}
+
 // Intersection Observer for Reveal
 const observerOptions = { threshold: 0.1 };
 const observer = new IntersectionObserver((entries) => {

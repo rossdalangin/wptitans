@@ -623,6 +623,9 @@ function wp_titans_customize_register( $wp_customize ) {
     $wp_customize->add_setting( 'wp_titans_progress_bar', array( 'default' => true, 'sanitize_callback' => 'wp_validate_boolean' ) );
     $wp_customize->add_control( 'wp_titans_progress_bar', array( 'label' => __( 'Show Reading Progress Bar', 'wp-titans' ), 'section' => 'wp_titans_ux', 'type' => 'checkbox' ) );
 
+    $wp_customize->add_setting( 'wp_titans_custom_cursor', array( 'default' => true, 'sanitize_callback' => 'wp_validate_boolean' ) );
+    $wp_customize->add_control( 'wp_titans_custom_cursor', array( 'label' => __( 'Enable Elite Custom Cursor', 'wp-titans' ), 'section' => 'wp_titans_ux', 'type' => 'checkbox' ) );
+
     $wp_customize->add_setting( 'wp_titans_header_btn_text', array( 'default' => 'Strategy Call', 'sanitize_callback' => 'wp_kses_post' ) );
     $wp_customize->add_control( 'wp_titans_header_btn_text', array( 'label' => __( 'Header Button Text', 'wp-titans' ), 'section' => 'wp_titans_branding' ) );
 

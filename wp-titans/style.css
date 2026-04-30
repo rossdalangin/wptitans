@@ -682,6 +682,11 @@ footer {
     100% { opacity: 0.5; transform: scale(0.9); }
 }
 
+@keyframes ticker-scroll {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
+
 @keyframes loading {
     0% { left: -100%; }
     100% { left: 100%; }
