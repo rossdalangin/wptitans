@@ -36,6 +36,12 @@ function wp_titans_scripts() {
     $font_url = "https://fonts.googleapis.com/css2?family=" . str_replace(' ', '+', $body_font) . ":wght@300;500;700&family=" . str_replace(' ', '+', $heading_font) . ":wght@400;700;800&display=swap";
 
     wp_enqueue_style( 'wp-titans-google-fonts', $font_url, array(), null );
+
+    $adobe_id = wp_titans_get_mod("wp_titans_adobe_fonts_id");
+    if ($adobe_id) {
+        wp_enqueue_style( 'wp-titans-adobe-fonts', "https://use.typekit.net/{$adobe_id}.css", array(), null );
+    }
+
     wp_enqueue_style( 'font-awesome', 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css', array(), '6.4.0' );
 
     wp_enqueue_script( 'wp-titans-scripts', get_template_directory_uri() . '/js/scripts.js', array(), '1.2.0', true );

@@ -49,6 +49,14 @@ function wp_titans_customize_register( $wp_customize ) {
     $wp_customize->add_setting( 'wp_titans_body_font', array( 'default' => wp_titans_get_default('wp_titans_body_font'), 'sanitize_callback' => 'wp_kses_post' ) );
     $wp_customize->add_control( 'wp_titans_body_font', array( 'label' => __( 'Body Font (Google Font Name)', 'wp-titans' ), 'section' => 'wp_titans_design', 'type' => 'text' ) );
 
+    $wp_customize->add_setting( 'wp_titans_adobe_fonts_id', array( 'default' => '', 'sanitize_callback' => 'sanitize_text_field' ) );
+    $wp_customize->add_control( 'wp_titans_adobe_fonts_id', array(
+        'label' => __( 'Adobe Fonts (Typekit) Project ID', 'wp-titans' ),
+        'description' => __( 'Enter your Project ID to load premium fonts.', 'wp-titans' ),
+        'section' => 'wp_titans_design',
+        'type' => 'text'
+    ) );
+
     $wp_customize->add_setting( 'wp_titans_line_height', array( 'default' => '1.8', 'sanitize_callback' => 'sanitize_text_field' ) );
     $wp_customize->add_control( 'wp_titans_line_height', array( 'label' => __( 'Body Line Height', 'wp-titans' ), 'section' => 'wp_titans_design' ) );
 
@@ -236,6 +244,17 @@ function wp_titans_customize_register( $wp_customize ) {
     for ($i = 1; $i <= 4; $i++) {
         $wp_customize->add_setting( "wp_titans_award_img_$i", array( 'default' => '', 'sanitize_callback' => 'esc_url_raw' ) );
         $wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, "wp_titans_award_img_$i", array( 'label' => "Award Badge $i", 'section' => 'wp_titans_awards' ) ) );
+    }
+
+    // --- Media Section ---
+    $wp_customize->add_section( 'wp_titans_media', array(
+        'title'    => __( 'Media / Featured In Bar', 'wp-titans' ),
+        'priority' => 44,
+    ) );
+
+    for ($i = 1; $i <= 4; $i++) {
+        $wp_customize->add_setting( "wp_titans_media_logo_$i", array( 'default' => '', 'sanitize_callback' => 'esc_url_raw' ) );
+        $wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, "wp_titans_media_logo_$i", array( 'label' => "Media Logo $i", 'section' => 'wp_titans_media' ) ) );
     }
 
     // --- Stats Section ---
@@ -665,6 +684,9 @@ function wp_titans_customize_register( $wp_customize ) {
 
     $wp_customize->add_setting( 'wp_titans_custom_cursor', array( 'default' => true, 'sanitize_callback' => 'wp_validate_boolean' ) );
     $wp_customize->add_control( 'wp_titans_custom_cursor', array( 'label' => __( 'Enable Elite Custom Cursor', 'wp-titans' ), 'section' => 'wp_titans_ux', 'type' => 'checkbox' ) );
+
+    $wp_customize->add_setting( 'wp_titans_noise_overlay', array( 'default' => false, 'sanitize_callback' => 'wp_validate_boolean' ) );
+    $wp_customize->add_control( 'wp_titans_noise_overlay', array( 'label' => __( 'Enable Luxury Noise Overlay', 'wp-titans' ), 'section' => 'wp_titans_ux', 'type' => 'checkbox' ) );
 
     $wp_customize->add_setting( 'wp_titans_header_btn_text', array( 'default' => 'Strategy Call', 'sanitize_callback' => 'wp_kses_post' ) );
     $wp_customize->add_control( 'wp_titans_header_btn_text', array( 'label' => __( 'Header Button Text', 'wp-titans' ), 'section' => 'wp_titans_branding' ) );

@@ -64,6 +64,19 @@ get_header(); ?>
     </div>
 </div>
 
+<!-- 2c. MEDIA TRUST BAR -->
+<section id="media-trust" style="background: #000; padding: 3rem 10%; border-bottom: 1px solid var(--border-glass);">
+    <div style="display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 4rem; opacity: 0.3; filter: grayscale(1);">
+        <span style="font-family: 'Syne'; font-weight: 800; font-size: 0.7rem; letter-spacing: 2px; color: var(--text-dim);">FEATURED IN:</span>
+        <?php for ($i = 1; $i <= 4; $i++) :
+            $media = wp_titans_get_mod("wp_titans_media_logo_$i");
+            if (!$media) continue;
+        ?>
+            <img loading="lazy" src="<?php echo esc_url($media); ?>" alt="Media Logo" style="height: 20px;">
+        <?php endfor; ?>
+    </div>
+</section>
+
 <!-- 3. TRUST BAR -->
 <section id="trust-bar" style="background: #050505; padding: 4rem 10%; border-bottom: 1px solid var(--border-glass);">
     <div class="reveal" style="text-align: center;">

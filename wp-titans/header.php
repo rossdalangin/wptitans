@@ -49,6 +49,10 @@
 <body <?php body_class(); ?>>
 <?php wp_body_open(); ?>
 
+<?php if (wp_titans_get_mod("wp_titans_noise_overlay")) : ?>
+<div id="noise-overlay" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: 9999; pointer-events: none; opacity: 0.05; background-image: url('data:image/svg+xml,%3Csvg viewBox=%220 0 200 200%22 xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cfilter id=%22noiseFilter%22%3E%3CfeTurbulence type=%22fractalNoise%22 baseFrequency=%220.65%22 numOctaves=%223%22 stitchTiles=%22stitch%22/%3E%3C/filter%3E%3Crect width=%22100%25%22 height=%22100%25%22 filter=%22url(%23noiseFilter)%22/%3E%3C/svg%3E');"></div>
+<?php endif; ?>
+
 <?php if (wp_titans_get_mod("wp_titans_top_bar_show")) : ?>
 <div id="top-announcement-bar" style="background: var(--primary); color: black; padding: 0.6rem 10%; text-align: center; font-size: 0.75rem; font-weight: 800; text-transform: uppercase; letter-spacing: 1px; position: relative; z-index: 2001; font-family: 'Syne';">
     <a href="<?php echo esc_url(wp_titans_get_mod("wp_titans_top_bar_url")); ?>" style="text-decoration: none;">
@@ -103,17 +107,17 @@
     </div>
     <div style="display: flex; align-items: center; gap: 2rem;">
         <a href="<?php echo esc_url(wp_titans_get_mod("wp_titans_hero_btn2_url")); ?>" class="btn btn-primary nav-cta" style="padding: 0.7rem 1.5rem; font-size: 0.85rem;"><?php echo esc_html(wp_titans_get_mod("wp_titans_hero_btn2_text")); ?></a>
-        <div id="search-toggle" style="cursor: pointer; font-size: 1.1rem; color: var(--primary);">
+        <button id="search-toggle" style="background:none; border:none; cursor: pointer; font-size: 1.1rem; color: var(--primary);" aria-label="Search">
             <i class="fas fa-search"></i>
-        </div>
+        </button>
         <?php if (wp_titans_get_mod("wp_titans_mode_toggle")) : ?>
-            <div id="theme-switch" style="cursor: pointer; font-size: 1.2rem; color: var(--primary);">
+            <button id="theme-switch" style="background:none; border:none; cursor: pointer; font-size: 1.2rem; color: var(--primary);" aria-label="Toggle Dark Mode">
                 <i class="fas fa-moon"></i>
-            </div>
+            </button>
         <?php endif; ?>
-        <div id="mobile-toggle" style="display: none; cursor: pointer; font-size: 1.5rem; color: var(--primary);">
+        <button id="mobile-toggle" style="display: none; background:none; border:none; cursor: pointer; font-size: 1.5rem; color: var(--primary);" aria-label="Open Menu">
             <i class="fas fa-bars"></i>
-        </div>
+        </button>
     </div>
 </nav>
 
