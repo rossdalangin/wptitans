@@ -1,0 +1,9 @@
+Lead ID,Lead Name,Company,Source,Status,Project Type,Budget Range,Priority,Lead Score,Last Contact Date,Next Action,Notes
+001,John Doe,Doe Consulting,LinkedIn,Initial Inquiry,Authority System,$5k - $10k,High,85,2026-05-01,Send Audit,Interested in 14-day sprint.
+002,Sarah Smith,Smith Legal,Audit Request,Discovery Call,Launchpad,$2k - $5k,Medium,60,2026-04-30,Follow up on call,Needs SEO focus.
+003,Marcus Thorne,Thorne Enterprises,Referral,Proposal Sent,Enterprise,$10k+,Very High,95,2026-05-02,Wait for signature,Includes custom CRM sync.
+004,Elena Vance,Vance Creative,Organic,Qualified,Authority System,$5k - $10k,Medium,70,2026-05-01,Book Discovery Call,Transitioning from Wix.
+005,Robert Hill,Hill & Co,LinkedIn Outreach,In Conversation,Growth Partner,$1k/mo,Low,40,2026-04-28,Nurture email,Currently happy with site.
+006,Linda Bloom,Bloom Health,Project Planner,In Discovery,Authority System,$5k - $10k,High,80,2026-05-02,Review Planner Data,High intent health consultant.
+007,Kevin Wright,Wright Solutions,Audit Request,Audit Delivered,Launchpad,$2k - $5k,Medium,55,2026-05-01,Follow up on audit,Site is extremely slow.
+008,Diana Prince,Themyscira Agency,Organic,Qualified,Enterprise,$10k+,High,90,2026-05-02,Send Proposal,Requires multi-language setup.

@@ -1,0 +1,16 @@
+Day,Phase,Task,Owner,Client Action,Deliverable
+Day 1,Discovery,Kickoff Call & Strategy Alignment,Lead Strategist,Complete Questionnaire,Project Roadmap
+Day 2,Discovery,Competitor Research & Sitemap Approval,Lead Strategist,Approve Sitemap,Final Sitemap
+Day 3,Content,Copywriting Blueprint & Brand Voice,Senior Copywriter,None,Copy Blueprint
+Day 4,Content,Core Page Copywriting (Home / About),Senior Copywriter,Review Home Copy,Draft Copy
+Day 5,Content,Service Page Copywriting & Final Approval,Senior Copywriter,Approve All Copy,Final Signed-off Copy
+Day 6,Design,UI Style Scapes & Moodboard,Creative Director,Approve Style,Moodboard
+Day 7,Design,Homepage Prototype Design,Creative Director,None,Homepage Concept
+Day 8,Design,Internal Page Prototypes (Services / Process),Creative Director,Approve Design,Final UI Design
+Day 9,Development,WP Theme Setup & Core Architecture,Lead Developer,None,Staging Site Live
+Day 10,Development,Content Implementation & Mobile Optimization,Lead Developer,None,Content Populated
+Day 11,Development,Advanced Logic (Forms / Search / UX),Lead Developer,None,Functional System
+Day 12,Optimization,SEO Foundation & Speed Tuning,Lead Developer,None,Lighthouse Report (90+)
+Day 13,Review,Quality Assurance & Client Walkthrough,Lead Strategist,Submit Punch-list,QA Report
+Day 14,Launch,DNS Configuration & Site Handover,Lead Developer,Provide Login Access,Live Authority Site
+Day 15+,Support,Post-Launch Monitoring (30 Days),Lead Strategist,None,Monthly Growth Report
