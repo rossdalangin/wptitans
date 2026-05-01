@@ -1,0 +1,34 @@
+# VIDEO TUTORIAL SCRIPT: THE TITAN PLATFORM WALKTHROUGH
+## Objective: High-Impact Screen Share for Sales or Onboarding
+
+---
+
+### SCENE 1: THE HOOK (0:00 - 0:45)
+**Visual**: Show the Front Page Hero section with the Video Background and Magnetic Buttons.
+**Script**:
+"In a world where most agency websites look like generic templates, your brand needs to command attention instantly. Welcome to the Titan Platform. This isn't just a WordPress theme; it's a high-performance conversion engine engineered for one thing: Authority. Notice the cinematic motion, the fluid typography, and the subtle interactions like our magnetic buttons that pull the user toward the action."
+
+### SCENE 2: THE CONVERSION ENGINE (0:45 - 2:00)
+**Visual**: Scroll to the Project Planner and click through a few steps.
+**Script**:
+"The heart of the system is our multi-step Project Planner. Instead of a basic contact form that leads to dead ends, the Titan Planner qualifies your leads for you. It collects their goals, their budget, and their timeline—guiding them through a professional discovery experience that culminates in an automated strategy call booking."
+
+### SCENE 3: TOTAL BRAND MANAGEMENT (2:00 - 3:30)
+**Visual**: Switch to the WordPress Customizer. Show the "Titan: Global Branding" panel and toggle the "Glass Luxury" mode.
+**Script**:
+"As an agency owner, you have absolute control. No page builders or complex code required. Within our organized Customizer panels, you can instantly switch color presets, adjust the 'Glass Luxury' frosted intensity, and manage every headline on the site. Want to change your flagship offer? It's as simple as editing a single field. The site updates in real-time, matching your preview perfectly."
+
+### SCENE 4: PROOF & SOCIAL TRUST (3:30 - 4:45)
+**Visual**: Show the Before/After Slider and the Results Ticker.
+**Script**:
+"Authority is built on proof. Our integrated Before and After comparison tool provides a visceral demonstration of your impact. Combine that with our auto-scrolling Results Ticker and Media Trust bar, and you establish a level of digital trust that standard agencies simply can't match."
+
+### SCENE 5: THE 14-DAY VELOCITY (4:45 - 6:00)
+**Visual**: Show the Client Portal tracker.
+**Script**:
+"Finally, we've solved the 'Agency Drag.' With our built-in 14-day velocity tracker in the Client Portal, your customers see exactly where their project stands. Transparent, fast, and authoritative. This is how you scale a modern digital studio."
+
+### SCENE 6: CALL TO ACTION (6:00+)
+**Visual**: Show the Book a Call page.
+**Script**:
+"Ready to stop settling for a digital brochure and start building an authority platform? Let's get your Titan system live in the next 14 days. Book your strategy call below."

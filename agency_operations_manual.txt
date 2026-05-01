@@ -1,0 +1,50 @@
+# AGENCY OPERATIONS MANUAL: THE 14-DAY AUTHORITY SYSTEM
+## Standard Operating Procedures (SOPs) for Scale & Velocity
+
+---
+
+### STAGE 1: ONBOARDING & BLUEPRINT (Day 1 - 2)
+**Goal**: Absolute strategic clarity and asset collection.
+
+1. **The Handshake**: Immediately upon payment, trigger the "Deposit Secured" welcome email.
+2. **The Command Center**: Provision the **Client Portal** and send login credentials.
+3. **The Questionnaire**: Ensure the client completes the "Strategic Onboarding Questionnaire" within 24 hours.
+4. **The Blueprint Call**: Conduct a 45-minute deep-dive call to finalize the messaging architecture andUSP.
+   * *Output*: A finalized "Strategic Blueprint" document.
+
+---
+
+### STAGE 2: CONTENT & DESIGN (Day 3 - 7)
+**Goal**: Transforming strategy into high-converting assets.
+
+1. **Copywriting**: Draft the 3-page core copy (Home, About, Services) based on the Blueprint. Focus on Authority Hooks.
+2. **Visual Preset**: Set the global color preset and design mode in the Customizer.
+3. **Draft Implementation**: Build out the core landing pages using the Titan specialized templates.
+4. **Review Cycle**: Send the initial draft to the client via the Client Portal. One round of consolidated feedback allowed.
+
+---
+
+### STAGE 3: DEVELOPMENT & INTEGRATION (Day 8 - 12)
+**Goal**: Performance optimization and lead-gen wiring.
+
+1. **Lead Engines**: Configure the Project Planner, Free Audit forms, and Exit-Intent modals.
+2. **SEO Mastery**: Input dynamic meta descriptions and Open Graph data for all pages.
+3. **Performance Audit**: Run a speed test. Ensure all images are using the "Titan" optimized sizes.
+4. **Trust Layer**: Upload client logos, awards, and media mentions to the trust bars.
+
+---
+
+### STAGE 4: LAUNCH & HANDOVER (Day 13 - 14)
+**Goal**: Strategic deployment and client empowerment.
+
+1. **Pre-Launch Checklist**: Verify SSL, test AJAX planner submission, and check mobile responsiveness.
+2. **The Handover Call**: Conduct a 30-minute training call using the "Titan Platform Walkthrough" script.
+3. **Administrative Transition**: Transfer ownership, provide documentation link, and upsell the "Titan Care Plan."
+4. **Public Reveal**: Trigger the agency's social media "Inside the Lab" announcement.
+
+---
+
+### KEY VELOCITY RULES:
+- **No Asset, No Clock**: The 14-day guarantee only starts once 100% of client assets are received.
+- **Consolidated Feedback**: Clients must provide feedback via a single document or portal comment to avoid revision creep.
+- **System-First Design**: Use the proven Titan framework layouts; avoid custom-coding new layouts that break the 14-day rhythm.

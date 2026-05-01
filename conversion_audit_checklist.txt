@@ -1,0 +1,63 @@
+# TITAN AUTHORITY & CONVERSION AUDIT CHECKLIST
+## Use this 30-point checklist to perform "Free Audits" for high-ticket prospects.
+
+---
+
+### 1. THE "3-SECOND RULE" (FIRST IMPRESSION)
+[ ] Does the H1 clearly state WHAT they do and WHO they serve?
+[ ] Is the "Vibe" professional or amateur (fonts/colors)?
+[ ] Is there a clear primary CTA in the top right of the header?
+[ ] Does the hero image/video support the claim or distract from it?
+[ ] Is the site SSL-secured and fast-loading (under 2s)?
+
+---
+
+### 2. TRUST & SOCIAL PROOF (AUTHORITY GAP)
+[ ] Is there a "As Seen In" or "Clients Served" trust bar above the fold?
+[ ] Are testimonials specific (results-based) rather than generic ("great guy")?
+[ ] Are there high-quality logos of recognizable brands?
+[ ] Is there a "Founded by" or "Meet the Team" section to humanize the brand?
+[ ] Are there visible case study links or a "Portfolio" button?
+
+---
+
+### 3. USER EXPERIENCE (FRICTION REDUCTION)
+[ ] Is the navigation menu simple (max 5-7 items)?
+[ ] Are buttons "Magnetic" or do they have clear hover states?
+[ ] Is the typography readable (min 16px for body)?
+[ ] Does the site use whitespace effectively or is it cluttered?
+[ ] Are there broken links or 404s?
+
+---
+
+### 4. MOBILE OPTIMIZATION (THE "THUMB" TEST)
+[ ] Are buttons large enough to tap easily?
+[ ] Does the content stack logically on mobile?
+[ ] Is there a "Sticky" CTA button for mobile users?
+[ ] Do images scale correctly or overlap text?
+[ ] Is the mobile menu (hamburger) easy to find and use?
+
+---
+
+### 5. CONVERSION ARCHITECTURE (LEAD GEN)
+[ ] Is there an "Exit-Intent" lead magnet (PDF, Guide, Audit)?
+[ ] Are forms simple (max 4 fields for initial contact)?
+[ ] Does every page end with a "Final Call to Action"?
+[ ] Is there a "Project Planner" or interactive tool for high-intent leads?
+[ ] Are "Trust Seals" (Guarantee, Secure Pay, Award) placed near CTAs?
+
+---
+
+### 6. MESSAGING & PSYCHOLOGY
+[ ] Does the copy use "You" (customer-centric) more than "We" (company-centric)?
+[ ] Is the problem the customer is facing clearly articulated?
+[ ] Is the "14-Day Transformation" (or specific timeline) mentioned?
+[ ] Are there clear "Pain Point" headers?
+[ ] Is there a sense of scarcity or exclusivity ("Only accepting 2 clients this month")?
+
+---
+
+**AUDIT SCORECARD:**
+- 0-10: Critical (Total Rebuild Needed)
+- 11-20: Underperforming (Major Conversion Optimization Needed)
+- 21-30: High Performer (Minor Polishing Needed)
