@@ -69,6 +69,44 @@ get_header(); ?>
 </section>
 
 <?php if (wp_titans_get_mod("wp_titans_pricing_show")) : ?>
+<section id="service-comparison" style="background: #080808; border-top: 1px solid var(--border-glass);">
+    <div class="reveal" style="text-align: center; margin-bottom: 5rem;">
+        <span class="tagline">Compare & Choose</span>
+        <h2>System Comparison</h2>
+    </div>
+    <div class="reveal" style="max-width: 1000px; margin: 0 auto; overflow-x: auto;">
+        <table style="width: 100%; border-collapse: collapse; text-align: left; background: #050505; border: 1px solid var(--border-glass); border-radius: 8px;">
+            <thead>
+                <tr style="border-bottom: 2px solid var(--primary);">
+                    <th style="padding: 2rem; font-family: 'Syne';">Features</th>
+                    <th style="padding: 2rem; font-family: 'Syne'; text-align: center;">Launchpad</th>
+                    <th style="padding: 2rem; font-family: 'Syne'; text-align: center; color: var(--primary);">Authority System</th>
+                    <th style="padding: 2rem; font-family: 'Syne'; text-align: center;">Enterprise</th>
+                </tr>
+            </thead>
+            <tbody style="color: var(--text-dim); font-size: 0.9rem;">
+                <?php
+                $matrix = [
+                    ['f' => 'Custom Branding', 't1' => true, 't2' => true, 't3' => true],
+                    ['f' => 'Strategic Copywriting', 't1' => false, 't2' => true, 't3' => true],
+                    ['f' => 'Lead Gen Funnels', 't1' => false, 't2' => true, 't3' => true],
+                    ['f' => 'CRM Integration', 't1' => false, 't2' => true, 't3' => true],
+                    ['f' => 'A/B Testing', 't1' => false, 't2' => false, 't3' => true],
+                    ['f' => 'Monthly Insights Studio', 't1' => false, 't2' => false, 't3' => true],
+                ];
+                foreach ($matrix as $row) : ?>
+                <tr style="border-bottom: 1px solid #111;">
+                    <td style="padding: 1.5rem 2rem; color: white; font-weight: 700;"><?php echo $row['f']; ?></td>
+                    <td style="padding: 1.5rem 2rem; text-align: center;"><?php echo $row['t1'] ? '<i class="fas fa-check" style="color:var(--primary);"></i>' : '<i class="fas fa-times" style="opacity:0.2;"></i>'; ?></td>
+                    <td style="padding: 1.5rem 2rem; text-align: center; background: rgba(212, 175, 55, 0.03);"><?php echo $row['t2'] ? '<i class="fas fa-check" style="color:var(--primary);"></i>' : '<i class="fas fa-times" style="opacity:0.2;"></i>'; ?></td>
+                    <td style="padding: 1.5rem 2rem; text-align: center;"><?php echo $row['t3'] ? '<i class="fas fa-check" style="color:var(--primary);"></i>' : '<i class="fas fa-times" style="opacity:0.2;"></i>'; ?></td>
+                </tr>
+                <?php endforeach; ?>
+            </tbody>
+        </table>
+    </div>
+</section>
+
 <section id="pricing" style="background: #000; border-top: 1px solid var(--border-glass);">
     <div class="reveal" style="text-align: center; margin-bottom: 5rem;">
         <span class="tagline">Investment</span>

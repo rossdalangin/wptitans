@@ -79,6 +79,9 @@ function wp_titans_customize_register( $wp_customize ) {
     $wp_customize->add_setting( 'wp_titans_letter_spacing', array( 'default' => '0', 'sanitize_callback' => 'sanitize_text_field' ) );
     $wp_customize->add_control( 'wp_titans_letter_spacing', array( 'label' => __( 'Heading Letter Spacing (em)', 'wp-titans' ), 'section' => 'wp_titans_design' ) );
 
+    $wp_customize->add_setting( 'wp_titans_h_uppercase', array( 'default' => false, 'sanitize_callback' => 'wp_validate_boolean' ) );
+    $wp_customize->add_control( 'wp_titans_h_uppercase', array( 'label' => __( 'Force Uppercase Headings', 'wp-titans' ), 'section' => 'wp_titans_design', 'type' => 'checkbox' ) );
+
     $wp_customize->add_setting( 'wp_titans_card_bg', array( 'default' => '#0a0a0a', 'sanitize_callback' => 'sanitize_hex_color' ) );
     $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'wp_titans_card_bg', array( 'label' => __( 'Card Background Color', 'wp-titans' ), 'section' => 'wp_titans_design' ) ) );
 
@@ -599,6 +602,13 @@ function wp_titans_customize_register( $wp_customize ) {
     $wp_customize->add_setting( 'wp_titans_cf7_shortcode', array( 'default' => '', 'sanitize_callback' => 'wp_kses_post' ) );
     $wp_customize->add_control( 'wp_titans_cf7_shortcode', array( 'label' => __( 'Contact Form 7 Shortcode', 'wp-titans' ), 'description' => __( 'Paste your CF7 shortcode here (e.g. [contact-form-7 id="123"])', 'wp-titans' ), 'section' => 'wp_titans_contact' ) );
 
+    $wp_customize->add_setting( 'wp_titans_high_value_redirect', array( 'default' => '', 'sanitize_callback' => 'esc_url_raw' ) );
+    $wp_customize->add_control( 'wp_titans_high_value_redirect', array(
+        'label' => __( 'High-Value Lead Redirect URL', 'wp-titans' ),
+        'description' => __( 'Redirect "Titan" leads (high budget) directly to this URL (e.g. Book a Call).', 'wp-titans' ),
+        'section' => 'wp_titans_contact'
+    ) );
+
     $wp_customize->add_setting( 'wp_titans_contact_form_action', array( 'default' => '', 'sanitize_callback' => 'esc_url_raw' ) );
     $wp_customize->add_control( 'wp_titans_contact_form_action', array( 'label' => __( 'Custom Form Action URL', 'wp-titans' ), 'description' => __( 'Used if CF7 shortcode is empty.', 'wp-titans' ), 'section' => 'wp_titans_contact' ) );
 
@@ -850,6 +860,9 @@ function wp_titans_customizer_css() {
         h1, h2, h3, h4, .btn, .nav-links a {
             font-family: '<?php echo esc_attr($heading_font); ?>', sans-serif;
             letter-spacing: <?php echo wp_titans_get_mod("wp_titans_letter_spacing"); ?>em;
+            <?php if (wp_titans_get_mod("wp_titans_h_uppercase")) : ?>
+                text-transform: uppercase !important;
+            <?php endif; ?>
         }
 
         .hero {

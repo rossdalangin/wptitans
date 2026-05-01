@@ -376,3 +376,22 @@ function wp_titans_admin_footer() {
     echo '<span id="footer-thankyou">Built for Titans by <a href="https://wordpresstitans.com" target="_blank" style="color: #D4AF37; font-weight: 700;">WordPress Titans</a>.</span>';
 }
 add_filter( 'admin_footer_text', 'wp_titans_admin_footer' );
+
+/**
+ * Custom Admin CSS (Luxury White Labeling)
+ */
+function wp_titans_admin_style() {
+    ?>
+    <style type="text/css">
+        #wpadminbar { background: #000; border-bottom: 1px solid rgba(212, 175, 55, 0.2); }
+        #adminmenu, #adminmenu .wp-submenu, #adminmenuback, #adminmenuwrap { background-color: #000; }
+        #adminmenu .wp-has-current-submenu .wp-submenu, #adminmenu .wp-has-current-submenu.opensub .wp-submenu, #adminmenu .wp-submenu, #adminmenu a.wp-has-current-submenu:focus + .wp-submenu, .no-js li.wp-has-current-submenu:hover .wp-submenu { background: #080808; }
+        #adminmenu li.current a.menu-top, #adminmenu li.wp-has-current-submenu a.wp-has-current-submenu, #adminmenu li.wp-has-current-submenu .wp-submenu .wp-submenu-head { background: #D4AF37; color: #000; }
+        #adminmenu .wp-submenu a:focus, #adminmenu .wp-submenu a:hover, #adminmenu a:hover, #adminmenu li.menu-top:hover, #adminmenu li.opensub > a.menu-top, #adminmenu li > a.menu-top:focus { color: #D4AF37; }
+        .wrap h1 { font-family: 'Syne', sans-serif; font-weight: 800; color: #D4AF37; text-transform: uppercase; letter-spacing: 1px; }
+        .wp-core-ui .button-primary { background: #D4AF37; border-color: #D4AF37; color: #000; font-weight: 700; text-transform: uppercase; }
+        .wp-core-ui .button-primary:hover { background: #f1c40f; border-color: #f1c40f; color: #000; }
+    </style>
+    <?php
+}
+add_action( 'admin_enqueue_scripts', 'wp_titans_admin_style' );

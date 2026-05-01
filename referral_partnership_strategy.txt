@@ -1,0 +1,51 @@
+# REFERRAL & PARTNERSHIP STRATEGY: THE TITAN NETWORK
+## Objective: Scale Agency Revenue through Strategic Alliances
+
+---
+
+### 1. THE "COMPLEMENTARY" PARTNER PROFILING
+Identify 10 partners in these three categories who serve your "High-Ticket Transitioner" persona but don't build websites:
+- **Category A: Brand Photographers** (They see the client right before they need a site).
+- **Category B: Business Coaches** (They identify the authority gap first).
+- **Category C: Ads Managers** (They can't run traffic to a broken website).
+
+---
+
+### 2. THE TITAN REFERRAL MODEL
+Avoid simple "affiliate" links. Use a high-end "Professional Referral" approach:
+
+**The Incentive Structure:**
+- **Referrer Reward**: 10% of the project fee ($500 - $1,000) OR a charitable donation in their name.
+- **Client Reward**: A "Preferred Partner" discount ($250 off) OR a free "Conversion Audit" add-on.
+- **Timing**: Referral fees paid immediately upon receipt of the client's 50% deposit.
+
+---
+
+### 3. PARTNERSHIP OUTREACH SCRIPT (LinkedIn/Email)
+"Hi [Partner Name],
+
+I’ve been following your work with [Niche] clients and love your approach to [Specific Skill - e.g., high-end photography].
+
+I run WordPress Titans, and we specialize in 14-day 'Authority Rebrands' for the same experts you work with. Often, our clients come to us needing [Partner's Service] before we can launch their flagship site.
+
+I’d love to see if we can set up a formal referral partnership where I send my clients to you, and vice versa.
+
+Would you be open to a 10-minute chat to align our workflows?
+
+Best,
+Ross"
+
+---
+
+### 4. THE "WHITE-GLOVE" HANDOFF PROCESS
+To maintain authority, the referral must feel elite:
+1. **Intro**: Partner sends a 3-way email intro ("I've found the Titans you need...").
+2. **Priority**: Referrals are tagged in the "Project Planner" (add a 'How did you hear about us?' field).
+3. **Tracking**: Use a simple shared Google Sheet to track project status for the partner.
+
+---
+
+### 5. STRATEGIC CO-MARKETING
+- **The "Expert Panel" Webinar**: Host a live session with a coach and a photographer on "Positioning for 2025."
+- **Guest Insights**: Feature a partner in your "Agency Insights" blog and have them share it with their email list.
+- **Joint Case Studies**: "How [Client] used [Partner's Service] + The Titan System to double their revenue."

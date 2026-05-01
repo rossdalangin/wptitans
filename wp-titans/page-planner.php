@@ -219,11 +219,24 @@ document.addEventListener('DOMContentLoaded', () => {
             .then(res => res.json())
             .then(response => {
                 if (response.success) {
-                    form.innerHTML = `<div style="text-align: center; padding: 4rem 0;">
-                        <i class="fas fa-check-circle" style="font-size: 5rem; color: var(--primary); margin-bottom: 2rem;"></i>
-                        <h2 style="font-size: 2.5rem; color: white;">Plan Received!</h2>
-                        <p style="color: var(--text-dim); font-size: 1.2rem; margin-top: 1.5rem;">One of our strategists will review your goals and reach out within 24 hours.</p>
-                    </div>`;
+                    // Lead Scoring & Redirect Logic
+                    const budget = dataObj['budget'];
+                    const highValueURL = "<?php echo esc_url(wp_titans_get_mod('wp_titans_high_value_redirect')); ?>";
+
+                    if (highValueURL && (budget === '20000-50000' || budget === '50000+')) {
+                        form.innerHTML = `<div style="text-align: center; padding: 4rem 0;">
+                            <i class="fas fa-rocket" style="font-size: 5rem; color: var(--primary); margin-bottom: 2rem;"></i>
+                            <h2 style="font-size: 2.5rem; color: white;">Elite Profile Detected.</h2>
+                            <p style="color: var(--text-dim); font-size: 1.2rem; margin-top: 1.5rem;">Redirecting you to our priority booking system...</p>
+                        </div>`;
+                        setTimeout(() => window.location.href = highValueURL, 2000);
+                    } else {
+                        form.innerHTML = `<div style="text-align: center; padding: 4rem 0;">
+                            <i class="fas fa-check-circle" style="font-size: 5rem; color: var(--primary); margin-bottom: 2rem;"></i>
+                            <h2 style="font-size: 2.5rem; color: white;">Plan Received!</h2>
+                            <p style="color: var(--text-dim); font-size: 1.2rem; margin-top: 1.5rem;">One of our strategists will review your goals and reach out within 24 hours.</p>
+                        </div>`;
+                    }
                     document.getElementById('planner-nav').style.display = 'none';
                 } else {
                     alert('Submission failed. Please check your details and try again.');
