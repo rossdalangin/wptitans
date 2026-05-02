@@ -58,14 +58,19 @@ get_header(); ?>
         if ($team_query->have_posts()) : while ($team_query->have_posts()) : $team_query->the_post();
             $li = get_post_meta(get_the_ID(), 'linkedin_url', true);
         ?>
-        <div class="card reveal" style="padding: 0; background: #050505; text-align: center; overflow: hidden; border: 1px solid var(--border-glass);">
-            <?php if (has_post_thumbnail()) : the_post_thumbnail('titan-team', array('style' => 'width: 100%; height: 300px; object-fit: cover;')); endif; ?>
+        <div class="card reveal team-card" style="padding: 0; background: #050505; text-align: center; border: 1px solid var(--border-glass);">
+            <div class="team-img-wrap">
+                <?php if (has_post_thumbnail()) : the_post_thumbnail('titan-team'); endif; ?>
+                <div class="team-social-overlay">
+                    <?php if ($li) : ?>
+                        <a href="<?php echo esc_url($li); ?>" target="_blank"><i class="fab fa-linkedin"></i></a>
+                    <?php endif; ?>
+                    <a href="mailto:<?php bloginfo('admin_email'); ?>"><i class="fas fa-envelope"></i></a>
+                </div>
+            </div>
             <div style="padding: 2.5rem;">
                 <h3 style="margin-bottom: 0.5rem; color: var(--primary);"><?php the_title(); ?></h3>
-                <p style="text-transform: uppercase; font-size: 0.8rem; letter-spacing: 2px; color: var(--text-dim); margin-bottom: 1rem;"><?php echo get_the_excerpt(); ?></p>
-                <?php if ($li) : ?>
-                    <a href="<?php echo esc_url($li); ?>" target="_blank" style="color: var(--primary); font-size: 1.2rem;"><i class="fab fa-linkedin"></i></a>
-                <?php endif; ?>
+                <p style="text-transform: uppercase; font-size: 0.8rem; letter-spacing: 2px; color: var(--text-dim);"><?php echo get_the_excerpt(); ?></p>
             </div>
         </div>
         <?php endwhile; wp_reset_postdata(); else : ?>
@@ -76,14 +81,19 @@ get_header(); ?>
                 $li = wp_titans_get_mod("wp_titans_team_li_$i");
                 if (!$name) continue;
             ?>
-            <div class="card reveal" style="padding: 0; background: #050505; text-align: center; overflow: hidden; border: 1px solid var(--border-glass);">
-                <img loading="lazy" src="<?php echo esc_url($img); ?>" alt="<?php echo esc_attr($name); ?>" style="width: 100%; height: 300px; object-fit: cover;">
+            <div class="card reveal team-card" style="padding: 0; background: #050505; text-align: center; border: 1px solid var(--border-glass);">
+                <div class="team-img-wrap">
+                    <img loading="lazy" src="<?php echo esc_url($img); ?>" alt="<?php echo esc_attr($name); ?>">
+                    <div class="team-social-overlay">
+                        <?php if ($li && $li !== "#") : ?>
+                            <a href="<?php echo esc_url($li); ?>" target="_blank"><i class="fab fa-linkedin"></i></a>
+                        <?php endif; ?>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
                 <div style="padding: 2.5rem;">
                     <h3 style="margin-bottom: 0.5rem; color: var(--primary);"><?php echo esc_html($name); ?></h3>
-                    <p style="text-transform: uppercase; font-size: 0.8rem; letter-spacing: 2px; color: var(--text-dim); margin-bottom: 1rem;"><?php echo esc_html($role); ?></p>
-                    <?php if ($li && $li !== "#") : ?>
-                        <a href="<?php echo esc_url($li); ?>" target="_blank" style="color: var(--primary); font-size: 1.2rem;"><i class="fab fa-linkedin"></i></a>
-                    <?php endif; ?>
+                    <p style="text-transform: uppercase; font-size: 0.8rem; letter-spacing: 2px; color: var(--text-dim);"><?php echo esc_html($role); ?></p>
                 </div>
             </div>
             <?php endfor; ?>

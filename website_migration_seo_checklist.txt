@@ -1,0 +1,38 @@
+# WEBSITE MIGRATION & SEO HANDOVER CHECKLIST
+## Ensuring Zero Traffic Loss during the Authority Transformation.
+
+---
+
+### 1. PRE-MIGRATION (Phase 1-2)
+[ ] **Crawl Existing Site**: Run a crawl (e.g., Screaming Frog) to log all current URLs.
+[ ] **Identify Top Pages**: Note pages with high traffic or backlinks in Search Console.
+[ ] **Backup Content**: Export existing posts, pages, and media from the old site.
+
+### 2. TECHNICAL SETUP (Phase 3)
+[ ] **Staging Environment**: Build on a temporary subdomain (e.g., staging.client.com).
+[ ] **SSL Verification**: Ensure the new host has a valid SSL certificate ready.
+[ ] **Search Visibility**: Set staging to "Discourage search engines from indexing."
+
+### 3. THE REDIRECT MAP
+[ ] **301 Redirects**: Map every old URL to its new equivalent in a spreadsheet.
+[ ] **Bulk Upload**: Import the map into a redirect plugin (e.g., Redirection).
+[ ] **Test Redirects**: Verify that 100% of mapped URLs are forwarding correctly.
+
+### 4. SEO OPTIMIZATION
+[ ] **Meta Data**: Manually port or improve Meta Titles/Descriptions for top-tier pages.
+[ ] **H1 Alignment**: Ensure each page has a singular, keyword-rich H1.
+[ ] **Image Alt Tags**: Apply descriptive alt text to all new images.
+
+### 5. LAUNCH DAY (Phase 4)
+[ ] **DNS Update**: Update A Records or Nameservers to point to the new platform.
+[ ] **Index Settings**: Uncheck "Discourage search engines" in WP settings.
+[ ] **XML Sitemap**: Submit the new sitemap (`/sitemap_index.xml`) to Google Search Console.
+[ ] **Tracking Verification**: Confirm GA4 and Meta Pixel are firing on the live domain.
+
+### 6. POST-LAUNCH MONITORING
+[ ] **404 Monitoring**: Check the 404 log daily for the first week and add redirects as needed.
+[ ] **Speed Audit**: Confirm the site meets the sub-2s "Titan Standard" on live hosting.
+[ ] **Console Review**: Monitor GSC for any crawl errors or sudden drops.
+
+---
+*Precision is the key to authority.*
