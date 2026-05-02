@@ -20,12 +20,22 @@ get_header(); ?>
             if ($res_query->have_posts()) : while ($res_query->have_posts()) : $res_query->the_post();
             ?>
             <div class="card reveal" style="padding: 0; overflow: hidden; border-radius: 8px;">
-                <?php if (has_post_thumbnail()) : the_post_thumbnail('large', array('style' => 'width: 100%; height: 250px; object-fit: cover;')); endif; ?>
+                <?php if (has_post_thumbnail()) : the_post_thumbnail('large', array('style' => 'width: 100%; height: 250px; object-fit: cover;')); else : ?>
+                    <div style="height: 250px; background: #111; display: flex; align-items: center; justify-content: center;">
+                        <i class="fas fa-file-pdf" style="font-size: 4rem; color: var(--primary); opacity: 0.2;"></i>
+                    </div>
+                <?php endif; ?>
                 <div style="padding: 3rem;">
                     <span style="color: var(--primary); font-size: 0.7rem; text-transform: uppercase; letter-spacing: 2px; font-weight: 700;">FREE DOWNLOAD</span>
                     <h3 style="font-size: 1.8rem; margin: 1.5rem 0;"><?php the_title(); ?></h3>
                     <p style="color: var(--text-dim); margin-bottom: 2.5rem;"><?php echo get_the_excerpt(); ?></p>
-                    <a href="<?php the_permalink(); ?>" class="btn btn-primary" style="width: 100%;">Get the Guide</a>
+                    <?php
+                    $file_url = get_post_meta(get_the_ID(), 'resource_file_url', true);
+                    if ($file_url) : ?>
+                        <a href="<?php echo esc_url($file_url); ?>" download class="btn btn-primary" style="width: 100%;">Download Blueprint</a>
+                    <?php else : ?>
+                        <a href="<?php the_permalink(); ?>" class="btn btn-primary" style="width: 100%;">Get the Guide</a>
+                    <?php endif; ?>
                 </div>
             </div>
             <?php endwhile; wp_reset_postdata(); else : ?>

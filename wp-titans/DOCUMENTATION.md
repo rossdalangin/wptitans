@@ -6,11 +6,17 @@ Welcome to the **WordPress Titans** definitive premium theme. Designed for elite
 
 ## 1. Quick Start Guide
 
-### Automated Setup Wizard
-To launch your agency site in seconds:
+### Automated Setup Wizard (The Titan Launch)
+To launch your full agency ecosystem in seconds:
 1. Go to **Appearance > Customize > Theme Setup**.
-2. Check **"Generate Essential Pages"** and Publish.
-3. This will create 11 core pages, assign their specialized templates, and build your primary navigation menu automatically.
+2. Check **"Generate Essential Pages"** and hit **Publish**.
+3. **The Result**:
+   - 17 high-converting core pages are created with correct templates.
+   - Primary navigation menu is built and assigned.
+   - 6 Elite Service posts are generated with authority-first copy.
+   - 6 World-class Case Studies are populated in the Portfolio.
+   - 4 Core Team Member profiles are initialized.
+   - 4 High-output Guides are added to the Knowledge Vault.
 
 ### Recommended Menu Structure
 For maximum conversion and authority, we recommend the following menu configuration:

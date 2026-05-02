@@ -162,62 +162,23 @@ function wp_titans_handle_setup() {
     if ( get_theme_mod( 'wp_titans_generate_pages', false ) ) {
 
         $pages = array(
-            'Home' => array(
-                'template' => 'front-page.php',
-                'is_front' => true
-            ),
-            'Services' => array(
-                'template' => 'page-services.php'
-            ),
-            'The Process' => array(
-                'template' => 'page-process.php'
-            ),
-            'About Us' => array(
-                'template' => 'page-about.php'
-            ),
-            'Contact Us' => array(
-                'template' => 'page-contact.php'
-            ),
-            'Portfolio' => array(
-                'template' => 'page-portfolio.php'
-            ),
-            'Book a Strategy Call' => array(
-                'template' => 'page-book.php'
-            ),
-            'Project Planner' => array(
-                'template' => 'page-planner.php'
-            ),
-            'Authority Website System' => array(
-                'template' => 'page-authority.php'
-            ),
-            'Privacy Policy' => array(
-                'template' => 'page.php',
-                'content'  => 'Your privacy is important to us. This policy explains how we collect and use your data.'
-            ),
-            'Terms & Conditions' => array(
-                'template' => 'page.php',
-                'content'  => 'By using our services, you agree to the following terms...'
-            ),
-            'Web Design Strategy' => array(
-                'template' => 'page-service-single.php',
-                'content'  => 'Our comprehensive web design strategy focuses on conversion and authority.'
-            ),
-            'Conversion Case Study' => array(
-                'template' => 'page-case-study.php',
-                'content'  => 'This case study outlines how we helped a client grow by 140%.'
-            ),
-            'Free Authority Audit' => array(
-                'template' => 'page-audit.php'
-            ),
-            'Authority ROI Calculator' => array(
-                'template' => 'page-roi-calculator.php'
-            ),
-            'Client Portal' => array(
-                'template' => 'page-portal.php'
-            ),
-            'Resource Center' => array(
-                'template' => 'page-resources.php'
-            )
+            'Home' => array('template' => 'front-page.php', 'is_front' => true),
+            'Our Arsenal' => array('template' => 'page-services.php'),
+            'The 14-Day Sprint' => array('template' => 'page-process.php'),
+            'The Titan Legacy' => array('template' => 'page-about.php'),
+            'Initiate Connection' => array('template' => 'page-contact.php'),
+            'Case Study Vault' => array('template' => 'page-portfolio.php'),
+            'Book a Strategy Call' => array('template' => 'page-book.php'),
+            'Start Your Project' => array('template' => 'page-planner.php'),
+            'Authority Website System™' => array('template' => 'page-authority.php'),
+            'The Knowledge Vault' => array('template' => 'page-resources.php'),
+            'Command Center' => array('template' => 'page-portal.php'),
+            'ROI Impact Calculator' => array('template' => 'page-roi-calculator.php'),
+            'Request Authority Audit' => array('template' => 'page-audit.php'),
+            'Web Design Strategy' => array('template' => 'page-service-single.php', 'content' => 'Building world-class systems...'),
+            'Conversion Case Study' => array('template' => 'page-case-study.php'),
+            'Privacy Protocols' => array('template' => 'page.php', 'content' => 'Secure and compliant.'),
+            'Service Engagement Terms' => array('template' => 'page.php', 'content' => 'Operational standards.')
         );
 
         $created_page_ids = array();
@@ -251,12 +212,13 @@ function wp_titans_handle_setup() {
         $menu_exists = wp_get_nav_menu_object( $menu_name );
         if ( ! $menu_exists ) {
             $menu_id = wp_create_nav_menu( $menu_name );
-            foreach ( $created_page_ids as $title => $id ) {
-                if ( in_array($title, array('Home', 'Services', 'The Process', 'About Us', 'Contact Us', 'Book a Strategy Call', 'Project Planner')) ) {
+            $menu_items = array('Home', 'Our Arsenal', 'The 14-Day Sprint', 'Case Study Vault', 'The Titan Legacy', 'Initiate Connection', 'Book a Strategy Call');
+            foreach ( $menu_items as $title ) {
+                if (isset($created_page_ids[$title])) {
                     wp_update_nav_menu_item( $menu_id, 0, array(
                         'menu-item-title'     => $title,
                         'menu-item-object'    => 'page',
-                        'menu-item-object-id' => $id,
+                        'menu-item-object-id' => $created_page_ids[$title],
                         'menu-item-type'      => 'post_type',
                         'menu-item-status'    => 'publish',
                     ) );
@@ -267,11 +229,14 @@ function wp_titans_handle_setup() {
             set_theme_mod( 'nav_menu_locations', $locations );
         }
 
-        // Generate Sample Services
+        // Generate Elite Services
         $sample_services = array(
-            'Authority Website System™' => 'A complete, conversion-focused website package designed to position you as the trusted expert.',
-            'Website Copywriting' => 'Strategic messaging crafted to connect with your ideal clients and drive conversions.',
-            'Performance SEO' => 'Increase visibility and improve ranking with strategic technical SEO implementation.'
+            'Authority Website System™' => 'The definitive rebrand for established experts. We weaponize your knowledge into a high-performance conversion engine in 14 days.',
+            'Elite Copywriting' => 'Conversion-first messaging that connects emotionally and closes logically. We speak your ideal client’s language.',
+            'Performance Optimization' => 'Sub-2 second load times guaranteed. We build on a clean, scalable WordPress architecture for market dominance.',
+            'SEO Mastery' => 'Dominate the first page. We optimize for the keywords that actually drive high-ticket revenue, not just vanity traffic.',
+            'Lead Gen Funnels' => 'Automated client acquisition systems. We build the filters that identify and secure your most valuable prospects.',
+            'Titan Maintenance' => '24/7 security, speed monitoring, and strategic support to ensure your authority never wavers.'
         );
         foreach ($sample_services as $stitle => $scontent) {
             if (!get_page_by_title($stitle, OBJECT, 'service')) {
@@ -285,11 +250,48 @@ function wp_titans_handle_setup() {
             }
         }
 
-        // Generate Sample Portfolio
+        // Generate Sample Resources
+        $sample_resources = array(
+            'The $100k Authority Blueprint' => array(
+                'desc' => 'The definitive roadmap to digital dominance for high-ticket experts.',
+                'file' => 'authority_blueprint_lead_magnet.txt'
+            ),
+            'High-Ticket Sales Framework' => array(
+                'desc' => 'How to convert hesitant prospects into $10k+ project signs.',
+                'file' => 'guide_high_ticket_sales.txt'
+            ),
+            'The 14-Day Velocity SOP' => array(
+                'desc' => 'Our internal methodology for rapid world-class delivery.',
+                'file' => 'guide_14_day_sprint.txt'
+            ),
+            'SEO Mastery for Agencies' => array(
+                'desc' => 'The keywords and technical standards for first-page dominance.',
+                'file' => 'guide_seo_mastery.txt'
+            )
+        );
+        foreach ($sample_resources as $rtitle => $rdata) {
+            if (!get_page_by_title($rtitle, OBJECT, 'resource')) {
+                $rid = wp_insert_post(array(
+                    'post_title' => $rtitle,
+                    'post_content' => $rdata['desc'],
+                    'post_status' => 'publish',
+                    'post_type' => 'resource',
+                    'post_excerpt' => $rdata['desc']
+                ));
+                if ($rid) {
+                    update_post_meta($rid, 'resource_file_url', home_url('/') . $rdata['file']);
+                }
+            }
+        }
+
+        // Generate Elite Portfolio
         $sample_portfolio = array(
-            'Global SaaS Authority' => 'Case study of a world-class software platform rebrand.',
-            'Executive Coaching Hub' => 'How we transformed a consultant digital presence.',
-            'Medical Practice System' => 'High-performance lead engine for a specialized clinic.'
+            'The SaaS Transformation' => 'Scaled a B2B platform by 140% lead volume through cinematic positioning.',
+            'Consultant Authority Build' => 'Positioned a solo-expert as the #1 choice in their field via the 14-Day Sprint.',
+            'Enterprise Infrastructure' => 'Developed a custom high-performance ecosystem for a growing $10M ARR agency.',
+            'Medical Specialist Hub' => 'Launched a high-trust platform that automated booking for a specialized clinic.',
+            'Legal Power Platform' => 'Transformed a traditional law firm into a modern, authority-driven digital brand.',
+            'E-commerce Dominance' => 'Optimized a luxury retail site for elite speed and world-class checkout conversion.'
         );
         foreach ($sample_portfolio as $ptitle => $pcontent) {
             if (!get_page_by_title($ptitle, OBJECT, 'portfolio')) {
@@ -299,6 +301,25 @@ function wp_titans_handle_setup() {
                     'post_status' => 'publish',
                     'post_type' => 'portfolio',
                     'post_excerpt' => $pcontent
+                ));
+            }
+        }
+
+        // Generate Sample Team
+        $sample_team = array(
+            'Ross Dalangin' => 'Lead Strategist & Architect. 20+ years of building digital authority for experts.',
+            'Sarah Titan' => 'Creative Director. Master of cinematic branding and luxury UI/UX.',
+            'Marcus Code' => 'Lead Developer. Expert in high-performance WordPress systems and clean logic.',
+            'Elena Script' => 'Senior Copywriter. Crafts the high-converting messaging that powers the Titan systems.'
+        );
+        foreach ($sample_team as $tname => $tbio) {
+            if (!get_page_by_title($tname, OBJECT, 'team')) {
+                wp_insert_post(array(
+                    'post_title' => $tname,
+                    'post_content' => $tbio,
+                    'post_status' => 'publish',
+                    'post_type' => 'team',
+                    'post_excerpt' => $tbio
                 ));
             }
         }
