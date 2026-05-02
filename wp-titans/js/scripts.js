@@ -305,6 +305,51 @@ if (searchToggle && searchOverlay) {
     });
     searchClose.addEventListener('click', () => searchOverlay.style.display = 'none');
 
+    // AJAX Live Search Logic
+    const resultsContainer = document.getElementById('search-results-live');
+    let searchTimeout;
+
+    searchInput.addEventListener('input', () => {
+        clearTimeout(searchTimeout);
+        const query = searchInput.value;
+        if (query.length < 3) {
+            resultsContainer.innerHTML = '';
+            return;
+        }
+
+        searchTimeout = setTimeout(() => {
+            const formData = new URLSearchParams();
+            formData.append('action', 'titan_search');
+            formData.append('query', query);
+
+            fetch(wp_titans_ajax.url, {
+                method: 'POST',
+                body: formData,
+                headers: { 'Content-Type': 'application/x-www-form-urlencoded' }
+            })
+            .then(res => res.json())
+            .then(response => {
+                if (response.success && response.data.length > 0) {
+                    let html = '<ul style="list-style:none; padding:0;">';
+                    response.data.forEach(item => {
+                        html += `
+                            <li style="margin-bottom:1.5rem; padding-bottom:1.5rem; border-bottom:1px solid #111;">
+                                <a href="${item.url}" style="display:block;">
+                                    <small style="color:var(--primary); text-transform:uppercase; font-size:0.65rem;">${item.type}</small>
+                                    <h4 style="color:white; margin:0.5rem 0 0; font-size:1.1rem;">${item.title}</h4>
+                                </a>
+                            </li>
+                        `;
+                    });
+                    html += '</ul>';
+                    resultsContainer.innerHTML = html;
+                } else {
+                    resultsContainer.innerHTML = '<p style="color:#444;">No exact matches found.</p>';
+                }
+            });
+        }, 300);
+    });
+
     // ESC to close
     document.addEventListener('keydown', (e) => {
         if (e.key === 'Escape') searchOverlay.style.display = 'none';

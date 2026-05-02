@@ -1,0 +1,36 @@
+# AD CREATIVE BRIEFS: THE TITAN PAID TRAFFIC
+## Visual & Copy Directives for Meta (FB/IG) and LinkedIn.
+
+---
+
+### CAMPAIGN 1: THE "SPEED & ROI" HOOK (Video/Reels)
+**Visual**: Fast-motion Montage. A digital clock counting down from 14:00:00:00. Overlay text: "A World-Class Platform in 14 Days."
+**Copy**:
+- **Headline**: Most agency projects take 6 months. We do it in 14 days.
+- **Primary Text**: "You’ve spent years becoming an expert. But your website looks like a starter kit. We build high-performance WordPress systems that command immediate trust and convert visitors into clients while you sleep. Guaranteed delivery in 14 days or we work for free."
+**CTA**: Claim Your Free Audit.
+
+---
+
+### CAMPAIGN 2: THE "ROI CALCULATOR" HOOK (Static/Image)
+**Visual**: A clean, high-contrast screenshot of the ROI Calculator result (e.g., "$12,400 Monthly Lift Detected").
+**Copy**:
+- **Headline**: What is your current website costing you?
+- **Primary Text**: "The 'Authority Gap' is the silent killer of high-ticket consulting deals. If your site is slow or outdated, you're leaving thousands on the table. Use our free tool to calculate your potential authority lift."
+**CTA**: Try the ROI Calculator.
+
+---
+
+### CAMPAIGN 3: THE "LUXURY AUTHENTICITY" HOOK (LinkedIn Single Image)
+**Visual**: High-end photo of the founder or a cinematic team office shot. Low-key lighting.
+**Copy**:
+- **Headline**: Stop settling for a "good enough" website.
+- **Primary Text**: "If you're a market leader, your digital presence should reflect it. At WordPress Titans, we don't just 'design sites'—we weaponize your expertise into a cinematic platform built for market dominance."
+**CTA**: View the Portfolio.
+
+---
+
+### PRODUCTION NOTES:
+- **Colors**: Strictly Titan Gold (#D4AF37) and Midnight Black (#000000).
+- **Fonts**: Use 'Syne' for bold text overlays in video.
+- **Resolution**: 1080x1920 (Reels/Stories), 1200x628 (LI Single Image).

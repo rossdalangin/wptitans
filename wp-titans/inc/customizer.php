@@ -599,6 +599,14 @@ function wp_titans_customize_register( $wp_customize ) {
         'type' => 'checkbox'
     ) );
 
+    $wp_customize->add_setting( 'wp_titans_reset_all', array( 'default' => false, 'sanitize_callback' => 'wp_validate_boolean' ) );
+    $wp_customize->add_control( 'wp_titans_reset_all', array(
+        'label' => __( 'Reset All Settings', 'wp-titans' ),
+        'description' => __( 'Check this and Save to restore theme to original Titan defaults. Warning: This cannot be undone.', 'wp-titans' ),
+        'section' => 'wp_titans_setup',
+        'type' => 'checkbox'
+    ) );
+
     $wp_customize->add_section( 'wp_titans_social', array(
         'title'    => __( 'Social Links', 'wp-titans' ),
         'priority' => 100,

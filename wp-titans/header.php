@@ -156,11 +156,12 @@ if ($texture !== 'none') :
 <div id="search-overlay">
     <div id="search-close"><i class="fas fa-times"></i></div>
     <div class="search-container">
-        <form role="search" method="get" action="<?php echo esc_url(home_url('/')); ?>">
-            <input type="search" placeholder="Type to search insights..." value="<?php echo get_search_query(); ?>" name="s" id="search-input">
+        <form role="search" method="get" action="<?php echo esc_url(home_url('/')); ?>" id="ajax-search-form">
+            <input type="search" placeholder="Search the Arsenal..." value="<?php echo get_search_query(); ?>" name="s" id="search-input" autocomplete="off">
             <button type="submit"><i class="fas fa-arrow-right"></i></button>
         </form>
-        <p style="margin-top: 2rem; color: #444; font-family: 'Syne'; text-transform: uppercase; letter-spacing: 2px;">Press Enter to search</p>
+        <div id="search-results-live" style="margin-top: 3rem; text-align: left; max-width: 600px; margin-left: auto; margin-right: auto;"></div>
+        <p style="margin-top: 2rem; color: #444; font-family: 'Syne'; text-transform: uppercase; letter-spacing: 2px;">Start typing to see live results</p>
     </div>
 </div>
 
