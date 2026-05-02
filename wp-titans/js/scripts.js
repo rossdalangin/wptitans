@@ -39,6 +39,49 @@ document.querySelectorAll('.faq-head').forEach(item => {
     });
 });
 
+// Form Simulations (Success States)
+const simulateForm = (formId, successMsg) => {
+    const form = document.getElementById(formId);
+    if (!form) return;
+
+    form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const btn = form.querySelector('button');
+        const originalText = btn.innerText;
+
+        btn.disabled = true;
+        btn.innerText = 'Sending...';
+
+        setTimeout(() => {
+            form.innerHTML = `
+                <div class="reveal visible" style="text-align: center; padding: 2rem;">
+                    <i class="fas fa-check-circle" style="font-size: 3rem; color: #2ecc71; margin-bottom: 1.5rem;"></i>
+                    <h3 style="color: white; margin-bottom: 1rem;">Success!</h3>
+                    <p style="color: #ccc;">${successMsg}</p>
+                </div>
+            `;
+        }, 1500);
+    });
+};
+
+document.addEventListener('DOMContentLoaded', () => {
+    simulateForm('audit-request-form', 'Your audit request has been received. Our strategists will deliver your manual report within 24 hours.');
+    simulateForm('exit-intent-form', 'Thank you! Your Authority Checklist is on its way to your inbox.');
+
+    // Newsletter form in footer or front page
+    const newsForms = document.querySelectorAll('#newsletter form, .footer-newsletter form');
+    newsForms.forEach(f => {
+        f.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const btn = f.querySelector('button');
+            btn.disabled = true;
+            btn.innerText = 'Joined!';
+            f.querySelector('input').value = '';
+            f.querySelector('input').placeholder = 'Welcome to the Titan Circle.';
+        });
+    });
+});
+
 // Custom Cursor
 const cursor = document.getElementById('custom-cursor');
 const cursorText = document.getElementById('cursor-text');

@@ -1,0 +1,29 @@
+# CLIENT OFFBOARDING & SUCCESS CHECKLIST
+## Ensuring a Smooth Transition & Long-Term Authority
+
+---
+
+### 1. TECHNICAL HANDOVER
+[ ] Final DNS switch to live domain.
+[ ] Verification of SSL certificate.
+[ ] Delivery of the "Client Handover Guide."
+[ ] Removal of temporary staging/admin accounts.
+[ ] Transfer of ownership for any 3rd party tools/licenses.
+
+### 2. CLIENT EMPOWERMENT
+[ ] Conduct the 30-minute "Titan Platform Walkthrough" call.
+[ ] Ensure the client knows how to update headlines and images in the Customizer.
+[ ] Confirm the client has access to the "Project Command Center" archives.
+
+### 3. TESTIMONIAL & SOCIAL PROOF
+[ ] Send the "Results-First" testimonial request email (Day 7 post-launch).
+[ ] Request a high-quality headshot for the Case Study feature.
+[ ] Ask for permission to share the project on the Titan "Inside the Lab" feed.
+
+### 4. UPSELL & RETENTION
+[ ] Pitch the "Titan Care" maintenance plan for security and speed.
+[ ] Discuss the "Growth Partner" roadmap for Phase 2 (SEO/Ads).
+[ ] Schedule the 90-day "Authority Review" call.
+
+---
+*A great ending is the start of the next project.*

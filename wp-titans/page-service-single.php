@@ -18,21 +18,39 @@ get_header(); ?>
     <section id="service-benefits" style="background: #050505; border-top: 1px solid var(--border-glass);">
         <div class="grid-2">
             <div class="reveal">
-                <h2 style="font-size: 3rem; margin-bottom: 2rem;">Why This Matters</h2>
-                <p style="color: var(--text-dim); font-size: 1.1rem; margin-bottom: 3rem;">We don't just provide a service; we provide a business outcome. Our approach ensures that every technical decision supports your authority and growth.</p>
-                <ul style="color: var(--text-dim); line-height: 2.2; font-size: 1.1rem;">
-                    <li><i class="fas fa-check-circle" style="color: var(--primary); margin-right: 15px;"></i> Strategic alignment with your business goals.</li>
-                    <li><i class="fas fa-check-circle" style="color: var(--primary); margin-right: 15px;"></i> Built for high-performance and zero friction.</li>
-                    <li><i class="fas fa-check-circle" style="color: var(--primary); margin-right: 15px;"></i> Continuous optimization for elite results.</li>
-                </ul>
+                <h2 style="font-size: 3rem; margin-bottom: 2rem;">The Business Outcome</h2>
+                <p style="color: var(--text-dim); font-size: 1.1rem; margin-bottom: 3rem;">We don't just provide a service; we deploy a strategic asset. Most agencies sell 'time' or 'designs'—we sell authority and conversion. Our approach ensures that every technical decision supports your market dominance.</p>
+
+                <div style="display: grid; grid-template-columns: 1fr; gap: 2rem; margin-bottom: 3rem;">
+                    <div style="background: #111; padding: 2rem; border-radius: 8px; border-left: 4px solid var(--primary);">
+                        <h4 style="font-size: 1.1rem; color: white; margin-bottom: 0.5rem;">Authority Alignment</h4>
+                        <p style="font-size: 0.9rem; color: #888;">Every pixel and paragraph is engineered to position you as the definitive expert in your niche.</p>
+                    </div>
+                    <div style="background: #111; padding: 2rem; border-radius: 8px; border-left: 4px solid var(--primary);">
+                        <h4 style="font-size: 1.1rem; color: white; margin-bottom: 0.5rem;">Frictionless Conversion</h4>
+                        <p style="font-size: 0.9rem; color: #888;">We strip away the noise and focus on the singular path that turns a visitor into a high-value lead.</p>
+                    </div>
+                    <div style="background: #111; padding: 2rem; border-radius: 8px; border-left: 4px solid var(--primary);">
+                        <h4 style="font-size: 1.1rem; color: white; margin-bottom: 0.5rem;">Scalable Foundation</h4>
+                        <p style="font-size: 0.9rem; color: #888;">Built on a high-performance WordPress architecture that grows with your team and your traffic.</p>
+                    </div>
+                </div>
             </div>
             <div class="reveal">
-                <div style="background: #111; padding: 4rem; border-radius: 12px; border: 1px solid var(--border-glass);">
+                <div style="background: #111; padding: 5rem; border-radius: 12px; border: 1px solid var(--border-glass); position: relative;">
+                    <div style="position: absolute; top: -20px; right: -20px; background: var(--primary); color: black; font-weight: 900; padding: 1rem 2rem; border-radius: 4px; font-size: 0.8rem; transform: rotate(5deg); box-shadow: 0 10px 30px rgba(212, 175, 55, 0.3);">ELITE SERVICE</div>
                     <?php if (has_post_thumbnail()) : ?>
-                        <?php the_post_thumbnail('large', array('style' => 'width: 100%; height: auto; border-radius: 8px; margin-bottom: 2rem;')); ?>
+                        <?php the_post_thumbnail('large', array('style' => 'width: 100%; height: auto; border-radius: 8px; margin-bottom: 3rem;')); ?>
                     <?php endif; ?>
-                    <div class="post-content" style="color: #eee;">
+                    <div class="post-content" style="color: #eee; font-size: 1.1rem;">
                         <?php the_content(); ?>
+                    </div>
+                    <div style="margin-top: 4rem; padding-top: 3rem; border-top: 1px solid #222; display: flex; align-items: center; gap: 2rem;">
+                        <div style="flex: 1;">
+                            <p style="color: white; font-weight: 700; margin: 0;">Start with an Audit</p>
+                            <small style="color: #666;">Get clarity on your current gaps before we build.</small>
+                        </div>
+                        <a href="<?php echo get_permalink(get_page_by_path('free-authority-audit')); ?>" class="btn btn-primary" style="padding: 0.8rem 1.5rem; font-size: 0.8rem;">Claim Free Audit</a>
                     </div>
                 </div>
             </div>

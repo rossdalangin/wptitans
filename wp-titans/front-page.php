@@ -51,16 +51,17 @@ get_header(); ?>
 
 <!-- 2b. RESULTS TICKER -->
 <div id="results-ticker-bar" style="background: var(--primary); padding: 1.2rem 0; overflow: hidden; white-space: nowrap; border-bottom: 1px solid rgba(0,0,0,0.1); color: black;">
-    <div class="ticker-content" style="display: inline-block; animation: ticker-scroll 30s linear infinite; font-family: 'Syne'; font-weight: 800; text-transform: uppercase; font-size: 0.85rem; letter-spacing: 2px;">
+    <div class="ticker-content" style="display: inline-block; animation: ticker-scroll 40s linear infinite; font-family: 'Syne'; font-weight: 800; text-transform: uppercase; font-size: 0.85rem; letter-spacing: 2px;">
         <?php
-        $ticker_items = [
-            'ROI-Driven Systems', '$1.2M+ Client Revenue Generated', 'Elite 14-Day Launch', 'High-Performance WordPress',
-            'Strategic SEO Mastery', 'Conversion Optimized UI/UX', 'World-Class Authority Branding',
-            'ROI-Driven Systems', '$1.2M+ Client Revenue Generated', 'Elite 14-Day Launch', 'High-Performance WordPress'
-        ];
-        foreach($ticker_items as $ti) : ?>
-            <span style="margin: 0 4rem;"><i class="fas fa-bolt" style="margin-right: 15px;"></i> <?php echo esc_html($ti); ?></span>
-        <?php endforeach; ?>
+        $ticker_text = wp_titans_get_mod("wp_titans_scrolling_ticker");
+        $ticker_items = explode('•', $ticker_text);
+
+        // Loop twice for seamless scroll
+        for($j=0; $j<2; $j++) :
+            foreach($ticker_items as $ti) : ?>
+                <span style="margin: 0 4rem;"><i class="fas fa-bolt" style="margin-right: 15px;"></i> <?php echo esc_html(trim($ti)); ?></span>
+            <?php endforeach;
+        endfor; ?>
     </div>
 </div>
 
@@ -264,7 +265,7 @@ get_header(); ?>
         </div>
         <div class="reveal">
             <div style="display: flex; flex-direction: column; align-items: flex-start; gap: 2rem;">
-                <a href="<?php echo get_permalink(get_page_by_path('free-authority-audit')); ?>" class="btn" style="background: black; color: white; border-radius: 4px; padding: 1.5rem 3rem; font-size: 1.1rem;">Request Your 100% Manual Audit</a>
+                <a href="<?php echo get_permalink(get_page_by_path('free-authority-audit')); ?>" class="btn btn-audit-cta">Request Your 100% Manual Audit</a>
                 <p style="font-size: 0.8rem; opacity: 0.7;">* No obligation. Strategic review of positioning, speed, and conversion.</p>
             </div>
         </div>
@@ -353,13 +354,16 @@ get_header(); ?>
         <h2>Inside the Titan Lab</h2>
     </div>
     <div class="grid-cards" style="grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1rem;">
-        <?php for($i=1; $i<=4; $i++) : ?>
-            <div class="reveal" style="aspect-ratio: 1/1; background: #050505; border: 1px solid var(--border-glass); overflow: hidden; position: relative;">
-                <img src="https://images.unsplash.com/photo-1497215728101-856f4ea42174?auto=format&fit=crop&w=400" alt="Social Post" style="width: 100%; height: 100%; object-fit: cover; opacity: 0.5; transition: var(--transition);">
+        <?php for($i=1; $i<=4; $i++) :
+            $s_img = wp_titans_get_mod("wp_titans_social_img_$i");
+            $s_url = wp_titans_get_mod("wp_titans_social_url_$i");
+        ?>
+            <a href="<?php echo esc_url($s_url); ?>" target="_blank" class="reveal" style="aspect-ratio: 1/1; background: #050505; border: 1px solid var(--border-glass); overflow: hidden; position: relative; display: block;">
+                <img src="<?php echo esc_url($s_img); ?>" alt="Social Post" style="width: 100%; height: 100%; object-fit: cover; opacity: 0.5; transition: var(--transition);">
                 <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; opacity: 0; transition: var(--transition);" class="social-hover">
-                    <i class="fab fa-instagram" style="font-size: 2rem; color: var(--primary);"></i>
+                    <i class="fab fa-linkedin" style="font-size: 2rem; color: var(--primary);"></i>
                 </div>
-            </div>
+            </a>
         <?php endfor; ?>
     </div>
     <style>

@@ -42,12 +42,18 @@ get_header(); ?>
 
                     <p style="color: var(--text-dim); margin-bottom: 2rem;" id="roi-leads-container">By increasing your conversion rate to <strong id="roi-target-label">3.5%</strong> (our system average), you could secure an extra <span id="roi-leads" style="color:white; font-weight: 700;">0</span> leads per month.</p>
 
-                    <div style="background: #000; padding: 2rem; border-radius: 8px; margin-bottom: 3rem;">
-                        <div style="font-size: 0.75rem; text-transform: uppercase; letter-spacing: 2px; color: var(--text-dim); margin-bottom: 0.5rem;">Estimated Yearly Lift</div>
-                        <div style="font-size: 2.5rem; font-weight: 800; color: white;" id="roi-yearly">$0</div>
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 3rem;">
+                        <div style="background: #000; padding: 1.5rem; border-radius: 8px;">
+                            <div style="font-size: 0.6rem; text-transform: uppercase; letter-spacing: 2px; color: var(--text-dim); margin-bottom: 0.5rem;">Yearly Lift</div>
+                            <div style="font-size: 1.5rem; font-weight: 800; color: white;" id="roi-yearly">$0</div>
+                        </div>
+                        <div style="background: #000; padding: 1.5rem; border-radius: 8px; border: 1px solid var(--primary);">
+                            <div style="font-size: 0.6rem; text-transform: uppercase; letter-spacing: 2px; color: var(--primary); margin-bottom: 0.5rem;">Annual ROI</div>
+                            <div style="font-size: 1.5rem; font-weight: 800; color: var(--primary);" id="roi-percentage">0%</div>
+                        </div>
                     </div>
 
-                    <a href="#contact" class="btn btn-primary" style="width: 100%; padding: 1.5rem;">Secure This Revenue</a>
+                    <a href="#contact" class="btn btn-primary" style="width: 100%; padding: 1.5rem;">Capture This ROI</a>
                 </div>
             </div>
         </div>
@@ -62,6 +68,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const resultDisplay = document.getElementById('roi-result');
     const leadsDisplay = document.getElementById('roi-leads');
     const yearlyDisplay = document.getElementById('roi-yearly');
+    const roiPercDisplay = document.getElementById('roi-percentage');
     const targetLabel = document.getElementById('roi-target-label');
     const explanation = document.getElementById('roi-explanation');
 
@@ -70,9 +77,13 @@ document.addEventListener('DOMContentLoaded', () => {
         const currentConv = parseFloat(convInput.value) || 0;
         const value = parseFloat(valueInput.value) || 0;
 
-        // Dynamic target: always aim for at least 2.5x current or a minimum of 3.5%
+        // Try to get price from PHP/Customizer, fallback to 4500
+        let invStr = "<?php echo esc_js(wp_titans_get_mod('wp_titans_pricing_val_2')); ?>";
+        let investment = parseFloat(invStr.replace(/[^0-9.]/g, '')) || 4500;
+
+        // Dynamic target: always aim for at least 1.5x current or a minimum of 3.5%
         let titanConv = Math.max(3.5, currentConv * 1.5);
-        if (currentConv >= 5) titanConv = currentConv + 1; // For high performers, aim for incremental gains
+        if (currentConv >= 5) titanConv = currentConv + 1;
 
         targetLabel.innerText = titanConv.toFixed(1) + '%';
 
@@ -80,10 +91,15 @@ document.addEventListener('DOMContentLoaded', () => {
         const titanRev = (traffic * (titanConv / 100)) * value;
 
         const lift = titanRev - currentRev;
+        const annualLift = lift * 12;
         const extraLeads = Math.round((traffic * (titanConv / 100)) - (traffic * (currentConv / 100)));
 
+        // ROI % = (Gain - Investment) / Investment * 100
+        const roiPercentage = investment > 0 ? ((annualLift - investment) / investment) * 100 : 0;
+
         resultDisplay.innerText = '$' + Math.round(lift).toLocaleString();
-        yearlyDisplay.innerText = '$' + Math.round(lift * 12).toLocaleString();
+        yearlyDisplay.innerText = '$' + Math.round(annualLift).toLocaleString();
+        roiPercDisplay.innerText = (roiPercentage > 0 ? Math.round(roiPercentage).toLocaleString() : 0) + '%';
         leadsDisplay.innerText = extraLeads > 0 ? extraLeads : 0;
 
         if (lift <= 0) {

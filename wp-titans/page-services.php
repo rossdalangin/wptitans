@@ -86,22 +86,38 @@ get_header(); ?>
             </thead>
             <tbody style="color: var(--text-dim); font-size: 0.9rem;">
                 <?php
-                $matrix = [
-                    ['f' => 'Custom Branding', 't1' => true, 't2' => true, 't3' => true],
-                    ['f' => 'Strategic Copywriting', 't1' => false, 't2' => true, 't3' => true],
-                    ['f' => 'Lead Gen Funnels', 't1' => false, 't2' => true, 't3' => true],
-                    ['f' => 'CRM Integration', 't1' => false, 't2' => true, 't3' => true],
-                    ['f' => 'A/B Testing', 't1' => false, 't2' => false, 't3' => true],
-                    ['f' => 'Monthly Insights Studio', 't1' => false, 't2' => false, 't3' => true],
-                ];
-                foreach ($matrix as $row) : ?>
-                <tr style="border-bottom: 1px solid #111;">
-                    <td style="padding: 1.5rem 2rem; color: white; font-weight: 700;"><?php echo $row['f']; ?></td>
-                    <td style="padding: 1.5rem 2rem; text-align: center;"><?php echo $row['t1'] ? '<i class="fas fa-check" style="color:var(--primary);"></i>' : '<i class="fas fa-times" style="opacity:0.2;"></i>'; ?></td>
-                    <td style="padding: 1.5rem 2rem; text-align: center; background: rgba(212, 175, 55, 0.03);"><?php echo $row['t2'] ? '<i class="fas fa-check" style="color:var(--primary);"></i>' : '<i class="fas fa-times" style="opacity:0.2;"></i>'; ?></td>
-                    <td style="padding: 1.5rem 2rem; text-align: center;"><?php echo $row['t3'] ? '<i class="fas fa-check" style="color:var(--primary);"></i>' : '<i class="fas fa-times" style="opacity:0.2;"></i>'; ?></td>
-                </tr>
-                <?php endforeach; ?>
+                $has_custom_matrix = false;
+                for ($i=1; $i<=6; $i++) {
+                    if (wp_titans_get_mod("wp_titans_matrix_feat_$i")) {
+                        $has_custom_matrix = true;
+                        ?>
+                        <tr style="border-bottom: 1px solid #111;">
+                            <td style="padding: 1.5rem 2rem; color: white; font-weight: 700;"><?php echo esc_html(wp_titans_get_mod("wp_titans_matrix_feat_$i")); ?></td>
+                            <td style="padding: 1.5rem 2rem; text-align: center;"><?php echo wp_titans_get_mod("wp_titans_matrix_p1_$i") ? '<i class="fas fa-check" style="color:var(--primary);"></i>' : '<i class="fas fa-times" style="opacity:0.2;"></i>'; ?></td>
+                            <td style="padding: 1.5rem 2rem; text-align: center; background: rgba(212, 175, 55, 0.03);"><?php echo wp_titans_get_mod("wp_titans_matrix_p2_$i") ? '<i class="fas fa-check" style="color:var(--primary);"></i>' : '<i class="fas fa-times" style="opacity:0.2;"></i>'; ?></td>
+                            <td style="padding: 1.5rem 2rem; text-align: center;"><?php echo wp_titans_get_mod("wp_titans_matrix_p3_$i") ? '<i class="fas fa-check" style="color:var(--primary);"></i>' : '<i class="fas fa-times" style="opacity:0.2;"></i>'; ?></td>
+                        </tr>
+                        <?php
+                    }
+                }
+                if (!$has_custom_matrix) :
+                    $matrix = [
+                        ['f' => 'Custom Branding', 't1' => true, 't2' => true, 't3' => true],
+                        ['f' => 'Strategic Copywriting', 't1' => false, 't2' => true, 't3' => true],
+                        ['f' => 'Lead Gen Funnels', 't1' => false, 't2' => true, 't3' => true],
+                        ['f' => 'CRM Integration', 't1' => false, 't2' => true, 't3' => true],
+                        ['f' => 'A/B Testing', 't1' => false, 't2' => false, 't3' => true],
+                        ['f' => 'Monthly Insights Studio', 't1' => false, 't2' => false, 't3' => true],
+                    ];
+                    foreach ($matrix as $row) : ?>
+                    <tr style="border-bottom: 1px solid #111;">
+                        <td style="padding: 1.5rem 2rem; color: white; font-weight: 700;"><?php echo $row['f']; ?></td>
+                        <td style="padding: 1.5rem 2rem; text-align: center;"><?php echo $row['t1'] ? '<i class="fas fa-check" style="color:var(--primary);"></i>' : '<i class="fas fa-times" style="opacity:0.2;"></i>'; ?></td>
+                        <td style="padding: 1.5rem 2rem; text-align: center; background: rgba(212, 175, 55, 0.03);"><?php echo $row['t2'] ? '<i class="fas fa-check" style="color:var(--primary);"></i>' : '<i class="fas fa-times" style="opacity:0.2;"></i>'; ?></td>
+                        <td style="padding: 1.5rem 2rem; text-align: center;"><?php echo $row['t3'] ? '<i class="fas fa-check" style="color:var(--primary);"></i>' : '<i class="fas fa-times" style="opacity:0.2;"></i>'; ?></td>
+                    </tr>
+                    <?php endforeach;
+                endif; ?>
             </tbody>
         </table>
     </div>

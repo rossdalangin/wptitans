@@ -118,7 +118,10 @@ function wp_titans_customize_register( $wp_customize ) {
     ) );
 
     $wp_customize->add_setting( 'wp_titans_hero_ticker', array( 'default' => 'Recent Results: $12k Lead Gen Funnel • 14-Day Authority Site Launch • Expert Brand Platform', 'sanitize_callback' => 'wp_kses_post' ) );
-    $wp_customize->add_control( 'wp_titans_hero_ticker', array( 'label' => __( 'Hero Ticker Text', 'wp-titans' ), 'section' => 'wp_titans_hero' ) );
+    $wp_customize->add_control( 'wp_titans_hero_ticker', array( 'label' => __( 'Hero Ticker Capsule Text', 'wp-titans' ), 'section' => 'wp_titans_hero' ) );
+
+    $wp_customize->add_setting( 'wp_titans_scrolling_ticker', array( 'default' => 'ROI-Driven Systems • $1.2M+ Client Revenue Generated • Elite 14-Day Launch • High-Performance WordPress • Strategic SEO Mastery • Conversion Optimized UI/UX • World-Class Authority Branding', 'sanitize_callback' => 'wp_kses_post' ) );
+    $wp_customize->add_control( 'wp_titans_scrolling_ticker', array( 'label' => __( 'Full-Width Scrolling Ticker Content', 'wp-titans' ), 'description' => __( 'Use bullets (•) to separate items.', 'wp-titans' ), 'section' => 'wp_titans_hero' ) );
 
     $wp_customize->add_setting( 'wp_titans_hero_btn1_text', array( 'default' => wp_titans_get_default('wp_titans_hero_btn1_text'), 'sanitize_callback' => 'wp_kses_post' ) );
     $wp_customize->add_control( 'wp_titans_hero_btn1_text', array( 'label' => __( 'Hero Button 1 Text', 'wp-titans' ), 'section' => 'wp_titans_hero' ) );
@@ -396,7 +399,7 @@ function wp_titans_customize_register( $wp_customize ) {
     $wp_customize->add_setting( 'wp_titans_faq_main_title', array( 'default' => wp_titans_get_default('wp_titans_faq_main_title'), 'sanitize_callback' => 'wp_kses_post' ) );
     $wp_customize->add_control( 'wp_titans_faq_main_title', array( 'label' => __( 'Section Title', 'wp-titans' ), 'section' => 'wp_titans_faq' ) ) ;
 
-    for ($i = 1; $i <= 4; $i++) {
+    for ($i = 1; $i <= 8; $i++) {
         $wp_customize->add_setting( "wp_titans_faq_q_$i", array( 'default' => wp_titans_get_default("wp_titans_faq_q_$i"), 'sanitize_callback' => 'wp_kses_post' ) );
         $wp_customize->add_control( "wp_titans_faq_q_$i", array( 'label' => "FAQ $i Question", 'section' => 'wp_titans_faq' ) );
 
@@ -422,6 +425,21 @@ function wp_titans_customize_register( $wp_customize ) {
     for ($i = 1; $i <= 6; $i++) {
         $wp_customize->add_setting( "wp_titans_service_points_$i", array( 'default' => wp_titans_get_default("wp_titans_service_points_$i"), 'sanitize_callback' => 'wp_kses_post' ) );
         $wp_customize->add_control( "wp_titans_service_points_$i", array( 'label' => "Service $i Features (Line by line)", 'section' => 'wp_titans_services', 'type' => 'textarea' ) );
+    }
+
+    // Services Matrix
+    for ($i = 1; $i <= 6; $i++) {
+        $wp_customize->add_setting( "wp_titans_matrix_feat_$i", array( 'default' => '', 'sanitize_callback' => 'wp_kses_post' ) );
+        $wp_customize->add_control( "wp_titans_matrix_feat_$i", array( 'label' => "Matrix Row $i: Feature Name", 'section' => 'wp_titans_services' ) );
+
+        $wp_customize->add_setting( "wp_titans_matrix_p1_$i", array( 'default' => false, 'sanitize_callback' => 'wp_validate_boolean' ) );
+        $wp_customize->add_control( "wp_titans_matrix_p1_$i", array( 'label' => "Row $i: In Launchpad?", 'section' => 'wp_titans_services', 'type' => 'checkbox' ) );
+
+        $wp_customize->add_setting( "wp_titans_matrix_p2_$i", array( 'default' => false, 'sanitize_callback' => 'wp_validate_boolean' ) );
+        $wp_customize->add_control( "wp_titans_matrix_p2_$i", array( 'label' => "Row $i: In Authority?", 'section' => 'wp_titans_services', 'type' => 'checkbox' ) );
+
+        $wp_customize->add_setting( "wp_titans_matrix_p3_$i", array( 'default' => false, 'sanitize_callback' => 'wp_validate_boolean' ) );
+        $wp_customize->add_control( "wp_titans_matrix_p3_$i", array( 'label' => "Row $i: In Enterprise?", 'section' => 'wp_titans_services', 'type' => 'checkbox' ) );
     }
 
     $wp_customize->add_setting( 'wp_titans_process_page_tagline', array( 'default' => wp_titans_get_default('wp_titans_process_page_tagline'), 'sanitize_callback' => 'wp_kses_post' ) );
@@ -532,6 +550,25 @@ function wp_titans_customize_register( $wp_customize ) {
     $wp_customize->add_setting( 'wp_titans_auth_subtitle', array( 'default' => wp_titans_get_default('wp_titans_auth_subtitle'), 'sanitize_callback' => 'wp_kses_post' ) );
     $wp_customize->add_control( 'wp_titans_auth_subtitle', array( 'label' => __( 'Authority Subtitle', 'wp-titans' ), 'section' => 'wp_titans_authority_page', 'type' => 'textarea' ) );
 
+    // Ideal Client Lists
+    $wp_customize->add_setting( 'wp_titans_auth_for_who', array( 'default' => "You are an expert with a high-value offer.\nYou have an outdated website.\nYou want professional positioning.\nYou value speed and 14-day launch.", 'sanitize_callback' => 'wp_kses_post' ) );
+    $wp_customize->add_control( 'wp_titans_auth_for_who', array( 'label' => __( 'This is FOR you if... (Line by line)', 'wp-titans' ), 'section' => 'wp_titans_authority_page', 'type' => 'textarea' ) );
+
+    $wp_customize->add_setting( 'wp_titans_auth_not_for_who', array( 'default' => "You want the cheapest possible option.\nYou don't have a clear offer.\nYou want a 100-page complex app.\nYou aren't willing to invest in authority.", 'sanitize_callback' => 'wp_kses_post' ) );
+    $wp_customize->add_control( 'wp_titans_auth_not_for_who', array( 'label' => __( 'This is NOT for you if... (Line by line)', 'wp-titans' ), 'section' => 'wp_titans_authority_page', 'type' => 'textarea' ) );
+
+    // Comparison Table (System vs Standard)
+    for ($i = 1; $i <= 5; $i++) {
+        $wp_customize->add_setting( "wp_titans_auth_comp_feat_$i", array( 'default' => wp_titans_get_default("wp_titans_auth_comp_feat_$i"), 'sanitize_callback' => 'wp_kses_post' ) );
+        $wp_customize->add_control( "wp_titans_auth_comp_feat_$i", array( 'label' => "Comparison Row $i: Feature", 'section' => 'wp_titans_authority_page' ) );
+
+        $wp_customize->add_setting( "wp_titans_auth_comp_titan_$i", array( 'default' => wp_titans_get_default("wp_titans_auth_comp_titan_$i"), 'sanitize_callback' => 'wp_kses_post' ) );
+        $wp_customize->add_control( "wp_titans_auth_comp_titan_$i", array( 'label' => "Comparison Row $i: Titan Value", 'section' => 'wp_titans_authority_page' ) );
+
+        $wp_customize->add_setting( "wp_titans_auth_comp_std_$i", array( 'default' => wp_titans_get_default("wp_titans_auth_comp_std_$i"), 'sanitize_callback' => 'wp_kses_post' ) );
+        $wp_customize->add_control( "wp_titans_auth_comp_std_$i", array( 'label' => "Comparison Row $i: Standard Value", 'section' => 'wp_titans_authority_page' ) );
+    }
+
     for ($i = 1; $i <= 6; $i++) {
         $wp_customize->add_setting( "wp_titans_auth_feature_icon_$i", array( 'default' => wp_titans_get_default("wp_titans_auth_feature_icon_$i"), 'sanitize_callback' => 'wp_kses_post' ) );
         $wp_customize->add_control( "wp_titans_auth_feature_icon_$i", array( 'label' => "Auth Feature $i Icon", 'section' => 'wp_titans_authority_page' ) );
@@ -615,6 +652,47 @@ function wp_titans_customize_register( $wp_customize ) {
     $wp_customize->add_setting( 'wp_titans_contact_form_method', array( 'default' => 'POST', 'sanitize_callback' => 'sanitize_text_field' ) );
     $wp_customize->add_control( 'wp_titans_contact_form_method', array( 'label' => __( 'Custom Form Method', 'wp-titans' ), 'section' => 'wp_titans_contact', 'type' => 'select', 'choices' => array('POST' => 'POST', 'GET' => 'GET') ) );
 
+    $wp_customize->add_section( 'wp_titans_social_feed', array(
+        'title'    => __( 'Front Page: Social Feed', 'wp-titans' ),
+        'priority' => 89,
+    ) );
+
+    for ($i = 1; $i <= 4; $i++) {
+        $wp_customize->add_setting( "wp_titans_social_img_$i", array( 'default' => 'https://images.unsplash.com/photo-1497215728101-856f4ea42174?auto=format&fit=crop&w=400', 'sanitize_callback' => 'esc_url_raw' ) );
+        $wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, "wp_titans_social_img_$i", array( 'label' => "Social Image $i", 'section' => 'wp_titans_social_feed' ) ) );
+
+        $wp_customize->add_setting( "wp_titans_social_url_$i", array( 'default' => '#', 'sanitize_callback' => 'esc_url_raw' ) );
+        $wp_customize->add_control( "wp_titans_social_url_$i", array( 'label' => "Social Image $i Link", 'section' => 'wp_titans_social_feed' ) );
+    }
+
+    $wp_customize->add_section( 'wp_titans_portal_sec', array(
+        'title'    => __( 'Client Portal Settings', 'wp-titans' ),
+        'panel'    => 'wp_titans_pages_panel',
+    ) );
+
+    $wp_customize->add_setting( 'wp_titans_portal_title', array( 'default' => 'Client Command Center', 'sanitize_callback' => 'wp_kses_post' ) );
+    $wp_customize->add_control( 'wp_titans_portal_title', array( 'label' => __( 'Portal Title', 'wp-titans' ), 'section' => 'wp_titans_portal_sec' ) );
+
+    $wp_customize->add_setting( 'wp_titans_portal_status', array( 'default' => '25', 'sanitize_callback' => 'sanitize_text_field' ) );
+    $wp_customize->add_control( 'wp_titans_portal_status', array(
+        'label' => __( 'Default Project Progress (%)', 'wp-titans' ),
+        'section' => 'wp_titans_portal_sec',
+        'type' => 'select',
+        'choices' => array('25' => 'Strategy (25%)', '50' => 'Content (50%)', '75' => 'Development (75%)', '100' => 'Launch (100%)')
+    ) );
+
+    $portal_links = array(
+        'msa' => 'Master Services Agreement',
+        'roadmap' => 'Strategic Roadmap',
+        'drive' => 'Shared Google Drive',
+        'recordings' => 'Strategy Call Recordings'
+    );
+
+    foreach ($portal_links as $key => $label) {
+        $wp_customize->add_setting( "wp_titans_portal_link_$key", array( 'default' => '#', 'sanitize_callback' => 'esc_url_raw' ) );
+        $wp_customize->add_control( "wp_titans_portal_link_$key", array( 'label' => "$label URL", 'section' => 'wp_titans_portal_sec' ) );
+    }
+
     $wp_customize->add_section( 'wp_titans_audit', array(
         'title'    => __( 'Audit Section (Lead Magnet)', 'wp-titans' ),
         'priority' => 98,
@@ -628,6 +706,12 @@ function wp_titans_customize_register( $wp_customize ) {
 
     $wp_customize->add_setting( 'wp_titans_audit_desc', array( 'default' => wp_titans_get_default('wp_titans_audit_desc'), 'sanitize_callback' => 'wp_kses_post' ) );
     $wp_customize->add_control( 'wp_titans_audit_desc', array( 'label' => __( 'Audit Description', 'wp-titans' ), 'section' => 'wp_titans_audit', 'type' => 'textarea' ) );
+
+    $wp_customize->add_setting( 'wp_titans_audit_testi_quote', array( 'default' => '', 'sanitize_callback' => 'wp_kses_post' ) );
+    $wp_customize->add_control( 'wp_titans_audit_testi_quote', array( 'label' => __( 'Audit Testimonial Quote', 'wp-titans' ), 'section' => 'wp_titans_audit', 'type' => 'textarea' ) );
+
+    $wp_customize->add_setting( 'wp_titans_audit_testi_author', array( 'default' => '', 'sanitize_callback' => 'wp_kses_post' ) );
+    $wp_customize->add_control( 'wp_titans_audit_testi_author', array( 'label' => __( 'Audit Testimonial Author', 'wp-titans' ), 'section' => 'wp_titans_audit' ) );
 
     // --- Guarantee Section ---
     $wp_customize->add_section( 'wp_titans_guarantee_sec', array(
@@ -875,7 +959,7 @@ function wp_titans_customizer_css() {
         <?php if (wp_titans_get_mod("wp_titans_design_mode") === 'glass') :
             $blur = wp_titans_get_mod("wp_titans_glass_intensity");
         ?>
-        .card, #masthead.scrolled, #planner-container, .option-content {
+        .card, #navbar.scrolled, #planner-container, .option-content {
             background: var(--bg-glass) !important;
             backdrop-filter: blur(<?php echo $blur; ?>px) !important;
             -webkit-backdrop-filter: blur(<?php echo $blur; ?>px) !important;

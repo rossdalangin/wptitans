@@ -1,0 +1,36 @@
+# AGENCY HIRING & SCALING GUIDE
+## Building the Titan Core Team
+
+---
+
+### 1. THE FIRST HIRE: PROJECT MANAGER (Operations)
+**Role**: Shield the founder from day-to-day client communication and coordinate the 14-day sprint.
+**Key Skill**: Extreme organization and high-level empathy.
+
+### 2. THE SECOND HIRE: JUNIOR DEVELOPER / WP SPECIALIST
+**Role**: Handle site setup, content population, and Customizer configurations.
+**Key Skill**: Proficiency in WordPress, CSS, and attention to detail.
+
+### 3. THE THIRD HIRE: CONVERSION COPYWRITER (Contractor)
+**Role**: Draft the Authority Blueprints and high-converting page copy.
+**Key Skill**: Direct-response marketing and brand voice development.
+
+### 4. THE FOURTH HIRE: APPOINTMENT SETTER / SDR
+**Role**: Manage outbound LinkedIn outreach and follow up on "Free Audit" leads.
+**Key Skill**: Persistence and ability to identify high-value prospects.
+
+---
+
+### INTERVIEW SCORECARD CRITERIA:
+1. **Speed**: Can they deliver quality work under pressure?
+2. **Authority**: Do they present themselves with professional confidence?
+3. **Systems-Thinking**: Do they follow SOPs or try to "reinvent the wheel"?
+4. **Growth Mindset**: Are they looking to build something world-class?
+
+---
+
+### ONBOARDING PROCESS:
+- **Week 1**: Deep dive into the Titan Theme and Customizer Logic.
+- **Week 2**: Shadow a full 14-Day Sprint.
+- **Week 3**: Lead a specific section of the project (e.g., Development).
+- **Week 4**: Full project ownership under Founder supervision.

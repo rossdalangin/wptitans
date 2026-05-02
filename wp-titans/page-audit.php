@@ -24,8 +24,8 @@ get_header(); ?>
                     <li><i class="fas fa-check-circle" style="color: var(--primary); margin-right: 15px;"></i> **Strategic Gap Analysis**: What your competitors are doing better.</li>
                 </ul>
                 <div style="margin-top: 4rem; padding: 3rem; background: #111; border-radius: 12px; border: 1px solid var(--primary);">
-                    <p style="margin: 0; font-style: italic; color: #eee;">"The audit Ross sent over was the catalyst for our 140% growth. He identified three 'leaks' in our funnel we had no idea existed."</p>
-                    <p style="margin-top: 1.5rem; font-weight: 700; color: var(--primary);">— Mark T., SaaS Founder</p>
+                    <p style="margin: 0; font-style: italic; color: #eee;"><?php echo esc_html(wp_titans_get_mod('wp_titans_audit_testi_quote', '"The audit Ross sent over was the catalyst for our 140% growth. He identified three \'leaks\' in our funnel we had no idea existed."')); ?></p>
+                    <p style="margin-top: 1.5rem; font-weight: 700; color: var(--primary);">— <?php echo esc_html(wp_titans_get_mod('wp_titans_audit_testi_author', 'Mark T., SaaS Founder')); ?></p>
                 </div>
             </div>
 

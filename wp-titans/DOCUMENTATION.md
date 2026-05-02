@@ -81,8 +81,20 @@ The theme includes a native toggle. You can enable/disable this in **Customizer 
 - **Design Presets**: Switch between Titan Gold, Midnight Sapphire, and Emerald Luxury in **Customizer > Visual Style**.
 - **Design Modes**: Toggle between "Solid" and "Glass Luxury" (Glassmorphism) in **Visual Style**.
 - **Elite Motion**: Magnetic buttons, mouse-follow glow effects, and cinematic scroll indicators are built-in and manageable via **Customizer > Layout & UX**.
-- **Project Planner**: A high-converting 5-step AJAX discovery engine that qualifies leads instantly.
-- **Results Ticker**: Auto-scrolling social proof bar on the homepage.
+- **Project Planner**: A high-converting 5-step AJAX discovery engine with built-in lead scoring. Titan-tier leads (high budget) are automatically identified and prioritized for strategy calls.
+- **ROI Calculator**: Interactive tool that demonstrates the financial impact of the "Authority Gap." Calculates monthly lift, yearly projections, and expected ROI percentage based on agency pricing.
+- **Client Portal (Command Center)**: A functional prototype for managing active projects. Includes a status selector for milestones, interactive task lists for client onboarding, a messaging board simulation, and a secure file-drop zone.
+- **Results Tickers**: Features both a static "Results Capsule" in the hero and a full-width auto-scrolling marquee, both manageable via the Customizer.
+
+---
+
+## 5. Sales & Marketing Power Kit
+
+Included in the theme root are 30+ strategic assets to help you scale:
+- **Financial & Operational (CSV)**: 12-Month Projections, CRM Lead Tracker, 14-Day Sprint Schedule, Discovery Scorecards.
+- **Legal & Reporting**: Master Services Agreement (MSA), Professional Website Audit Report templates, Client Handover Guides.
+- **Sales & Outreach**: Cold outreach sequences, discovery call scripts, and high-ticket pricing guides.
+- **Content & Ads**: 30-Day Social Content Calendar, Video Ad Frameworks, and Email Nurture Automations.
 
 ---
 

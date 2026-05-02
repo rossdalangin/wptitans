@@ -1,0 +1,25 @@
+# CLIENT DESIGN PRESENTATION SCRIPT
+## How to present the "Titan Signature" draft for maximum approval.
+
+---
+
+### 1. THE SET-UP (5 Minutes)
+"Before we look at the live draft, I want to ground us in the goals we set during the Strategy Phase. Our primary objective was to close your 'Authority Gap' and position you as the definitive expert in [Niche]. Every design decision you're about to see was made to support that goal."
+
+### 2. THE REVEAL (10 Minutes)
+"As we scroll through the Home Page, you’ll notice the cinematic, high-contrast aesthetic. This isn’t just for looks; it’s designed to create an immediate emotional response of power and trust.
+
+- **The Hero**: Notice how the headline hits the primary pain point we identified.
+- **The Tickers**: We’re using motion here to show constant activity and results.
+- **The Visual Reveal**: Notice how images 'swipe' in? This creates a premium feel that distinguishes you from your competitors' static sites."
+
+### 3. THE CONVERSION ENGINE (5 Minutes)
+"We’ve implemented the Project Planner and the ROI Calculator. These aren't just forms—they are interactive tools that qualify your leads and demonstrate the financial value of working with you before you even talk to them."
+
+### 4. HANDLING FEEDBACK (10 Minutes)
+"As you review this over the next 48 hours, I want you to ask one question: **'Does this help me command more authority?'** If you have a change request, let’s look at it through that lens.
+
+We’re on track for our 14-day launch, so I’ll look for your consolidated feedback in the Command Center by [Time/Date]."
+
+---
+*Pro Tip: Present via Zoom/Video call. Never send the link first without the context.*

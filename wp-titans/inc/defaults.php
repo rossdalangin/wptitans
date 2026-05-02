@@ -44,8 +44,8 @@ function wp_titans_get_defaults() {
         'wp_titans_about_page_title' => 'We help experts build websites that truly reflect their value.',
         'wp_titans_about_page_subtitle' => 'Design for business outcomes, not just trends.',
         'wp_titans_about_page_image' => 'https://wordpresstitans.com/wp-content/uploads/2025/12/Screenshot-2025-12-06-001551.webp',
-        'wp_titans_about_story_title' => 'Built on 20+ Years of Experience',
-        'wp_titans_about_story_content' => "WordPress Titans began with one mission: to help experts build websites that truly reflect their value.\n\nAfter 20+ years of building websites for all kinds of businesses, one thing became clear — most websites fail not because of design, but because they lack clarity, strategy, and authority positioning.",
+        'wp_titans_about_story_title' => 'The Obsession with Authority',
+        'wp_titans_about_story_content' => "WordPress Titans was born from a realization that changed everything: Most experts are invisible. \n\nYou spend decades mastering your craft. You solve impossible problems. You deliver world-class results. Yet, your digital presence looks like a template from 2012. This 'Authority Gap' is the silent killer of high-ticket businesses.\n\nAfter 20+ years at the intersection of psychology, high-performance systems, and creative design, we decided to stop building websites and start building legacies. We don't just 'design'—we weaponize your expertise into a cinematic platform that commands immediate respect and converts visitors into loyal clients before you even jump on a call.",
         'wp_titans_founder_image' => 'https://wordpresstitans.com/wp-content/uploads/2025/07/pic-ross-dalangin.jpg',
         'wp_titans_founder_name' => 'Ross Dalangin',
         'wp_titans_founder_bio' => 'I’m Ross Dalangin — a web developer with over two decades of experience in WordPress, theme development, and business-focused design systems.',
@@ -94,6 +94,17 @@ function wp_titans_get_defaults() {
         'wp_titans_newsletter_desc' => 'Weekly insights on authority branding and high-performance WordPress systems.',
         'wp_titans_blog_show'       => true,
         'wp_titans_blog_title'      => 'Agency Insights',
+        'wp_titans_portal_title'    => 'Client Command Center',
+        'wp_titans_portal_status'   => '25',
+        'wp_titans_portal_link_msa' => '#',
+        'wp_titans_portal_link_roadmap' => '#',
+        'wp_titans_portal_link_drive' => '#',
+        'wp_titans_portal_link_recordings' => '#',
+        'wp_titans_audit_testi_quote' => '"The audit Ross sent over was the catalyst for our 140% growth. He identified three \'leaks\' in our funnel we had no idea existed."',
+        'wp_titans_audit_testi_author' => 'Mark T., SaaS Founder',
+        'wp_titans_auth_for_who' => "You are an expert with a high-value offer.\nYou have an outdated website.\nYou want professional positioning.\nYou value speed and 14-day launch.",
+        'wp_titans_auth_not_for_who' => "You want the cheapest possible option.\nYou don't have a clear offer.\nYou want a 100-page complex app.\nYou aren't willing to invest in authority.",
+        'wp_titans_scrolling_ticker' => 'ROI-Driven Systems • $1.2M+ Client Revenue Generated • Elite 14-Day Launch • High-Performance WordPress • Strategic SEO Mastery • Conversion Optimized UI/UX • World-Class Authority Branding',
     );
 }
 
@@ -362,6 +373,32 @@ function wp_titans_get_default( $key ) {
             'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=400'
         ];
         return isset( $d[$i-1] ) ? $d[$i-1] : '';
+    }
+
+    if ( strpos( $key, 'wp_titans_auth_comp_feat_' ) === 0 ) {
+        $i = (int) str_replace( 'wp_titans_auth_comp_feat_', '', $key );
+        $d = ['Launch Speed', 'Lead Gen Logic', 'Performance', 'Positioning', 'Management'];
+        return isset( $d[$i-1] ) ? $d[$i-1] : '';
+    }
+    if ( strpos( $key, 'wp_titans_auth_comp_titan_' ) === 0 ) {
+        $i = (int) str_replace( 'wp_titans_auth_comp_titan_', '', $key );
+        $d = ['Elite 14-Day Delivery', 'Multi-Step Conversion Funnels', '90+ Core Web Vitals', 'Authority-First Strategy', '100% No-Code Admin'];
+        return isset( $d[$i-1] ) ? $d[$i-1] : '';
+    }
+    if ( strpos( $key, 'wp_titans_auth_comp_std_' ) === 0 ) {
+        $i = (int) str_replace( 'wp_titans_auth_comp_std_', '', $key );
+        $d = ['2-4 Months Average', 'Simple Contact Form', 'Plugin-Heavy & Slow', 'Generic "Portfolio" Look', 'Hard-coded / Complex'];
+        return isset( $d[$i-1] ) ? $d[$i-1] : '';
+    }
+
+    if ( strpos( $key, 'wp_titans_matrix_feat_' ) === 0 ) {
+        $i = (int) str_replace( 'wp_titans_matrix_feat_', '', $key );
+        $d = ['Custom Branding', 'Strategic Copywriting', 'Lead Gen Funnels', 'CRM Integration', 'A/B Testing', 'Monthly Insights Studio'];
+        return isset( $d[$i-1] ) ? $d[$i-1] : '';
+    }
+
+    if ( strpos( $key, 'wp_titans_social_img_' ) === 0 ) {
+        return 'https://images.unsplash.com/photo-1497215728101-856f4ea42174?auto=format&fit=crop&w=400';
     }
 
     if ( strpos( $key, 'wp_titans_social_' ) === 0 ) {

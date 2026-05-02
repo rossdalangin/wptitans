@@ -1,0 +1,31 @@
+# WEBSITE MAINTENANCE CHECKLIST (WEEKLY/MONTHLY)
+## Maintaining Authority through Technical Excellence
+
+---
+
+### WEEKLY TASKS
+[ ] **Backups**: Verify that a full site backup was successful and stored off-site.
+[ ] **Updates**: Install WordPress core, plugin, and theme updates (Check for conflicts).
+[ ] **Security**: Scan for malware or unauthorized login attempts.
+[ ] **Forms**: Perform a test submission of the Project Planner and Contact Form.
+[ ] **Uptime**: Check uptime monitoring reports for any downtime.
+
+---
+
+### MONTHLY TASKS
+[ ] **Performance**: Run a Google PageSpeed Insights test. Aim for 90+ on Desktop.
+[ ] **Links**: Scan for broken links (404 errors) and fix or redirect them.
+[ ] **Database**: Optimize the WordPress database (Clean up revisions and overhead).
+[ ] **SEO**: Review Google Search Console for any indexing errors or search drops.
+[ ] **Content**: Update copyright date and any seasonal offers in the Customizer.
+
+---
+
+### QUARTERLY TASKS
+[ ] **UX Review**: Navigate your site on a mobile device you don't usually use. Check the "Thumb Test."
+[ ] **Legal**: Review Privacy Policy and Terms for any required updates.
+[ ] **Password Change**: Update administrative passwords for increased security.
+[ ] **Strategic Review**: Does the messaging still align with your current business goals?
+
+---
+*A Titan site is a living asset. Keep it sharp.*

@@ -1,0 +1,26 @@
+# CLIENT ONBOARDING VIDEO SCRIPT
+## Deliver this via a Loom/Video in the Client Portal on Day 1.
+
+---
+
+### THE HOOK (0:00 - 0:15)
+"Welcome to the Titan Alliance! I'm [Founder Name], and I'm thrilled you’ve chosen us to build your new authority platform. We’ve just officially kicked off your project, and the clock is now ticking on our 14-day sprint."
+
+### THE GOAL (0:15 - 0:45)
+"Our goal over the next two weeks is simple: To close the 'Authority Gap' that is costing you business. By the time we’re done, your website won't just look better—it will function as a cinematic sales engine that commands trust from every visitor."
+
+### THE ROADMAP (0:45 - 1:30)
+"Here’s exactly what to expect in the Command Center below:
+1. **Phase 1: Strategy**. We’ll start with our blueprint call to nail your positioning.
+2. **Phase 2: Content**. Our team will draft your conversion-first copy.
+3. **Phase 3: Design & Launch**. We build, optimize, and deploy your site to the world.
+
+Everything you need—from your shared drive to our direct Slack link—is right here in this portal."
+
+### THE "ASK" (1:30 - 2:00)
+"To hit our 14-day guarantee, I need one thing from you: **Speed.** Please check the 'Tasks' section below and upload your logos and headshots today. The faster you move, the faster we launch.
+
+I’ll see you on our blueprint call. Let's build your legacy."
+
+---
+*Pro Tip: Record this in a high-contrast, professional environment to mirror the Titan aesthetic.*

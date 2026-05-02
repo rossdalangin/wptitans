@@ -32,20 +32,35 @@ get_header(); ?>
             </thead>
             <tbody style="color: var(--text-dim);">
                 <?php
-                $comparisons = [
-                    ['f' => 'Launch Speed', 's' => 'Elite 14-Day Delivery', 'o' => '2-4 Months Average'],
-                    ['f' => 'Lead Gen Logic', 's' => 'Multi-Step Conversion Funnels', 'o' => 'Simple Contact Form'],
-                    ['f' => 'Performance', 's' => '90+ Core Web Vitals', 'o' => 'Plugin-Heavy & Slow'],
-                    ['f' => 'Positioning', 's' => 'Authority-First Strategy', 'o' => 'Generic "Portfolio" Look'],
-                    ['f' => 'Management', 's' => '100% No-Code Admin', 'o' => 'Hard-coded / Complex'],
-                ];
-                foreach ($comparisons as $row) : ?>
-                    <tr style="border-bottom: 1px solid #111;">
-                        <td style="padding: 1.5rem 2rem; font-weight: 700; color: white;"><?php echo $row['f']; ?></td>
-                        <td style="padding: 1.5rem 2rem; color: var(--primary); font-weight: 700;"><i class="fas fa-check-circle"></i> <?php echo $row['s']; ?></td>
-                        <td style="padding: 1.5rem 2rem; opacity: 0.5;"><i class="fas fa-times-circle"></i> <?php echo $row['o']; ?></td>
-                    </tr>
-                <?php endforeach; ?>
+                $has_custom_comp = false;
+                for ($i=1; $i<=5; $i++) {
+                    if (wp_titans_get_mod("wp_titans_auth_comp_feat_$i")) {
+                        $has_custom_comp = true;
+                        ?>
+                        <tr style="border-bottom: 1px solid #111;">
+                            <td style="padding: 1.5rem 2rem; font-weight: 700; color: white;"><?php echo esc_html(wp_titans_get_mod("wp_titans_auth_comp_feat_$i")); ?></td>
+                            <td style="padding: 1.5rem 2rem; color: var(--primary); font-weight: 700;"><i class="fas fa-check-circle"></i> <?php echo esc_html(wp_titans_get_mod("wp_titans_auth_comp_titan_$i")); ?></td>
+                            <td style="padding: 1.5rem 2rem; opacity: 0.5;"><i class="fas fa-times-circle"></i> <?php echo esc_html(wp_titans_get_mod("wp_titans_auth_comp_std_$i")); ?></td>
+                        </tr>
+                        <?php
+                    }
+                }
+                if (!$has_custom_comp) :
+                    $comparisons = [
+                        ['f' => 'Launch Speed', 's' => 'Elite 14-Day Delivery', 'o' => '2-4 Months Average'],
+                        ['f' => 'Lead Gen Logic', 's' => 'Multi-Step Conversion Funnels', 'o' => 'Simple Contact Form'],
+                        ['f' => 'Performance', 's' => '90+ Core Web Vitals', 'o' => 'Plugin-Heavy & Slow'],
+                        ['f' => 'Positioning', 's' => 'Authority-First Strategy', 'o' => 'Generic "Portfolio" Look'],
+                        ['f' => 'Management', 's' => '100% No-Code Admin', 'o' => 'Hard-coded / Complex'],
+                    ];
+                    foreach ($comparisons as $row) : ?>
+                        <tr style="border-bottom: 1px solid #111;">
+                            <td style="padding: 1.5rem 2rem; font-weight: 700; color: white;"><?php echo $row['f']; ?></td>
+                            <td style="padding: 1.5rem 2rem; color: var(--primary); font-weight: 700;"><i class="fas fa-check-circle"></i> <?php echo $row['s']; ?></td>
+                            <td style="padding: 1.5rem 2rem; opacity: 0.5;"><i class="fas fa-times-circle"></i> <?php echo $row['o']; ?></td>
+                        </tr>
+                    <?php endforeach;
+                endif; ?>
             </tbody>
         </table>
     </div>
@@ -54,22 +69,27 @@ get_header(); ?>
 <section id="ideal-client" style="background: #050505;">
     <div class="grid-2">
         <div class="reveal">
-            <h2 style="color: #2ecc71;"><i class="fas fa-check-circle"></i> This is for you if...</h2>
-            <ul style="font-size: 1.1rem; color: var(--text-dim); line-height: 2;">
-                <li>You are an expert, coach, or consultant with a high-value offer.</li>
-                <li>You have a website that looks outdated or "cheap".</li>
-                <li>You are embarrassed to send prospects to your current site.</li>
-                <li>You want a professional platform that builds immediate trust.</li>
-                <li>You value speed and want to launch in 14 days.</li>
+            <h2 style="color: #2ecc71; margin-bottom: 2rem;"><i class="fas fa-check-circle"></i> This is for you if...</h2>
+            <ul style="font-size: 1.1rem; color: var(--text-dim); line-height: 2.2;">
+                <?php
+                $for_who = wp_titans_get_mod("wp_titans_auth_for_who");
+                $for_arr = explode("\n", $for_who);
+                foreach($for_arr as $item) {
+                    if(trim($item)) echo '<li><i class="fas fa-plus" style="font-size:0.7rem; color:#2ecc71; margin-right:10px;"></i> ' . esc_html(trim($item)) . '</li>';
+                }
+                ?>
             </ul>
         </div>
         <div class="reveal">
-            <h2 style="color: #e74c3c;"><i class="fas fa-times-circle"></i> This is NOT for you if...</h2>
-            <ul style="font-size: 1.1rem; color: var(--text-dim); line-height: 2;">
-                <li>You are looking for the "cheapest" possible option.</li>
-                <li>You don't have a clear business offer yet.</li>
-                <li>You want a complex, 100-page custom web application.</li>
-                <li>You are not willing to invest in professional positioning.</li>
+            <h2 style="color: #e74c3c; margin-bottom: 2rem;"><i class="fas fa-times-circle"></i> This is NOT for you if...</h2>
+            <ul style="font-size: 1.1rem; color: var(--text-dim); line-height: 2.2;">
+                <?php
+                $not_for_who = wp_titans_get_mod("wp_titans_auth_not_for_who");
+                $not_arr = explode("\n", $not_for_who);
+                foreach($not_arr as $item) {
+                    if(trim($item)) echo '<li><i class="fas fa-minus" style="font-size:0.7rem; color:#e74c3c; margin-right:10px;"></i> ' . esc_html(trim($item)) . '</li>';
+                }
+                ?>
             </ul>
         </div>
     </div>

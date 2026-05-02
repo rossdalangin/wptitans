@@ -177,7 +177,7 @@
             if ($exit_cf7) :
                 echo do_shortcode($exit_cf7);
             else : ?>
-            <form action="<?php echo esc_url($exit_action); ?>" method="<?php echo esc_attr($exit_method); ?>" style="display: flex; flex-direction: column; gap: 1rem;">
+            <form action="<?php echo esc_url($exit_action); ?>" method="<?php echo esc_attr($exit_method); ?>" id="exit-intent-form" style="display: flex; flex-direction: column; gap: 1rem;">
                 <input type="email" name="titan_lead_email" placeholder="Enter your email" required style="padding: 1.2rem; background: #000; border: 1px solid #333; color: white; border-radius: 4px;">
                 <button type="submit" class="btn btn-primary">Get the Checklist</button>
             </form>

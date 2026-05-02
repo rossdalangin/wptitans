@@ -171,7 +171,26 @@ section {
 }
 
 .btn-case-study {
+    color: #fff !important;
+}
+
+.btn-case-study:hover {
+    color: #000 !important;
+}
+
+.btn-audit-cta {
+    background: #000;
     color: #fff;
+    border-radius: 4px;
+    padding: 1.5rem 3rem;
+    font-size: 1.1rem;
+    border: 1px solid transparent;
+}
+
+.btn-audit-cta:hover {
+    background: #111 !important;
+    color: var(--primary) !important;
+    border: 1px solid var(--primary) !important;
 }
 
 /* --- Navigation --- */
@@ -724,7 +743,7 @@ footer {
 
 @keyframes ticker-scroll {
     0% { transform: translateX(0); }
-    100% { transform: translateX(-50%); }
+    100% { transform: translateX(-50.05%); }
 }
 
 @keyframes loading {
