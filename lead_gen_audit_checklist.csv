@@ -1,0 +1,11 @@
+Checkpoint,Category,Priority,Action Item
+Page Speed Score (Mobile),Performance,Critical,Compress images and leverage caching
+Core Web Vitals (LCP),Performance,High,Reduce render-blocking resources
+H1 Optimization,SEO,High,Include primary keyword for the target page
+Meta Description Length,SEO,Medium,Keep between 120-160 characters
+Social Proof (Above Fold),Trust,Critical,Add client logo bar or rating
+Clear CTA,Conversion,Critical,Ensure button contrasts and has action-oriented text
+Lead Magnet Quality,Conversion,High,Ensure it solves a specific problem for the niche
+Mobile Responsiveness,UX,Critical,Check for horizontal scrolling issues
+Internal Linking,SEO,Medium,Link to relevant services from the blog
+Contact Form Length,UX,Medium,Reduce fields to increase completion rate

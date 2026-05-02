@@ -193,6 +193,25 @@
     </div>
     <?php endif; ?>
 
+    <?php if (wp_titans_get_mod('wp_titans_cookie_consent')) : ?>
+    <div id="cookie-banner" style="position: fixed; bottom: 30px; left: 50%; transform: translateX(-50%) translateY(200%); background: #111; border: 1px solid var(--border-glass); padding: 1.5rem 3rem; border-radius: 50px; display: flex; align-items: center; gap: 2rem; z-index: 9999; box-shadow: 0 20px 50px rgba(0,0,0,0.5); transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);">
+        <p style="margin: 0; font-size: 0.85rem; color: #888; white-space: nowrap;"><?php echo esc_html(wp_titans_get_mod('wp_titans_cookie_text')); ?></p>
+        <button id="accept-cookies" class="btn btn-primary" style="padding: 0.6rem 1.5rem; font-size: 0.75rem;">Accept Protocols</button>
+    </div>
+    <script>
+    document.addEventListener('DOMContentLoaded', () => {
+        if (!localStorage.getItem('titan_cookies')) {
+            const banner = document.getElementById('cookie-banner');
+            setTimeout(() => banner.style.transform = 'translateX(-50%) translateY(0)', 2000);
+            document.getElementById('accept-cookies').addEventListener('click', () => {
+                banner.style.transform = 'translateX(-50%) translateY(200%)';
+                localStorage.setItem('titan_cookies', 'true');
+            });
+        }
+    });
+    </script>
+    <?php endif; ?>
+
     <?php echo wp_titans_get_mod("wp_titans_footer_scripts"); ?>
     <?php wp_footer(); ?>
 </body>

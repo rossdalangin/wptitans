@@ -105,6 +105,7 @@ function wp_titans_get_defaults() {
         'wp_titans_auth_for_who' => "You are an expert with a high-value offer.\nYou have an outdated website.\nYou want professional positioning.\nYou value speed and 14-day launch.",
         'wp_titans_auth_not_for_who' => "You want the cheapest possible option.\nYou don't have a clear offer.\nYou want a 100-page complex app.\nYou aren't willing to invest in authority.",
         'wp_titans_scrolling_ticker' => 'ROI-Driven Systems • $1.2M+ Client Revenue Generated • Elite 14-Day Launch • High-Performance WordPress • Strategic SEO Mastery • Conversion Optimized UI/UX • World-Class Authority Branding',
+        'wp_titans_show_auth_notif' => true,
     );
 }
 

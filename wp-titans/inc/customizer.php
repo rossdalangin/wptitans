@@ -771,6 +771,12 @@ function wp_titans_customize_register( $wp_customize ) {
         'priority' => 25,
     ) );
 
+    $wp_customize->add_setting( 'wp_titans_cookie_consent', array( 'default' => true, 'sanitize_callback' => 'wp_validate_boolean' ) );
+    $wp_customize->add_control( 'wp_titans_cookie_consent', array( 'label' => __( 'Enable Cookie Consent Banner', 'wp-titans' ), 'section' => 'wp_titans_ux', 'type' => 'checkbox' ) );
+
+    $wp_customize->add_setting( 'wp_titans_cookie_text', array( 'default' => 'We use cookies to analyze authority metrics and optimize your experience.', 'sanitize_callback' => 'wp_kses_post' ) );
+    $wp_customize->add_control( 'wp_titans_cookie_text', array( 'label' => __( 'Cookie Banner Text', 'wp-titans' ), 'section' => 'wp_titans_ux', 'type' => 'textarea' ) );
+
     $wp_customize->add_setting( 'wp_titans_sticky_header', array( 'default' => true, 'sanitize_callback' => 'wp_validate_boolean' ) );
     $wp_customize->add_control( 'wp_titans_sticky_header', array( 'label' => __( 'Sticky Header', 'wp-titans' ), 'section' => 'wp_titans_ux', 'type' => 'checkbox' ) );
 

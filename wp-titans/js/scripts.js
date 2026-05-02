@@ -404,28 +404,44 @@ if (pricingToggle) {
 const authNotif = document.getElementById('auth-notification');
 if (authNotif) {
     const messages = [
-        { t: "New Project Completed", s: "SaaS Authority System Launch" },
-        { t: "Strategy Call Booked", s: "Growth Audit for Real Estate" },
-        { t: "Success Story", s: "+140% Lead Growth in 30 Days" },
-        { t: "New Client Secured", s: "Enterprise Web Infrastructure" }
+        { t: "New Project Completed", s: "FinTech Authority Launch" },
+        { t: "Strategy Call Booked", s: "Revenue Audit (Healthcare)" },
+        { t: "Success Story", s: "+210% ROI for E-commerce Client" },
+        { t: "New Client Secured", s: "Real Estate Market Expansion" },
+        { t: "Asset Downloaded", s: "Authority Blueprint by Fortune 500 VP" },
+        { t: "Performance Peak", s: "34ms LCP achieved for High-Traffic Portal" },
+        { t: "Lead Generated", s: "Enterprise SEO Inquiry ($50k+ Pot.)" },
+        { t: "System Deployment", s: "Headless CMS Cluster for Luxury Brand" }
     ];
+
+    const times = ["Just now", "2 mins ago", "5 mins ago", "12 mins ago", "Just now", "3 mins ago"];
     let msgIdx = 0;
 
     const showNotif = () => {
-        const msg = messages[msgIdx];
+        const msg = messages[Math.floor(Math.random() * messages.length)];
+        const time = times[Math.floor(Math.random() * times.length)];
+
         document.getElementById('notif-text').innerText = msg.t;
-        document.getElementById('notif-sub').innerText = msg.s;
+        document.getElementById('notif-sub').innerHTML = `${msg.s} <span style="display:block; font-size:0.6rem; opacity:0.6; margin-top:0.2rem;">${time}</span>`;
 
         authNotif.style.transform = 'translateY(0)';
 
         setTimeout(() => {
             authNotif.style.transform = 'translateY(200%)';
-            msgIdx = (msgIdx + 1) % messages.length;
-        }, 6000);
+        }, 7000);
     };
 
-    setTimeout(showNotif, 4000);
-    setInterval(showNotif, 25000);
+    // Randomize initial delay and subsequent intervals
+    setTimeout(showNotif, 5000);
+
+    const triggerNext = () => {
+        const delay = Math.floor(Math.random() * (45000 - 20000) + 20000);
+        setTimeout(() => {
+            showNotif();
+            triggerNext();
+        }, delay);
+    };
+    triggerNext();
 
     document.getElementById('notif-close').addEventListener('click', () => {
         authNotif.style.display = 'none';
