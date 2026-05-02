@@ -156,6 +156,7 @@ section {
     box-shadow: 0 0 25px var(--accent-glow);
     transform: translateY(-2px);
     background-color: #f1c40f;
+    color: #000 !important;
 }
 
 .btn-outline {
@@ -166,7 +167,11 @@ section {
 
 .btn-outline:hover {
     background: var(--primary);
-    color: black;
+    color: #000 !important;
+}
+
+.btn-case-study {
+    color: #fff;
 }
 
 /* --- Navigation --- */

@@ -201,8 +201,8 @@ if (filterBtns.length > 0) {
 
             // Filtering logic
             portfolioItems.forEach(item => {
-                const category = item.getAttribute('data-category');
-                if (filter === 'all' || filter === category) {
+                const categories = item.getAttribute('data-category').split(' ');
+                if (filter === 'all' || categories.includes(filter)) {
                     item.style.display = 'block';
                     setTimeout(() => {
                         item.style.opacity = '1';

@@ -40,7 +40,13 @@ get_header(); ?>
 
                     <hr style="margin: 3rem 0; border: 0; border-top: 1px solid #222;">
 
-                    <p style="color: var(--text-dim); margin-bottom: 3rem;">By increasing your conversion rate to **3.5%** (our system average), you could secure an extra <span id="roi-leads" style="color:white; font-weight: 700;">0</span> leads per month.</p>
+                    <p style="color: var(--text-dim); margin-bottom: 2rem;" id="roi-leads-container">By increasing your conversion rate to <strong id="roi-target-label">3.5%</strong> (our system average), you could secure an extra <span id="roi-leads" style="color:white; font-weight: 700;">0</span> leads per month.</p>
+
+                    <div style="background: #000; padding: 2rem; border-radius: 8px; margin-bottom: 3rem;">
+                        <div style="font-size: 0.75rem; text-transform: uppercase; letter-spacing: 2px; color: var(--text-dim); margin-bottom: 0.5rem;">Estimated Yearly Lift</div>
+                        <div style="font-size: 2.5rem; font-weight: 800; color: white;" id="roi-yearly">$0</div>
+                    </div>
+
                     <a href="#contact" class="btn btn-primary" style="width: 100%; padding: 1.5rem;">Secure This Revenue</a>
                 </div>
             </div>
@@ -55,13 +61,20 @@ document.addEventListener('DOMContentLoaded', () => {
     const valueInput = document.getElementById('roi-value');
     const resultDisplay = document.getElementById('roi-result');
     const leadsDisplay = document.getElementById('roi-leads');
+    const yearlyDisplay = document.getElementById('roi-yearly');
+    const targetLabel = document.getElementById('roi-target-label');
+    const explanation = document.getElementById('roi-explanation');
 
     const calculate = () => {
         const traffic = parseFloat(trafficInput.value) || 0;
         const currentConv = parseFloat(convInput.value) || 0;
         const value = parseFloat(valueInput.value) || 0;
 
-        const titanConv = 3.5; // Benchmark
+        // Dynamic target: always aim for at least 2.5x current or a minimum of 3.5%
+        let titanConv = Math.max(3.5, currentConv * 1.5);
+        if (currentConv >= 5) titanConv = currentConv + 1; // For high performers, aim for incremental gains
+
+        targetLabel.innerText = titanConv.toFixed(1) + '%';
 
         const currentRev = (traffic * (currentConv / 100)) * value;
         const titanRev = (traffic * (titanConv / 100)) * value;
@@ -70,7 +83,16 @@ document.addEventListener('DOMContentLoaded', () => {
         const extraLeads = Math.round((traffic * (titanConv / 100)) - (traffic * (currentConv / 100)));
 
         resultDisplay.innerText = '$' + Math.round(lift).toLocaleString();
+        yearlyDisplay.innerText = '$' + Math.round(lift * 12).toLocaleString();
         leadsDisplay.innerText = extraLeads > 0 ? extraLeads : 0;
+
+        if (lift <= 0) {
+            explanation.innerText = "You're already performing at a Titan level!";
+            resultDisplay.style.color = "#2ecc71";
+        } else {
+            explanation.innerText = "Additional Monthly Revenue with a Titan System™";
+            resultDisplay.style.color = "var(--primary)";
+        }
     };
 
     [trafficInput, convInput, valueInput].forEach(el => el.addEventListener('input', calculate));

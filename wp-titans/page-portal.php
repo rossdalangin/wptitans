@@ -13,9 +13,12 @@ get_header(); ?>
             </div>
             <div style="text-align: right;">
                 <p style="color: var(--primary); font-weight: 700; font-family: 'Syne';">PROJECT STATUS</p>
-                <div style="background: #111; padding: 0.5rem 1.5rem; border-radius: 50px; border: 1px solid var(--primary); display: inline-block; margin-top: 0.5rem;">
-                    <span style="font-size: 0.8rem; font-weight: 800; color: white;">IN STRATEGY PHASE</span>
-                </div>
+                <select id="status-selector" style="background: #111; padding: 0.5rem 1.5rem; border-radius: 50px; border: 1px solid var(--primary); color: white; font-size: 0.8rem; font-weight: 800; cursor: pointer; appearance: none; text-align: center;">
+                    <option value="25">STRATEGY PHASE (25%)</option>
+                    <option value="50">CONTENT & DESIGN (50%)</option>
+                    <option value="75">DEVELOPMENT (75%)</option>
+                    <option value="100">LAUNCH READY (100%)</option>
+                </select>
             </div>
         </div>
     </section>
@@ -41,17 +44,17 @@ get_header(); ?>
                 <div style="margin-top: 3rem;">
                     <div style="display: flex; justify-content: space-between; margin-bottom: 1rem;">
                         <span style="font-size: 0.8rem; font-weight: 700;">Overall Progress</span>
-                        <span style="font-size: 0.8rem; font-weight: 700; color: var(--primary);">25%</span>
+                        <span style="font-size: 0.8rem; font-weight: 700; color: var(--primary);" id="progress-val">25%</span>
                     </div>
                     <div style="width: 100%; height: 6px; background: #000; border-radius: 10px; overflow: hidden; margin-bottom: 3rem;">
-                        <div style="width: 25%; height: 100%; background: var(--primary); box-shadow: 0 0 10px var(--primary);"></div>
+                        <div id="progress-bar" style="width: 25%; height: 100%; background: var(--primary); box-shadow: 0 0 10px var(--primary); transition: width 0.8s cubic-bezier(0.16, 1, 0.3, 1);"></div>
                     </div>
 
-                    <ul style="font-size: 0.9rem; color: var(--text-dim);">
-                        <li style="margin-bottom: 1.5rem; color: white;"><i class="fas fa-check-circle" style="color: var(--primary); margin-right: 10px;"></i> Phase 01: Strategy & Blueprint</li>
-                        <li style="margin-bottom: 1.5rem; opacity: 0.4;"><i class="far fa-circle" style="margin-right: 10px;"></i> Phase 02: Copywriting & Content</li>
-                        <li style="margin-bottom: 1.5rem; opacity: 0.4;"><i class="far fa-circle" style="margin-right: 10px;"></i> Phase 03: Design & Implementation</li>
-                        <li style="margin-bottom: 1.5rem; opacity: 0.4;"><i class="far fa-circle" style="margin-right: 10px;"></i> Phase 04: Development & Launch</li>
+                    <ul id="milestone-list" style="font-size: 0.9rem; color: var(--text-dim);">
+                        <li class="milestone active" data-val="25" style="margin-bottom: 1.5rem; transition: var(--transition);"><i class="fas fa-check-circle" style="color: var(--primary); margin-right: 10px;"></i> Phase 01: Strategy & Blueprint</li>
+                        <li class="milestone" data-val="50" style="margin-bottom: 1.5rem; transition: var(--transition); opacity: 0.4;"><i class="far fa-circle" style="margin-right: 10px;"></i> Phase 02: Copywriting & Content</li>
+                        <li class="milestone" data-val="75" style="margin-bottom: 1.5rem; transition: var(--transition); opacity: 0.4;"><i class="far fa-circle" style="margin-right: 10px;"></i> Phase 03: Design & Implementation</li>
+                        <li class="milestone" data-val="100" style="margin-bottom: 1.5rem; transition: var(--transition); opacity: 0.4;"><i class="far fa-circle" style="margin-right: 10px;"></i> Phase 04: Development & Launch</li>
                     </ul>
                 </div>
             </div>
@@ -68,6 +71,60 @@ get_header(); ?>
             </div>
         </div>
     </section>
+
+    <section id="portal-tasks" style="background: #080808; border-top: 1px solid var(--border-glass); padding: 8rem 10%;">
+        <div class="reveal">
+            <h2 style="margin-bottom: 3rem;">Client Tasks</h2>
+            <div style="background: #111; padding: 3rem; border-radius: 12px; border: 1px solid #222;">
+                <div class="task-item" style="display: flex; align-items: center; gap: 2rem; padding: 1.5rem 0; border-bottom: 1px solid #222;">
+                    <input type="checkbox" checked style="width: 25px; height: 25px; accent-color: var(--primary);">
+                    <span style="flex: 1; font-weight: 700;">Complete Strategic Onboarding Questionnaire</span>
+                    <span style="background: rgba(46, 204, 113, 0.1); color: #2ecc71; font-size: 0.7rem; padding: 0.4rem 1rem; border-radius: 50px; font-weight: 800;">COMPLETED</span>
+                </div>
+                <div class="task-item" style="display: flex; align-items: center; gap: 2rem; padding: 1.5rem 0; border-bottom: 1px solid #222;">
+                    <input type="checkbox" style="width: 25px; height: 25px; accent-color: var(--primary);">
+                    <span style="flex: 1; font-weight: 700;">Upload High-Resolution Assets to Shared Drive</span>
+                    <span style="background: rgba(212, 175, 55, 0.1); color: var(--primary); font-size: 0.7rem; padding: 0.4rem 1rem; border-radius: 50px; font-weight: 800;">ACTION REQUIRED</span>
+                </div>
+                <div class="task-item" style="display: flex; align-items: center; gap: 2rem; padding: 1.5rem 0;">
+                    <input type="checkbox" style="width: 25px; height: 25px; accent-color: var(--primary);">
+                    <span style="flex: 1; font-weight: 700;">Approve Core Messaging Blueprint</span>
+                    <span style="background: rgba(212, 175, 55, 0.1); color: var(--primary); font-size: 0.7rem; padding: 0.4rem 1rem; border-radius: 50px; font-weight: 800;">ACTION REQUIRED</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const selector = document.getElementById('status-selector');
+        const bar = document.getElementById('progress-bar');
+        const valText = document.getElementById('progress-val');
+        const milestones = document.querySelectorAll('.milestone');
+
+        selector.addEventListener('change', (e) => {
+            const val = e.target.value;
+            bar.style.width = val + '%';
+            valText.innerText = val + '%';
+
+            milestones.forEach(m => {
+                const mVal = m.getAttribute('data-val');
+                const icon = m.querySelector('i');
+                if (parseInt(mVal) <= parseInt(val)) {
+                    m.style.opacity = '1';
+                    m.style.color = 'white';
+                    icon.className = 'fas fa-check-circle';
+                    icon.style.color = 'var(--primary)';
+                } else {
+                    m.style.opacity = '0.4';
+                    m.style.color = 'var(--text-dim)';
+                    icon.className = 'far fa-circle';
+                    icon.style.color = 'inherit';
+                }
+            });
+        });
+    });
+    </script>
 
     <section id="portal-cta" style="background: #000; text-align: center; border-top: 1px solid var(--border-glass);">
         <div class="reveal">
