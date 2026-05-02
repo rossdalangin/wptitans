@@ -1,0 +1,16 @@
+Category,Asset Name,Description,Required/Optional,Format,Owner
+Branding,Primary Logo,High-resolution transparent PNG/SVG,Required,File,Client
+Branding,Secondary/Icon Logo,Square version for favicon/favicon,Optional,File,Client
+Branding,Brand Style Guide,Colors and fonts (if existing),Optional,PDF,Client
+Credentials,WordPress Login,Admin access to current site,Required,Login,Client
+Credentials,Hosting/CPanel,Access for DNS/Server config,Required,Login,Client
+Credentials,Google Analytics,Access to existing property,Optional,Email Access,Client
+Credentials,Domain Registrar,Access for launch day DNS changes,Required,Login,Client
+Content,Core Copywriting,Text for Home, About, Services,Required,Doc,Agency/Client
+Content,Team Photos,Professional headshots for Team page,Required,JPG/PNG,Client
+Content,Project Images,High-res photos of past work (Portfolio),Required,JPG/PNG,Client
+Content,Client Testimonials,Approved quotes from past clients,Required,Text,Client
+Tracking,Facebook Pixel ID,For ad tracking setup,Optional,ID String,Client
+Tracking,Google Tag Manager,Access to existing container,Optional,Email Access,Client
+Legal,Privacy Policy,Existing legal text,Required,Text,Client
+Legal,Terms of Service,Existing legal text,Required,Text,Client

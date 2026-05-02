@@ -1,0 +1,40 @@
+# TITAN BRAND STYLE GUIDE: DESIGN STANDARDS
+## Maintaining the Luxury Aesthetic of the WordPress Titans Ecosystem
+
+---
+
+### 1. TYPOGRAPHY (The Syne/Space Grotesk Duo)
+- **Headings (Syne)**:
+  - Weight: 800 (Extra Bold) for H1, 700 for others.
+  - Case: Uppercase for primary taglines and section headers.
+  - Letter Spacing: -0.04em for H1 (Tight), +0.2em for Taglines (Wide).
+- **Body (Space Grotesk)**:
+  - Weight: 300 (Light) for long-form, 500 (Medium) for UI labels.
+  - Line Height: 1.8 (Elite readability).
+
+---
+
+### 2. COLOR PALETTE
+- **Midnight Black (#000000)**: The base of power. Use for all main backgrounds.
+- **Titan Gold (#D4AF37)**: The color of authority. Use for primary CTAs, icons, and accents.
+- **Titan Secondary Gold (#B8860B)**: Deep gold for gradients and hover states.
+- **Glass/Border (#FFFFFF, Opacity 0.08)**: Use for subtle section separators and card borders.
+- **Text Dim (#CCCCCC)**: Primary body color to reduce eye strain on dark backgrounds.
+
+---
+
+### 3. VISUAL LANGUAGE (The Titan "Vibe")
+- **Gradients**: Use radial gradients (Gold to Transparent) for "Mouse Glow" effects.
+- **Borders**: All primary cards and buttons must have a 8px (Customizer-managed) border-radius.
+- **Shadows**: Avoid heavy black shadows. Use "Glow" shadows (Titan Gold at 15% opacity) for high-intent elements.
+- **Imagery**: Use high-contrast, professional photography. Prefer desaturated or "Darkened" images (80% overlay) in heroes to ensure headline legibility.
+
+---
+
+### 4. INTERACTION STANDARDS
+- **Magnetic Force**: All primary buttons must attract the cursor within a 50px radius.
+- **Glassmorphism**: When using "Glass Luxury" mode, ensure the background blur is set to at least 15px.
+- **Transitions**: All hover states must use the `cubic-bezier(0.16, 1, 0.3, 1)` timing function for a "snappy yet smooth" luxury feel.
+
+---
+*Built for the World's Most Authoritative Agencies.*

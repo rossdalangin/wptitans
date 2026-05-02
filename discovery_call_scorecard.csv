@@ -1,0 +1,15 @@
+Section,Criteria,Score (1-5),Weight,Weighted Score,Notes
+Authority,First Impression / Professionalism,0,25%,0,Does the site look "elite"?
+Authority,Social Proof / Trust Signals,0,15%,0,Logos, testimonials, awards.
+Conversion,Clarity of Primary CTA,0,20%,0,Is it obvious what to do next?
+Conversion,Lead Capture Strategy,0,10%,0,Lead magnets, forms, modals.
+Performance,Mobile Responsiveness,0,10%,0,Thumb-test and stacking.
+Performance,Load Speed / Core Web Vitals,0,10%,0,Lighthouse scores.
+Messaging,Clarity of Value Proposition,0,10%,0,Do they know WHO and WHAT?
+,,,,,
+TOTAL SCORE,,0,100%,0.0,
+,,,,,
+Status,Threshold,,,Recommendation,
+Critical,0-40,,,Full Titan Rebuild,
+Optimizable,41-75,,,Authority Optimization Sprint,
+Elite,76-100,,,Maintenance & Growth Partner,

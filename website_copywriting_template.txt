@@ -1,0 +1,44 @@
+# TITAN SIGNATURE: WEBSITE COPYWRITING TEMPLATE
+## Use this structure to draft high-converting agency copy.
+
+---
+
+### PAGE: HOMEPAGE
+
+**1. HERO SECTION**
+- **H1 (The Authority Hook)**: [e.g., We Build the Platforms That Position You as the Best in the World.]
+- **Sub-headline**: [e.g., Stop fighting your website. Start dominating your market with high-performance, conversion-first design.]
+- **Primary CTA**: [e.g., Schedule a Strategy Call]
+- **Secondary CTA**: [e.g., View the System]
+
+**2. THE PROBLEM (The Pain Point)**
+- **Headline**: The Invisible Gap Costing You Millions.
+- **Copy**: You are an expert. You have the results. But your website looks like a starter kit. That "Authority Gap" is why prospects ghost you for cheaper, less-capable competitors who simply look better online.
+
+**3. THE SOLUTION (The Titan Way)**
+- **Headline**: High-Performance Authority Systems.
+- **Copy**: We don't just "design websites." We deploy cinematic digital platforms engineered for trust, speed, and unstoppable lead flow.
+
+---
+
+### PAGE: SERVICES
+
+**1. SERVICE ITEM 1: The Authority System™**
+- **Headline**: The Flagship 14-Day Sprint.
+- **Bullet Points**:
+  - Full Strategy & Positioning
+  - High-Converting Copywriting
+  - Elite Custom Design
+  - Mobile & SEO Optimization
+- **CTA**: Apply for the Sprint
+
+---
+
+### PAGE: ABOUT
+
+**1. THE MISSION**
+- **Headline**: We only work with the best.
+- **Copy**: WordPress Titans was founded for the experts who have outgrown "good enough." Our mission is to ensure your digital presence is as powerful as your real-world expertise.
+
+---
+*Instructions: Focus on "You" (the client) more than "We" (the agency). Keep sentences punchy and authoritative.*
