@@ -267,6 +267,42 @@ function wp_titans_handle_setup() {
             set_theme_mod( 'nav_menu_locations', $locations );
         }
 
+        // Generate Sample Services
+        $sample_services = array(
+            'Authority Website System™' => 'A complete, conversion-focused website package designed to position you as the trusted expert.',
+            'Website Copywriting' => 'Strategic messaging crafted to connect with your ideal clients and drive conversions.',
+            'Performance SEO' => 'Increase visibility and improve ranking with strategic technical SEO implementation.'
+        );
+        foreach ($sample_services as $stitle => $scontent) {
+            if (!get_page_by_title($stitle, OBJECT, 'service')) {
+                wp_insert_post(array(
+                    'post_title' => $stitle,
+                    'post_content' => $scontent,
+                    'post_status' => 'publish',
+                    'post_type' => 'service',
+                    'post_excerpt' => $scontent
+                ));
+            }
+        }
+
+        // Generate Sample Portfolio
+        $sample_portfolio = array(
+            'Global SaaS Authority' => 'Case study of a world-class software platform rebrand.',
+            'Executive Coaching Hub' => 'How we transformed a consultant digital presence.',
+            'Medical Practice System' => 'High-performance lead engine for a specialized clinic.'
+        );
+        foreach ($sample_portfolio as $ptitle => $pcontent) {
+            if (!get_page_by_title($ptitle, OBJECT, 'portfolio')) {
+                wp_insert_post(array(
+                    'post_title' => $ptitle,
+                    'post_content' => $pcontent,
+                    'post_status' => 'publish',
+                    'post_type' => 'portfolio',
+                    'post_excerpt' => $pcontent
+                ));
+            }
+        }
+
         // Reset the setting so it doesn't run every time
         set_theme_mod( 'wp_titans_generate_pages', false );
     }

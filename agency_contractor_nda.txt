@@ -1,0 +1,25 @@
+# CONTRACTOR NON-DISCLOSURE & INTELLECTUAL PROPERTY AGREEMENT
+## [Agency Name] // [Contractor Name]
+
+---
+
+### 1. CONFIDENTIALITY
+Contractor agrees to keep all "Titan Proprietary Information" (including but not limited to strategy blueprints, client data, pricing, and 14-day sprint workflows) strictly confidential.
+
+### 2. INTELLECTUAL PROPERTY (IP)
+- **Work for Hire**: All designs, code, copy, and assets created by the Contractor during their engagement with the Agency are "Work for Hire" and the sole property of the Agency.
+- **Titan Theme**: Contractor acknowledges that the Titan Signature Legacy theme framework is proprietary and may not be used for personal projects or other clients without written consent.
+
+### 3. NON-SOLICITATION
+Contractor agrees not to solicit or work directly with any of the Agency's clients for a period of 24 months following the termination of this agreement.
+
+### 4. NON-COMPETE
+Contractor shall not launch a competing agency service that utilizes the specific "14-Day Authority System" trademark or proprietary methodology within [Your Region/Niche].
+
+### 5. TERMINATION
+This agreement remains in effect indefinitely regarding confidentiality and IP. Engagement may be terminated by either party with [X] days' notice.
+
+---
+**AGREED BY:**
+[Agency Representative] // Date
+[Contractor Name] // Date
