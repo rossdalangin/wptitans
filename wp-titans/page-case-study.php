@@ -63,6 +63,33 @@ get_header(); ?>
         </div>
     </section>
 
+    <!-- Next Project Teaser -->
+    <section id="next-project" style="background: #000; padding: 10rem 10%; border-top: 1px solid var(--border-glass);">
+        <div class="reveal" style="text-align: center;">
+            <span class="tagline">CONTINUE EXPLORING</span>
+            <h2 style="font-size: clamp(2.5rem, 5vw, 4rem); margin-bottom: 4rem;">See Another Transformation</h2>
+
+            <div style="max-width: 1000px; margin: 0 auto;">
+                <?php
+                $next_project = new WP_Query(array('post_type' => 'portfolio', 'posts_per_page' => 1, 'post__not_in' => array(get_the_ID()), 'orderby' => 'rand'));
+                if ($next_project->have_posts()) : while ($next_project->have_posts()) : $next_project->the_post(); ?>
+                    <a href="<?php the_permalink(); ?>" class="card reveal" style="display: block; padding: 0; overflow: hidden; border-radius: 12px; border: 1px solid var(--border-glass); text-decoration: none; position: relative; group;">
+                        <div style="height: 400px; overflow: hidden;">
+                            <?php the_post_thumbnail('full', array('style' => 'width: 100%; height: 100%; object-fit: cover; transition: transform 0.8s;')); ?>
+                        </div>
+                        <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.6); display: flex; flex-direction: column; justify-content: center; align-items: center; opacity: 1; transition: var(--transition);">
+                            <h3 style="font-size: 2.5rem; color: white;"><?php the_title(); ?></h3>
+                            <span class="btn btn-outline" style="margin-top: 2rem; border-color: var(--primary); color: var(--primary);">View Next Case Study</span>
+                        </div>
+                    </a>
+                    <style>#next-project a:hover img { transform: scale(1.05); } #next-project a:hover div { background: rgba(0,0,0,0.4); }</style>
+                <?php endwhile; wp_reset_postdata(); else : ?>
+                    <a href="<?php echo get_permalink(get_page_by_path('portfolio')); ?>" class="btn btn-primary">Return to Portfolio</a>
+                <?php endif; ?>
+            </div>
+        </div>
+    </section>
+
 </main>
 
 <?php get_footer(); ?>

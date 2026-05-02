@@ -1,0 +1,28 @@
+# PRIVACY POLICY: [AGENCY NAME]
+## Last Updated: [Date]
+
+---
+
+### 1. OVERVIEW
+[Agency Name] ("we," "us," or "our") operates the website [Domain]. We are committed to protecting your privacy and the personal information you share with us.
+
+### 2. DATA WE COLLECT
+We collect personal data that you provide directly to us through forms on our site, including:
+- **Contact Forms**: Name, email address, business name.
+- **Project Planner**: Project goals, budget ranges, timelines.
+- **ROI Calculator**: Anonymized traffic and conversion data.
+
+### 3. HOW WE USE YOUR DATA
+We use your information to:
+- Respond to inquiries and provide requested audits/consultations.
+- Improve our website performance and lead generation systems.
+- Send occasional agency updates or resource blueprints (if opted-in).
+
+### 4. DATA SECURITY
+We implement industry-standard SSL encryption and secure server protocols to protect your information. We do not sell or lease your personal data to third parties.
+
+### 5. COOKIES & TRACKING
+We use cookies to analyze site traffic (via Google Analytics) and optimize our ad campaigns (via Meta Pixel). You can disable cookies in your browser settings.
+
+### 6. CONTACT
+For questions regarding this policy, please contact: [Email Address].

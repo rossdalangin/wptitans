@@ -411,6 +411,18 @@ input:focus, textarea:focus, select:focus {
     display: block;
 }
 
+.grid-masonry .portfolio-item div {
+    aspect-ratio: auto !important;
+}
+
+.grid-masonry .portfolio-item:nth-child(even) img {
+    aspect-ratio: 4/5;
+}
+
+.grid-masonry .portfolio-item:nth-child(odd) img {
+    aspect-ratio: 1/1;
+}
+
 .card {
     background: var(--bg-card);
     padding: 3rem;
