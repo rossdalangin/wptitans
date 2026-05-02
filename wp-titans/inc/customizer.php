@@ -813,6 +813,14 @@ function wp_titans_customize_register( $wp_customize ) {
     $wp_customize->add_setting( 'wp_titans_noise_overlay', array( 'default' => false, 'sanitize_callback' => 'wp_validate_boolean' ) );
     $wp_customize->add_control( 'wp_titans_noise_overlay', array( 'label' => __( 'Enable Luxury Noise Overlay', 'wp-titans' ), 'section' => 'wp_titans_ux', 'type' => 'checkbox' ) );
 
+    $wp_customize->add_setting( 'wp_titans_texture_overlay', array( 'default' => 'none', 'sanitize_callback' => 'sanitize_text_field' ) );
+    $wp_customize->add_control( 'wp_titans_texture_overlay', array(
+        'label' => __( 'Subtle Pattern Overlay', 'wp-titans' ),
+        'section' => 'wp_titans_ux',
+        'type' => 'select',
+        'choices' => array('none' => 'None', 'dots' => 'Titan Dots', 'grid' => 'Titan Grid', 'lines' => 'Titan Lines')
+    ) );
+
     $wp_customize->add_setting( 'wp_titans_mouse_glow', array( 'default' => true, 'sanitize_callback' => 'wp_validate_boolean' ) );
     $wp_customize->add_control( 'wp_titans_mouse_glow', array( 'label' => __( 'Enable Mouse-Follow Glow', 'wp-titans' ), 'section' => 'wp_titans_ux', 'type' => 'checkbox' ) );
 

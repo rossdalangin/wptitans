@@ -1,0 +1,15 @@
+Component,Unit,Unit Cost,Quantity,Total Cost,Margin %,Sales Price
+Labor: Lead Designer,Hour,75,10,750,,
+Labor: WP Developer,Hour,60,15,900,,
+Labor: Copywriter,Hour,80,6,480,,
+Labor: Project Manager,Hour,50,4,200,,
+Software: Hosting (1yr),Each,240,1,240,,
+Software: Premium Plugins,Each,150,1,150,,
+Overhead: Marketing/Ads,Flat,300,1,300,,
+Overhead: Admin/Rent,Flat,150,1,150,,
+Total Project COGS,,,,3170,,
+Target Sales Price (Launchpad),,,,4500,29.6%,4500
+Target Sales Price (Authority),,,,6500,51.2%,6500
+Target Sales Price (Enterprise),,,,12000,73.6%,12000
+Monthly Retainer (Titan Care),Month,80,1,80,60.0%,199
+Monthly Retainer (Growth Partner),Month,400,1,400,59.9%,997

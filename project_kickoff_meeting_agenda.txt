@@ -1,0 +1,32 @@
+# PROJECT KICKOFF MEETING AGENDA: THE AUTHORITY SPRINT
+## Duration: 45 Minutes // Goal: Finalize the Blueprint.
+
+---
+
+### 1. INTRODUCTIONS & MISSION (5 Mins)
+- Reconfirm the primary goal: Closing the Authority Gap.
+- Set the expectation for the 14-day velocity (The "Speed Rule").
+
+### 2. THE AUTHORITY DEEP DIVE (15 Mins)
+- **Who is the Ideal Client?** (Psychographic profile).
+- **What is the $100k Problem?** (The specific pain you solve).
+- **The "Titan Edge"**: Why should they choose you over a 10-person agency?
+- **Proof Points**: Review existing testimonials and data.
+
+### 3. ARCHITECTURE & SITEMAP (10 Mins)
+- Review the proposed Strategic Sitemap.
+- Identify the "Golden Path" for the user journey.
+- Confirm lead magnet integration points (Audit/Calculator).
+
+### 4. VISUAL DIRECTION (10 Mins)
+- Review the Titan Design Presets (Gold/Sapphire/Emerald).
+- Select Design Mode (Solid vs. Glass Luxury).
+- Discuss high-impact imagery requirements.
+
+### 5. NEXT STEPS & LOGISTICS (5 Mins)
+- **Asset Deadline**: 24 hours to upload all missing logos/copy.
+- **Review Date**: Set the date for the Phase 2 live draft walkthrough.
+- **Communication**: Confirm Slack/Portal access.
+
+---
+*Output: Finalized "Authority Blueprint" document to trigger the 14-day clock.*

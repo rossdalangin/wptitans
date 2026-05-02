@@ -72,6 +72,17 @@
 <div id="noise-overlay" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: 9999; pointer-events: none; opacity: 0.05; background-image: url('data:image/svg+xml,%3Csvg viewBox=%220 0 200 200%22 xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cfilter id=%22noiseFilter%22%3E%3CfeTurbulence type=%22fractalNoise%22 baseFrequency=%220.65%22 numOctaves=%223%22 stitchTiles=%22stitch%22/%3E%3C/filter%3E%3Crect width=%22100%25%22 height=%22100%25%22 filter=%22url(%23noiseFilter)%22/%3E%3C/svg%3E');"></div>
 <?php endif; ?>
 
+<?php
+$texture = wp_titans_get_mod('wp_titans_texture_overlay');
+if ($texture !== 'none') :
+    $img_url = '';
+    if ($texture === 'dots') $img_url = 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAFklEQVQoU2NkYGD4z8DAwMgwYhAKDAwAJ20B9XfS124AAAAASUVORK5CYII=';
+    if ($texture === 'grid') $img_url = 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAAFElEQVQ4T2NkYGD4z0AAMDAwYIQCABNfAQF9OunvAAAAAElFTkSuQmCC';
+    if ($texture === 'lines') $img_url = 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFCAYAAACNbyblAAAAFElEQVQYV2NkYGD4z4AEMDAwYAgAALf6AgG98L1PAAAAAElFTkSuQmCC';
+?>
+<div id="texture-overlay" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: 9998; pointer-events: none; opacity: 0.03; background-image: url('<?php echo $img_url; ?>'); background-repeat: repeat;"></div>
+<?php endif; ?>
+
 <?php if (wp_titans_get_mod("wp_titans_top_bar_show")) : ?>
 <div id="top-announcement-bar" style="background: var(--primary); color: black; padding: 0.6rem 10%; text-align: center; font-size: 0.75rem; font-weight: 800; text-transform: uppercase; letter-spacing: 1px; position: relative; z-index: 2001; font-family: 'Syne';">
     <a href="<?php echo esc_url(wp_titans_get_mod("wp_titans_top_bar_url")); ?>" style="text-decoration: none;">

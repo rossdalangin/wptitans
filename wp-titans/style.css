@@ -592,14 +592,38 @@ footer {
 .mobile-nav-links {
     display: flex;
     flex-direction: column;
-    gap: 2rem;
+    gap: 1.5rem;
     text-align: center;
 }
 
 .mobile-nav-links a {
-    font-size: 2rem;
+    font-size: 2.5rem;
     font-family: 'Syne';
     font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: -1px;
+    display: block;
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+#mobile-menu-overlay.active .mobile-nav-links a {
+    animation: mobileLinkReveal 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+#mobile-menu-overlay.active .mobile-nav-links a:nth-child(1) { animation-delay: 0.1s; }
+#mobile-menu-overlay.active .mobile-nav-links a:nth-child(2) { animation-delay: 0.2s; }
+#mobile-menu-overlay.active .mobile-nav-links a:nth-child(3) { animation-delay: 0.3s; }
+#mobile-menu-overlay.active .mobile-nav-links a:nth-child(4) { animation-delay: 0.4s; }
+#mobile-menu-overlay.active .mobile-nav-links a:nth-child(5) { animation-delay: 0.5s; }
+
+@keyframes mobileLinkReveal {
+    to { opacity: 1; transform: translateY(0); }
+}
+
+#mobile-close:hover {
+    transform: rotate(90deg) scale(1.2);
+    color: white;
 }
 
 /* Search Overlay */
