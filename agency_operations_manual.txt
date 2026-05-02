@@ -1,50 +1,51 @@
-# AGENCY OPERATIONS MANUAL: THE 14-DAY AUTHORITY SYSTEM
-## Standard Operating Procedures (SOPs) for Scale & Velocity
+# AGENCY OPERATIONS MANUAL: THE TITAN SYSTEM
+## Standard Operating Procedures for Elite 14-Day Delivery.
 
 ---
 
-### STAGE 1: ONBOARDING & BLUEPRINT (Day 1 - 2)
-**Goal**: Absolute strategic clarity and asset collection.
+### STAGE 1: ONBOARDING & STRATEGIC BLUEPRINT (Day 1-2)
+**Goal**: Absolute clarity on the client's authority and sitemap.
 
-1. **The Handshake**: Immediately upon payment, trigger the "Deposit Secured" welcome email.
-2. **The Command Center**: Provision the **Client Portal** and send login credentials.
-3. **The Questionnaire**: Ensure the client completes the "Strategic Onboarding Questionnaire" within 24 hours.
-4. **The Blueprint Call**: Conduct a 45-minute deep-dive call to finalize the messaging architecture andUSP.
-   * *Output*: A finalized "Strategic Blueprint" document.
-
----
-
-### STAGE 2: CONTENT & DESIGN (Day 3 - 7)
-**Goal**: Transforming strategy into high-converting assets.
-
-1. **Copywriting**: Draft the 3-page core copy (Home, About, Services) based on the Blueprint. Focus on Authority Hooks.
-2. **Visual Preset**: Set the global color preset and design mode in the Customizer.
-3. **Draft Implementation**: Build out the core landing pages using the Titan specialized templates.
-4. **Review Cycle**: Send the initial draft to the client via the Client Portal. One round of consolidated feedback allowed.
+1. **Automation Trigger**: Payment triggers the "Welcome to the Lab" email via the CRM.
+2. **Asset Lockdown**: Client is given 24 hours to upload logos, headshots, and case study data to the **Command Center**.
+   * *Pro Tip*: No work begins until 100% of critical assets are received. The 14-day clock starts ONLY on receipt.
+3. **The Blueprint Call**: Conduct a 45-minute deep-dive using the **Project Kickoff Meeting Agenda**.
+   * *Output*: Finalized **Project Discovery Brief** signed by the client.
 
 ---
 
-### STAGE 3: DEVELOPMENT & INTEGRATION (Day 8 - 12)
-**Goal**: Performance optimization and lead-gen wiring.
+### STAGE 2: AUTHORITY COPY & ARCHITECTURE (Day 3-7)
+**Goal**: Crafting the messaging that closes the Authority Gap.
 
-1. **Lead Engines**: Configure the Project Planner, Free Audit forms, and Exit-Intent modals.
-2. **SEO Mastery**: Input dynamic meta descriptions and Open Graph data for all pages.
-3. **Performance Audit**: Run a speed test. Ensure all images are using the "Titan" optimized sizes.
-4. **Trust Layer**: Upload client logos, awards, and media mentions to the trust bars.
-
----
-
-### STAGE 4: LAUNCH & HANDOVER (Day 13 - 14)
-**Goal**: Strategic deployment and client empowerment.
-
-1. **Pre-Launch Checklist**: Verify SSL, test AJAX planner submission, and check mobile responsiveness.
-2. **The Handover Call**: Conduct a 30-minute training call using the "Titan Platform Walkthrough" script.
-3. **Administrative Transition**: Transfer ownership, provide documentation link, and upsell the "Titan Care Plan."
-4. **Public Reveal**: Trigger the agency's social media "Inside the Lab" announcement.
+1. **Copy Drafting**: Use the **Website Copywriting Template**. Focus on "Commander" persona.
+   * *Layman's terms*: Write like an expert talking to another expert. No fluff.
+2. **Architecture**: Create all 17 core pages using the **Titan One-Click Setup**.
+3. **Internal Review**: PM reviews the sitemap and initial copy for alignment with the Blueprint.
+4. **Client Reveal**: Record a 10-minute Loom video walking through the Copy and Layout Blueprint.
 
 ---
 
-### KEY VELOCITY RULES:
-- **No Asset, No Clock**: The 14-day guarantee only starts once 100% of client assets are received.
-- **Consolidated Feedback**: Clients must provide feedback via a single document or portal comment to avoid revision creep.
-- **System-First Design**: Use the proven Titan framework layouts; avoid custom-coding new layouts that break the 14-day rhythm.
+### STAGE 3: CINEMATIC BUILD & LOGIC (Day 8-12)
+**Goal**: Turning strategy into a high-performance system.
+
+1. **Visual Pass**: Set global colors, typography, and interactive motion (Magnetic buttons/Glassmorphism).
+2. **The Engines**: Wire up the ROI Calculator, Project Planner, and Audit forms.
+   * *Check*: Test lead scoring logic to ensure "Titan" leads are correctly identified.
+3. **Performance Tuning**: Run Lighthouse. Ensure sub-2s load time. Optimize images using Titan custom sizes.
+4. **SEO Pass**: Port meta descriptions and set up 301 redirects using the **SEO Handover Checklist**.
+
+---
+
+### STAGE 4: QA, LAUNCH & LEGACY (Day 13-14)
+**Goal**: Zero-risk deployment and client empowerment.
+
+1. **The Handshake Call**: 30-minute walkthrough of the backend (Customizer) and Command Center.
+2. **Launch Protocol**: Switch DNS, verify SSL, and submit XML sitemap to Google Search Console.
+3. **Offboarding**: Send the **Client Handover Guide** and pitch the **Titan Care** maintenance plan.
+4. **Social Announcement**: Capture a screenshot for the "Inside the Lab" feed.
+
+---
+### THE TITAN VELOCITY RULES:
+- **Rule 1**: We do not accept piecemeal feedback. Feedback must be consolidated.
+- **Rule 2**: We design for results, not personal preferences. We are the Commanders.
+- **Rule 3**: Speed is our brand. Every delay must be documented in the Command Center.

@@ -1,40 +1,29 @@
-# HIGH-TICKET SALES: OBJECTIONS & REBUTTALS
-## Handling the Resistance to the Titan Signature Offer.
+# THE OBJECTION VAULT: HIGH-TICKET REBUTTALS
+## Psychological Frameworks for Overcoming "Titan" Hesitations.
 
 ---
 
-### OBJECTION 1: "IT'S TOO EXPENSIVE."
-**Context**: They see the price as a 'cost' rather than an 'investment.'
-**Titan Rebuttal**:
-"I understand. However, if we look at your ROI Calculator results, your current site is costing you $[Amount] in lost revenue every single month due to the Authority Gap. If this system secures just 2 additional clients, it pays for itself. Are you looking for a 'website,' or are you looking for a conversion engine that pays for itself in 90 days?"
+### 1. THE "PRICE" OBJECTION
+**Client**: "This is more than we budgeted for."
+**Rebuttal (The ROI Anchor)**: "I completely understand. But let's look at the numbers. Your current site is leaking $[Amount] per month. If we wait 3 months to find a 'cheaper' option, you've lost $[3x Amount]. The 'expensive' option is actually the one that keeps the leak open. Our system pays for itself by closing that gap. Does it make sense to lose $10k to save $2k?"
 
 ---
 
-### OBJECTION 2: "I DON'T HAVE TIME FOR A 14-DAY SPRINT."
-**Context**: They fear the workload required from them.
-**Titan Rebuttal**:
-"That’s exactly why we built the System. Most projects take 6 months because they lack a systematic framework. We require just 45 minutes for the Blueprint and 30 minutes for the Handover. We handle the copywriting, the design, and the technical architecture. Our 14-day velocity is designed to save you months of back-and-forth."
+### 2. THE "TIME" OBJECTION
+**Client**: "I'm too busy to start a web project right now."
+**Rebuttal (The Burden Shift)**: "That is exactly why the 14-Day Sprint exists. Most projects drag on for 6 months because they require too much of your time. Our system is designed to take the burden *off* you. We only need 45 minutes for the initial blueprint. We handle the rest. If we wait until you're 'less busy,' you'll still have a site that isn't working for you. Let's fix it now so the site starts saving you time by qualifying your leads automatically."
 
 ---
 
-### OBJECTION 3: "I'VE WORKED WITH AGENCIES BEFORE AND IT WAS A NIGHTMARE."
-**Context**: Past trauma from poor delivery.
-**Titan Rebuttal**:
-"I hear that often. It happens when agencies don't have a proven process. That’s why we have our **14-Day Delivery Guarantee.** If we don't hit the initial draft deadline, you get a 50% discount. We take the risk so you don't have to. You can also see our [Case Study Link] where we’ve done this successfully for others in [Niche]."
+### 3. THE "TRUST" OBJECTION
+**Client**: "How do I know you can deliver in 14 days?"
+**Rebuttal (The Risk Reversal)**: "That’s why we have our **Success Guarantee.** If we miss that 14-day mark for your initial draft, we cut our fee in half. We’ve built our entire agency around this velocity. You can also see our [Case Study Vault] where we’ve done this for [Niche] experts just like you."
 
 ---
 
-### OBJECTION 4: "I NEED TO TALK TO MY PARTNER/SPOUSE."
-**Context**: They are sold, but need external approval.
-**Titan Rebuttal**:
-"That makes total sense. I’ve put together an 'Authority Strategy Brief' (Phase 1 PDF) that explains exactly how we’re going to close the gap for [Company Name]. Why don't I send that over now? It will help you explain the financial impact of the rebrand to your partner."
+### 4. THE "DIY" OBJECTION
+**Client**: "Can't I just use Wix or Squarespace?"
+**Rebuttal (The Quality Signal)**: "You could. But high-ticket prospects can 'smell' a DIY site in seconds. It signals 'small' and 'unproven.' A Titan platform uses high-performance architecture, custom motion, and authority-first copywriting that DIY tools simply can't replicate. Do you want your brand to look like a hobby, or like a market leader?"
 
 ---
-
-### OBJECTION 5: "CAN'T I JUST DO THIS ON WIX/SQUARESPACE?"
-**Context**: They don't value the high-performance WordPress stack.
-**Titan Rebuttal**:
-"You could. But generic builders are designed for hobbyists. We build on a high-performance WordPress stack optimized for speed and SEO. When a high-value prospect visits your site, they can 'feel' the difference between a DIY template and an authority-first system. Does your current brand deserve to be on a hobbyist platform?"
-
----
-*Close with Authority. Deliver with Speed.*
+*THE TITAN RULE: Never argue. Always empathize, then re-frame the perspective around Authority and ROI.*

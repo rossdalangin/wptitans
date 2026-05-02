@@ -1,44 +1,43 @@
 # TITAN SIGNATURE: WEBSITE COPYWRITING TEMPLATE
-## Use this structure to draft high-converting agency copy.
+## Closing the Authority Gap via Direct-Response Copywriting.
+
+---
+
+### THE PERSONA: THE "COMMANDER"
+Your copy should not "help" or "assist." It should lead. Use active verbs and authoritative framing.
 
 ---
 
 ### PAGE: HOMEPAGE
 
 **1. HERO SECTION**
-- **H1 (The Authority Hook)**: [e.g., We Build the Platforms That Position You as the Best in the World.]
-- **Sub-headline**: [e.g., Stop fighting your website. Start dominating your market with high-performance, conversion-first design.]
-- **Primary CTA**: [e.g., Schedule a Strategy Call]
-- **Secondary CTA**: [e.g., View the System]
+- **Headline (The Hook)**: "Weaponize Your Expertise with a World-Class Authority Platform."
+- **Sub-headline**: "Stop losing high-ticket deals to a 'starter kit' website. We deploy high-performance systems for experts who demand immediate trust and unstoppable growth."
+- **CTA**: "Claim Your Free Audit"
 
-**2. THE PROBLEM (The Pain Point)**
-- **Headline**: The Invisible Gap Costing You Millions.
-- **Copy**: You are an expert. You have the results. But your website looks like a starter kit. That "Authority Gap" is why prospects ghost you for cheaper, less-capable competitors who simply look better online.
-
-**3. THE SOLUTION (The Titan Way)**
-- **Headline**: High-Performance Authority Systems.
-- **Copy**: We don't just "design websites." We deploy cinematic digital platforms engineered for trust, speed, and unstoppable lead flow.
+**2. THE PAIN POINT (The Authority Gap)**
+- **Headline**: "You Are an Expert. Why Do You Look Like a Beginner Online?"
+- **Copy**: "You’ve spent decades mastering your craft. You deliver 7-figure results. But your current website creates a 'friction point' that causes your best prospects to ghost you. We close that gap in 14 days."
 
 ---
 
-### PAGE: SERVICES
+### PAGE: SERVICES (The Authority System™)
 
-**1. SERVICE ITEM 1: The Authority System™**
-- **Headline**: The Flagship 14-Day Sprint.
-- **Bullet Points**:
-  - Full Strategy & Positioning
-  - High-Converting Copywriting
-  - Elite Custom Design
-  - Mobile & SEO Optimization
-- **CTA**: Apply for the Sprint
+**1. STRATEGY BLUEPRINT**
+- **Draft**: "We don't start with colors; we start with results. Our 45-minute blueprint session nails your positioning so your site closes deals before you even speak."
+
+**2. CINEMATIC DESIGN**
+- **Draft**: "Luxury isn't a look; it's a feeling of power. We use high-contrast UI, motion depth, and custom typography to ensure you command the room."
 
 ---
 
-### PAGE: ABOUT
+### COPYWRITING "BEFORE & AFTER" (Real Examples)
 
-**1. THE MISSION**
-- **Headline**: We only work with the best.
-- **Copy**: WordPress Titans was founded for the experts who have outgrown "good enough." Our mission is to ensure your digital presence is as powerful as your real-world expertise.
+- **BEFORE (Weak)**: "We build websites for consultants and help you get more traffic from Google."
+- **AFTER (Titan)**: "We deploy high-performance conversion engines that position consultants as the definitive choice in their market."
+
+- **BEFORE (Weak)**: "Our process takes about 2 weeks and we will show you some designs for feedback."
+- **AFTER (Titan)**: "Our systematic 14-day sprint weaponizes your brand and transforms your digital presence with elite precision."
 
 ---
-*Instructions: Focus on "You" (the client) more than "We" (the agency). Keep sentences punchy and authoritative.*
+*Pro Tip: Every sentence should answer the client's internal question: "How does this make me look like a market leader?"*

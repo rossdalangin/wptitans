@@ -1,16 +1,15 @@
-Day,Phase,Task,Owner,Client Action,Deliverable
-Day 1,Discovery,Kickoff Call & Strategy Alignment,Lead Strategist,Complete Questionnaire,Project Roadmap
-Day 2,Discovery,Competitor Research & Sitemap Approval,Lead Strategist,Approve Sitemap,Final Sitemap
-Day 3,Content,Copywriting Blueprint & Brand Voice,Senior Copywriter,None,Copy Blueprint
-Day 4,Content,Core Page Copywriting (Home / About),Senior Copywriter,Review Home Copy,Draft Copy
-Day 5,Content,Service Page Copywriting & Final Approval,Senior Copywriter,Approve All Copy,Final Signed-off Copy
-Day 6,Design,UI Style Scapes & Moodboard,Creative Director,Approve Style,Moodboard
-Day 7,Design,Homepage Prototype Design,Creative Director,None,Homepage Concept
-Day 8,Design,Internal Page Prototypes (Services / Process),Creative Director,Approve Design,Final UI Design
-Day 9,Development,WP Theme Setup & Core Architecture,Lead Developer,None,Staging Site Live
-Day 10,Development,Content Implementation & Mobile Optimization,Lead Developer,None,Content Populated
-Day 11,Development,Advanced Logic (Forms / Search / UX),Lead Developer,None,Functional System
-Day 12,Optimization,SEO Foundation & Speed Tuning,Lead Developer,None,Lighthouse Report (90+)
-Day 13,Review,Quality Assurance & Client Walkthrough,Lead Strategist,Submit Punch-list,QA Report
-Day 14,Launch,DNS Configuration & Site Handover,Lead Developer,Provide Login Access,Live Authority Site
-Day 15+,Support,Post-Launch Monitoring (30 Days),Lead Strategist,None,Monthly Growth Report
+Day,Phase,Task,Hours,Pro Tip,Deliverable
+1,Discovery,Kickoff Call & Authority Deep-Dive,2.0,Anchor the conversation on ROI metrics,Discovery Brief
+2,Discovery,Sitemap Approval & Asset Audit,1.5,Don't start Day 3 until all logos are in,Final Sitemap
+3,Copywriting,Home & About Authority Copy,4.0,Focus on 'The Authority Gap' hook,Home Copy Draft
+4,Copywriting,Service Page & Case Study Messaging,4.0,Every case study needs a specific metric,All Page Copy
+5,Copywriting,Final Copy Review & Client Sign-off,1.5,Record a Loom walkthrough of the copy,Signed Copy Doc
+6,Design,WP One-Click Setup & Branding,3.0,Select the 'Glass Luxury' mode for premium feel,Base WP Build
+7,Design,Hero & Trust Bar Implementation,3.0,Group logos of similar color for cleaner look,Header/Hero Live
+8,Design,Internal Page Styling & Content,6.0,Use Titan patterns for subtle texture,Staging Site Draft
+9,Development,Interactive Tool Wiring (ROI/Planner),4.0,Test AJAX submission with your own email,Functional Tools
+10,Development,Client Portal & Lead Gen Integration,3.0,Simulate a 'Titan' lead scoring event,Client Command Center
+11,Development,Mobile UI/UX Refinement,3.0,Perform the 'Thumb Test' on 3 different phones,Responsive Site
+12,Optimization,Technical SEO & Lighthouse Tuning,2.0,Target 95+ score on Desktop performance,SEO Audit Report
+13,Review,Quality Assurance & Internal Punch-list,2.0,PM must check every link for 404s,QA Certification
+14,Launch,DNS Switch & Client Handover Call,2.0,Upsell Titan Care on the handover call,Live Legacy Site

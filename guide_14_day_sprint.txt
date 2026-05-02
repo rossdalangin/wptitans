@@ -1,27 +1,48 @@
-# THE 14-DAY VELOCITY: THE SPRINT BLUEPRINT
-## How we deliver world-class authority systems in exactly two weeks.
+# THE 14-DAY VELOCITY: THE SPRINT OPERATIONS BIBLE
+## The Step-by-Step Framework for Rapid, High-Quality Delivery.
 
 ---
 
-### PHASE 1: DISCOVERY & BLUEPRINT (Day 1-2)
-We start with absolute clarity. One 45-minute call to nail your positioning, target audience, and primary "Authority Hook."
-- **Output**: The Strategic Blueprint.
-
-### PHASE 2: CONTENT & DESIGN (Day 3-8)
-Our senior copywriters draft your conversion-first messaging while our design team builds your cinematic platform in the "Titan Lab."
-- **Output**: The Live Draft Walkthrough.
-
-### PHASE 3: DEVELOPMENT & INTEGRATION (Day 9-12)
-We wire up your lead generation engines (Project Planner, ROI Calculator) and optimize for sub-2s performance.
-- **Output**: The Performance Audit Report.
-
-### PHASE 4: LAUNCH & HANDOVER (Day 13-14)
-We deploy your new asset to the world and provide you with the "Command Center" training to manage it with ease.
-- **Output**: Your Live Authority Platform.
+### WHY VELOCITY IS YOUR COMPETITIVE ADVANTAGE
+Clients hate 6-month projects. They lose momentum and interest. By launching in 14 days, you become a "Results Provider," not a "Service Provider."
 
 ---
-### WHY SPEED MATTERS
-High-ticket experts don't have 6 months to wait for a "good enough" site. Speed is a competitive advantage. The 14-Day Sprint allows you to start generating high-value leads while your competitors are still debating on font choices.
+
+### THE 14-DAY CALENDAR (GRANULAR BREAKDOWN)
+
+**DAY 1-2: DISCOVERY & BLUEPRINT (The Strategy)**
+- **Task**: 45-min Kickoff call. Finalize the "Authority Hook" and Sitemap.
+- **Client Action**: Must upload all logos, headshots, and existing case study data.
+- **Pro Tip**: Use the **Project Discovery Brief** template to get a signed approval before moving to Day 3.
+
+**DAY 3-5: THE BLUEPRINT & COPY (The Message)**
+- **Task**: Senior copywriter drafts the Home, About, and top 3 Service pages.
+- **Focus**: High-converting hooks and pain-point relief.
+- **Status**: Send to client for ONE round of feedback on Day 5.
+
+**DAY 6-8: DESIGN & REVEAL (The Visuals)**
+- **Task**: Apply the Titan Design Preset. Build the core pages in WordPress.
+- **Focus**: Cinematic branding, magnetic buttons, and glassmorphism settings.
+- **Handover**: Live video walkthrough (Loom) of the draft for client approval.
+
+**DAY 9-11: DEVELOPMENT & WIRING (The Logic)**
+- **Task**: Configure the ROI Calculator, Project Planner, and Exit-Intent modals.
+- **Focus**: 100% functionality and lead-scoring accuracy.
+
+**DAY 12-13: PERFORMANCE & SEO (The Optimization)**
+- **Task**: Lighthouse speed testing. Porting SEO metadata. 301 Redirect map.
+- **Benchmark**: Sub-2s load time. 90+ Mobile Score.
+
+**DAY 14: LAUNCH & COMMAND CENTER (The Handover)**
+- **Task**: DNS Switch. Client Portal training call.
+- **The Upsell**: Present the "Titan Care" maintenance plan for long-term security.
 
 ---
-*Launch Fast. Scale Faster.*
+
+### THE "GOLDEN RULES" OF THE SPRINT
+1. **No Asset, No Clock**: The 14 days start ONLY when the client provides 100% of the required materials.
+2. **Consolidated Feedback**: One document. One time. We do not do "endless revisions."
+3. **System Over Personal Taste**: We are the experts. We design for conversions, not for the client's favorite color.
+
+---
+*Velocity creates Authority. Execute with precision.*

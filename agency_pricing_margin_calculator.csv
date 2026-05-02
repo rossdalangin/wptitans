@@ -1,15 +1,14 @@
-Component,Unit,Unit Cost,Quantity,Total Cost,Margin %,Sales Price
-Labor: Lead Designer,Hour,75,10,750,,
-Labor: WP Developer,Hour,60,15,900,,
-Labor: Copywriter,Hour,80,6,480,,
-Labor: Project Manager,Hour,50,4,200,,
-Software: Hosting (1yr),Each,240,1,240,,
-Software: Premium Plugins,Each,150,1,150,,
-Overhead: Marketing/Ads,Flat,300,1,300,,
-Overhead: Admin/Rent,Flat,150,1,150,,
-Total Project COGS,,,,3170,,
-Target Sales Price (Launchpad),,,,4500,29.6%,4500
-Target Sales Price (Authority),,,,6500,51.2%,6500
-Target Sales Price (Enterprise),,,,12000,73.6%,12000
-Monthly Retainer (Titan Care),Month,80,1,80,60.0%,199
-Monthly Retainer (Growth Partner),Month,400,1,400,59.9%,997
+Project Component,Type,Rate/Unit,Qty,Cost,Buffer (15%),Net COGS,Suggested Retail,Projected Margin
+Lead Design (Sprint),Labor,85,12,1020,153,1173,2000,41.4%
+Lead Development (WP),Labor,70,18,1260,189,1449,2500,42.0%
+Copywriting Blueprint,Labor,90,8,720,108,828,1500,44.8%
+Project Management,Labor,60,5,300,45,345,750,54.0%
+Performance Optimization,Labor,75,4,300,45,345,750,54.0%
+Premium Theme/Plugins,Software,250,1,250,0,250,500,50.0%
+Secure Hosting (Setup),Service,120,1,120,0,120,250,52.0%
+,,,,,,,,
+TOTAL SPRINT COGS,,,,3970,540,4510,8250,45.3%
+,,,,,,,,
+RECURRING SERVICES,,,,,,,,
+Titan Care (Maintenance),Retainer,80,1,80,0,80,199,59.8%
+Growth Partner (Retainer),Retainer,450,1,450,0,450,997,54.9%

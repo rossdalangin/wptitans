@@ -1,40 +1,44 @@
 # TITAN BRAND STYLE GUIDE: DESIGN STANDARDS
-## Maintaining the Luxury Aesthetic of the WordPress Titans Ecosystem
+## Maintaining the "Voice of Power" across Visual and Verbal Assets.
 
 ---
 
-### 1. TYPOGRAPHY (The Syne/Space Grotesk Duo)
-- **Headings (Syne)**:
-  - Weight: 800 (Extra Bold) for H1, 700 for others.
-  - Case: Uppercase for primary taglines and section headers.
-  - Letter Spacing: -0.04em for H1 (Tight), +0.2em for Taglines (Wide).
-- **Body (Space Grotesk)**:
-  - Weight: 300 (Light) for long-form, 500 (Medium) for UI labels.
-  - Line Height: 1.8 (Elite readability).
+### 1. VISUAL DO'S AND DON'TS
+
+**DO:**
+- Use high-contrast backgrounds (Deep Black #000).
+- Use Gold (#D4AF37) for "Intentional" highlights only (CTAs, Key Icons).
+- Maintain generous whitespace (Padding: 10rem+).
+- Use subtle textures (Titan patterns) to add "High-Grade" depth.
+
+**DON'T:**
+- Use low-contrast gray text on black (Hard to read, feels cheap).
+- Use generic "Corporate" blue or bright primary colors.
+- Use cluttered layouts or overlapping text on mobile.
+- Use low-resolution or generic stock photos.
 
 ---
 
-### 2. COLOR PALETTE
-- **Midnight Black (#000000)**: The base of power. Use for all main backgrounds.
-- **Titan Gold (#D4AF37)**: The color of authority. Use for primary CTAs, icons, and accents.
-- **Titan Secondary Gold (#B8860B)**: Deep gold for gradients and hover states.
-- **Glass/Border (#FFFFFF, Opacity 0.08)**: Use for subtle section separators and card borders.
-- **Text Dim (#CCCCCC)**: Primary body color to reduce eye strain on dark backgrounds.
+### 2. TYPOGRAPHY HIERARCHY
+- **H1 (Headlines)**: Syne (Weight 800). Letter spacing: -0.04em.
+- **H2/H3 (Sub-headers)**: Syne (Weight 700). Uppercase enabled.
+- **Body**: Space Grotesk (Weight 300). Line height: 1.8.
+- **Labels**: Space Grotesk (Weight 700). Uppercase, +0.2em letter spacing.
 
 ---
 
-### 3. VISUAL LANGUAGE (The Titan "Vibe")
-- **Gradients**: Use radial gradients (Gold to Transparent) for "Mouse Glow" effects.
-- **Borders**: All primary cards and buttons must have a 8px (Customizer-managed) border-radius.
-- **Shadows**: Avoid heavy black shadows. Use "Glow" shadows (Titan Gold at 15% opacity) for high-intent elements.
-- **Imagery**: Use high-contrast, professional photography. Prefer desaturated or "Darkened" images (80% overlay) in heroes to ensure headline legibility.
+### 3. THE "INTERACTIVE LUXURY" PRINCIPLE
+Every user interaction should feel "bespoke."
+- **Magnetic Force**: Buttons should attract the cursor within a 50px radius.
+- **Glassmorphism**: Use for overlays to simulate a "Modern Studio" feel.
+- **Reveal Motion**: Content should "reveal" vertically or swipe horizontally to maintain momentum.
 
 ---
 
-### 4. INTERACTION STANDARDS
-- **Magnetic Force**: All primary buttons must attract the cursor within a 50px radius.
-- **Glassmorphism**: When using "Glass Luxury" mode, ensure the background blur is set to at least 15px.
-- **Transitions**: All hover states must use the `cubic-bezier(0.16, 1, 0.3, 1)` timing function for a "snappy yet smooth" luxury feel.
+### 4. BRAND VOICE: THE COMMANDER PERSONA
+- **Layman's term**: We are the doctor, the client is the patient. We diagnose, we don't ask for permission.
+- **Hook**: "Close the Authority Gap."
+- **Guarantee**: "Velocity without Compromise."
 
 ---
-*Built for the World's Most Authoritative Agencies.*
+*Command Attention. Own the Market.*

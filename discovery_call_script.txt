@@ -1,39 +1,30 @@
-# THE 15-MINUTE STRATEGY CALL: "TITAN AUTHORITY" SCRIPT
-## Objective: Transition from "Audit" to "Authority Website System" Close
+# THE TITAN DISCOVERY SCRIPT: HIGH-TICKET PERSUASION
+## 15-Minute Strategic Audit to Close $5k+ Engagements.
 
 ---
 
-### 1. THE OPENER (2 Minutes)
-"Hi [Name], thanks for jumping on. My goal today is simple: Review the Authority Audit we sent over, clarify where your biggest conversion leaks are, and see if our 14-day system is the right fit for where you're taking your business. Sound good?"
-
-### 2. THE DIAGNOSIS (4 Minutes)
-"I noticed on your current site that [Problem identified in Audit - e.g., the primary CTA is buried]. When a high-ticket client lands there, what do you think is the first impression they get of your expert status?"
-
-*Listen carefully for pain points like: 'It looks cheap', 'I'm embarrassed', 'It's slow'.*
-
-### 3. THE POSITIONING (4 Minutes)
-"Most designers focus on making things 'pretty.' We focus on building **Authority Platforms**.
-
-For someone with your level of expertise, you need a system that:
-1. Vetts the client before the call (Our multi-step Planner).
-2. Loads in under 1.5 seconds (Our performance architecture).
-3. Positions you as the 'Definitive Choice' instantly (Our cinematic branding).
-
-Our **Authority Website System™** does exactly this, and we launch it in 14 days. Does a high-speed, high-performance rebrand like that align with your current goals?"
-
-### 4. THE 14-DAY VELOCITY REVEAL (2 Minutes)
-"The reason we can do this in 14 days isn't because we rush — it's because we use a proven 'Authority Architecture' that we've refined over 20 years. We handle the strategy, the copywriting, and the tech. You just show up for the initial blueprint call."
-
-### 5. THE CLOSE / NEXT STEPS (3 Minutes)
-"Based on what you've told me, I'm confident we can increase your lead confidence by [Specific Goal].
-
-Our flagship system is a flat investment of [Price - e.g., $5,500]. We have a start date available on [Date].
-
-Shall I send over the proposal and the Strategic Blueprint doc today?"
+### STAGE 1: SETTING THE FRAME (0:00 - 2:00)
+"Hi [Name], thanks for jumping on. I’ve reviewed your [Company Name] site and the ROI data you sent over. The goal of this call is simple: I want to see if your current digital presence is a liability or an asset, and if we are the right team to fix it. Sound good?"
+*Psychology: Authority framing. You are the expert reviewing them, not a vendor begging for work.*
 
 ---
 
-### TACTICAL TIPS FOR SUCCESS:
-- **Control the Frame**: You are the specialist, they are the patient.
-- **Speed as Value**: Emphasize that 'done is better than perfect' especially when it's built on a proven system.
-- **Reference the 'Planner'**: If they filled out the Project Planner, refer back to their budget and goals constantly.
+### STAGE 2: THE PAIN DIAGNOSIS (2:00 - 7:00)
+"Tell me, when a high-value prospect lands on your current site, what is the #1 reason they might decide NOT to work with you?"
+*(Wait for answer)*
+"I noticed your current load time is [X] seconds and the messaging is a bit generic. In layman's terms: You are an expert business with a 'starter kit' website. That **Authority Gap** is costing you [Reference ROI Calculator Amount] every single month. How much longer can you afford that leak?"
+
+---
+
+### STAGE 3: THE AUTHORITY TRANSFORMATION (7:00 - 11:00)
+"We solve this with the **14-Day Authority Sprint.** We don't just 'design'—we weaponize your expertise. We handle the copywriting blueprint, the cinematic design, and the high-performance WordPress build. Most importantly, we provide a **14-Day Delivery Guarantee.** If we aren't ready for your review in two weeks, the project is 50% off. We take the risk, because our system works."
+
+---
+
+### STAGE 4: ANCHORING & THE CLOSE (11:00 - 15:00)
+"A system of this caliber typically takes 4-6 months with a traditional agency. We’ve compressed that into 14 days of high-intensity work. The investment for the flagship Authority System is $[Price].
+
+I have one slot left for our [Date] sprint. To secure it, we require a 50% deposit and a signed Master Services Agreement. Based on our conversation, do you feel [Company Name] is ready to command the authority it deserves?"
+
+---
+*PRO TIP: If they hesitate, lean into 'Loss Aversion'. Remind them of the revenue they are losing EVERY month by waiting.*
