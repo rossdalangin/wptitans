@@ -19,7 +19,7 @@ get_header(); ?>
 <section id="system-comparison" style="background: #000; border-bottom: 1px solid var(--border-glass);">
     <div class="reveal" style="text-align: center; margin-bottom: 5rem;">
         <span class="tagline">The Difference</span>
-        <h2>System vs. Standard</h2>
+        <h2><?php echo esc_html(wp_titans_get_mod("wp_titans_auth_comp_title", "System vs. Standard")); ?></h2>
     </div>
     <div class="reveal" style="max-width: 1000px; margin: 0 auto; overflow-x: auto;">
         <table style="width: 100%; border-collapse: collapse; text-align: left; background: #050505; border-radius: 8px; border: 1px solid var(--border-glass);">
@@ -98,7 +98,7 @@ get_header(); ?>
 <section id="features" style="background: #080808;">
     <div class="reveal" style="text-align: center; margin-bottom: 5rem;">
         <span class="tagline">What's Included</span>
-        <h2>Everything You Need for Authority</h2>
+        <h2><?php echo esc_html(wp_titans_get_mod("wp_titans_auth_feats_title", "Everything You Need for Authority")); ?></h2>
     </div>
     <div class="grid-cards">
         <?php
@@ -120,8 +120,8 @@ get_header(); ?>
 <section id="guarantee" style="background: #000; text-align: center; border-top: 1px solid var(--border-glass);">
     <div class="reveal">
         <i class="fas fa-shield-heart" style="font-size: 4rem; color: var(--primary); margin-bottom: 2rem;"></i>
-        <h2>The 14-Day Delivery Guarantee</h2>
-        <p style="font-size: 1.2rem; max-width: 800px; margin: 0 auto; color: var(--text-dim);">If we don't have your initial website draft ready for review within 14 days of receiving your content, we'll give you a 50% discount on the total project cost. No excuses, just results.</p>
+        <h2><?php echo esc_html(wp_titans_get_mod("wp_titans_auth_guarantee_title", "The 14-Day Delivery Guarantee")); ?></h2>
+        <p style="font-size: 1.2rem; max-width: 800px; margin: 0 auto; color: var(--text-dim);"><?php echo esc_html(wp_titans_get_mod("wp_titans_auth_guarantee_text", "If we don't have your initial website draft ready for review within 14 days of receiving your content, we'll give you a 50% discount on the total project cost. No excuses, just results.")); ?></p>
     </div>
 </section>
 

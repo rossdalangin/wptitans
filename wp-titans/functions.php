@@ -142,6 +142,7 @@ function wp_titans_register_cpts() {
         'menu_icon'   => 'dashicons-groups',
         'supports'    => array( 'title', 'thumbnail', 'excerpt' ),
         'show_in_rest' => true,
+        'rewrite'     => array('slug' => 'the-titans'),
     ) );
 
     // Resources
@@ -167,14 +168,14 @@ function wp_titans_handle_setup() {
             'The 14-Day Sprint' => array('template' => 'page-process.php'),
             'The Titan Legacy' => array('template' => 'page-about.php'),
             'Initiate Connection' => array('template' => 'page-contact.php'),
-            'Case Study Vault' => array('template' => 'page-portfolio.php'),
+            'Portfolio' => array('template' => 'page-portfolio.php'),
             'Book a Strategy Call' => array('template' => 'page-book.php'),
-            'Start Your Project' => array('template' => 'page-planner.php'),
+            'Project Planner' => array('template' => 'page-planner.php'),
             'Authority Website System™' => array('template' => 'page-authority.php'),
-            'The Knowledge Vault' => array('template' => 'page-resources.php'),
-            'Command Center' => array('template' => 'page-portal.php'),
-            'ROI Impact Calculator' => array('template' => 'page-roi-calculator.php'),
-            'Request Authority Audit' => array('template' => 'page-audit.php'),
+            'Resource Center' => array('template' => 'page-resources.php'),
+            'Client Portal' => array('template' => 'page-portal.php'),
+            'ROI Calculator' => array('template' => 'page-roi-calculator.php'),
+            'Free Authority Audit' => array('template' => 'page-audit.php'),
             'Web Design Strategy' => array('template' => 'page-service-single.php', 'content' => 'Building world-class systems...'),
             'Conversion Case Study' => array('template' => 'page-case-study.php'),
             'Privacy Protocols' => array('template' => 'page.php', 'content' => 'Secure and compliant.'),
@@ -212,7 +213,7 @@ function wp_titans_handle_setup() {
         $menu_exists = wp_get_nav_menu_object( $menu_name );
         if ( ! $menu_exists ) {
             $menu_id = wp_create_nav_menu( $menu_name );
-            $menu_items = array('Home', 'Our Arsenal', 'The 14-Day Sprint', 'Case Study Vault', 'The Titan Legacy', 'Initiate Connection', 'Book a Strategy Call');
+            $menu_items = array('Home', 'Our Arsenal', 'The 14-Day Sprint', 'Portfolio', 'The Titan Legacy', 'Initiate Connection', 'Book a Strategy Call');
             foreach ( $menu_items as $title ) {
                 if (isset($created_page_ids[$title])) {
                     wp_update_nav_menu_item( $menu_id, 0, array(

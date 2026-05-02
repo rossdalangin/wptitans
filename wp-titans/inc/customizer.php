@@ -103,6 +103,18 @@ function wp_titans_customize_register( $wp_customize ) {
     $wp_customize->add_setting( 'wp_titans_hero_subtitle', array( 'default' => wp_titans_get_default('wp_titans_hero_subtitle'), 'sanitize_callback' => 'wp_kses_post', 'transport' => 'postMessage' ) );
     $wp_customize->add_control( 'wp_titans_hero_subtitle', array( 'label' => __( 'Hero Subtitle', 'wp-titans' ), 'section' => 'wp_titans_hero', 'type' => 'textarea' ) );
 
+    // Enable Selective Refresh for non-JS fields
+    if ( isset( $wp_customize->selective_refresh ) ) {
+        $wp_customize->selective_refresh->add_partial( 'wp_titans_hero_title', array( 'selector' => '#hero h1', 'render_callback' => function() { return wp_titans_get_mod('wp_titans_hero_title'); } ) );
+        $wp_customize->selective_refresh->add_partial( 'wp_titans_hero_subtitle', array( 'selector' => '#hero p', 'render_callback' => function() { return wp_titans_get_mod('wp_titans_hero_subtitle'); } ) );
+        $wp_customize->selective_refresh->add_partial( 'wp_titans_about_title', array( 'selector' => '#about h2', 'render_callback' => function() { return wp_titans_get_mod('wp_titans_about_title'); } ) );
+        $wp_customize->selective_refresh->add_partial( 'wp_titans_services_main_title', array( 'selector' => '#services h2', 'render_callback' => function() { return wp_titans_get_mod('wp_titans_services_main_title'); } ) );
+        $wp_customize->selective_refresh->add_partial( 'wp_titans_process_main_title', array( 'selector' => '#process h2', 'render_callback' => function() { return wp_titans_get_mod('wp_titans_process_main_title'); } ) );
+        $wp_customize->selective_refresh->add_partial( 'wp_titans_logo_text', array( 'selector' => '.logo', 'render_callback' => function() { return wp_titans_get_mod('wp_titans_logo_text'); } ) );
+        $wp_customize->selective_refresh->add_partial( 'wp_titans_portfolio_title', array( 'selector' => '#portfolio h2', 'render_callback' => function() { return wp_titans_get_mod('wp_titans_portfolio_title'); } ) );
+        $wp_customize->selective_refresh->add_partial( 'wp_titans_comparison_title', array( 'selector' => '#comparison h2', 'render_callback' => function() { return wp_titans_get_mod('wp_titans_comparison_title'); } ) );
+    }
+
     $wp_customize->add_setting( 'wp_titans_hero_bg', array( 'default' => wp_titans_get_default('wp_titans_hero_bg'), 'sanitize_callback' => 'esc_url_raw' ) );
     $wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'wp_titans_hero_bg', array( 'label' => __( 'Hero Background Image', 'wp-titans' ), 'section' => 'wp_titans_hero' ) ) );
 
@@ -390,6 +402,15 @@ function wp_titans_customize_register( $wp_customize ) {
     $wp_customize->add_setting( 'wp_titans_blog_title', array( 'default' => 'Agency Insights', 'sanitize_callback' => 'wp_kses_post' ) );
     $wp_customize->add_control( 'wp_titans_blog_title', array( 'label' => __( 'Blog Section Title', 'wp-titans' ), 'section' => 'wp_titans_blog_sec' ) );
 
+    $wp_customize->add_setting( 'wp_titans_portfolio_title', array( 'default' => 'Case Studies & Results', 'sanitize_callback' => 'wp_kses_post' ) );
+    $wp_customize->add_control( 'wp_titans_portfolio_title', array( 'label' => __( 'Portfolio Section Title', 'wp-titans' ), 'section' => 'wp_titans_portfolio' ) );
+
+    $wp_customize->add_setting( 'wp_titans_comparison_title', array( 'default' => 'Website Evolution', 'sanitize_callback' => 'wp_kses_post' ) );
+    $wp_customize->add_control( 'wp_titans_comparison_title', array( 'label' => __( 'Comparison Section Title', 'wp-titans' ), 'section' => 'wp_titans_comparison' ) );
+
+    $wp_customize->add_setting( 'wp_titans_social_feed_title', array( 'default' => 'Inside the Titan Lab', 'sanitize_callback' => 'wp_kses_post' ) );
+    $wp_customize->add_control( 'wp_titans_social_feed_title', array( 'label' => __( 'Social Feed Title', 'wp-titans' ), 'section' => 'wp_titans_social_feed' ) );
+
     // --- FAQ Section ---
     $wp_customize->add_section( 'wp_titans_faq', array(
         'title'    => __( '16. FAQ Accordion', 'wp-titans' ),
@@ -549,6 +570,18 @@ function wp_titans_customize_register( $wp_customize ) {
 
     $wp_customize->add_setting( 'wp_titans_auth_subtitle', array( 'default' => wp_titans_get_default('wp_titans_auth_subtitle'), 'sanitize_callback' => 'wp_kses_post' ) );
     $wp_customize->add_control( 'wp_titans_auth_subtitle', array( 'label' => __( 'Authority Subtitle', 'wp-titans' ), 'section' => 'wp_titans_authority_page', 'type' => 'textarea' ) );
+
+    $wp_customize->add_setting( 'wp_titans_auth_comp_title', array( 'default' => 'System vs. Standard', 'sanitize_callback' => 'wp_kses_post' ) );
+    $wp_customize->add_control( 'wp_titans_auth_comp_title', array( 'label' => __( 'Comparison Section Title', 'wp-titans' ), 'section' => 'wp_titans_authority_page' ) );
+
+    $wp_customize->add_setting( 'wp_titans_auth_feats_title', array( 'default' => 'Everything You Need for Authority', 'sanitize_callback' => 'wp_kses_post' ) );
+    $wp_customize->add_control( 'wp_titans_auth_feats_title', array( 'label' => __( 'Features Section Title', 'wp-titans' ), 'section' => 'wp_titans_authority_page' ) );
+
+    $wp_customize->add_setting( 'wp_titans_auth_guarantee_title', array( 'default' => 'The 14-Day Delivery Guarantee', 'sanitize_callback' => 'wp_kses_post' ) );
+    $wp_customize->add_control( 'wp_titans_auth_guarantee_title', array( 'label' => __( 'Guarantee Title', 'wp-titans' ), 'section' => 'wp_titans_authority_page' ) );
+
+    $wp_customize->add_setting( 'wp_titans_auth_guarantee_text', array( 'default' => 'If we don\'t have your initial website draft ready for review within 14 days of receiving your content, we\'ll give you a 50% discount on the total project cost. No excuses, just results.', 'sanitize_callback' => 'wp_kses_post' ) );
+    $wp_customize->add_control( 'wp_titans_auth_guarantee_text', array( 'label' => __( 'Guarantee Description', 'wp-titans' ), 'section' => 'wp_titans_authority_page', 'type' => 'textarea' ) );
 
     // Ideal Client Lists
     $wp_customize->add_setting( 'wp_titans_auth_for_who', array( 'default' => "You are an expert with a high-value offer.\nYou have an outdated website.\nYou want professional positioning.\nYou value speed and 14-day launch.", 'sanitize_callback' => 'wp_kses_post' ) );

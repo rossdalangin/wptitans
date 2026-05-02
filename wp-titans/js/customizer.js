@@ -14,4 +14,11 @@
 		} );
 	} );
 
+    // About Content
+    wp.customize( 'wp_titans_about_content', function( value ) {
+		value.bind( function( to ) {
+			$( '#about p' ).text( to );
+		} );
+	} );
+
 } )( jQuery );

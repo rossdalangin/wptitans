@@ -213,7 +213,7 @@ get_header(); ?>
 <section id="portfolio" style="background: #000;">
     <div class="reveal" style="text-align: center; margin-bottom: 4rem;">
         <span class="tagline">Our Work</span>
-        <h2>Case Studies & Results</h2>
+        <h2><?php echo esc_html(wp_titans_get_mod("wp_titans_portfolio_title")); ?></h2>
     </div>
     <div class="grid-cards">
         <?php
@@ -278,7 +278,7 @@ get_header(); ?>
 <section id="comparison" style="background: #000; border-top: 1px solid var(--border-glass);">
     <div class="reveal" style="text-align: center; margin-bottom: 5rem;">
         <span class="tagline">The Transformation</span>
-        <h2>Website Evolution</h2>
+        <h2><?php echo esc_html(wp_titans_get_mod("wp_titans_comparison_title")); ?></h2>
     </div>
     <div class="grid-2">
         <?php for ($i = 1; $i <= 2; $i++) :
@@ -351,7 +351,7 @@ get_header(); ?>
 <section id="social-grid" style="background: #000; border-top: 1px solid var(--border-glass);">
     <div class="reveal" style="text-align: center; margin-bottom: 5rem;">
         <span class="tagline">Follow the Journey</span>
-        <h2>Inside the Titan Lab</h2>
+        <h2><?php echo esc_html(wp_titans_get_mod("wp_titans_social_feed_title")); ?></h2>
     </div>
     <div class="grid-cards" style="grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1rem;">
         <?php for($i=1; $i<=4; $i++) :
