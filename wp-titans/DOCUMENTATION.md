@@ -44,6 +44,18 @@ For maximum conversion and authority, we recommend the following menu configurat
 *   **Purpose**: A high-impact, long-form sales page for your "Flagship" service.
 *   **How to use**: Create a page and assign the "Authority Landing Page" template. Customize the feature grids and before/after sliders via the **Customizer > Authority Landing Page** section.
 
+### Workshop Landing Page
+*   **Purpose**: High-conversion page for selling events, workshops, or bootcamps.
+*   **How to use**: Assign the "Workshop Landing Page" template. Includes urgency tickers and vetted application forms.
+
+### VSL (Video Sales Letter)
+*   **Purpose**: Minimalist page designed to maximize video watch time and drive calls.
+*   **How to use**: Assign the "VSL Landing Page" template. Includes a delayed CTA button to sync with your pitch.
+
+### Founders Manifesto
+*   **Purpose**: Establish deep philosophical trust and brand authority.
+*   **How to use**: Assign the "Founders Manifesto" template. Best used in the "About" dropdown or Footer.
+
 ### Project Planner
 *   **Purpose**: A multi-step discovery form that qualifies leads before they talk to you.
 *   **How to use**: Assign the "Project Planner" template. It automatically renders a 4-step interactive form (Service -> Budget -> Timeline -> Details). Leads are sent directly to your admin email.

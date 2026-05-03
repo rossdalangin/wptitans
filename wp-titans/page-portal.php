@@ -54,6 +54,15 @@ get_header(); ?>
 
             <!-- Milestone Tracker -->
             <div class="card reveal" style="background: #111; border-color: var(--primary);">
+                <div id="velocity-chart" style="width: 100%; height: 60px; margin-bottom: 1.5rem; display: flex; align-items: flex-end; gap: 4px; opacity: 0.3;">
+                    <div style="flex: 1; height: 30%; background: var(--primary);"></div>
+                    <div style="flex: 1; height: 45%; background: var(--primary);"></div>
+                    <div style="flex: 1; height: 60%; background: var(--primary);"></div>
+                    <div style="flex: 1; height: 55%; background: var(--primary);"></div>
+                    <div style="flex: 1; height: 80%; background: var(--primary);"></div>
+                    <div style="flex: 1; height: 95%; background: var(--primary);"></div>
+                    <div style="flex: 1; height: 100%; background: var(--primary);"></div>
+                </div>
                 <i class="fas fa-tasks" style="font-size: 1.5rem; margin-bottom: 2rem;"></i>
                 <h3 style="font-size: 1.5rem;">The 14-Day Velocity</h3>
                 <div style="margin-top: 3rem;">
@@ -218,6 +227,11 @@ get_header(); ?>
                 }
             });
         });
+
+        // Velocity Chart Hover
+        const chart = document.getElementById('velocity-chart');
+        chart.addEventListener('mouseenter', () => chart.style.opacity = '1');
+        chart.addEventListener('mouseleave', () => chart.style.opacity = '0.3');
 
         // Message Simulation
         const msgBtn = document.getElementById('portal-msg-send');

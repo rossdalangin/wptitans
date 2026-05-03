@@ -1,33 +1,27 @@
-# STRATEGIC SITEMAP & ARCHITECTURE TEMPLATE
-## Closing the Authority Gap through Structural Clarity.
+TITAN AGENCY: STRATEGIC SITEMAP BLUEPRINT
+-----------------------------------------
 
----
+PHASE 1: THE CORE (Velocity Launch)
+1. Home (The Hub)
+2. Our Arsenal (Services Overview)
+3. The 14-Day Sprint (Process)
+4. Portfolio (Proof)
+5. The Titan Legacy (About)
+6. Initiate Connection (Contact)
 
-### LEVEL 1: CORE AUTHORITY HUB
-1. **Homepage (The Commander)**: Core positioning, lead magnet (Audit), and trust bars.
-2. **Flagship Landing Page (The System)**: Long-form sales page for the primary high-ticket service.
-3. **About (The Legacy)**: Founder's story, values, and team authority.
+PHASE 2: THE CONVERSION ENGINE
+7. Authority Website System™ (Flagship Landing Page)
+8. Project Planner (Discovery App)
+9. ROI Calculator (Value Demonstration)
+10. Free Authority Audit (Lead Magnet)
 
-### LEVEL 2: CONVERSION ENGINES
-1. **Services Archive (The Arsenal)**: Categorized overview of all agency solutions.
-   - *Sub-page*: Service Detail (Specific workflows and case studies).
-2. **Case Studies (The Proof)**: High-impact portfolio items with ROI focus.
-3. **Project Planner (The Filter)**: Multi-step AJAX qualification engine.
+PHASE 3: THE AUTHORITY STACK
+11. Resource Center (The Knowledge Vault)
+12. The Titan Manifesto (Philosophy)
+13. 14-Day Velocity Workshop (High-Ticket Event)
+14. The Authority Protocol (VSL Page)
 
-### LEVEL 3: LEAD MAGNETS & TOOLS
-1. **Free Authority Audit (The Hook)**: Specialized capture page for manual reviews.
-2. **ROI Calculator (The Logic)**: Demonstrating the financial value of a rebuild.
-3. **Client Portal (The HQ)**: Secure Command Center for active project management.
-4. **Resources/Vault (The Value)**: Free guides, blueprints, and educational content.
-
-### LEVEL 4: TRUST & LEGAL
-1. **Contact (The Handshake)**: Low-friction direct communication.
-2. **Privacy Policy**: Standard data protection.
-3. **Terms & Conditions**: Operational legalities.
-
----
-
-### THE "GOLDEN PATH" NAVIGATION (UX Strategy)
-- **Primary Path**: Home -> Flagship Page -> Project Planner -> Strategy Call.
-- **Secondary Path**: Home -> Case Studies -> Free Audit -> Strategy Call.
-- **Navigation Priority**: Keep the top-right CTA consistent (e.g., "Book a Call") across all levels.
+PHASE 4: OPERATIONAL
+15. Client Command Center (Portal)
+16. Privacy Protocols
+17. Service Engagement Terms

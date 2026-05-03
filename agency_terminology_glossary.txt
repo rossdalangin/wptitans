@@ -1,28 +1,20 @@
-# THE TITAN GLOSSARY: AGENCY TERMINOLOGY
-## Use these terms in your copy and calls to build authority.
+TITAN AGENCY: TERMINOLOGY & BRAND DICTIONARY
+--------------------------------------------
 
----
+1. THE AUTHORITY GAP
+The discrepancy between a professional's actual expertise and their perceived value online.
 
-### 1. THE AUTHORITY GAP
-The difference between your real-world expertise and how you appear online. A large gap causes prospects to ghost you despite your results.
+2. CINEMATIC POSITIONING
+Design and messaging that feels expensive, authoritative, and high-stakes.
 
-### 2. CINEMATIC BRANDING
-A high-contrast, luxury design style (like Titan Signature) that uses motion, depth, and typography to create an emotional response of trust and power.
+3. TECHNICAL FRICTION
+The "leaks" in a website (slow speed, bad UX, confusing copy) that prevent a user from converting.
 
-### 3. CONVERSION FRICTION
-Any element on a website (long forms, slow speed, confusing navigation) that prevents a user from taking the desired action.
+4. 14-DAY VELOCITY
+The agency's signature protocol for rapid, high-quality deployment.
 
-### 4. THE 14-DAY SPRINT
-Our proprietary rapid-delivery methodology that deploys a world-class platform in two weeks without sacrificing quality.
+5. THE KNOWLEDGE VAULT
+The resource center where authority is established through deep-dive content.
 
-### 5. LEAD SCORING
-The technical logic used in our Project Planner to automatically identify and prioritize high-budget, high-intent leads for immediate sales follow-up.
-
-### 6. POSITIONING BLUEPRINT
-The strategic document created in Phase 1 that defines your unique value proposition, target audience, and core messaging hooks.
-
-### 7. GLASSMORPHISM
-A modern UI trend using frosted glass effects and background blurs (Enabled in the Titan Customizer) to create a premium, futuristic feel.
-
-### 8. TITAN CARE
-Our comprehensive post-launch support and growth plan that ensures your site stays fast, secure, and authoritative.
+6. COMMAND CENTER
+The client portal where projects are managed with transparency and precision.
