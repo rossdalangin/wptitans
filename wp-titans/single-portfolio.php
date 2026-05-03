@@ -7,16 +7,25 @@ get_header(); ?>
 <main style="padding-top: 10rem; background: #000;">
     <section id="case-study-hero" style="min-height: 60vh; text-align: center; padding-bottom: 5rem;">
         <div class="reveal">
-            <span class="tagline">Case Study</span>
+            <span class="tagline"><?php _e('Case Study', 'wp-titans'); ?></span>
             <h1 style="font-size: clamp(3rem, 8vw, 6rem); margin-bottom: 2rem;"><?php the_title(); ?></h1>
             <div style="display: flex; justify-content: center; gap: 4rem; margin-top: 4rem;">
+                <?php
+                $growth = get_post_meta(get_the_ID(), 'portfolio_growth', true) ?: '+140%';
+                $speed = get_post_meta(get_the_ID(), 'portfolio_speed', true) ?: '14 Days';
+                $roi = get_post_meta(get_the_ID(), 'portfolio_roi', true) ?: '240%';
+                ?>
                 <div class="stat-item" style="text-align: center;">
-                    <h3 style="font-size: 2.5rem; color: var(--primary);">+140%</h3>
-                    <p style="font-size: 0.8rem; text-transform: uppercase;">Lead Growth</p>
+                    <h3 style="font-size: 2.5rem; color: var(--primary);"><?php echo esc_html($growth); ?></h3>
+                    <p style="font-size: 0.8rem; text-transform: uppercase;"><?php _e('Lead Growth', 'wp-titans'); ?></p>
                 </div>
                 <div class="stat-item" style="text-align: center;">
-                    <h3 style="font-size: 2.5rem; color: var(--primary);">14 Days</h3>
-                    <p style="font-size: 0.8rem; text-transform: uppercase;">Time to Launch</p>
+                    <h3 style="font-size: 2.5rem; color: var(--primary);"><?php echo esc_html($speed); ?></h3>
+                    <p style="font-size: 0.8rem; text-transform: uppercase;"><?php _e('Time to Launch', 'wp-titans'); ?></p>
+                </div>
+                <div class="stat-item" style="text-align: center;">
+                    <h3 style="font-size: 2.5rem; color: var(--primary);"><?php echo esc_html($roi); ?></h3>
+                    <p style="font-size: 0.8rem; text-transform: uppercase;"><?php _e('ROI Performance', 'wp-titans'); ?></p>
                 </div>
             </div>
         </div>
@@ -33,26 +42,26 @@ get_header(); ?>
     <section id="case-study-content" style="background: #050505; border-top: 1px solid var(--border-glass); margin-top: -10vh; padding-top: 20vh;">
         <div class="grid-2" style="align-items: flex-start;">
             <div class="reveal">
-                <h2 style="font-size: 2.5rem; margin-bottom: 2rem; color: var(--primary);">The Challenge</h2>
+                <h2 style="font-size: 2.5rem; margin-bottom: 2rem; color: var(--primary);"><?php _e('The Challenge', 'wp-titans'); ?></h2>
                 <div style="color: var(--text-dim); font-size: 1.15rem; line-height: 1.8;">
                     <?php the_content(); ?>
                 </div>
 
                 <div class="reveal" style="margin-top: 4rem; display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem;">
                     <div style="background: #111; padding: 2rem; border-radius: 8px; border-left: 3px solid var(--primary);">
-                        <h4 style="font-size: 0.8rem; text-transform: uppercase; color: #555; margin-bottom: 0.5rem;">Launch Speed</h4>
-                        <p style="font-size: 1.5rem; font-weight: 800; color: white;">14 Days</p>
+                        <h4 style="font-size: 0.8rem; text-transform: uppercase; color: #555; margin-bottom: 0.5rem;"><?php _e('Launch Speed', 'wp-titans'); ?></h4>
+                        <p style="font-size: 1.5rem; font-weight: 800; color: white;"><?php echo esc_html($speed); ?></p>
                     </div>
                     <div style="background: #111; padding: 2rem; border-radius: 8px; border-left: 3px solid var(--primary);">
-                        <h4 style="font-size: 0.8rem; text-transform: uppercase; color: #555; margin-bottom: 0.5rem;">ROI Performance</h4>
-                        <p style="font-size: 1.5rem; font-weight: 800; color: white;">+240% Growth</p>
+                        <h4 style="font-size: 0.8rem; text-transform: uppercase; color: #555; margin-bottom: 0.5rem;"><?php _e('ROI Performance', 'wp-titans'); ?></h4>
+                        <p style="font-size: 1.5rem; font-weight: 800; color: white;"><?php echo esc_html($roi); ?></p>
                     </div>
                 </div>
             </div>
             <div class="reveal">
                 <div style="background: #111; padding: 4rem; border-radius: 12px; border: 1px solid var(--border-glass);">
-                    <h3 style="margin-bottom: 2rem; color: white;">The Transformation</h3>
-                    <p style="color: var(--text-dim); margin-bottom: 2rem;">We implemented the **Authority Website System™** to solve core positioning issues and automate client acquisition.</p>
+                    <h3 style="margin-bottom: 2rem; color: white;"><?php _e('The Transformation', 'wp-titans'); ?></h3>
+                    <p style="color: var(--text-dim); margin-bottom: 2rem;"><?php _e('We implemented the **Authority Website System™** to solve core positioning issues and automate client acquisition.', 'wp-titans'); ?></p>
                     <ul style="color: #eee; line-height: 2.5;">
                         <li><i class="fas fa-check" style="color: var(--primary); margin-right: 15px;"></i> Strategic Content Architecture</li>
                         <li><i class="fas fa-check" style="color: var(--primary); margin-right: 15px;"></i> High-Performance WordPress Build</li>
@@ -64,5 +73,24 @@ get_header(); ?>
     </section>
 
 </main>
+
+    <!-- Next Project Navigation -->
+    <section id="next-project" style="background: #000; border-top: 1px solid #111; padding: 10rem 10%; text-align: center;">
+        <div class="reveal">
+            <span class="tagline"><?php _e('Up Next', 'wp-titans'); ?></span>
+            <?php
+            $next_post = get_next_post();
+            if ( ! empty( $next_post ) ) : ?>
+                <h2 style="font-size: 3.5rem; margin-bottom: 3rem;"><a href="<?php echo get_permalink( $next_post->ID ); ?>"><?php echo esc_html( $next_post->post_title ); ?></a></h2>
+                <a href="<?php echo get_permalink( $next_post->ID ); ?>" class="btn btn-outline"><?php _e('View Next Case Study', 'wp-titans'); ?></a>
+            <?php else :
+                $first_post = new WP_Query(array('post_type' => 'portfolio', 'posts_per_page' => 1, 'order' => 'ASC'));
+                if ($first_post->have_posts()) : while ($first_post->have_posts()) : $first_post->the_post(); ?>
+                    <h2 style="font-size: 3.5rem; margin-bottom: 3rem;"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
+                    <a href="<?php the_permalink(); ?>" class="btn btn-outline"><?php _e('View Next Case Study', 'wp-titans'); ?></a>
+                <?php endwhile; wp_reset_postdata(); endif;
+            endif; ?>
+        </div>
+    </section>
 
 <?php get_footer(); ?>

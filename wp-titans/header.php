@@ -98,6 +98,49 @@ if ($texture !== 'none') :
     </div>
 <?php endif; ?>
 
+<!-- Floating Authority Widget -->
+<?php if (wp_titans_get_mod('wp_titans_fab_show', true)) : ?>
+<div id="authority-floating-widget" style="position: fixed; bottom: 30px; right: 30px; z-index: 10000; display: flex; flex-direction: column; align-items: flex-end; gap: 1rem;">
+    <div id="fab-menu" style="display: none; flex-direction: column; gap: 0.5rem; margin-bottom: 1rem; transform: translateY(20px); opacity: 0; transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);">
+        <a href="<?php echo get_permalink(get_page_by_path('book-a-strategy-call')); ?>" style="background: #111; color: white; padding: 0.8rem 1.5rem; border-radius: 4px; font-size: 0.75rem; font-weight: 800; font-family: 'Syne'; text-transform: uppercase; letter-spacing: 1px; border: 1px solid var(--primary); text-decoration: none; white-space: nowrap;">
+            <i class="fas fa-calendar-alt" style="margin-right: 10px; color: var(--primary);"></i> <?php _e('Book Strategy Call', 'wp-titans'); ?>
+        </a>
+        <a href="<?php echo get_permalink(get_page_by_path('free-authority-audit')); ?>" style="background: #111; color: white; padding: 0.8rem 1.5rem; border-radius: 4px; font-size: 0.75rem; font-weight: 800; font-family: 'Syne'; text-transform: uppercase; letter-spacing: 1px; border: 1px solid var(--primary); text-decoration: none; white-space: nowrap;">
+            <i class="fas fa-search" style="margin-right: 10px; color: var(--primary);"></i> <?php _e('Free Authority Audit', 'wp-titans'); ?>
+        </a>
+    </div>
+    <button id="fab-trigger" style="width: 60px; height: 60px; background: var(--primary); border: none; border-radius: 50%; color: black; font-size: 1.5rem; cursor: pointer; box-shadow: 0 10px 30px rgba(var(--primary-rgb), 0.3); transition: transform 0.3s;" aria-label="<?php _e('Conversion Options', 'wp-titans'); ?>">
+        <i class="fas fa-comment-dots"></i>
+    </button>
+</div>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    const trigger = document.getElementById('fab-trigger');
+    const menu = document.getElementById('fab-menu');
+    let isOpen = false;
+
+    trigger.addEventListener('click', () => {
+        isOpen = !isOpen;
+        if (isOpen) {
+            menu.style.display = 'flex';
+            setTimeout(() => {
+                menu.style.transform = 'translateY(0)';
+                menu.style.opacity = '1';
+                trigger.style.transform = 'rotate(90deg)';
+                trigger.innerHTML = '<i class="fas fa-times"></i>';
+            }, 10);
+        } else {
+            menu.style.transform = 'translateY(20px)';
+            menu.style.opacity = '0';
+            trigger.style.transform = 'rotate(0)';
+            trigger.innerHTML = '<i class="fas fa-comment-dots"></i>';
+            setTimeout(() => { menu.style.display = 'none'; }, 400);
+        }
+    });
+});
+</script>
+<?php endif; ?>
+
 <?php if (wp_titans_get_mod("wp_titans_preloader_show")) : ?>
 <div id="preloader">
     <div class="loader-content">
@@ -161,7 +204,7 @@ if ($texture !== 'none') :
             <button type="submit"><i class="fas fa-arrow-right"></i></button>
         </form>
         <div id="search-results-live" style="margin-top: 3rem; text-align: left; max-width: 600px; margin-left: auto; margin-right: auto;"></div>
-        <p style="margin-top: 2rem; color: #444; font-family: 'Syne'; text-transform: uppercase; letter-spacing: 2px;">Start typing to see live results</p>
+        <p style="margin-top: 2rem; color: #444; font-family: 'Syne'; text-transform: uppercase; letter-spacing: 2px;"><?php _e('Start typing to see live results', 'wp-titans'); ?></p>
     </div>
 </div>
 

@@ -380,22 +380,37 @@ get_header(); ?>
     </div>
     <?php $testi_layout = wp_titans_get_mod("wp_titans_testi_layout"); ?>
     <div class="<?php echo $testi_layout === 'slider' ? 'testi-slider' : 'grid-cards'; ?>">
-        <?php for ($i = 1; $i <= 3; $i++) :
-            $img = wp_titans_get_mod("wp_titans_testi_img_$i");
-            $quote = wp_titans_get_mod("wp_titans_testi_quote_$i");
-            $author = wp_titans_get_mod("wp_titans_testi_author_$i");
-            $role = wp_titans_get_mod("wp_titans_testi_role_$i");
-            if (!$quote) continue;
+        <?php
+        $front_testis = new WP_Query(array('post_type' => 'testimonial', 'posts_per_page' => 6));
+        if ($front_testis->have_posts()) : while ($front_testis->have_posts()) : $front_testis->the_post();
+            $author_role = get_post_meta(get_the_ID(), 'testimonial_role', true);
         ?>
-        <div class="testimonial-card reveal <?php echo $testi_layout === 'slider' ? 'testi-slide' : ''; ?>">
-            <?php if ($img) : ?>
-                <img loading="lazy" src="<?php echo esc_url($img); ?>" alt="<?php echo esc_attr($author); ?>" style="width: 80px; height: 80px; border-radius: 50%; object-fit: cover; margin-bottom: 1.5rem; border: 2px solid var(--primary);">
-            <?php endif; ?>
-            <blockquote>"<?php echo esc_html($quote); ?>"</blockquote>
-            <div class="testimonial-author"><?php echo esc_html($author); ?></div>
-            <small style="color: var(--text-dim);"><?php echo esc_html($role); ?></small>
-        </div>
-        <?php endfor; ?>
+            <div class="testimonial-card reveal <?php echo $testi_layout === 'slider' ? 'testi-slide' : ''; ?>">
+                <?php if (has_post_thumbnail()) : the_post_thumbnail('titan-testimonial', array('style' => 'width: 80px; height: 80px; border-radius: 50%; object-fit: cover; margin-bottom: 1.5rem; border: 2px solid var(--primary);')); endif; ?>
+                <blockquote>"<?php the_content(); ?>"</blockquote>
+                <div class="testimonial-author"><?php the_title(); ?></div>
+                <?php if ($author_role) : ?>
+                    <small style="color: var(--text-dim);"><?php echo esc_html($author_role); ?></small>
+                <?php endif; ?>
+            </div>
+        <?php endwhile; wp_reset_postdata(); else : ?>
+            <?php for ($i = 1; $i <= 3; $i++) :
+                $img = wp_titans_get_mod("wp_titans_testi_img_$i");
+                $quote = wp_titans_get_mod("wp_titans_testi_quote_$i");
+                $author = wp_titans_get_mod("wp_titans_testi_author_$i");
+                $role = wp_titans_get_mod("wp_titans_testi_role_$i");
+                if (!$quote) continue;
+            ?>
+            <div class="testimonial-card reveal <?php echo $testi_layout === 'slider' ? 'testi-slide' : ''; ?>">
+                <?php if ($img) : ?>
+                    <img loading="lazy" src="<?php echo esc_url($img); ?>" alt="<?php echo esc_attr($author); ?>" style="width: 80px; height: 80px; border-radius: 50%; object-fit: cover; margin-bottom: 1.5rem; border: 2px solid var(--primary);">
+                <?php endif; ?>
+                <blockquote>"<?php echo esc_html($quote); ?>"</blockquote>
+                <div class="testimonial-author"><?php echo esc_html($author); ?></div>
+                <small style="color: var(--text-dim);"><?php echo esc_html($role); ?></small>
+            </div>
+            <?php endfor; ?>
+        <?php endif; ?>
     </div>
 </section>
 

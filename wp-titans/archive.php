@@ -14,22 +14,25 @@ get_header(); ?>
     </div>
 </section>
 
-<section id="blog-archive" style="background: #050505; padding-top: 5rem;">
+<section id="blog-archive" style="background: #050505; padding-top: 5rem; padding-bottom: 10rem;">
     <div class="grid-cards" style="grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));">
         <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
-            <article id="post-<?php the_ID(); ?>" <?php post_class('card reveal'); ?> style="padding: 0; overflow: hidden; border-radius: 8px;">
+            <article id="post-<?php the_ID(); ?>" <?php post_class('card reveal'); ?> style="padding: 0; overflow: hidden; border-radius: 8px; position: relative;">
                 <?php if ( has_post_thumbnail() ) : ?>
                     <div class="post-thumb" style="height: 250px; overflow: hidden;">
                         <?php the_post_thumbnail('large', array('style' => 'width:100%; height:100%; object-fit:cover; transition: transform 0.5s ease;')); ?>
                     </div>
                 <?php endif; ?>
                 <div style="padding: 2.5rem;">
-                    <span class="tagline" style="font-size: 0.7rem; margin-bottom: 0.5rem;"><?php echo get_the_date(); ?></span>
+                    <div style="margin-bottom: 1rem; display: flex; justify-content: space-between; align-items: center; opacity: 0.5; font-family: 'Syne'; font-size: 0.6rem; letter-spacing: 2px; text-transform: uppercase;">
+                        <span><?php echo get_the_date(); ?></span>
+                        <span><i class="fas fa-clock" style="margin-right: 5px;"></i> <?php echo titan_reading_time(); ?></span>
+                    </div>
                     <h3 style="margin-bottom: 1rem;"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
                     <div style="color: var(--text-dim); font-size: 0.95rem; margin-bottom: 2rem;">
                         <?php echo wp_trim_words( get_the_excerpt(), 20 ); ?>
                     </div>
-                    <a href="<?php the_permalink(); ?>" class="btn btn-outline" style="padding: 0.8rem 1.5rem; font-size: 0.8rem;">Read Article</a>
+                    <a href="<?php the_permalink(); ?>" class="btn btn-outline" style="padding: 0.8rem 1.5rem; font-size: 0.8rem;"><?php _e('Read Article', 'wp-titans'); ?></a>
                 </div>
             </article>
         <?php endwhile;

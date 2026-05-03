@@ -145,6 +145,26 @@ get_header(); ?>
         </div>
     </section>
 
+    <section id="portal-health" style="background: #000; border-top: 1px solid var(--border-glass); padding: 8rem 10%;">
+        <div class="reveal">
+            <h2 style="margin-bottom: 3rem;">Site Health & Performance</h2>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem;">
+                <div style="background: #050505; padding: 2.5rem; border: 1px solid #111; border-radius: 8px; text-align: center;">
+                    <div style="font-size: 3rem; color: #2ecc71; font-weight: 900; font-family: 'Syne';">98</div>
+                    <p style="font-size: 0.7rem; text-transform: uppercase; color: #555; letter-spacing: 2px; margin-top: 1rem;">Core Web Vitals</p>
+                </div>
+                <div style="background: #050505; padding: 2.5rem; border: 1px solid #111; border-radius: 8px; text-align: center;">
+                    <div style="font-size: 3rem; color: var(--primary); font-weight: 900; font-family: 'Syne';">SSL</div>
+                    <p style="font-size: 0.7rem; text-transform: uppercase; color: #555; letter-spacing: 2px; margin-top: 1rem;">Security Protocol</p>
+                </div>
+                <div style="background: #050505; padding: 2.5rem; border: 1px solid #111; border-radius: 8px; text-align: center;">
+                    <div style="font-size: 3rem; color: var(--primary); font-weight: 900; font-family: 'Syne';">A+</div>
+                    <p style="font-size: 0.7rem; text-transform: uppercase; color: #555; letter-spacing: 2px; margin-top: 1rem;">Authority Grade</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <section id="portal-files" style="background: #050505; border-top: 1px solid var(--border-glass); padding: 8rem 10%;">
         <div class="reveal">
             <h2 style="margin-bottom: 3rem;">Secure File Drop</h2>

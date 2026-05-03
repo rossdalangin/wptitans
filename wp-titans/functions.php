@@ -20,8 +20,20 @@ if ( ! function_exists( 'wp_titans_setup' ) ) :
         add_image_size( 'titan-portfolio', 800, 500, true );
         add_image_size( 'titan-team', 400, 500, true );
         add_image_size( 'titan-testimonial', 150, 150, true );
+
+        load_theme_textdomain( 'wp-titans', get_template_directory() . '/languages' );
     }
 endif;
+
+/**
+ * Calculate Reading Time
+ */
+function titan_reading_time() {
+    $content = get_post_field( 'post_content', get_the_ID() );
+    $word_count = str_word_count( strip_tags( $content ) );
+    $readingtime = ceil($word_count / 200);
+    return $readingtime . ' MIN';
+}
 add_action( 'after_setup_theme', 'wp_titans_setup' );
 
 /**
@@ -151,6 +163,15 @@ function wp_titans_register_cpts() {
         'public'      => true,
         'menu_icon'   => 'dashicons-media-document',
         'supports'    => array( 'title', 'editor', 'thumbnail', 'excerpt' ),
+        'show_in_rest' => true,
+    ) );
+
+    // Testimonials
+    register_post_type( 'testimonial', array(
+        'labels'      => array( 'name' => 'Testimonials', 'singular_name' => 'Testimonial' ),
+        'public'      => true,
+        'menu_icon'   => 'dashicons-testimonial',
+        'supports'    => array( 'title', 'editor', 'thumbnail' ),
         'show_in_rest' => true,
     ) );
 }
@@ -320,6 +341,43 @@ function wp_titans_handle_setup() {
             }
         }
 
+        // Generate Sample Insights
+        $sample_posts = array(
+            'The Authority Gap' => 'How to identify and bridge the discrepancy between your expertise and your perception.',
+            'Cinematic Messaging' => 'The framework for writing copy that resonates with high-ticket clients.',
+            'Velocity Operations' => 'Behind the scenes of our 14-Day deployment protocol.',
+            'The Future of WordPress' => 'How headless architectures and AI are reshaping the digital landscape.',
+            'Lead Gen Mastery' => 'Automating your client acquisition journey without losing the human touch.'
+        );
+        foreach ($sample_posts as $ptitle => $pcontent) {
+            if (!get_page_by_title($ptitle, OBJECT, 'post')) {
+                wp_insert_post(array(
+                    'post_title' => $ptitle,
+                    'post_content' => $pcontent,
+                    'post_status' => 'publish',
+                    'post_type' => 'post',
+                    'post_excerpt' => $pcontent
+                ));
+            }
+        }
+
+        // Generate Sample Testimonials
+        $sample_testis = array(
+            'The SaaS Pivot' => 'Ross and the Titan team didn’t just build a site; they built a revenue engine. Our lead quality improved 3x in the first month.',
+            'Consultant Launch' => 'I was invisible before the 14-Day Sprint. Now, I have a brand that actually reflects the premium level of my work.',
+            'Enterprise Build' => 'Unmatched speed. Unmatched precision. The best WordPress development team we have ever partnered with.'
+        );
+        foreach ($sample_testis as $ttitle => $tcontent) {
+            if (!get_page_by_title($ttitle, OBJECT, 'testimonial')) {
+                wp_insert_post(array(
+                    'post_title' => $ttitle,
+                    'post_content' => $tcontent,
+                    'post_status' => 'publish',
+                    'post_type' => 'testimonial'
+                ));
+            }
+        }
+
         // Generate Sample Team
         $sample_team = array(
             'Ross Dalangin' => 'Lead Strategist & Architect. 20+ years of building digital authority for experts.',
@@ -445,6 +503,7 @@ function wp_titans_dashboard_widget_content() {
             <a href="<?php echo admin_url('customize.php'); ?>" class="button button-primary">Theme Customizer</a>
             <a href="<?php echo admin_url('edit.php?post_type=service'); ?>" class="button">Manage Services</a>
             <a href="<?php echo admin_url('edit.php?post_type=portfolio'); ?>" class="button">Manage Portfolio</a>
+            <a href="<?php echo admin_url('edit.php?post_type=testimonial'); ?>" class="button">Manage Testimonials</a>
             <a href="<?php echo admin_url('admin.php?page=titan-arsenal'); ?>" class="button">Agency Arsenal</a>
         </div>
         <p style="margin-top: 20px;"><small>Need help? Check the <a href="<?php echo get_template_directory_uri(); ?>/DOCUMENTATION.md" target="_blank">Documentation</a>.</small></p>

@@ -151,10 +151,29 @@ const observer = new IntersectionObserver((entries) => {
 document.querySelectorAll('.reveal, .img-reveal').forEach(el => observer.observe(el));
 
 // Staggered reveals for grids
-document.querySelectorAll('.grid-cards, .grid-2').forEach(grid => {
+document.querySelectorAll('.grid-cards, .grid-2, .grid-masonry').forEach(grid => {
     const items = grid.querySelectorAll('.reveal');
     items.forEach((item, index) => {
         item.style.transitionDelay = `${index * 0.15}s`;
+    });
+});
+
+// Magnetic Buttons Refined Physics
+document.querySelectorAll('.btn-primary, .btn-outline, #fab-trigger').forEach(btn => {
+    btn.addEventListener('mousemove', (e) => {
+        const rect = btn.getBoundingClientRect();
+        const x = e.clientX - rect.left - rect.width / 2;
+        const y = e.clientY - rect.top - rect.height / 2;
+
+        // Physics constants for more fluid feel
+        const intensity = 0.4;
+        const rotate = x * 0.05;
+
+        btn.style.transform = `translate(${x * intensity}px, ${y * intensity}px) rotate(${rotate}deg)`;
+    });
+
+    btn.addEventListener('mouseleave', () => {
+        btn.style.transform = `translate(0, 0) rotate(0)`;
     });
 });
 

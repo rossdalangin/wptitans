@@ -56,6 +56,22 @@ For maximum conversion and authority, we recommend the following menu configurat
 *   **Purpose**: Establish deep philosophical trust and brand authority.
 *   **How to use**: Assign the "Founders Manifesto" template. Best used in the "About" dropdown or Footer.
 
+### Referral & Partner Protocol
+*   **Purpose**: Scale your agency through strategic alliances and white-labeling.
+*   **How to use**: Assign the "Referral & Partner Protocol" template. Includes tiered partnership models and intake forms.
+
+### Client Onboarding Protocol
+*   **Purpose**: A high-end welcome experience for new clients to initialize projects.
+*   **How to use**: Assign the "Client Onboarding Protocol" template. Best used as the landing page after a contract is signed.
+
+### Brand Style Guide
+*   **Purpose**: A public or internal showcase of the agency's visual and verbal standards.
+*   **How to use**: Assign the "Brand Style Guide" template. Automatically pulls your Customizer colors and fonts.
+
+### Strategic Growth Roadmap
+*   **Purpose**: Outline the multi-phase journey for client success.
+*   **How to use**: Assign the "Strategic Growth Roadmap" template. Features a cinematic vertical timeline component.
+
 ### Project Planner
 *   **Purpose**: A multi-step discovery form that qualifies leads before they talk to you.
 *   **How to use**: Assign the "Project Planner" template. It automatically renders a 4-step interactive form (Service -> Budget -> Timeline -> Details). Leads are sent directly to your admin email.
@@ -71,8 +87,10 @@ For maximum conversion and authority, we recommend the following menu configurat
 Navigate to **Appearance > Customize** to master these agency-specific tools:
 
 *   **Trust Bar (Logos)**: Upload client logos to create an "As Seen On" bar.
+*   **Testimonials CPT**: Manage client proof via a dedicated "Testimonials" menu in the dashboard. High-converting layouts are automatically generated.
 *   **Awards & Badges**: Display certifications and industry awards below the hero section.
 *   **Before & After Slider**: Add visual proof of your transformations. Supported in both the homepage and Authority page.
+*   **Package Matrix**: Centralize your tier comparisons and pricing models in a single location for site-wide consistency.
 *   **Success Guarantee**: Build trust with a dedicated "Promise" section that highlights your commitment to quality.
 *   **Lead Capture Modals**: Enable the exit-intent popup to capture leads before they leave your site.
 *   **Social & Meta**: Manage your Open Graph (OG) share images and SEO meta descriptions globally.

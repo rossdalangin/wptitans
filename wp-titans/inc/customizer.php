@@ -704,6 +704,26 @@ function wp_titans_customize_register( $wp_customize ) {
         'priority' => 89,
     ) );
 
+    // --- Package Matrix ---
+    $wp_customize->add_section( 'wp_titans_package_matrix', array(
+        'title'    => __( 'Central Package Matrix', 'wp-titans' ),
+        'priority' => 64,
+    ) );
+
+    for ($i = 1; $i <= 8; $i++) {
+        $wp_customize->add_setting( "wp_titans_matrix_label_$i", array( 'default' => '', 'sanitize_callback' => 'wp_kses_post' ) );
+        $wp_customize->add_control( "wp_titans_matrix_label_$i", array( 'label' => "Feature $i Name", 'section' => 'wp_titans_package_matrix' ) );
+
+        $wp_customize->add_setting( "wp_titans_matrix_tier1_$i", array( 'default' => false, 'sanitize_callback' => 'wp_validate_boolean' ) );
+        $wp_customize->add_control( "wp_titans_matrix_tier1_$i", array( 'label' => "In Tier 1?", 'section' => 'wp_titans_package_matrix', 'type' => 'checkbox' ) );
+
+        $wp_customize->add_setting( "wp_titans_matrix_tier2_$i", array( 'default' => false, 'sanitize_callback' => 'wp_validate_boolean' ) );
+        $wp_customize->add_control( "wp_titans_matrix_tier2_$i", array( 'label' => "In Tier 2?", 'section' => 'wp_titans_package_matrix', 'type' => 'checkbox' ) );
+
+        $wp_customize->add_setting( "wp_titans_matrix_tier3_$i", array( 'default' => false, 'sanitize_callback' => 'wp_validate_boolean' ) );
+        $wp_customize->add_control( "wp_titans_matrix_tier3_$i", array( 'label' => "In Tier 3?", 'section' => 'wp_titans_package_matrix', 'type' => 'checkbox' ) );
+    }
+
     // --- Partners Section ---
     $wp_customize->add_section( 'wp_titans_partners_sec', array(
         'title'    => __( 'Partnership Protocols', 'wp-titans' ),
