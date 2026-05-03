@@ -146,9 +146,11 @@ section {
     font-weight: 700;
     font-size: 0.95rem;
     cursor: pointer;
-    transition: var(--transition);
+    transition: transform 0.2s cubic-bezier(0.33, 1, 0.68, 1), background 0.4s, box-shadow 0.4s;
     border: none;
     text-align: center;
+    position: relative;
+    overflow: hidden;
 }
 
 .btn-primary {
@@ -836,6 +838,19 @@ footer {
 
 #auth-notification div:first-child {
     animation: titan-notif-pulse 2s infinite;
+}
+
+/* Elite Lava Lamp Gradient */
+@keyframes lavaLamp {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.lava-bg {
+    background: linear-gradient(-45deg, #000000, #0a0a0a, #111111, #000000);
+    background-size: 400% 400%;
+    animation: lavaLamp 15s ease infinite;
 }
 
 @keyframes scroll-dot {

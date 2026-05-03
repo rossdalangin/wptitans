@@ -179,10 +179,14 @@ function wp_titans_handle_setup() {
             '14-Day Velocity Workshop' => array('template' => 'page-workshop.php'),
             'The Authority Protocol' => array('template' => 'page-vsl.php'),
             'The Titan Manifesto' => array('template' => 'page-manifesto.php'),
+            'Referral & Partner Protocol' => array('template' => 'page-partner.php'),
+            'Client Onboarding Protocol' => array('template' => 'page-onboarding.php'),
+            'Brand Style Guide' => array('template' => 'page-style-guide.php'),
             'Legal: Privacy Protocols' => array('template' => 'page-legal.php', 'content' => '## Data Protection Strategy\nYour data is secure under our elite encryption protocols.'),
             'Legal: Engagement Terms' => array('template' => 'page-legal.php', 'content' => '## Service Agreement\nStandard operational terms for Titan engagements.'),
             'Authority Blueprint' => array('template' => 'page-blueprint.php'),
             'Join the Arsenal' => array('template' => 'page-careers.php'),
+            'Strategic Growth Roadmap' => array('template' => 'page-roadmap.php'),
             'Web Design Strategy' => array('template' => 'page-service-single.php', 'content' => 'Building world-class systems...'),
             'Conversion Case Study' => array('template' => 'page-case-study.php'),
             'Privacy Protocols' => array('template' => 'page.php', 'content' => 'Secure and compliant.'),
@@ -244,7 +248,10 @@ function wp_titans_handle_setup() {
             'Performance Optimization' => 'Sub-2 second load times guaranteed. We build on a clean, scalable WordPress architecture for market dominance.',
             'SEO Mastery' => 'Dominate the first page. We optimize for the keywords that actually drive high-ticket revenue, not just vanity traffic.',
             'Lead Gen Funnels' => 'Automated client acquisition systems. We build the filters that identify and secure your most valuable prospects.',
-            'Titan Maintenance' => '24/7 security, speed monitoring, and strategic support to ensure your authority never wavers.'
+            'Titan Maintenance' => '24/7 security, speed monitoring, and strategic support to ensure your authority never wavers.',
+            'Headless CMS Protocol' => 'Decoupled WordPress architectures for unmatched speed, security, and multi-channel content delivery.',
+            'Custom Plugin Engineering' => 'Bespoke functionality developed to solve complex operational challenges and automate agency workflows.',
+            'Security & SSL Hardening' => 'Enterprise-grade security lockdowns to protect your authority assets from digital intrusion.'
         );
         foreach ($sample_services as $stitle => $scontent) {
             if (!get_page_by_title($stitle, OBJECT, 'service')) {
@@ -438,9 +445,82 @@ function wp_titans_dashboard_widget_content() {
             <a href="<?php echo admin_url('customize.php'); ?>" class="button button-primary">Theme Customizer</a>
             <a href="<?php echo admin_url('edit.php?post_type=service'); ?>" class="button">Manage Services</a>
             <a href="<?php echo admin_url('edit.php?post_type=portfolio'); ?>" class="button">Manage Portfolio</a>
-            <a href="<?php echo admin_url('customize.php?autofocus[section]=wp_titans_setup'); ?>" class="button">One-Click Setup</a>
+            <a href="<?php echo admin_url('admin.php?page=titan-arsenal'); ?>" class="button">Agency Arsenal</a>
         </div>
         <p style="margin-top: 20px;"><small>Need help? Check the <a href="<?php echo get_template_directory_uri(); ?>/DOCUMENTATION.md" target="_blank">Documentation</a>.</small></p>
+    </div>
+    <?php
+}
+
+/**
+ * Add Titan Agency Arsenal Page
+ */
+function wp_titans_add_arsenal_page() {
+    add_menu_page(
+        'Agency Arsenal',
+        'Titan Arsenal',
+        'manage_options',
+        'titan-arsenal',
+        'wp_titans_arsenal_page_content',
+        'dashicons-vault',
+        2
+    );
+}
+add_action('admin_menu', 'wp_titans_add_arsenal_page');
+
+function wp_titans_arsenal_page_content() {
+    ?>
+    <div class="wrap">
+        <h1>Titan Agency Success Kit</h1>
+        <p>Your high-output operations center. Access all 85+ strategic assets here.</p>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; margin-top: 30px;">
+            <div style="background: #111; color: white; padding: 30px; border-radius: 8px; border: 1px solid #D4AF37;">
+                <h3 style="color: #D4AF37; margin-top: 0;">🚀 Strategy & Growth</h3>
+                <ul style="list-style: none; padding: 0;">
+                    <li><a href="<?php echo home_url('/guide_seo_mastery.txt'); ?>" target="_blank" style="color: #ccc;">SEO Mastery Battleplan</a></li>
+                    <li><a href="<?php echo home_url('/guide_high_ticket_sales.txt'); ?>" target="_blank" style="color: #ccc;">High-Ticket Sales Framework</a></li>
+                    <li><a href="<?php echo home_url('/guide_authority_branding.txt'); ?>" target="_blank" style="color: #ccc;">Authority Branding Blueprint</a></li>
+                    <li><a href="<?php echo home_url('/guide_14_day_sprint.txt'); ?>" target="_blank" style="color: #ccc;">14-Day Velocity SOPs</a></li>
+                </ul>
+            </div>
+
+            <div style="background: #111; color: white; padding: 30px; border-radius: 8px; border: 1px solid #D4AF37;">
+                <h3 style="color: #D4AF37; margin-top: 0;">📊 Operational Data</h3>
+                <ul style="list-style: none; padding: 0;">
+                    <li><a href="<?php echo home_url('/agency_growth_metrics_dashboard.csv'); ?>" target="_blank" style="color: #ccc;">Growth Metrics Dashboard (CSV)</a></li>
+                    <li><a href="<?php echo home_url('/agency_financial_projection_model.csv'); ?>" target="_blank" style="color: #ccc;">Financial Projections (CSV)</a></li>
+                    <li><a href="<?php echo home_url('/sales_pipeline_lead_tracker.csv'); ?>" target="_blank" style="color: #ccc;">Sales Pipeline Tracker (CSV)</a></li>
+                    <li><a href="<?php echo home_url('/fourteen_day_project_sprint_schedule.csv'); ?>" target="_blank" style="color: #ccc;">Sprint Schedule (CSV)</a></li>
+                </ul>
+            </div>
+
+            <div style="background: #111; color: white; padding: 30px; border-radius: 8px; border: 1px solid #D4AF37;">
+                <h3 style="color: #D4AF37; margin-top: 0;">📢 Sales & Marketing</h3>
+                <ul style="list-style: none; padding: 0;">
+                    <li><a href="<?php echo home_url('/ad_copy_vault.txt'); ?>" target="_blank" style="color: #ccc;">Ad Copy Vault</a></li>
+                    <li><a href="<?php echo home_url('/agency_vsl_script.txt'); ?>" target="_blank" style="color: #ccc;">VSL Blueprint Script</a></li>
+                    <li><a href="<?php echo home_url('/sales_discovery_call_script.txt'); ?>" target="_blank" style="color: #ccc;">Discovery Call Blueprint</a></li>
+                    <li><a href="<?php echo home_url('/email_automation_series.txt'); ?>" target="_blank" style="color: #ccc;">Email Nurture Sequences</a></li>
+                </ul>
+            </div>
+
+            <div style="background: #111; color: white; padding: 30px; border-radius: 8px; border: 1px solid #D4AF37;">
+                <h3 style="color: #D4AF37; margin-top: 0;">⚖️ Legal & Client Management</h3>
+                <ul style="list-style: none; padding: 0;">
+                    <li><a href="<?php echo home_url('/master_services_agreement.txt'); ?>" target="_blank" style="color: #ccc;">Master Services Agreement</a></li>
+                    <li><a href="<?php echo home_url('/agency_contractor_nda.txt'); ?>" target="_blank" style="color: #ccc;">Contractor NDA</a></li>
+                    <li><a href="<?php echo home_url('/client_handover_guide_template.txt'); ?>" target="_blank" style="color: #ccc;">Client Handover SOP</a></li>
+                    <li><a href="<?php echo home_url('/client_onboarding_asset_checklist.csv'); ?>" target="_blank" style="color: #ccc;">Onboarding Checklist (CSV)</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div style="margin-top: 50px; text-align: center; background: #000; padding: 40px; border-radius: 8px;">
+            <h2 style="color: #D4AF37;">Ready for a custom deployment?</h2>
+            <p>For advanced integrations or technical support, contact the Titans.</p>
+            <a href="mailto:support@wordpresstitans.com" class="button button-primary">Email Support</a>
+        </div>
     </div>
     <?php
 }

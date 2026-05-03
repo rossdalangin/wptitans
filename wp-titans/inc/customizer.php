@@ -121,6 +121,9 @@ function wp_titans_customize_register( $wp_customize ) {
     $wp_customize->add_setting( 'wp_titans_hero_video', array( 'default' => '', 'sanitize_callback' => 'esc_url_raw' ) );
     $wp_customize->add_control( 'wp_titans_hero_video', array( 'label' => __( 'Hero Background Video URL (Direct MP4 link)', 'wp-titans' ), 'section' => 'wp_titans_hero', 'type' => 'text' ) );
 
+    $wp_customize->add_setting( 'wp_titans_hero_lava', array( 'default' => false, 'sanitize_callback' => 'wp_validate_boolean' ) );
+    $wp_customize->add_control( 'wp_titans_hero_lava', array( 'label' => __( 'Enable Lava Lamp Animation in Hero', 'wp-titans' ), 'section' => 'wp_titans_hero', 'type' => 'checkbox' ) );
+
     $wp_customize->add_setting( 'wp_titans_hero_align', array( 'default' => 'center', 'sanitize_callback' => 'sanitize_text_field' ) );
     $wp_customize->add_control( 'wp_titans_hero_align', array(
         'label' => __( 'Hero Alignment', 'wp-titans' ),

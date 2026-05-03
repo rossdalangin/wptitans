@@ -6,7 +6,7 @@ get_header(); ?>
 
 <!-- 1. HERO SECTION -->
 <?php $h_align = wp_titans_get_mod("wp_titans_hero_align"); ?>
-<section id="hero" class="hero" style="overflow: hidden; padding-bottom: 15rem; align-items: <?php echo $h_align === 'left' ? 'flex-start' : 'center'; ?>; text-align: <?php echo esc_attr($h_align); ?>;">
+<section id="hero" class="hero <?php echo wp_titans_get_mod('wp_titans_hero_lava') ? 'lava-bg' : ''; ?>" style="overflow: hidden; padding-bottom: 15rem; align-items: <?php echo $h_align === 'left' ? 'flex-start' : 'center'; ?>; text-align: <?php echo esc_attr($h_align); ?>;">
     <?php if (wp_titans_get_mod("wp_titans_hero_video")) : ?>
         <video autoplay muted loop playsinline style="position: absolute; top: 50%; left: 50%; min-width: 100%; min-height: 100%; width: auto; height: auto; transform: translate(-50%, -50%); z-index: 0; object-fit: cover;">
             <source src="<?php echo esc_url(wp_titans_get_mod("wp_titans_hero_video")); ?>" type="video/mp4">
@@ -94,7 +94,7 @@ get_header(); ?>
 </section>
 
 <!-- 4. WHO WE WORK WITH -->
-<section id="who-we-work-with" style="background: #000;">
+<section id="who-we-work-with" class="lava-bg">
     <div class="reveal" style="text-align: center; margin-bottom: 4rem;">
         <span class="tagline"><?php echo esc_html(wp_titans_get_mod("wp_titans_target_tagline")); ?></span>
         <h2><?php echo esc_html(wp_titans_get_mod("wp_titans_target_main_title")); ?></h2>
