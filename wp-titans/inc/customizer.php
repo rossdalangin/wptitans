@@ -124,6 +124,9 @@ function wp_titans_customize_register( $wp_customize ) {
     $wp_customize->add_setting( 'wp_titans_hero_lava', array( 'default' => false, 'sanitize_callback' => 'wp_validate_boolean' ) );
     $wp_customize->add_control( 'wp_titans_hero_lava', array( 'label' => __( 'Enable Lava Lamp Animation in Hero', 'wp-titans' ), 'section' => 'wp_titans_hero', 'type' => 'checkbox' ) );
 
+    $wp_customize->add_setting( 'wp_titans_target_lava', array( 'default' => true, 'sanitize_callback' => 'wp_validate_boolean' ) );
+    $wp_customize->add_control( 'wp_titans_target_lava', array( 'label' => __( 'Enable Lava Lamp in Qualifying Section', 'wp-titans' ), 'section' => 'wp_titans_target', 'type' => 'checkbox' ) );
+
     $wp_customize->add_setting( 'wp_titans_hero_align', array( 'default' => 'center', 'sanitize_callback' => 'sanitize_text_field' ) );
     $wp_customize->add_control( 'wp_titans_hero_align', array(
         'label' => __( 'Hero Alignment', 'wp-titans' ),
@@ -700,6 +703,15 @@ function wp_titans_customize_register( $wp_customize ) {
         'title'    => __( 'Front Page: Social Feed', 'wp-titans' ),
         'priority' => 89,
     ) );
+
+    // --- Partners Section ---
+    $wp_customize->add_section( 'wp_titans_partners_sec', array(
+        'title'    => __( 'Partnership Protocols', 'wp-titans' ),
+        'panel'    => 'wp_titans_pages_panel',
+    ) );
+
+    $wp_customize->add_setting( 'wp_titans_partner_fee', array( 'default' => '10%', 'sanitize_callback' => 'sanitize_text_field' ) );
+    $wp_customize->add_control( 'wp_titans_partner_fee', array( 'label' => __( 'Referral Fee Percentage', 'wp-titans' ), 'section' => 'wp_titans_partners_sec' ) );
 
     for ($i = 1; $i <= 4; $i++) {
         $wp_customize->add_setting( "wp_titans_social_img_$i", array( 'default' => 'https://images.unsplash.com/photo-1497215728101-856f4ea42174?auto=format&fit=crop&w=400', 'sanitize_callback' => 'esc_url_raw' ) );

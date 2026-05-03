@@ -20,7 +20,7 @@ get_header(); ?>
         <div class="card reveal">
             <i class="fas fa-handshake"></i>
             <h3>Referral Protocol</h3>
-            <p>Introduce high-value clients to our 14-Day Velocity System and receive a 10% referral fee upon successful engagement.</p>
+            <p>Introduce high-value clients to our 14-Day Velocity System and receive a <?php echo esc_html(wp_titans_get_mod('wp_titans_partner_fee')); ?> referral fee upon successful engagement.</p>
             <div style="margin-top: 2rem; color: var(--primary); font-weight: 800; font-size: 0.8rem;">RECURRING AVAILABLE</div>
         </div>
         <div class="card reveal">

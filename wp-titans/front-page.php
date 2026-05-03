@@ -94,7 +94,7 @@ get_header(); ?>
 </section>
 
 <!-- 4. WHO WE WORK WITH -->
-<section id="who-we-work-with" class="lava-bg">
+<section id="who-we-work-with" class="<?php echo wp_titans_get_mod('wp_titans_target_lava') ? 'lava-bg' : ''; ?>">
     <div class="reveal" style="text-align: center; margin-bottom: 4rem;">
         <span class="tagline"><?php echo esc_html(wp_titans_get_mod("wp_titans_target_tagline")); ?></span>
         <h2><?php echo esc_html(wp_titans_get_mod("wp_titans_target_main_title")); ?></h2>
