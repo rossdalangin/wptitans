@@ -30,6 +30,8 @@ This kit contains 85+ high-value assets to help you scale your agency from $0 to
 - Case Study Interview Guides
 - Authority Notifications & Trust Signals
 - Newsletter & Content Pillar Templates
+- Video Sales Letter (VSL) Mastery
+- High-Ticket Workshop Funnels
 
 ## 🛠 Project Success
 - Discovery Call Scorecards
