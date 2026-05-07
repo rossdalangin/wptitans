@@ -1,67 +1,52 @@
-TITAN AGENCY CUSTOMER JOURNEY MINDMAP
-====================================
+TITAN AGENCY: ULTIMATE CUSTOMER JOURNEY MINDMAP
+==============================================
 
-[ENTRY POINT] --> [PRIMARY ACTION] --> [IMMEDIATE RESULT] --> [WHAT THEY RECEIVE] --> [NEXT LOGICAL STEP]
+VISUAL FLOW (ASCII)
+-------------------
 
-1. THE AUTHORITY HUNTER (High Intent)
-   Entry: Authority Website System™ Landing Page
-   Action: Clicks "Schedule My Free Consultation"
-   Result: Redirects to /book-a-strategy-call/ (Calendly embed)
-   Receive: Automated booking confirmation + "Pre-Call Authority Pack" (PDF)
-   Next: Attend Strategy Call --> Receive Custom Proposal
+[ENTRY]        [AWARENESS]           [DECISION]            [REVENUE]           [RETENTION]
+  |               |                     |                     |                    |
+  |-- Landing P.--|--> Social Proof ----|--> ROI Calc --------|-- Project Sign ----|-- Command Ctr --|
+  |               |                     |                     |                    |                 |
+  |-- ROI Calc ---|--> Audit Request ---|--> Discovery Call --|-- Sprint Deposit --|-- Weekly Sync --|
+  |               |                     |                     |                    |                 |
+  |-- Planner ----|--> Blueprint DL ----|--> Strategy Pack ---|-- MSA Signed ------|-- Testimonial --|
 
-2. THE ANALYTICAL FOUNDER (Logic Driven)
-   Entry: ROI Calculator Page
-   Action: Inputs metrics + Clicks "Capture This ROI"
-   Result: Success Popup + Redirects to /free-authority-audit/
-   Receive: Immediate ROI Calculation on screen + "ROI Analysis Guide" via Email
-   Next: Complete Audit Form --> Receive Manual Video Audit
 
-3. THE EXPLORER (General Traffic)
-   Entry: Homepage / Hero Section
-   Action: Clicks "Our Arsenal" or Scrolls to Services
-   Result: Views /services/ or /case-studies/
-   Receive: Portfolio proof and service clarity
-   Next: Clicks Floating CTA --> Project Planner
+DETAILED JOURNEY PHASES
+-----------------------
 
-4. THE RECRUITER (Warm Lead)
-   Entry: Free Authority Audit Page
-   Action: Fills Audit Request Form
-   Result: Redirects to /thank-you-audit/ (or success state on page)
-   Receive: "The 3-Point Authority Protocol" (Video/PDF within 24hrs)
-   Next: Agency follows up with a "Gap Discovery" call
+PHASE 1: THE INITIATION (Entry & Awareness)
+- Entry Points: Authority LP, ROI Calculator, Project Planner, or Knowledge Vault.
+- User Sees: High-fidelity, cinematic branding. They realize their "Authority Gap."
+- User Action: Fills a multi-step form (Frictionless initiation).
+- Success State: Redirects to /thank-you-initialization/.
 
-5. THE UNCERTAIN (Low Friction)
-   Entry: Project Planner Page
-   Action: Completes 5-step AJAX Form
-   Result: Score-based redirect (High Budget --> /book-a-call/ | Low Budget --> /resource-center/)
-   Receive: "Custom Project Estimation" + "14-Day Velocity Roadmap"
-   Next: Strategy Consultation for High-Value Leads
+PHASE 2: THE QUALIFICATION (Value & Trust)
+- User Receives: "The Authority Pack" (PDF) + Confirmation Email.
+- Interaction: If they requested an audit, they receive a manual video scan within 24hrs.
+- Objective: Move the user from "Interested" to "Booked Call."
 
-6. THE DEPARTING (Recovery)
-   Entry: Any page (triggers on exit intent)
-   Action: Fills Modal Form ("Don't Leave Your Authority Behind")
-   Result: Success state + email delivery
-   Receive: "The $100k Authority Blueprint" (Lead Magnet)
-   Next: 5-Part Email Nurture Sequence --> Redirect to Case Studies
+PHASE 3: THE CONVERSION (High-Stakes Sales)
+- Action: Attend Strategy Consultation.
+- Deliverable: "The Velocity Roadmap" (Custom project plan).
+- The Signing: Client receives links to:
+  1. Master Services Agreement (MSA) - Digital Sign.
+  2. Stripe Payment Link (Deposit).
+- Transition: Once paid, redirect to /success-onboarding-complete/.
 
-7. THE PARTNER (Expansion)
-   Entry: Referral & Partner Protocol Page
-   Action: Fills Partnership Intake Form
-   Result: Redirects to /partner-onboarding/
-   Receive: "Agency Partner Kit" (Agreements + Assets)
-   Next: Manual review by Founder --> Strategic Alliance Established
+PHASE 4: THE ACCELERATION (14-Day Velocity Sprint)
+- Action: Client completes Onboarding Questionnaire.
+- User Access: Immediate login to "Client Command Center" (Portal).
+- Milestones: Strategy (Day 3) --> Design (Day 7) --> Dev (Day 12) --> Launch (Day 14).
+- Visibility: Client sees real-time progress on their dashboard.
 
-8. THE ACTIVE CLIENT (Retention)
-   Entry: Client Portal / Command Center
-   Action: Logins to view project
-   Result: Real-time progress tracking + Secure File Drop
-   Receive: Velocity Updates + Deliverables
-   Next: Weekly Sync Call --> Project Launch --> Post-Launch Support
+PHASE 5: THE LEGACY (Retention & Advocacy)
+- Post-Launch: 30 days of "Hyper-Support."
+- Results Review: Quarterly audit of performance metrics.
+- Expansion: Upsell to "Titan Maintenance" or "LinkedIn Authority Engine."
+- Advocacy: Testimonial and referral program initiation.
 
---------------------------------------------------------------------------------
-CORE CONVERSION LOGIC
-- No Dead Ends: Every page must end with a CTA or a link to a resource.
-- Authority First: All deliverables (PDFs/Videos) must use premium brand terminology.
-- Frictionless: Forms should be multi-step or AJAX to keep the user engaged.
-- Automation: Emails must trigger immediately to capitalize on dopamine spikes.
+
+CORE LOGIC: THE "STICK" FACTOR
+At every stage, the user receives an asset (PDF, Video, Dashboard access) that reinforces the agency's premium status. This makes it socially and professionally difficult for them to "churn" or choose a cheaper competitor.

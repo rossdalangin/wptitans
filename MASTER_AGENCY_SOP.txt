@@ -1,0 +1,54 @@
+TITAN MASTER AGENCY SOP: THE OPERATIONAL BIBLE
+=============================================
+
+This document outlines the standard operating procedures (SOPs) for running a high-velocity, high-ticket WordPress agency using the Titan Ecosystem.
+
+1. LEAD GENERATION (The Daily Engine)
+------------------------------------
+- Morning (8:00 AM): Review the "Project Planner" submissions.
+  - Score leads: Budget > $5k = Priority 1.
+  - Manual follow-up: Send a personalized video (Loom) addressing their specific "Authority Gap."
+- Afternoon (2:00 PM): Deliver "Free Authority Audits."
+  - Follow the 30-point `conversion_audit_checklist.txt`.
+  - Goal: Book a Gap Discovery Call.
+- Continuous: Monitor LinkedIn/Twitter. Post one cinematic project insight every 48 hours.
+
+2. SALES & POSITIONING (The Conversion Protocol)
+-----------------------------------------------
+- Step 1: Pre-Call Reconnaissance. Use `discovery_call_pre_game_guide.txt`.
+- Step 2: The Discovery Call. Focus on the "Cost of Inaction."
+- Step 3: Immediate Follow-up. Send the post-booking automation sequence Day 3 (Bridge Email).
+- Step 4: Proposal Delivery. Use the `strategic_sitemap_template.txt` to visualize the outcome.
+
+3. THE 14-DAY VELOCITY SPRINT (Project Delivery)
+------------------------------------------------
+- DAY 0: Onboarding. Client completes the Onboarding Protocol page.
+- DAY 1-3: Strategy & Copywriting.
+  - Deliver Brand Messaging Blueprint.
+  - Client approval via Client Portal message board.
+- DAY 4-7: Cinematic Design.
+  - Build out the 5-page Authority Framework.
+  - Use the "Lava Lamp" and "Glassmorphism" presets for high-end feel.
+- DAY 8-12: Technical Development & SEO.
+  - Harden security. Optimize for < 2s load time.
+  - Implement dynamic JSON-LD Schema.
+- DAY 13: Final Quality Assurance.
+  - Perform "Performance Audit" using `website_performance_audit_report.txt`.
+- DAY 14: THE LAUNCH.
+  - Switch to Live. Deliver handover pack via Client Portal.
+
+4. CLIENT MANAGEMENT (The Command Center)
+-----------------------------------------
+- Rule 1: All assets go to the Client Portal. Never use email for file transfers.
+- Rule 2: Weekly Velocity Updates. Every Friday, post a project status update in the Portal.
+- Rule 3: Testimonial Capture. On Day 30 post-launch, trigger the `client_testimonial_request_template.txt`.
+
+5. AGENCY SCALING (The Growth Roadmap)
+--------------------------------------
+- Quarterly: Review `agency_growth_metrics_dashboard.csv`.
+- White-Labeling: When project load exceeds 3 per month, initialize the `guide_white_label_partnerships.txt` to outsource development while maintaining Creative Directorship.
+- Pricing: Review and increase flagship price by 10% every 5 successful launches.
+
+--------------------------------------------------------------------------------
+BY TITANS, FOR TITANS.
+"Velocity is the ultimate luxury."

@@ -210,6 +210,8 @@ function wp_titans_handle_setup() {
             'Strategic Growth Roadmap' => array('template' => 'page-roadmap.php'),
             'Web Design Strategy' => array('template' => 'page-service-single.php', 'content' => 'Building world-class systems...'),
             'Conversion Case Study' => array('template' => 'page-case-study.php'),
+            'Thank You: Initialization' => array('template' => 'page-thank-you.php'),
+            'Success: Onboarding Complete' => array('template' => 'page-success-onboarding.php'),
             'Privacy Protocols' => array('template' => 'page.php', 'content' => 'Secure and compliant.'),
             'Service Engagement Terms' => array('template' => 'page.php', 'content' => 'Operational standards.')
         );
