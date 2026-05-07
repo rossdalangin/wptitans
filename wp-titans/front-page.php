@@ -78,7 +78,32 @@ get_header(); ?>
     </div>
 </section>
 
-<!-- 3. TRUST BAR -->
+<!-- 3. PROBLEM SECTION -->
+<section id="problem" style="background: #000; padding: 8rem 10%; border-bottom: 1px solid var(--border-glass);">
+    <div class="reveal" style="text-align: center; margin-bottom: 5rem;">
+        <h2 style="font-size: clamp(2rem, 5vw, 3.5rem);"><?php echo esc_html(wp_titans_get_mod("wp_titans_about_title")); ?></h2>
+    </div>
+    <div class="grid-cards" style="margin-top: 0;">
+        <div class="card reveal" style="background: transparent; border: none; padding: 0;">
+            <h4 style="color: var(--primary); margin-bottom: 1rem;">Outdated & Unprofessional</h4>
+            <p>Visitors judge you in seconds. If your website looks old, they leave.</p>
+        </div>
+        <div class="card reveal" style="background: transparent; border: none; padding: 0;">
+            <h4 style="color: var(--primary); margin-bottom: 1rem;">Not Optimized for Conversions</h4>
+            <p>No clear structure, CTA, or messaging = lost clients.</p>
+        </div>
+        <div class="card reveal" style="background: transparent; border: none; padding: 0;">
+            <h4 style="color: var(--primary); margin-bottom: 1rem;">Not Visible on Google</h4>
+            <p>Without SEO, your ideal clients never find you.</p>
+        </div>
+        <div class="card reveal" style="background: transparent; border: none; padding: 0;">
+            <h4 style="color: var(--primary); margin-bottom: 1rem;">Hard to Maintain</h4>
+            <p>You spend more time fixing tech than running your business.</p>
+        </div>
+    </div>
+</section>
+
+<!-- 3b. TRUST BAR -->
 <section id="trust-bar" style="background: #050505; padding: 4rem 10%; border-bottom: 1px solid var(--border-glass);">
     <div class="reveal" style="text-align: center;">
         <p style="font-size: 0.8rem; text-transform: uppercase; letter-spacing: 2px; color: var(--text-dim); margin-bottom: 2.5rem;"><?php echo esc_html(wp_titans_get_mod("wp_titans_logos_title")); ?></p>
@@ -304,7 +329,56 @@ get_header(); ?>
 </section>
 <?php endif; ?>
 
-<!-- 10. STATS BAR -->
+<!-- 10. WHY CHOOSE US -->
+<section id="why-choose" style="background: #080808; border-top: 1px solid var(--border-glass);">
+    <div class="reveal" style="text-align: center; margin-bottom: 5rem;">
+        <span class="tagline">The Difference</span>
+        <h2>Why Businesses Choose WordPressTitans™</h2>
+    </div>
+    <div class="grid-2">
+        <div class="reveal">
+            <ul style="list-style: none; padding: 0;">
+                <li style="margin-bottom: 2.5rem; display: flex; gap: 1.5rem;">
+                    <i class="fas fa-check-circle" style="color: var(--primary); font-size: 1.5rem; margin-top: 0.3rem;"></i>
+                    <div>
+                        <h4 style="margin-bottom: 0.5rem;">We design for business outcomes, not trends</h4>
+                        <p style="color: var(--text-dim);">Your goals are our focus. We build what actually drives revenue.</p>
+                    </div>
+                </li>
+                <li style="margin-bottom: 2.5rem; display: flex; gap: 1.5rem;">
+                    <i class="fas fa-check-circle" style="color: var(--primary); font-size: 1.5rem; margin-top: 0.3rem;"></i>
+                    <div>
+                        <h4 style="margin-bottom: 0.5rem;">Clear strategy before design begins</h4>
+                        <p style="color: var(--text-dim);">We clarify your message and audience before a single pixel is moved.</p>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div class="reveal">
+            <ul style="list-style: none; padding: 0;">
+                <li style="margin-bottom: 2.5rem; display: flex; gap: 1.5rem;">
+                    <i class="fas fa-check-circle" style="color: var(--primary); font-size: 1.5rem; margin-top: 0.3rem;"></i>
+                    <div>
+                        <h4 style="margin-bottom: 0.5rem;">Fast, secure, and scalable WordPress builds</h4>
+                        <p style="color: var(--text-dim);">Elite performance that handles traffic and establishes immediate trust.</p>
+                    </div>
+                </li>
+                <li style="margin-bottom: 2.5rem; display: flex; gap: 1.5rem;">
+                    <i class="fas fa-check-circle" style="color: var(--primary); font-size: 1.5rem; margin-top: 0.3rem;"></i>
+                    <div>
+                        <h4 style="margin-bottom: 0.5rem;">Professional process, no guesswork</h4>
+                        <p style="color: var(--text-dim);">Our 14-day protocol ensures world-class delivery every single time.</p>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="reveal" style="text-align: center; margin-top: 4rem;">
+        <a href="#contact" class="btn btn-primary">Schedule My Free Consultation</a>
+    </div>
+</section>
+
+<!-- 10b. STATS BAR -->
 <div id="stats" class="stats-bar">
     <?php for ($i = 1; $i <= 4; $i++) :
         $num = wp_titans_get_mod("wp_titans_stat_num_$i");
