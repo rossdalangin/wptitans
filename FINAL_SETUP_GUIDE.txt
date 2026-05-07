@@ -1,0 +1,40 @@
+TITAN AGENCY: FINAL SETUP & EXECUTION GUIDE
+===========================================
+
+This guide explains how to connect your pages, forms, and strategic assets to execute the conversion protocols defined in the MINDMAP.
+
+STEP 1: INITIAL THEME DEPLOYMENT
+- Navigate to Appearance > Customize > Theme Setup.
+- Check "Generate Essential Pages" and hit Publish.
+- Result: Your full sitemap (27 pages) is created.
+
+STEP 2: CONNECTING THE CONVERSION PATHS
+- Go to Customizer > Lead Generation & Modals.
+  - Set "Audit Success Redirect" to your /thank-you-initialization/ page.
+  - Set "Exit Intent Redirect" to your /resource-center/ page.
+- Go to Customizer > 17. Contact Strategy.
+  - Set "Contact Success Redirect" to your /thank-you-initialization/ page.
+
+STEP 3: THE HIGH-TICKET REDIRECT (PROJECT PLANNER)
+- The Project Planner automatically redirects leads with budgets > $5,000 to the Book a Strategy Call page.
+- You can change this URL in Customizer > 17. Contact Strategy > "High-Value Lead Redirect URL."
+
+STEP 4: ASSET FULFILLMENT
+- Use an automation tool (Zapier, Make, or WP Mail SMTP) to trigger emails based on form submissions.
+- Map the following assets from the root directory to your emails:
+  1. Post-Booking Confirmation --> Send "Pre-Call Authority Pack" (PDF).
+  2. Audit Request --> Deliver "3-Point Authority Protocol" (Video/PDF).
+  3. Exit Intent --> Send "The $100k Authority Blueprint" (PDF).
+
+STEP 5: CLIENT PORTAL SETUP
+- Once a project begins, provide the client with the login details for /client-portal/.
+- Update the shared links (MSA, Drive, Roadmap) in Customizer > Client Portal Settings.
+
+FINAL EXECUTION CHECKLIST
+[ ] Have you set your primary brand color in Visual Style?
+[ ] Have you updated the "Ideal Client" qualifiers on the Authority LP?
+[ ] Have you verified the links in the Header and Footer menus?
+[ ] Have you reviewed the MASTER_AGENCY_SOP.txt for your daily routine?
+
+YOU ARE NOW OPERATING AT TITAN LEVEL.
+"Precision is the mark of a master."

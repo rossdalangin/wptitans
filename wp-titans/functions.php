@@ -532,7 +532,12 @@ add_action('wp_ajax_nopriv_titan_search', 'wp_titans_ajax_search');
 function wp_titans_ajax_setup() {
     wp_localize_script( 'wp-titans-scripts', 'wp_titans_ajax', array(
         'url'   => admin_url( 'admin-ajax.php' ),
-        'nonce' => wp_create_nonce( 'wp_titans_nonce' )
+        'nonce' => wp_create_nonce( 'wp_titans_nonce' ),
+        'redirects' => array(
+            'audit' => wp_titans_get_mod('wp_titans_audit_redirect'),
+            'contact' => wp_titans_get_mod('wp_titans_contact_redirect'),
+            'exit' => wp_titans_get_mod('wp_titans_exit_redirect')
+        )
     ) );
 }
 add_action( 'wp_enqueue_scripts', 'wp_titans_ajax_setup', 20 );

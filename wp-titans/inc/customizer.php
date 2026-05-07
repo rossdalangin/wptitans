@@ -789,6 +789,9 @@ function wp_titans_customize_register( $wp_customize ) {
     $wp_customize->add_setting( 'wp_titans_audit_testi_author', array( 'default' => '', 'sanitize_callback' => 'wp_kses_post' ) );
     $wp_customize->add_control( 'wp_titans_audit_testi_author', array( 'label' => __( 'Audit Testimonial Author', 'wp-titans' ), 'section' => 'wp_titans_audit' ) );
 
+    $wp_customize->add_setting( 'wp_titans_audit_redirect', array( 'default' => '', 'sanitize_callback' => 'esc_url_raw' ) );
+    $wp_customize->add_control( 'wp_titans_audit_redirect', array( 'label' => __( 'Audit Success Redirect URL', 'wp-titans' ), 'description' => __( 'Redirect here after audit request (e.g. Thank You page).', 'wp-titans' ), 'section' => 'wp_titans_audit' ) );
+
     // --- Guarantee Section ---
     $wp_customize->add_section( 'wp_titans_guarantee_sec', array(
         'title'    => __( 'Success Guarantee', 'wp-titans' ),
@@ -997,6 +1000,12 @@ function wp_titans_customize_register( $wp_customize ) {
 
     $wp_customize->add_setting( 'wp_titans_exit_form_method', array( 'default' => 'POST', 'sanitize_callback' => 'sanitize_text_field' ) );
     $wp_customize->add_control( 'wp_titans_exit_form_method', array( 'label' => __( 'Exit Form Method', 'wp-titans' ), 'section' => 'wp_titans_leads', 'type' => 'select', 'choices' => array('POST' => 'POST', 'GET' => 'GET') ) );
+
+    $wp_customize->add_setting( 'wp_titans_exit_redirect', array( 'default' => '', 'sanitize_callback' => 'esc_url_raw' ) );
+    $wp_customize->add_control( 'wp_titans_exit_redirect', array( 'label' => __( 'Exit Intent Success Redirect URL', 'wp-titans' ), 'section' => 'wp_titans_leads' ) );
+
+    $wp_customize->add_setting( 'wp_titans_contact_redirect', array( 'default' => '', 'sanitize_callback' => 'esc_url_raw' ) );
+    $wp_customize->add_control( 'wp_titans_contact_redirect', array( 'label' => __( 'Contact Form Success Redirect URL', 'wp-titans' ), 'section' => 'wp_titans_contact' ) );
 
 }
 add_action( 'customize_register', 'wp_titans_customize_register' );

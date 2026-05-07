@@ -41,33 +41,40 @@ document.querySelectorAll('.faq-head').forEach(item => {
 });
 
 // Form Simulations (Success States)
-const simulateForm = (formId, successMsg) => {
+const simulateForm = (formId, successMsg, redirectKey = null) => {
     const form = document.getElementById(formId);
     if (!form) return;
 
     form.addEventListener('submit', (e) => {
         e.preventDefault();
         const btn = form.querySelector('button');
-        const originalText = btn.innerText;
 
         btn.disabled = true;
+        const originalText = btn.innerText;
         btn.innerText = 'Sending...';
 
         setTimeout(() => {
-            form.innerHTML = `
-                <div class="reveal visible" style="text-align: center; padding: 2rem;">
-                    <i class="fas fa-check-circle" style="font-size: 3rem; color: #2ecc71; margin-bottom: 1.5rem;"></i>
-                    <h3 style="color: white; margin-bottom: 1rem;">Success!</h3>
-                    <p style="color: #ccc;">${successMsg}</p>
-                </div>
-            `;
+            // Check for redirect
+            const redirectUrl = (redirectKey && wp_titans_ajax.redirects) ? wp_titans_ajax.redirects[redirectKey] : null;
+
+            if (redirectUrl && redirectUrl !== '') {
+                window.location.href = redirectUrl;
+            } else {
+                form.innerHTML = `
+                    <div class="reveal visible" style="text-align: center; padding: 2rem;">
+                        <i class="fas fa-check-circle" style="font-size: 3rem; color: #2ecc71; margin-bottom: 1.5rem;"></i>
+                        <h3 style="color: white; margin-bottom: 1rem;">Success!</h3>
+                        <p style="color: #ccc;">${successMsg}</p>
+                    </div>
+                `;
+            }
         }, 1500);
     });
 };
 
 document.addEventListener('DOMContentLoaded', () => {
-    simulateForm('audit-request-form', 'Your audit request has been received. Our strategists will deliver your manual report within 24 hours.');
-    simulateForm('exit-intent-form', 'Thank you! Your Authority Checklist is on its way to your inbox.');
+    simulateForm('audit-request-form', 'Your audit request has been received. Our strategists will deliver your manual report within 24 hours.', 'audit');
+    simulateForm('exit-intent-form', 'Thank you! Your Authority Checklist is on its way to your inbox.', 'exit');
 
     // Newsletter form in footer or front page
     const newsForms = document.querySelectorAll('#newsletter form, .footer-newsletter form');
