@@ -1,0 +1,63 @@
+TITAN AGENCY: POST-BOOKING AUTOMATION SCRIPTS
+=========================================
+
+1. EMAIL 1: IMMEDIATE CONFIRMATION (Sent instantly after booking)
+Subject: Strategic Initiative Confirmed: [Founder Name] x [Client Name]
+
+Hello [Client Name],
+
+Your Strategy Call is confirmed. We don’t take these sessions lightly—this is the first step in bridging the Authority Gap for [Client Company].
+
+I’ve attached our "Pre-Call Authority Pack." Please review the three case studies inside. They represent the exact logic we will be discussing during our call.
+
+Our Goal for the Session:
+1. Identify the primary friction points in your current digital platform.
+2. Outline the 14-Day Velocity Roadmap specifically for your industry.
+3. Confirm if there is a mutual alignment for a Titan-level engagement.
+
+I’ll see you on [Date] at [Time].
+
+Onward,
+
+[Founder Name]
+WordPress Titans
+
+--------------------------------------------------------------------------------
+
+2. EMAIL 2: THE 24-HOUR REMINDER (Focus on Scarcity/Value)
+Subject: Tomorrow: Weaponizing [Client Company]’s Expertise
+
+Hello [Client Name],
+
+We are less than 24 hours away from our session.
+
+To make our time as high-output as possible, please have your current website analytics and a list of your top 3 competitors ready. We will be performing a live "Gap Analysis" during the call.
+
+Important: We only take on 2 new "Authority Builds" per month to maintain our 14-day delivery standard. We will discuss current availability tomorrow.
+
+Talk soon,
+
+[Founder Name]
+
+--------------------------------------------------------------------------------
+
+3. EMAIL 3: POST-CALL FOLLOW-UP (The "Bridge" Email)
+Subject: The Roadmap for [Client Company]
+
+[Client Name],
+
+Great session today. Your mastery of [Client Industry] is clear—now we just need to ensure the market perceives it with the same intensity.
+
+As discussed, I’ve attached the custom "Authority Growth Roadmap" we sketched out.
+
+Next Steps:
+1. Review the MSA and Proposal (Links Below).
+2. Complete the Deposit to secure your 14-Day Sprint slot for [Month].
+3. Fill out the Onboarding Questionnaire.
+
+[Link: View Proposal]
+[Link: Master Services Agreement]
+
+Let’s build your legacy.
+
+[Founder Name]

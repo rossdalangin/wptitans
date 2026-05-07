@@ -1,0 +1,61 @@
+TITAN AGENCY: CONVERSION WORKFLOW PROTOCOLS
+==========================================
+
+This document provides explicit instructions for agency owners on how to set up the form logic, redirects, and asset delivery pipelines for maximum conversion.
+
+1. THE "STRATEGY CALL" PROTOCOL (Direct Conversion)
+--------------------------------------------------
+- Form Location: /book-a-strategy-call/
+- Tool: Calendly, SavvyCal, or WP Titans Book Template.
+- Logic: Client selects a time.
+- Next Page: Success/Confirmation page (auto-redirect from Calendly).
+- What they get: Calendar invite + Pre-Call Authority Pack (sent via automated email).
+- Founder Action: Review client website/social before the call.
+
+2. THE "AUTHORITY AUDIT" PROTOCOL (High-Value Lead Gen)
+------------------------------------------------------
+- Form Location: /free-authority-audit/
+- Logic: Single or multi-step form capturing Website URL, Revenue Tier, and Goals.
+- Next Page: /thank-you-audit/ (Features a video from the founder setting expectations).
+- What they get: Manual "Authority Scan" (Loom video or PDF) delivered within 24-48 hours.
+- Founder Action: Deliver the audit and offer a "Gap Discovery Call" to discuss results.
+
+3. THE "PROJECT PLANNER" PROTOCOL (Qualification)
+------------------------------------------------
+- Form Location: /project-planner/
+- Logic: 5-Step AJAX form in the WP Titans theme.
+- High-Value Redirect: If budget is > $5,000, redirect to /book-a-strategy-call/.
+- Low-Value Redirect: If budget is < $2,000, redirect to /resource-center/ (Self-serve).
+- What they get: A summarized "Project Roadmap" email based on their inputs.
+- Founder Action: Prioritize "Titan" leads for immediate manual outreach.
+
+4. THE "EXIT INTENT" PROTOCOL (Recovery)
+----------------------------------------
+- Form Location: Triggered Modal (Pop-up).
+- Logic: Captures Email only.
+- Next Page: Success Message + stay on current page.
+- What they get: "The $100k Authority Blueprint" (PDF download).
+- Founder Action: Set up a 5-part email nurture sequence (Day 1, 3, 7, 14, 21).
+
+5. THE "ROI CALCULATOR" PROTOCOL (Logic Lead)
+---------------------------------------------
+- Location: /roi-calculator/
+- Interaction: JS-based calculator.
+- CTA Logic: "Capture This ROI" button.
+- Next Page: /free-authority-audit/ (Pre-fills URL if possible).
+- What they get: The realization of the revenue they are losing (The Authority Gap).
+
+6. THE "PARTNER INTAKE" PROTOCOL (Scale)
+---------------------------------------
+- Form Location: /referral-partner-protocol/
+- Logic: Questions on industry focus and current client load.
+- Next Page: /partner-onboarding/ (Includes the Partner Kit and Agreements).
+- What they get: Referral Fee Schedule + Brand Assets + White-label SOPs.
+
+--------------------------------------------------------------------------------
+REDIRECT URL MAPPING SUMMARY
+- Primary CTA --> /book-a-strategy-call/
+- Lead Magnet CTA --> /free-authority-audit/
+- Recovery CTA --> /resource-center/
+- Project Start --> /client-onboarding-protocol/
+- Success/Thank You --> /case-studies/ (Keep them in the loop)

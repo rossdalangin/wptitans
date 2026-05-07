@@ -34,9 +34,10 @@ This kit contains 85+ high-value assets to help you scale your agency from $0 to
 - High-Ticket Workshop Funnels
 
 ## 🛠 Project Success
-- Discovery Call Scorecards
+- Discovery Call Scorecards & Pre-Game Guides
 - Kickoff Meeting Agendas
 - Design Presentation Scripts
+- Post-Booking Email Automation Sequences
 - Post-Launch Optimization Checklists
 
 ---

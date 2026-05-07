@@ -245,13 +245,20 @@ function wp_titans_handle_setup() {
         $menu_exists = wp_get_nav_menu_object( $menu_name );
         if ( ! $menu_exists ) {
             $menu_id = wp_create_nav_menu( $menu_name );
-            $menu_items = array('Home', 'Our Arsenal', 'The 14-Day Sprint', 'Portfolio', 'The Titan Legacy', 'Initiate Connection', 'Book a Strategy Call');
-            foreach ( $menu_items as $title ) {
-                if (isset($created_page_ids[$title])) {
+            $menu_items = array(
+                'Home' => 'Home',
+                'Our Arsenal' => 'The Arsenal',
+                'Portfolio' => 'Success Stories',
+                'The 14-Day Sprint' => 'The Sprint',
+                'Resource Center' => 'The Vault',
+                'Book a Strategy Call' => 'Initiate Strategy'
+            );
+            foreach ( $menu_items as $original_title => $nav_label ) {
+                if (isset($created_page_ids[$original_title])) {
                     wp_update_nav_menu_item( $menu_id, 0, array(
-                        'menu-item-title'     => $title,
+                        'menu-item-title'     => $nav_label,
                         'menu-item-object'    => 'page',
-                        'menu-item-object-id' => $created_page_ids[$title],
+                        'menu-item-object-id' => $created_page_ids[$original_title],
                         'menu-item-type'      => 'post_type',
                         'menu-item-status'    => 'publish',
                     ) );
@@ -259,6 +266,54 @@ function wp_titans_handle_setup() {
             }
             $locations = get_theme_mod( 'nav_menu_locations' );
             $locations['menu-1'] = $menu_id;
+            set_theme_mod( 'nav_menu_locations', $locations );
+        }
+
+        // Setup Footer 1 (Our Arsenal)
+        $f1_name = 'Footer Arsenal';
+        if ( ! wp_get_nav_menu_object( $f1_name ) ) {
+            $f1_id = wp_create_nav_menu( $f1_name );
+            $f1_items = array('Authority Website System™', 'Elite Copywriting', 'SEO Mastery', 'Lead Gen Funnels');
+            foreach ($f1_items as $stitle) {
+                $post = get_page_by_title($stitle, OBJECT, 'service');
+                if ($post) {
+                    wp_update_nav_menu_item($f1_id, 0, array(
+                        'menu-item-title' => $stitle,
+                        'menu-item-object' => 'service',
+                        'menu-item-object-id' => $post->ID,
+                        'menu-item-type' => 'post_type',
+                        'menu-item-status' => 'publish',
+                    ));
+                }
+            }
+            $locations = get_theme_mod( 'nav_menu_locations' );
+            $locations['footer-1'] = $f1_id;
+            set_theme_mod( 'nav_menu_locations', $locations );
+        }
+
+        // Setup Footer 2 (Agency Control)
+        $f2_name = 'Footer Control';
+        if ( ! wp_get_nav_menu_object( $f2_name ) ) {
+            $f2_id = wp_create_nav_menu( $f2_name );
+            $f2_items = array(
+                'Client Portal' => 'Client Command Center',
+                'Free Authority Audit' => 'Free Audit',
+                'Project Planner' => 'Project Planner',
+                'The Titan Manifesto' => 'Founders Manifesto'
+            );
+            foreach ($f2_items as $otitle => $nlabel) {
+                if (isset($created_page_ids[$otitle])) {
+                    wp_update_nav_menu_item($f2_id, 0, array(
+                        'menu-item-title' => $nlabel,
+                        'menu-item-object' => 'page',
+                        'menu-item-object-id' => $created_page_ids[$otitle],
+                        'menu-item-type' => 'post_type',
+                        'menu-item-status' => 'publish',
+                    ));
+                }
+            }
+            $locations = get_theme_mod( 'nav_menu_locations' );
+            $locations['footer-2'] = $f2_id;
             set_theme_mod( 'nav_menu_locations', $locations );
         }
 

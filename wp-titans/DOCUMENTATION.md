@@ -21,20 +21,20 @@ To launch your full agency ecosystem in seconds:
 ### Recommended Menu Structure
 For maximum conversion and authority, we recommend the following menu configuration:
 
-#### **Header (Primary Navigation)**
-*   **Home**: The hub of your agency authority.
-*   **Services**: High-level overview of your solutions.
-*   **The Process**: Proof of your systematic approach to success.
-*   **Case Studies**: Results-driven portfolio.
-*   **About**: Your story and your "Why".
-*   **Contact**: Low-friction inquiry path.
-*   **[CTA Button] Strategy Call**: High-intent conversion target.
+#### **Header (Strategic Architecture)**
+*   **Home**: The hub of agency dominance.
+*   **The Arsenal**: Comprehensive services overview.
+*   **Success Stories**: High-proof portfolio (Case Studies).
+*   **The Sprint**: The 14-Day Velocity Process.
+*   **The Vault**: Resource Center for self-serve leads.
+*   **[CTA Button] Initiate Strategy**: Your primary conversion point.
 
-#### **Footer (Strategic Columns)**
-*   **Column 1: Services** (Web Design, SEO Strategy, Authority Branding, Performance Systems).
-*   **Column 2: Company** (About Us, The Process, Career, Contact).
-*   **Column 3: Insights** (Latest from the Journal/Blog).
-*   **Column 4: Legal** (Privacy Policy, Terms & Conditions).
+#### **Footer (Global Authority Columns)**
+*   **Column 1: Our Arsenal** (Authority Website System™, Lead Gen Funnels, SEO Mastery).
+*   **Column 2: Transformation** (The 14-Day Sprint, ROI Calculator, Success Stories).
+*   **Column 3: Agency** (Our Story, Founders Manifesto, Referral Protocol, Careers).
+*   **Column 4: Control** (Client Portal, Free Authority Audit, Project Planner).
+*   **Column 5: Legal** (Privacy Protocols, Terms of Service).
 
 ---
 
@@ -126,7 +126,14 @@ The theme includes a native toggle. You can enable/disable this in **Customizer 
 
 ## 5. Sales & Marketing Power Kit
 
-Included in the theme root are 30+ strategic assets to help you scale:
+Included in the theme root are 85+ strategic assets designed to build a world-class agency infrastructure.
+
+### **The Customer Journey & Conversion Protocol**
+For a detailed breakdown of how leads enter the ecosystem and the logic behind their transitions, refer to:
+- **`CUSTOMER_JOURNEY_MINDMAP.txt`**: The high-level map of client entries and "what's next."
+- **`CONVERSION_WORKFLOW_PROTOCOLS.txt`**: Specific instructions on setting up forms, redirects, and automated fulfillment.
+
+### **The Titan Power Kit Index**
 - **Financial & Operational (CSV)**: 12-Month Projections, CRM Lead Tracker, 14-Day Sprint Schedule, Discovery Scorecards.
 - **Legal & Reporting**: Master Services Agreement (MSA), Professional Website Audit Report templates, Client Handover Guides.
 - **Sales & Outreach**: Cold outreach sequences, discovery call scripts, and high-ticket pricing guides.
