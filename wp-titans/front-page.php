@@ -260,13 +260,15 @@ get_header(); ?>
 <section id="free-audit" style="background: #D4AF37; color: black; padding: 6rem 10%;">
     <div class="grid-2">
         <div class="reveal">
-            <h2 style="color: black; margin-bottom: 1rem;"><?php echo esc_html(wp_titans_get_mod("wp_titans_audit_title")); ?></h2>
-            <p style="color: rgba(0,0,0,0.8); font-size: 1.2rem;"><?php echo esc_html(wp_titans_get_mod("wp_titans_audit_desc")); ?></p>
+            <h2 style="color: black; margin-bottom: 1.5rem; line-height: 1.1;"><?php echo esc_html(wp_titans_get_mod("wp_titans_audit_title")); ?></h2>
+            <p style="color: rgba(0,0,0,0.9); font-size: 1.4rem; font-weight: 500;"><?php echo esc_html(wp_titans_get_mod("wp_titans_audit_desc")); ?></p>
         </div>
         <div class="reveal">
-            <div style="display: flex; flex-direction: column; align-items: flex-start; gap: 2rem;">
-                <a href="<?php echo get_permalink(get_page_by_path('free-authority-audit')); ?>" class="btn btn-audit-cta">Request Your 100% Manual Audit</a>
-                <p style="font-size: 0.8rem; opacity: 0.7;">* No obligation. Strategic review of positioning, speed, and conversion.</p>
+            <div style="display: flex; flex-direction: column; align-items: flex-start; gap: 2.5rem;">
+                <a href="<?php echo get_permalink(get_page_by_path('free-authority-audit')); ?>" class="btn btn-audit-cta" style="box-shadow: 0 10px 40px rgba(0,0,0,0.2);">Request Your Manual Authority Audit</a>
+                <p style="font-size: 0.85rem; opacity: 0.8; color: black; font-weight: 700; text-transform: uppercase; letter-spacing: 1px;">
+                   <i class="fas fa-shield-check" style="margin-right: 10px;"></i> No obligation. 100% Confidential.
+                </p>
             </div>
         </div>
     </div>
