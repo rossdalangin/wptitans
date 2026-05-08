@@ -1,6 +1,5 @@
     <?php if (wp_titans_get_mod("wp_titans_gcta_show")) :
-        // Only show if not Front Page (it has the Contact section) or Authority page (it has its own CTA)
-        // Actually, we removed them from Authority and Services, so now we show it everywhere except Front Page
+        // Only show if not Front Page (it has the Contact section)
         if (!is_front_page()) :
     ?>
         <section id="global-cta" style="background: #080808; text-align: center; border-top: 1px solid var(--border-glass);">
@@ -11,8 +10,8 @@
         </section>
     <?php endif; endif; ?>
 
-    <footer>
-        <div>
+    <section id="footer-top" style="background: #000; padding: 4rem 10% 0; border-top: 1px solid var(--border-glass);">
+        <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 2rem;">
             <div class="footer-logo">
                 <?php
                 $logo_img = wp_titans_get_mod("wp_titans_logo_image");
@@ -25,68 +24,75 @@
                     <i class="fas <?php echo esc_attr($logo_icon); ?>"></i> <?php echo esc_html($logo_text); ?>
                 <?php endif; ?>
             </div>
-            <p style="margin-top: 1.5rem; font-size: 0.9rem; color: #888;">
-                <?php echo esc_html(wp_titans_get_mod("wp_titans_footer_desc")); ?>
-            </p>
-        </div>
-        <div class="footer-links">
-            <h4>Services</h4>
-            <?php
-            if ( has_nav_menu( 'footer-1' ) ) {
-                wp_nav_menu( array( 'theme_location' => 'footer-1', 'container' => false, 'items_wrap' => '<ul>%3$s</ul>' ) );
-            } else {
-                echo '<ul>
-                    <li><a href="#services">Authority System</a></li>
-                    <li><a href="#services">Copywriting</a></li>
-                    <li><a href="#services">Development</a></li>
-                    <li><a href="#services">SEO</a></li>
-                </ul>';
-            }
-            ?>
-        </div>
-        <div class="footer-links">
-            <h4>Company</h4>
-            <?php
-            if ( has_nav_menu( 'footer-2' ) ) {
-                wp_nav_menu( array( 'theme_location' => 'footer-2', 'container' => false, 'items_wrap' => '<ul>%3$s</ul>' ) );
-            } else {
-                echo '<ul>
-                    <li><a href="#about">Our Story</a></li>
-                    <li><a href="#process">The Process</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                    <li><a href="#">Privacy Policy</a></li>
-                </ul>';
-            }
-            ?>
-        </div>
-        <div class="footer-links">
-            <h4>Recent Work</h4>
-            <div style="display: flex; flex-direction: column; gap: 1rem;">
-                <?php for ($i = 1; $i <= 3; $i++) :
-                    $img = wp_titans_get_mod("wp_titans_portfolio_img_$i");
-                    $title = wp_titans_get_mod("wp_titans_portfolio_title_$i");
-                    if (!$title) continue;
-                ?>
-                <a href="<?php echo get_permalink(get_page_by_path('portfolio')); ?>" style="display: flex; align-items: center; gap: 1rem; text-decoration: none;">
-                    <img loading="lazy" src="<?php echo esc_url($img); ?>" alt="" style="width: 50px; height: 50px; object-fit: cover; border-radius: 4px;">
-                    <span style="font-size: 0.8rem; line-height: 1.2; color: #888;"><?php echo esc_html($title); ?></span>
-                </a>
-                <?php endfor; ?>
-            </div>
-        </div>
-        <div class="footer-links">
-            <h4>Connect</h4>
-            <div style="display: flex; gap: 1.2rem; font-size: 1.4rem; margin-top: 0.5rem;">
+            <div style="display: flex; gap: 1.2rem; font-size: 1.4rem;">
                 <?php
                 $socials = ['facebook', 'linkedin', 'twitter', 'instagram'];
                 foreach ($socials as $social) :
                     $url = wp_titans_get_mod("wp_titans_social_$social");
                     if ($url && $url !== '#') : ?>
-                        <a href="<?php echo esc_url($url); ?>" class="social-link"><i class="fab fa-<?php echo esc_attr($social); ?>"></i></a>
+                        <a href="<?php echo esc_url($url); ?>" class="social-link" style="color: #444;"><i class="fab fa-<?php echo esc_attr($social); ?>"></i></a>
                     <?php endif;
                 endforeach;
                 ?>
             </div>
+        </div>
+    </section>
+
+    <footer>
+        <div style="max-width: 300px;">
+            <p style="font-size: 0.9rem; color: #888; line-height: 1.6;">
+                <?php echo esc_html(wp_titans_get_mod("wp_titans_footer_desc")); ?>
+            </p>
+        </div>
+        <div class="footer-links">
+            <h4>Our Arsenal</h4>
+            <?php
+            if ( has_nav_menu( 'footer-1' ) ) {
+                wp_nav_menu( array( 'theme_location' => 'footer-1', 'container' => false, 'items_wrap' => '<ul>%3$s</ul>' ) );
+            } else {
+                echo '<ul><li><a href="#services">The Arsenal</a></li></ul>';
+            }
+            ?>
+        </div>
+        <div class="footer-links">
+            <h4>Transformation</h4>
+            <?php
+            if ( has_nav_menu( 'footer-2' ) ) {
+                wp_nav_menu( array( 'theme_location' => 'footer-2', 'container' => false, 'items_wrap' => '<ul>%3$s</ul>' ) );
+            } else {
+                echo '<ul><li><a href="#process">The Sprint</a></li></ul>';
+            }
+            ?>
+        </div>
+        <div class="footer-links">
+            <h4>Agency</h4>
+            <?php
+            if ( has_nav_menu( 'footer-3' ) ) {
+                wp_nav_menu( array( 'theme_location' => 'footer-3', 'container' => false, 'items_wrap' => '<ul>%3$s</ul>' ) );
+            } else {
+                echo '<ul><li><a href="#about">Our Story</a></li></ul>';
+            }
+            ?>
+        </div>
+        <div class="footer-links">
+            <h4>Control</h4>
+            <?php
+            if ( has_nav_menu( 'footer-4' ) ) {
+                wp_nav_menu( array( 'theme_location' => 'footer-4', 'container' => false, 'items_wrap' => '<ul>%3$s</ul>' ) );
+            } else {
+                echo '<ul><li><a href="#">Client Portal</a></li></ul>';
+            }
+            ?>
+        </div>
+        <div class="footer-links">
+            <h4>Legal</h4>
+            <?php
+            if ( has_nav_menu( 'footer-5' ) ) {
+                wp_nav_menu( array( 'theme_location' => 'footer-5', 'container' => false, 'items_wrap' => '<ul>%3$s</ul>' ) );
+            } else {
+                echo '<ul><li><a href="#">Privacy Protocols</a></li></ul>';
+            }
+            ?>
         </div>
     </footer>
 

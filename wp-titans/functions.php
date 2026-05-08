@@ -13,8 +13,11 @@ if ( ! function_exists( 'wp_titans_setup' ) ) :
 
         register_nav_menus( array(
             'menu-1'   => esc_html__( 'Primary', 'wp-titans' ),
-            'footer-1' => esc_html__( 'Footer Services', 'wp-titans' ),
-            'footer-2' => esc_html__( 'Footer Company', 'wp-titans' ),
+            'footer-1' => esc_html__( 'Footer Arsenal', 'wp-titans' ),
+            'footer-2' => esc_html__( 'Footer Transformation', 'wp-titans' ),
+            'footer-3' => esc_html__( 'Footer Agency', 'wp-titans' ),
+            'footer-4' => esc_html__( 'Footer Control', 'wp-titans' ),
+            'footer-5' => esc_html__( 'Footer Legal', 'wp-titans' ),
         ) );
 
         add_image_size( 'titan-portfolio', 800, 500, true );
@@ -293,15 +296,14 @@ function wp_titans_handle_setup() {
             set_theme_mod( 'nav_menu_locations', $locations );
         }
 
-        // Setup Footer 2 (Agency Control)
-        $f2_name = 'Footer Control';
+        // Setup Footer 2 (Transformation)
+        $f2_name = 'Footer Transformation';
         if ( ! wp_get_nav_menu_object( $f2_name ) ) {
             $f2_id = wp_create_nav_menu( $f2_name );
             $f2_items = array(
-                'Client Portal' => 'Client Command Center',
-                'Free Authority Audit' => 'Free Audit',
-                'Project Planner' => 'Project Planner',
-                'The Titan Manifesto' => 'Founders Manifesto'
+                'The 14-Day Sprint' => 'The 14-Day Sprint',
+                'ROI Calculator' => 'ROI Calculator',
+                'Portfolio' => 'Success Stories'
             );
             foreach ($f2_items as $otitle => $nlabel) {
                 if (isset($created_page_ids[$otitle])) {
@@ -316,6 +318,81 @@ function wp_titans_handle_setup() {
             }
             $locations = get_theme_mod( 'nav_menu_locations' );
             $locations['footer-2'] = $f2_id;
+            set_theme_mod( 'nav_menu_locations', $locations );
+        }
+
+        // Setup Footer 3 (Agency)
+        $f3_name = 'Footer Agency';
+        if ( ! wp_get_nav_menu_object( $f3_name ) ) {
+            $f3_id = wp_create_nav_menu( $f3_name );
+            $f3_items = array(
+                'The Titan Legacy' => 'Our Story',
+                'The Titan Manifesto' => 'Manifesto',
+                'Referral & Partner Protocol' => 'Partner Protocol',
+                'Join the Arsenal' => 'Careers'
+            );
+            foreach ($f3_items as $otitle => $nlabel) {
+                if (isset($created_page_ids[$otitle])) {
+                    wp_update_nav_menu_item($f3_id, 0, array(
+                        'menu-item-title' => $nlabel,
+                        'menu-item-object' => 'page',
+                        'menu-item-object-id' => $created_page_ids[$otitle],
+                        'menu-item-type' => 'post_type',
+                        'menu-item-status' => 'publish',
+                    ));
+                }
+            }
+            $locations = get_theme_mod( 'nav_menu_locations' );
+            $locations['footer-3'] = $f3_id;
+            set_theme_mod( 'nav_menu_locations', $locations );
+        }
+
+        // Setup Footer 4 (Control)
+        $f4_name = 'Footer Control';
+        if ( ! wp_get_nav_menu_object( $f4_name ) ) {
+            $f4_id = wp_create_nav_menu( $f4_name );
+            $f4_items = array(
+                'Client Portal' => 'Client Portal',
+                'Free Authority Audit' => 'Free Audit',
+                'Project Planner' => 'Project Planner'
+            );
+            foreach ($f4_items as $otitle => $nlabel) {
+                if (isset($created_page_ids[$otitle])) {
+                    wp_update_nav_menu_item($f4_id, 0, array(
+                        'menu-item-title' => $nlabel,
+                        'menu-item-object' => 'page',
+                        'menu-item-object-id' => $created_page_ids[$otitle],
+                        'menu-item-type' => 'post_type',
+                        'menu-item-status' => 'publish',
+                    ));
+                }
+            }
+            $locations = get_theme_mod( 'nav_menu_locations' );
+            $locations['footer-4'] = $f4_id;
+            set_theme_mod( 'nav_menu_locations', $locations );
+        }
+
+        // Setup Footer 5 (Legal)
+        $f5_name = 'Footer Legal';
+        if ( ! wp_get_nav_menu_object( $f5_name ) ) {
+            $f5_id = wp_create_nav_menu( $f5_name );
+            $f5_items = array(
+                'Privacy Protocols' => 'Privacy Protocols',
+                'Service Engagement Terms' => 'Terms of Service'
+            );
+            foreach ($f5_items as $otitle => $nlabel) {
+                if (isset($created_page_ids[$otitle])) {
+                    wp_update_nav_menu_item($f5_id, 0, array(
+                        'menu-item-title' => $nlabel,
+                        'menu-item-object' => 'page',
+                        'menu-item-object-id' => $created_page_ids[$otitle],
+                        'menu-item-type' => 'post_type',
+                        'menu-item-status' => 'publish',
+                    ));
+                }
+            }
+            $locations = get_theme_mod( 'nav_menu_locations' );
+            $locations['footer-5'] = $f5_id;
             set_theme_mod( 'nav_menu_locations', $locations );
         }
 
@@ -574,7 +651,7 @@ function wp_titans_dashboard_widget_content() {
 }
 
 /**
- * Add Titan Agency Arsenal Page
+ * Add Titan Agency Arsenal & Lead Dashboard Pages
  */
 function wp_titans_add_arsenal_page() {
     add_menu_page(
@@ -586,8 +663,83 @@ function wp_titans_add_arsenal_page() {
         'dashicons-vault',
         2
     );
+
+    add_submenu_page(
+        'titan-arsenal',
+        'Lead Intelligence',
+        'Lead Intelligence',
+        'manage_options',
+        'titan-leads',
+        'wp_titans_lead_dashboard_content'
+    );
 }
 add_action('admin_menu', 'wp_titans_add_arsenal_page');
+
+function wp_titans_lead_dashboard_content() {
+    ?>
+    <div class="wrap">
+        <h1>Lead Intelligence Dashboard</h1>
+        <p>Real-time authority metrics and funnel performance tracking.</p>
+
+        <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; margin-top: 30px;">
+            <div style="background: #111; color: white; padding: 20px; border-radius: 8px; border: 1px solid #D4AF37;">
+                <p style="margin:0; font-size: 0.7rem; text-transform: uppercase; color: #888;">Total Leads (30d)</p>
+                <h2 style="margin: 10px 0 0; color: #D4AF37; font-size: 2.5rem;">142</h2>
+            </div>
+            <div style="background: #111; color: white; padding: 20px; border-radius: 8px; border: 1px solid #D4AF37;">
+                <p style="margin:0; font-size: 0.7rem; text-transform: uppercase; color: #888;">Titan-Tier (High Value)</p>
+                <h2 style="margin: 10px 0 0; color: #D4AF37; font-size: 2.5rem;">12</h2>
+            </div>
+            <div style="background: #111; color: white; padding: 20px; border-radius: 8px; border: 1px solid #2ecc71;">
+                <p style="margin:0; font-size: 0.7rem; text-transform: uppercase; color: #888;">Conversion Rate</p>
+                <h2 style="margin: 10px 0 0; color: #2ecc71; font-size: 2.5rem;">4.2%</h2>
+            </div>
+            <div style="background: #111; color: white; padding: 20px; border-radius: 8px; border: 1px solid #D4AF37;">
+                <p style="margin:0; font-size: 0.7rem; text-transform: uppercase; color: #888;">Est. Pipeline Value</p>
+                <h2 style="margin: 10px 0 0; color: #D4AF37; font-size: 2.5rem;">$124k</h2>
+            </div>
+        </div>
+
+        <div style="margin-top: 40px; background: #111; padding: 30px; border-radius: 8px; border: 1px solid #222;">
+            <h3 style="color: white; margin-top: 0;">Recent High-Intent Activity</h3>
+            <table class="wp-list-table widefat fixed striped" style="background: transparent; border: none; color: #ccc;">
+                <thead>
+                    <tr style="background: #000;">
+                        <th style="color: #D4AF37;">Lead Source</th>
+                        <th style="color: #D4AF37;">Authority Score</th>
+                        <th style="color: #D4AF37;">Budget Tier</th>
+                        <th style="color: #D4AF37;">Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Project Planner</td>
+                        <td><span style="color: #2ecc71;">★★★★★</span></td>
+                        <td>$10k - $25k</td>
+                        <td><span style="background: #D4AF37; color: #000; padding: 2px 8px; border-radius: 4px; font-size: 0.7rem; font-weight: 700;">INITIALIZED</span></td>
+                    </tr>
+                    <tr>
+                        <td>Authority Audit</td>
+                        <td><span style="color: #2ecc71;">★★★★☆</span></td>
+                        <td>$5k - $10k</td>
+                        <td><span style="background: #444; color: #fff; padding: 2px 8px; border-radius: 4px; font-size: 0.7rem; font-weight: 700;">FOLLOW-UP SENT</span></td>
+                    </tr>
+                    <tr>
+                        <td>ROI Calculator</td>
+                        <td><span style="color: #2ecc71;">★★★★★</span></td>
+                        <td>$25k+</td>
+                        <td><span style="background: #2ecc71; color: #000; padding: 2px 8px; border-radius: 4px; font-size: 0.7rem; font-weight: 700;">CALL BOOKED</span></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div style="margin-top: 30px; text-align: right;">
+            <a href="<?php echo admin_url('admin.php?page=titan-arsenal'); ?>" class="button">Back to Arsenal</a>
+        </div>
+    </div>
+    <?php
+}
 
 function wp_titans_arsenal_page_content() {
     ?>

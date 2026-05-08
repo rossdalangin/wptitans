@@ -1,0 +1,33 @@
+TITAN AGENCY: CLIENT ACQUISITION BATTLEPLAN
+============================================
+
+PURPOSE: High-velocity lead generation for Authority-based WordPress agencies.
+
+CHANNEL 1: THE "REVERSE" AUDIT (LinkedIn/Twitter)
+- Strategy: Identify a high-ticket expert with a poor website.
+- Action: Record a 5-minute Loom video. Do NOT pitch. Show them 3 specific "Authority Gaps."
+- The Hook: "I made this for you because your expertise in [Topic] is elite, but your site is costing you trust. Here is how I would fix it."
+- Goal: Book a Gap Discovery Call.
+
+CHANNEL 2: THE ROI ENGINE (Cold Outreach)
+- Strategy: Use the ROI Calculator logic.
+- Action: Email prospective clients with a "Financial Leak" analysis.
+- The Hook: "Based on your industry average conversion rates, your current site is leaving approximately $X,000 on the table every month. I have a 14-day protocol to reclaim that revenue."
+- Goal: Redirect to /roi-calculator/.
+
+CHANNEL 3: COMPLEMENTARY ALLIANCES (Referrals)
+- Strategy: Partner with SEO, PPC, or Branding agencies who DON'T build sites.
+- Action: Offer a 10% "Referral Bounty" or a reciprocal lead exchange.
+- The Hook: "You get them the traffic; we ensure it converts. It makes your work look better and gets the client a higher ROI."
+- Goal: Permanent stream of warm inbound leads.
+
+CHANNEL 4: ORGANIC AUTHORITY (Content)
+- Strategy: Post "The Titan Manifesto" snippets and 14-day sprint "Behind the Scenes."
+- Action: Focus on the PSYCHOLOGY of design, not the technical tools.
+- The Hook: "Why we deleted 60% of our client's copy to increase their lead volume by 200%."
+- Goal: Drive traffic to /resource-center/.
+
+--------------------------------------------------------------------------------
+BATTLEPLAN CORE PRINCIPLE:
+Never compete on price. Always compete on ROI and the removal of the Authority Gap.
+"The hunter becomes the hunted when the authority is established."
