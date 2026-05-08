@@ -109,6 +109,43 @@ function wp_titans_divider() {
 }
 
 /**
+ * Titan Power Widgets
+ */
+function wp_titans_authority_badge() {
+    ?>
+    <div class="titan-authority-badge" style="background: #111; border: 1px solid var(--primary); padding: 1rem 2rem; border-radius: 50px; display: inline-flex; align-items: center; gap: 1rem; box-shadow: 0 10px 30px rgba(var(--primary-rgb), 0.2);">
+        <i class="fas fa-shield-check" style="color: var(--primary); font-size: 1.2rem;"></i>
+        <span style="font-size: 0.65rem; font-weight: 900; text-transform: uppercase; letter-spacing: 2px; color: white;">AUTHORITY VERIFIED</span>
+    </div>
+    <?php
+}
+
+function wp_titans_pipeline_widget() {
+    ?>
+    <div class="titan-pipeline-widget" style="background: #050505; border: 1px solid var(--border-glass); padding: 2rem; border-radius: 8px;">
+        <h4 style="font-size: 0.7rem; color: #555; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 1.5rem;">REAL-TIME PIPELINE STATUS</h4>
+        <div style="display: flex; flex-direction: column; gap: 1.5rem;">
+            <div>
+                <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem; font-size: 0.75rem;">
+                    <span>Active Authority Builds</span>
+                    <span style="color: var(--primary);">03</span>
+                </div>
+                <div style="height: 4px; background: #111; border-radius: 10px; overflow: hidden;">
+                    <div style="width: 75%; height: 100%; background: var(--primary);"></div>
+                </div>
+            </div>
+            <div>
+                <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem; font-size: 0.75rem;">
+                    <span>Next Available Sprint Slot</span>
+                    <span style="color: #2ecc71;">14 Days</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <?php
+}
+
+/**
  * Simple Breadcrumbs
  */
 function wp_titans_breadcrumbs() {
@@ -215,6 +252,7 @@ function wp_titans_handle_setup() {
             'Conversion Case Study' => array('template' => 'page-case-study.php'),
             'Thank You: Initialization' => array('template' => 'page-thank-you.php'),
             'Success: Onboarding Complete' => array('template' => 'page-success-onboarding.php'),
+            'The Titan Lab' => array('template' => 'page-lab.php'),
             'Privacy Protocols' => array('template' => 'page.php', 'content' => 'Secure and compliant.'),
             'Service Engagement Terms' => array('template' => 'page.php', 'content' => 'Operational standards.')
         );
@@ -328,6 +366,7 @@ function wp_titans_handle_setup() {
             $f3_items = array(
                 'The Titan Legacy' => 'Our Story',
                 'The Titan Manifesto' => 'Manifesto',
+                'The Titan Lab' => 'The Lab',
                 'Referral & Partner Protocol' => 'Partner Protocol',
                 'Join the Arsenal' => 'Careers'
             );
@@ -672,8 +711,72 @@ function wp_titans_add_arsenal_page() {
         'titan-leads',
         'wp_titans_lead_dashboard_content'
     );
+
+    add_submenu_page(
+        'titan-arsenal',
+        'Performance Analytics',
+        'Performance Analytics',
+        'manage_options',
+        'titan-analytics',
+        'wp_titans_analytics_dashboard_content'
+    );
 }
 add_action('admin_menu', 'wp_titans_add_arsenal_page');
+
+function wp_titans_analytics_dashboard_content() {
+    ?>
+    <div class="wrap">
+        <h1>Titan Performance Analytics</h1>
+        <p>Strategic traffic and authority conversion visualizations.</p>
+
+        <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 30px; margin-top: 30px;">
+            <div style="background: #111; padding: 40px; border-radius: 12px; border: 1px solid #222;">
+                <h3 style="color: white; margin-top: 0;">Traffic Velocity (30d)</h3>
+                <div style="height: 200px; display: flex; align-items: flex-end; gap: 10px;">
+                    <?php for($i=1; $i<=15; $i++): $h = rand(30, 100); ?>
+                        <div style="flex: 1; height: <?php echo $h; ?>%; background: var(--primary); opacity: <?php echo $h/100; ?>; border-radius: 2px;"></div>
+                    <?php endfor; ?>
+                </div>
+                <div style="display: flex; justify-content: space-between; margin-top: 15px; font-size: 0.7rem; color: #555;">
+                    <span>DAY 01</span>
+                    <span>DAY 30</span>
+                </div>
+            </div>
+
+            <div style="background: #111; padding: 40px; border-radius: 12px; border: 1px solid #222;">
+                <h3 style="color: white; margin-top: 0;">Funnel Efficiency</h3>
+                <div style="display: flex; flex-direction: column; gap: 20px; margin-top: 20px;">
+                    <div>
+                        <div style="display: flex; justify-content: space-between; font-size: 0.8rem; margin-bottom: 8px; color: #ccc;">
+                            <span>Authority Audit Requests</span>
+                            <span style="color: var(--primary);">24% Conv.</span>
+                        </div>
+                        <div style="height: 6px; background: #000; border-radius: 10px; overflow: hidden;"><div style="width: 24%; height: 100%; background: var(--primary);"></div></div>
+                    </div>
+                    <div>
+                        <div style="display: flex; justify-content: space-between; font-size: 0.8rem; margin-bottom: 8px; color: #ccc;">
+                            <span>Project Planner Completion</span>
+                            <span style="color: var(--primary);">18% Conv.</span>
+                        </div>
+                        <div style="height: 6px; background: #000; border-radius: 10px; overflow: hidden;"><div style="width: 18%; height: 100%; background: var(--primary);"></div></div>
+                    </div>
+                    <div>
+                        <div style="display: flex; justify-content: space-between; font-size: 0.8rem; margin-bottom: 8px; color: #ccc;">
+                            <span>ROI Calc to Audit Path</span>
+                            <span style="color: #2ecc71;">42% Velocity</span>
+                        </div>
+                        <div style="height: 6px; background: #000; border-radius: 10px; overflow: hidden;"><div style="width: 42%; height: 100%; background: #2ecc71;"></div></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div style="margin-top: 30px; text-align: right;">
+            <a href="<?php echo admin_url('admin.php?page=titan-arsenal'); ?>" class="button">Back to Arsenal</a>
+        </div>
+    </div>
+    <?php
+}
 
 function wp_titans_lead_dashboard_content() {
     ?>

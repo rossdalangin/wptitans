@@ -39,6 +39,12 @@ This kit contains 85+ high-value assets to help you scale your agency from $0 to
 - Design Presentation Scripts
 - Post-Booking Email Automation Sequences
 - Post-Launch Optimization Checklists
+- Video Ad Scripts (LinkedIn & Meta)
+- 90-Day Operational Scaling Blueprint
+- Client Acquisition Battleplan (4-Channel)
+- Proposal Master Template (Strategic Alignment)
+- Client Retention & LTV SOP
+- Agency Exit Strategy (Equity Building)
 
 ---
 *Built by WordPress Titans for Elite Agency Owners.*

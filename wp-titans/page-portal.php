@@ -65,20 +65,32 @@ get_header(); ?>
                 </div>
                 <i class="fas fa-tasks" style="font-size: 1.5rem; margin-bottom: 2rem;"></i>
                 <h3 style="font-size: 1.5rem;">The 14-Day Velocity</h3>
-                <div style="margin-top: 3rem;">
-                    <div style="display: flex; justify-content: space-between; margin-bottom: 1rem;">
-                        <span style="font-size: 0.8rem; font-weight: 700;">Overall Progress</span>
-                        <span style="font-size: 0.8rem; font-weight: 700; color: var(--primary);" id="progress-val">25%</span>
-                    </div>
-                    <div style="width: 100%; height: 6px; background: #000; border-radius: 10px; overflow: hidden; margin-bottom: 3rem;">
-                        <div id="progress-bar" style="width: 25%; height: 100%; background: var(--primary); box-shadow: 0 0 10px var(--primary); transition: width 0.8s cubic-bezier(0.16, 1, 0.3, 1);"></div>
+                <div style="margin-top: 3rem; position: relative; padding-left: 2rem;">
+                    <div id="milestone-line" style="position: absolute; left: 6px; top: 0; bottom: 0; width: 2px; background: #222;">
+                        <div id="milestone-progress-line" style="width: 100%; height: 25%; background: var(--primary); transition: height 0.8s ease;"></div>
                     </div>
 
-                    <ul id="milestone-list" style="font-size: 0.9rem; color: var(--text-dim);">
-                        <li class="milestone active" data-val="25" style="margin-bottom: 1.5rem; transition: var(--transition);"><i class="fas fa-check-circle" style="color: var(--primary); margin-right: 10px;"></i> Phase 01: Strategy & Blueprint</li>
-                        <li class="milestone" data-val="50" style="margin-bottom: 1.5rem; transition: var(--transition); opacity: 0.4;"><i class="far fa-circle" style="margin-right: 10px;"></i> Phase 02: Copywriting & Content</li>
-                        <li class="milestone" data-val="75" style="margin-bottom: 1.5rem; transition: var(--transition); opacity: 0.4;"><i class="far fa-circle" style="margin-right: 10px;"></i> Phase 03: Design & Implementation</li>
-                        <li class="milestone" data-val="100" style="margin-bottom: 1.5rem; transition: var(--transition); opacity: 0.4;"><i class="far fa-circle" style="margin-right: 10px;"></i> Phase 04: Development & Launch</li>
+                    <ul id="milestone-list" style="list-style: none; padding: 0; font-size: 0.85rem; color: var(--text-dim);">
+                        <li class="milestone active" data-val="25" style="margin-bottom: 2.5rem; position: relative;">
+                            <div class="m-dot" style="position: absolute; left: -2rem; top: 3px; width: 14px; height: 14px; border-radius: 50%; background: var(--primary); border: 3px solid #000; z-index: 5;"></div>
+                            <strong style="color: white; display: block; margin-bottom: 0.3rem;">Phase 01: Strategy & Blueprint</strong>
+                            <span>Deep-dive audit and conversion architecture.</span>
+                        </li>
+                        <li class="milestone" data-val="50" style="margin-bottom: 2.5rem; position: relative; opacity: 0.4;">
+                            <div class="m-dot" style="position: absolute; left: -2rem; top: 3px; width: 14px; height: 14px; border-radius: 50%; background: #222; border: 3px solid #000; z-index: 5;"></div>
+                            <strong style="color: white; display: block; margin-bottom: 0.3rem;">Phase 02: Copywriting & Content</strong>
+                            <span>High-authority messaging and asset collection.</span>
+                        </li>
+                        <li class="milestone" data-val="75" style="margin-bottom: 2.5rem; position: relative; opacity: 0.4;">
+                            <div class="m-dot" style="position: absolute; left: -2rem; top: 3px; width: 14px; height: 14px; border-radius: 50%; background: #222; border: 3px solid #000; z-index: 5;"></div>
+                            <strong style="color: white; display: block; margin-bottom: 0.3rem;">Phase 03: Design & Implementation</strong>
+                            <span>Cinematic UI/UX build and system integration.</span>
+                        </li>
+                        <li class="milestone" data-val="100" style="margin-bottom: 0; position: relative; opacity: 0.4;">
+                            <div class="m-dot" style="position: absolute; left: -2rem; top: 3px; width: 14px; height: 14px; border-radius: 50%; background: #222; border: 3px solid #000; z-index: 5;"></div>
+                            <strong style="color: white; display: block; margin-bottom: 0.3rem;">Phase 04: Development & Launch</strong>
+                            <span>WP engineering, SEO hardening, and Mission Go-Live.</span>
+                        </li>
                     </ul>
                 </div>
             </div>
@@ -204,22 +216,21 @@ get_header(); ?>
         const taskChecks = document.querySelectorAll('#portal-activity input[type="checkbox"]');
 
         const updateUI = (val) => {
-            bar.style.width = val + '%';
-            valText.innerText = val + '%';
+            if (bar) bar.style.width = val + '%';
+            if (valText) valText.innerText = val + '%';
+
+            const line = document.getElementById('milestone-progress-line');
+            if (line) line.style.height = val + '%';
 
             milestones.forEach(m => {
                 const mVal = m.getAttribute('data-val');
-                const icon = m.querySelector('i');
+                const dot = m.querySelector('.m-dot');
                 if (parseInt(mVal) <= parseInt(val)) {
                     m.style.opacity = '1';
-                    m.style.color = 'white';
-                    icon.className = 'fas fa-check-circle';
-                    icon.style.color = 'var(--primary)';
+                    if (dot) dot.style.background = 'var(--primary)';
                 } else {
                     m.style.opacity = '0.4';
-                    m.style.color = 'var(--text-dim)';
-                    icon.className = 'far fa-circle';
-                    icon.style.color = 'inherit';
+                    if (dot) dot.style.background = '#222';
                 }
             });
         };
