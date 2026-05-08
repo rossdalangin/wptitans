@@ -1,11 +1,13 @@
-Phase,Topic,Content Type,Goal,Call to Action,Frequency
-Awareness,The "Invisible Expert" Problem,Text/Story,Highlight the Authority Gap,Request Audit,Weekly
-Awareness,Why 90% of Agency Sites Fail,Listicle,Education on Conversion Friction,Join Circle,Bi-Weekly
-Awareness,Cinematic vs. Template Design,Image/Carousel,Showcase Visual Authority,View Portfolio,Weekly
-Consideration,The 14-Day Sprint Breakdown,Video/BTS,Demystify the Speed of Delivery,Book Strategy Call,Monthly
-Consideration,ROI of High-Performance WP,Case Study/Data,Prove Business Outcome,Try ROI Calculator,Bi-Weekly
-Consideration,Client Success Story: [Niche],Testimonial/Video,Build Trust via Proof,Read Case Study,Monthly
-Conversion,The Free Authority Audit Offer,Direct Offer,Lead Generation,Claim Free Audit,Weekly
-Conversion,Project Planner Walkthrough,Screen Share,Reduce Barrier to Inquiry,Start Planner,Monthly
-Retention,Titan Care: Security & Speed,Informational,Upsell Maintenance,Upgrade Plan,Quarterly
-Retention,Quarterly Growth Review,Report/Video,Maintain Long-term Authority,Book Sync,Quarterly
+Week,Content Pillar,Authority Hook,Format,Goal,CTA Redirect
+1,The Authority Gap,"Why Expertise is Invisible",Blog / LinkedIn Article,Establish Problem,/free-authority-audit/
+2,ROI Case Study,"+240% Lead Growth (SaaS Build)",Video / Carousel,Proof of Strategy,/case-studies/
+3,Velocity SOP,"The 14-Day Blueprint",Behind the Scenes,Operational Trust,/process/
+4,Client Success,"Consultant Rebrand Results",Interview Snippet,Emotional Trust,/services/
+5,Psychology of Design,"Colors & Conversions",Tutorial / Reel,Expert Status,/resource-center/
+6,Scaling Protocols,"The Founders Manifesto",Philosophical Piece,Alignment,/manifesto/
+7,Tech Stack Revealed,"Clean Code = High ROI",Technical Deep Dive,Security/Speed,/lab/
+8,The ROI Leak,"The Cost of Inaction",Interactive Poll / Post,Logic,/roi-calculator/
+9,Lead Gen Secrets,"Multi-Step Form Magic",Case Study,Technical Trust,/planner/
+10,Market Research,"State of WP Agency 2026",PDF / Whitepaper,High-IQ Positioning,/vault/
+11,Alliance Building,"How to Choose a Growth Partner",Strategic Piece,Referrals,/partner-protocol/
+12,Ultimate Offer,"Initializing Strategy for Q3",Direct Ask,Conversion,/book-a-strategy-call/
