@@ -48,6 +48,9 @@ This kit contains 85+ high-value assets to help you scale your agency from $0 to
 - Dream 100 Outreach Protocol & Scripts
 - Multi-Channel Ad Copy Vault (FB, IG, LI, Google)
 - Project Handover & Testimonial Request Script
+- Elite Tech Stack Guide & Evaluation
+- High-Converting Cold Email Vault
+- 12-Week Authority Content Strategy Worksheet (CSV)
 
 ---
 *Built by WordPress Titans for Elite Agency Owners.*

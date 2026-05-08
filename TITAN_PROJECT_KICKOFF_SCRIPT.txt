@@ -1,0 +1,21 @@
+TITAN AGENCY: PROJECT KICKOFF MEETING SCRIPT
+==========================================
+
+PURPOSE: To establish total authority and align on mission outcomes in the first 30 minutes.
+
+1. THE MISSION SETTING (0-5 min)
+"Welcome to the Arsenal, [Client Name]. We aren't here to build a website. We are here to weaponize your expertise for [Month] and beyond. By [Date], the Authority Gap we identified in your scan will be officially closed."
+
+2. THE VELOCITY PROTOCOL REVIEW (5-10 min)
+"We move at Titan velocity. This means you will see a high-fidelity prototype in your Client Portal by Day 4. To maintain this speed, we need 'Hyper-Decisiveness' from your team. We don't do endless revisions; we do strategic deployments."
+
+3. THE OUTCOME ALIGNMENT (10-20 min)
+"Let's confirm the singular business outcome. Is it $50k in new monthly pipeline, or is it establishing dominance in the [Specific Market] niche? Everything we build in the next 14 days will point directly at this number."
+
+4. THE TECH & COMMUNICATION STACK (20-25 min)
+"You've received your login for the Client Command Center. This is our only channel for assets and milestones. If it’s not in the Portal, it doesn’t exist. We sync every Friday via the message board."
+
+5. THE NEXT 24 HOURS (Closing)
+"Our copywriters are already sketching your Brand Voice Blueprint. I need you to upload your high-res logo and your top 3 project case studies to the Secure File Drop by 5:00 PM today. Do we have alignment on that?"
+
+"Mission Initialized. Let's go to work."

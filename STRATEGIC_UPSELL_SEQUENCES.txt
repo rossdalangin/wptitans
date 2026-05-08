@@ -1,0 +1,28 @@
+TITAN AGENCY: STRATEGIC UPSELL SEQUENCES
+========================================
+
+PURPOSE: To increase client Lifetime Value (LTV) by closing the next "Authority Gap."
+
+SEQUENCE 1: THE PRE-LAUNCH SEO BATTLEPLAN (The 'Visibility' Upsell)
+- Trigger: Day 10 of the Sprint.
+- Message: "The platform is looking elite. But a world-class platform is invisible without SEO Mastery. I’ve sketched out a Battleplan to capture the top 12 high-intent keywords for [Niche]."
+- Price: +$1,500 One-time or $500/mo.
+
+SEQUENCE 2: THE POST-LAUNCH TITAN MAINTENANCE (The 'Security' Upsell)
+- Trigger: Day 14 (Launch Day).
+- Message: "You now own an elite digital asset. The maintenance protocol ensures your authority never wavers. We handle the security hardening, speed tuning, and quarterly success audits."
+- Price: $299 - $799/mo.
+
+SEQUENCE 3: THE LINKEDIN AUTHORITY ENGINE (The 'Distribution' Upsell)
+- Trigger: Day 45 (Post-Launch).
+- Message: "Your site is converting leads. Now we need to flood it with high-ticket prospects. Our content studio can weaponize your project insights for LinkedIn to drive inbound strategy calls."
+- Price: $1,500 - $3,500/mo.
+
+SEQUENCE 4: THE FUNNEL EXPANSION (The 'Scale' Upsell)
+- Trigger: Day 90 (Success Review).
+- Message: "We’ve reclaimed $[X] in revenue. Now let's double down. We’ll build out the ROI Calculator or a High-Ticket Workshop funnel to capture the bottom-of-funnel traffic."
+- Price: $3,000 - $7,500.
+
+--------------------------------------------------------------------------------
+UPSELL PRINCIPLE:
+Never sell "extra work." Always sell "more outcome" or "less risk."

@@ -7,6 +7,11 @@ get_header(); ?>
 <main style="padding-top: 10rem; background: #000; min-height: 100vh;">
     <section id="lab-hero" style="text-align: center; padding-bottom: 5rem;">
         <div class="reveal">
+            <div style="display: flex; justify-content: center; gap: 1rem; margin-bottom: 3rem; opacity: 0.5;">
+                <div style="width: 2px; height: 30px; background: var(--primary);"></div>
+                <div style="width: 2px; height: 50px; background: var(--primary);"></div>
+                <div style="width: 2px; height: 30px; background: var(--primary);"></div>
+            </div>
             <span class="tagline">Inside the Protocol</span>
             <h1 style="font-size: clamp(3rem, 8vw, 5rem); margin-bottom: 2rem;">The Titan Lab</h1>
             <p style="max-width: 800px; margin: 0 auto; color: var(--text-dim); font-size: 1.25rem;">Explore the methodology, toolset, and authority culture that powers our 14-day velocity sprints.</p>
@@ -30,11 +35,17 @@ get_header(); ?>
                 </div>
             </div>
             <div class="reveal">
-                <div style="aspect-ratio: 16/10; background: #000; border: 1px solid var(--border-glass); border-radius: 12px; display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden;">
-                    <i class="fas fa-microscope" style="font-size: 8rem; color: var(--primary); opacity: 0.1;"></i>
-                    <div style="position: absolute; bottom: 2rem; left: 2rem; right: 2rem; text-align: left;">
-                        <span style="font-size: 0.6rem; text-transform: uppercase; color: var(--primary); letter-spacing: 2px;">LIVE STATUS</span>
-                        <h4 style="color: white; margin-top: 0.5rem;">Optimizing Authority Engine v2.4</h4>
+                <div style="aspect-ratio: 16/10; background: #000; border: 1px solid var(--border-glass); border-radius: 12px; position: relative; overflow: hidden; display: flex; flex-direction: column;">
+                    <div style="flex: 1; padding: 3rem; display: flex; flex-direction: column; justify-content: center;">
+                        <div style="display: flex; gap: 2rem; align-items: flex-end; height: 100px;">
+                            <?php for($i=1; $i<=20; $i++): $h = rand(20, 90); ?>
+                                <div style="flex: 1; height: <?php echo $h; ?>%; background: var(--primary); opacity: <?php echo $h/100; ?>;"></div>
+                            <?php endfor; ?>
+                        </div>
+                    </div>
+                    <div style="padding: 2rem; background: #080808; border-top: 1px solid #111;">
+                        <span style="font-size: 0.6rem; text-transform: uppercase; color: var(--primary); letter-spacing: 2px;">AUTHORITY ENGINE v2.4</span>
+                        <h4 style="color: white; margin-top: 0.5rem;">Live Performance Benchmarking</h4>
                     </div>
                 </div>
             </div>

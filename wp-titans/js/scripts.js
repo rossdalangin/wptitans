@@ -131,13 +131,15 @@ if (mouseGlow) {
 }
 
 // Magnetic Buttons
-document.querySelectorAll('.btn-primary, .btn-outline').forEach(btn => {
+document.querySelectorAll('.btn-primary, .btn-outline, #fab-trigger').forEach(btn => {
     btn.addEventListener('mousemove', (e) => {
         const rect = btn.getBoundingClientRect();
         const x = e.clientX - rect.left - rect.width / 2;
         const y = e.clientY - rect.top - rect.height / 2;
 
-        btn.style.transform = `translate(${x * 0.3}px, ${y * 0.3}px)`;
+        const intensity = (wp_titans_ajax.motion && wp_titans_ajax.motion.magnetic) ? parseFloat(wp_titans_ajax.motion.magnetic) : 0.3;
+
+        btn.style.transform = `translate(${x * intensity}px, ${y * intensity}px)`;
     });
 
     btn.addEventListener('mouseleave', () => {

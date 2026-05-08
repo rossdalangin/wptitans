@@ -909,6 +909,21 @@ function wp_titans_customize_register( $wp_customize ) {
     $wp_customize->add_setting( 'wp_titans_mouse_glow', array( 'default' => true, 'sanitize_callback' => 'wp_validate_boolean' ) );
     $wp_customize->add_control( 'wp_titans_mouse_glow', array( 'label' => __( 'Enable Mouse-Follow Glow', 'wp-titans' ), 'section' => 'wp_titans_ux', 'type' => 'checkbox' ) );
 
+    $wp_customize->add_setting( 'wp_titans_glow_size', array( 'default' => '600', 'sanitize_callback' => 'absint' ) );
+    $wp_customize->add_control( 'wp_titans_glow_size', array(
+        'label' => __( 'Glow Size (px)', 'wp-titans' ),
+        'section' => 'wp_titans_ux',
+        'type' => 'number'
+    ) );
+
+    $wp_customize->add_setting( 'wp_titans_magnetic_intensity', array( 'default' => '0.3', 'sanitize_callback' => 'sanitize_text_field' ) );
+    $wp_customize->add_control( 'wp_titans_magnetic_intensity', array(
+        'label' => __( 'Magnetic Button Intensity', 'wp-titans' ),
+        'section' => 'wp_titans_ux',
+        'type' => 'number',
+        'input_attrs' => array('min' => 0.1, 'max' => 0.8, 'step' => 0.1)
+    ) );
+
     $wp_customize->add_setting( 'wp_titans_design_mode', array( 'default' => 'solid', 'sanitize_callback' => 'sanitize_text_field' ) );
     $wp_customize->add_control( 'wp_titans_design_mode', array(
         'label' => __( 'Container Design Mode', 'wp-titans' ),
@@ -923,6 +938,14 @@ function wp_titans_customize_register( $wp_customize ) {
         'section' => 'wp_titans_design',
         'type' => 'number',
         'input_attrs' => array('min' => 0, 'max' => 50)
+    ) );
+
+    $wp_customize->add_setting( 'wp_titans_preloader_speed', array( 'default' => '2', 'sanitize_callback' => 'sanitize_text_field' ) );
+    $wp_customize->add_control( 'wp_titans_preloader_speed', array(
+        'label' => __( 'Preloader Pulse Speed (s)', 'wp-titans' ),
+        'section' => 'wp_titans_ux',
+        'type' => 'number',
+        'input_attrs' => array('min' => 0.5, 'max' => 5, 'step' => 0.1)
     ) );
 
     $wp_customize->add_setting( 'wp_titans_header_btn_text', array( 'default' => 'Strategy Call', 'sanitize_callback' => 'wp_kses_post' ) );
@@ -1051,6 +1074,8 @@ function wp_titans_customizer_css() {
         .hero {
             background-image: linear-gradient(rgba(0,0,0,<?php echo wp_titans_get_mod("wp_titans_hero_opacity"); ?>), rgba(0,0,0,<?php echo wp_titans_get_mod("wp_titans_hero_opacity"); ?>)), url('<?php echo wp_titans_get_mod("wp_titans_hero_bg"); ?>');
         }
+        #preloader i { animation-duration: <?php echo wp_titans_get_mod('wp_titans_preloader_speed'); ?>s !important; }
+        #mouse-glow { width: <?php echo wp_titans_get_mod('wp_titans_glow_size'); ?>px !important; height: <?php echo wp_titans_get_mod('wp_titans_glow_size'); ?>px !important; }
         :root {
             --bg-card: <?php echo wp_titans_get_mod("wp_titans_card_bg"); ?>;
             --radius: <?php echo wp_titans_get_mod("wp_titans_border_radius"); ?>;

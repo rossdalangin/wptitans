@@ -476,6 +476,10 @@ function wp_titans_handle_setup() {
             'SEO Mastery for Agencies' => array(
                 'desc' => 'The keywords and technical standards for first-page dominance.',
                 'file' => 'guide_seo_mastery.txt'
+            ),
+            'Technical SEO Audit Checklist' => array(
+                'desc' => 'Our internal 50-point checklist for search engine dominance.',
+                'file' => 'website_migration_seo_checklist.txt'
             )
         );
         foreach ($sample_resources as $rtitle => $rdata) {
@@ -651,6 +655,9 @@ function wp_titans_ajax_setup() {
             'audit' => wp_titans_get_mod('wp_titans_audit_redirect'),
             'contact' => wp_titans_get_mod('wp_titans_contact_redirect'),
             'exit' => wp_titans_get_mod('wp_titans_exit_redirect')
+        ),
+        'motion' => array(
+            'magnetic' => wp_titans_get_mod('wp_titans_magnetic_intensity')
         )
     ) );
 }
@@ -855,7 +862,7 @@ function wp_titans_arsenal_page_content() {
                     <li><a href="<?php echo home_url('/guide_seo_mastery.txt'); ?>" target="_blank" style="color: #ccc;">SEO Mastery Battleplan</a></li>
                     <li><a href="<?php echo home_url('/guide_high_ticket_sales.txt'); ?>" target="_blank" style="color: #ccc;">High-Ticket Sales Framework</a></li>
                     <li><a href="<?php echo home_url('/guide_authority_branding.txt'); ?>" target="_blank" style="color: #ccc;">Authority Branding Blueprint</a></li>
-                    <li><a href="<?php echo home_url('/guide_14_day_sprint.txt'); ?>" target="_blank" style="color: #ccc;">14-Day Velocity SOPs</a></li>
+                    <li><a href="<?php echo home_url('/90_DAY_SCALING_BLUEPRINT.txt'); ?>" target="_blank" style="color: #ccc;">90-Day Scaling Blueprint</a></li>
                 </ul>
             </div>
 
@@ -872,10 +879,10 @@ function wp_titans_arsenal_page_content() {
             <div style="background: #111; color: white; padding: 30px; border-radius: 8px; border: 1px solid #D4AF37;">
                 <h3 style="color: #D4AF37; margin-top: 0;">📢 Sales & Marketing</h3>
                 <ul style="list-style: none; padding: 0;">
-                    <li><a href="<?php echo home_url('/ad_copy_vault.txt'); ?>" target="_blank" style="color: #ccc;">Ad Copy Vault</a></li>
-                    <li><a href="<?php echo home_url('/agency_vsl_script.txt'); ?>" target="_blank" style="color: #ccc;">VSL Blueprint Script</a></li>
-                    <li><a href="<?php echo home_url('/sales_discovery_call_script.txt'); ?>" target="_blank" style="color: #ccc;">Discovery Call Blueprint</a></li>
-                    <li><a href="<?php echo home_url('/email_automation_series.txt'); ?>" target="_blank" style="color: #ccc;">Email Nurture Sequences</a></li>
+                    <li><a href="<?php echo home_url('/ACQUISITION_BATTLEPLAN.txt'); ?>" target="_blank" style="color: #ccc;">Acquisition Battleplan</a></li>
+                    <li><a href="<?php echo home_url('/AD_COPY_VAULT_REFINED.txt'); ?>" target="_blank" style="color: #ccc;">Ad Copy Vault (Multi-Channel)</a></li>
+                    <li><a href="<?php echo home_url('/TITAN_COLD_EMAIL_TEMPLATES.txt'); ?>" target="_blank" style="color: #ccc;">Cold Email Templates</a></li>
+                    <li><a href="<?php echo home_url('/DREAM_100_OUTREACH.txt'); ?>" target="_blank" style="color: #ccc;">Dream 100 Outreach Scripts</a></li>
                 </ul>
             </div>
 
