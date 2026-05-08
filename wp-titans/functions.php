@@ -516,11 +516,9 @@ function wp_titans_handle_setup() {
 
         // Generate Sample Insights
         $sample_posts = array(
-            'The Authority Gap' => 'How to identify and bridge the discrepancy between your expertise and your perception.',
-            'Cinematic Messaging' => 'The framework for writing copy that resonates with high-ticket clients.',
-            'Velocity Operations' => 'Behind the scenes of our 14-Day deployment protocol.',
-            'The Future of WordPress' => 'How headless architectures and AI are reshaping the digital landscape.',
-            'Lead Gen Mastery' => 'Automating your client acquisition journey without losing the human touch.'
+            'The Authority Gap: Why World-Class Experts are Often Invisible' => "Most experts spend decades mastering their craft only to present it through a website that looks like a commodity template. This 'Authority Gap' is the silent killer of high-ticket businesses.\n\nIn this insight, we break down how to identify your gap and the 3-step protocol to close it, transforming your digital presence from an online brochure into a commanding authority platform that converts before you even say a word.",
+            'The Velocity Protocol: How We Deliver World-Class Builds in 14 Days' => "Why do most agencies take 4 months to build a site? Usually, it's a lack of system. At WordPress Titans, we've perfected the 14-Day Velocity Sprint. \n\nWe move from strategy and brand voice on Day 1 to a cinematic, high-performance launch on Day 14. This isn't just about speed; it's about eliminating the 'decision fatigue' that plagues standard agency projects and delivering a revenue-generating asset while the client momentum is at its peak.",
+            'Cinematic Copywriting: Speaking the Language of High-Ticket Clients' => "High-ticket prospects don't buy features; they buy certainty and outcomes. Standard copy describes what you do. Cinematic copy command-positions who you are. \n\nLearn our 'Command & Conquer' framework for writing headlines that qualify visitors instantly and body copy that bridges the gap between an expert's mastery and the market's perception."
         );
         foreach ($sample_posts as $ptitle => $pcontent) {
             if (!get_page_by_title($ptitle, OBJECT, 'post')) {

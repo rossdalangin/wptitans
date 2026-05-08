@@ -45,6 +45,9 @@ This kit contains 85+ high-value assets to help you scale your agency from $0 to
 - Proposal Master Template (Strategic Alignment)
 - Client Retention & LTV SOP
 - Agency Exit Strategy (Equity Building)
+- Dream 100 Outreach Protocol & Scripts
+- Multi-Channel Ad Copy Vault (FB, IG, LI, Google)
+- Project Handover & Testimonial Request Script
 
 ---
 *Built by WordPress Titans for Elite Agency Owners.*
