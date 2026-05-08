@@ -1,0 +1,27 @@
+TITAN AGENCY: CONTRACTOR ONBOARDING PROTOCOL
+==========================================
+
+PURPOSE: To ensure every external "Sub-Titan" maintains the agency's world-class standards.
+
+1. THE "CULTURE CODE" REVIEW
+- New contractors must read the TITAN_MANIFESTO.txt and BRAND_VOICE_GUIDE.txt.
+- Goal: Align on the "Authority Gap" narrative and cinematic UI standards.
+
+2. ACCESS & SECURITY PROTOCOLS
+- Provision of @wordpresstitans.com email (alias).
+- Invitation to the "Titan Lab" project channel in Slack.
+- LastPass/Dashlane access to project-specific credentials (never share via Slack).
+
+3. THE 14-DAY VELOCITY ALIGNMENT
+- Contractor must verify they can commit to the specific 14-day sprint window.
+- Daily check-ins: 5-minute "Blocker" update in Slack at 9:00 AM.
+
+4. THE "QUALITY VERIFICATION" STEP
+- Before any work is uploaded to the Client Portal, it must be reviewed by the Creative Director (Founder).
+- Standards: Sub-2s load time, perfect mobile responsiveness, and command-based copywriting.
+
+5. PAYMENT & LEGAL
+- Signed Contractor NDA and Subcontractor Agreement.
+- Invoice Submission: Net-15 upon project launch.
+
+"We don't hire 'hands'; we hire masters who follow the protocol."

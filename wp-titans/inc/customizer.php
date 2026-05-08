@@ -968,6 +968,14 @@ function wp_titans_customize_register( $wp_customize ) {
     $wp_customize->add_setting( 'wp_titans_seo_desc', array( 'default' => 'High-performance WordPress agency helping experts build authority and generate leads.', 'sanitize_callback' => 'sanitize_text_field' ) );
     $wp_customize->add_control( 'wp_titans_seo_desc', array( 'label' => __( 'Meta Description', 'wp-titans' ), 'description' => __( 'Fallback SEO description for the homepage.', 'wp-titans' ), 'section' => 'wp_titans_scripts', 'type' => 'textarea' ) );
 
+    $wp_customize->add_setting( 'wp_titans_local_type', array( 'default' => 'ProfessionalService', 'sanitize_callback' => 'sanitize_text_field' ) );
+    $wp_customize->add_control( 'wp_titans_local_type', array(
+        'label' => __( 'Schema: Business Type', 'wp-titans' ),
+        'section' => 'wp_titans_scripts',
+        'type' => 'select',
+        'choices' => array('ProfessionalService' => 'Professional Service', 'LocalBusiness' => 'Local Business', 'AdvertisingAgency' => 'Marketing/Ad Agency')
+    ) );
+
     $wp_customize->add_setting( 'wp_titans_custom_css', array( 'default' => '', 'sanitize_callback' => 'wp_kses_post' ) );
     $wp_customize->add_control( 'wp_titans_custom_css', array( 'label' => __( 'Custom CSS', 'wp-titans' ), 'description' => __( 'Add custom CSS overrides here.', 'wp-titans' ), 'section' => 'wp_titans_design', 'type' => 'textarea' ) );
 

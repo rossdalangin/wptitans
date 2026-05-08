@@ -1,0 +1,31 @@
+TITAN AGENCY: STRATEGIC SITEMAP BLUEPRINTS
+=========================================
+
+PURPOSE: High-IQ architectures for specific high-ticket niches.
+
+BLUEPRINT 1: THE CONSULTANT AUTHORITY HUB
+- Home: The "Big Idea" headline + Authority Gap frame.
+- Services: Strategic Advisory, Keynote Speaking, The 14-Day Sprint.
+- Success Stories: Metrics-heavy individual case studies.
+- The Vault: Gated PDF resources + Video Insights.
+- Book Strategy Call: Calendly integration.
+
+BLUEPRINT 2: THE SAAS GROWTH PLATFORM
+- Home: Quantified ROI headline + VSL embed.
+- Product: Interactive feature tour + System Comparison table.
+- Solutions: Vertical-specific landing pages (e.g., Enterprise, SMB).
+- The Lab: Engineering culture + Performance benchmarks.
+- ROI Calculator: Primary lead magnet.
+- Get a Demo: Multi-step intake form.
+
+BLUEPRINT 3: THE MEDICAL/LEGAL SPECIALIST
+- Home: Trust-first messaging + Certifications trust bar.
+- The Legacy: Detailed founder bio + Professional philosophy.
+- Expertise: Individual service pages with dynamic FAQ Schema.
+- Insights: Recent professional journals + Case Results.
+- Free Audit: Compliance/Positioning scan request.
+- Schedule Consultation: Low-friction booking.
+
+--------------------------------------------------------------------------------
+SITEMAP CORE PRINCIPLE:
+"Every page must lead to a single conversion point. A sitemap with too many branches is a sitemap that loses money."

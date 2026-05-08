@@ -32,7 +32,7 @@
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "ProfessionalService",
+      "@type": "<?php echo esc_js(wp_titans_get_mod('wp_titans_local_type')); ?>",
       "name": "<?php bloginfo("name"); ?>",
       "url": "<?php echo esc_url(home_url("/")); ?>",
       "logo": "<?php echo esc_url(wp_titans_get_mod("wp_titans_logo_image")); ?>",
@@ -42,7 +42,13 @@
         "addressLocality": "<?php echo esc_html(wp_titans_get_mod("wp_titans_contact_location")); ?>"
       },
       "telephone": "<?php echo esc_html(wp_titans_get_mod("wp_titans_contact_phone")); ?>",
-      "priceRange": "$$"
+      "priceRange": "$$",
+      "sameAs": [
+        "<?php echo esc_url(wp_titans_get_mod('wp_titans_social_facebook')); ?>",
+        "<?php echo esc_url(wp_titans_get_mod('wp_titans_social_linkedin')); ?>",
+        "<?php echo esc_url(wp_titans_get_mod('wp_titans_social_twitter')); ?>",
+        "<?php echo esc_url(wp_titans_get_mod('wp_titans_social_instagram')); ?>"
+      ]
     }
     </script>
 

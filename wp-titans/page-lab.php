@@ -61,18 +61,42 @@ get_header(); ?>
             <div class="card reveal" style="background: #050505;">
                 <i class="fas fa-vial"></i>
                 <h3>Rapid Prototyping</h3>
-                <p>We move from wireframe to cinematic high-fidelity in 72 hours.</p>
+                <p>We move from wireframe to cinematic high-fidelity in 72 hours. Speed is our primary design constraint.</p>
             </div>
             <div class="card reveal" style="background: #050505;">
                 <i class="fas fa-brain"></i>
-                <h3>Cognitive Design</h3>
-                <p>Applying psychological triggers to guide high-ticket prospects to conversion.</p>
+                <h3>Cognitive UX</h3>
+                <p>Applying contrast bias and authority anchors to guide high-ticket prospects toward the primary conversion point.</p>
             </div>
             <div class="card reveal" style="background: #050505;">
                 <i class="fas fa-shield-virus"></i>
                 <h3>Security Hardening</h3>
-                <p>Enterprise-grade protocols to protect your digital authority.</p>
+                <p>Enterprise-grade protocols to protect your digital authority from performance degradation and technical threats.</p>
             </div>
+        </div>
+    </section>
+
+    <section id="lab-toolset" style="background: #050505; border-top: 1px solid var(--border-glass);">
+        <div class="reveal" style="text-align: center; margin-bottom: 5rem;">
+            <span class="tagline">The Arsenal</span>
+            <h2>Titan Tech Stack</h2>
+        </div>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem;">
+            <?php
+            $tools = [
+                ['n' => 'Figma', 'd' => 'High-Fidelity Design'],
+                ['n' => 'Loom', 'd' => 'Authority Audits'],
+                ['n' => 'Cloudflare', 'd' => 'WAF & Security'],
+                ['n' => 'Slack', 'd' => 'Sync Comms'],
+                ['n' => 'Stripe', 'd' => 'Global Payments'],
+                ['n' => 'WP Engine', 'd' => 'Elite Hosting'],
+            ];
+            foreach($tools as $tool) : ?>
+            <div class="reveal" style="background: #000; padding: 2.5rem; border: 1px solid #111; border-radius: 8px; text-align: center;">
+                <h4 style="color: var(--primary); font-size: 1rem; margin-bottom: 0.5rem;"><?php echo $tool['n']; ?></h4>
+                <p style="font-size: 0.7rem; color: #555; text-transform: uppercase; letter-spacing: 1px;"><?php echo $tool['d']; ?></p>
+            </div>
+            <?php endforeach; ?>
         </div>
     </section>
 
