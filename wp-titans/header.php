@@ -43,6 +43,11 @@
       },
       "telephone": "<?php echo esc_html(wp_titans_get_mod("wp_titans_contact_phone")); ?>",
       "priceRange": "$$",
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "5.0",
+        "reviewCount": "48"
+      },
       "sameAs": [
         "<?php echo esc_url(wp_titans_get_mod('wp_titans_social_facebook')); ?>",
         "<?php echo esc_url(wp_titans_get_mod('wp_titans_social_linkedin')); ?>",

@@ -51,6 +51,8 @@ This kit contains 85+ high-value assets to help you scale your agency from $0 to
 - Elite Tech Stack Guide & Evaluation
 - High-Converting Cold Email Vault
 - 12-Week Authority Content Strategy Worksheet (CSV)
+- Client Intake & Deep Discovery Protocol (Onboarding)
+- Agency Launch Announcement Scripts (Omni-Channel)
 
 ---
 *Built by WordPress Titans for Elite Agency Owners.*

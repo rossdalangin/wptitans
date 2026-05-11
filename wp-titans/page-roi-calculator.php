@@ -38,6 +38,18 @@ get_header(); ?>
                     <div style="font-size: 5rem; font-weight: 900; color: var(--primary); margin-bottom: 1rem;" id="roi-result">$0</div>
                     <p style="color: #eee; font-size: 1.1rem;" id="roi-explanation">Additional Monthly Revenue with a Titan System™</p>
 
+                    <!-- ROI Visual Chart -->
+                    <div id="roi-chart-container" style="margin: 3rem 0; height: 100px; display: flex; align-items: flex-end; gap: 1.5rem; justify-content: center;">
+                        <div style="text-align: center; flex: 1;">
+                            <div id="bar-current" style="width: 100%; height: 20%; background: #222; border-radius: 4px; transition: height 0.6s cubic-bezier(0.16, 1, 0.3, 1);"></div>
+                            <span style="font-size: 0.6rem; color: #555; text-transform: uppercase; margin-top: 10px; display: block;">Current</span>
+                        </div>
+                        <div style="text-align: center; flex: 1;">
+                            <div id="bar-titan" style="width: 100%; height: 20%; background: var(--primary); border-radius: 4px; transition: height 0.8s cubic-bezier(0.16, 1, 0.3, 1); box-shadow: 0 0 20px rgba(var(--primary-rgb), 0.3);"></div>
+                            <span style="font-size: 0.6rem; color: var(--primary); text-transform: uppercase; margin-top: 10px; display: block;">Titan Lift</span>
+                        </div>
+                    </div>
+
                     <hr style="margin: 3rem 0; border: 0; border-top: 1px solid #222;">
 
                     <p style="color: var(--text-dim); margin-bottom: 2rem;" id="roi-leads-container">By increasing your conversion rate to <strong id="roi-target-label">3.5%</strong> (our system average), you could secure an extra <span id="roi-leads" style="color:white; font-weight: 700;">0</span> leads per month.</p>
@@ -77,6 +89,9 @@ document.addEventListener('DOMContentLoaded', () => {
         const currentConv = parseFloat(convInput.value) || 0;
         const value = parseFloat(valueInput.value) || 0;
 
+        const barCurrent = document.getElementById('bar-current');
+        const barTitan = document.getElementById('bar-titan');
+
         // Try to get price from PHP/Customizer, fallback to 4500
         let invStr = "<?php echo esc_js(wp_titans_get_mod('wp_titans_pricing_val_2')); ?>";
         let investment = parseFloat(invStr.replace(/[^0-9.]/g, '')) || 4500;
@@ -101,6 +116,14 @@ document.addEventListener('DOMContentLoaded', () => {
         yearlyDisplay.innerText = '$' + Math.round(annualLift).toLocaleString();
         roiPercDisplay.innerText = (roiPercentage > 0 ? Math.round(roiPercentage).toLocaleString() : 0) + '%';
         leadsDisplay.innerText = extraLeads > 0 ? extraLeads : 0;
+
+        // Update Visual Chart
+        const totalRev = currentRev + lift;
+        if (totalRev > 0) {
+            const curH = (currentRev / totalRev) * 100;
+            barCurrent.style.height = Math.max(10, curH) + '%';
+            barTitan.style.height = '100%';
+        }
 
         if (lift <= 0) {
             explanation.innerText = "You're already performing at a Titan level!";

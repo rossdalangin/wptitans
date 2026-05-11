@@ -1,32 +1,35 @@
-TITAN AGENCY: ELITE TECH STACK GUIDE
-===================================
+# AGENCY TECH STACK GUIDE: THE ELITE TOOLKIT
+## The Tools Required to Run a High-Ticket, 14-Day Sprint Agency.
 
-PURPOSE: To ensure maximum operational velocity, security, and performance.
+---
 
-1. INFRASTRUCTURE & HOSTING (The Core)
-- Kinsta or WP Engine: Enterprise-grade managed WordPress hosting.
-- Cloudflare: Global CDN and WAF (Security Hardening).
-- SendGrid or Postmark: For reliable transactional email delivery (Protocols).
+### 1. PLATFORM & INFRASTRUCTURE
+- **CMS**: WordPress (Self-hosted).
+- **Theme**: Titan Signature Legacy (The Foundation).
+- **Hosting**: WP Engine or Cloudways (For sub-2s load times).
+- **Domain/DNS**: Cloudflare (For proxy protection and performance).
 
-2. DESIGN & CREATIVE (The Cinematic UI)
-- Figma: For collaborative wireframing and high-fidelity design.
-- Adobe Creative Cloud: For luxury asset generation (Noise overlays, textures).
-- Loom: For manual Authority Audits and Project Handovers.
+### 2. LEAD GEN & CONVERSION
+- **Form Handler**: Contact Form 7 (Integrated with the Titan Theme).
+- **Booking**: Calendly or SavvyCal (Embedded on the /book page).
+- **Lead Enrichment**: Apollo.io or Hunter.io (For prospecting).
+- **Tracking**: Google Analytics 4 & Meta Pixel.
 
-3. CONVERSION & LEAD GEN (The Engine)
-- Contact Form 7: Theme-integrated and stylized for authority.
-- Calendly: Embedded via /book-a-strategy-call/ for high-intent leads.
-- Zapier / Make: To automate form-to-email and form-to-CRM workflows.
+### 3. OPERATIONS & PROJECT MANAGEMENT
+- **Command Center**: Notion or ClickUp (To track the 14-day sprint tasks).
+- **Communication**: Slack (Dedicated channels for each project).
+- **Storage**: Google Drive or Dropbox (For shared client assets).
+- **Video Handover**: Loom (For walkthroughs and strategy blueprints).
 
-4. PROJECT MANAGEMENT (The Command Center)
-- Slack: For real-time project synchronization.
-- ClickUp or Notion: Internal task tracking and Wiki/SOP storage.
-- WP Titans Client Portal: The "Front-end" interface for client interaction.
+### 4. SALES & LEGAL
+- **CRM**: Pipedrive or HubSpot (Sync leads from the Project Planner).
+- **Proposals**: BetterProposals or PandaDoc.
+- **Invoicing**: Stripe or Wise (Direct integration for global payments).
 
-5. SALES & CRM (The Pipeline)
-- Pipedrive or HubSpot: For managing Titan-tier opportunities.
-- Stripe: For high-ticket deposits and recurring "Titan Maintenance" fees.
+### 5. DESIGN & CONTENT
+- **Visual Prototype**: Figma (For custom UI exploration).
+- **Stock Assets**: Unsplash / Adobe Stock (For high-impact hero images).
+- **AI Copywriting**: Claude or ChatGPT (As an assistant to the Blueprint).
 
---------------------------------------------------------------------------------
-TECH STACK RULE:
-"Complexity is the enemy of velocity. If a tool doesn't automate a protocol or increase performance, delete it."
+---
+*Automation is the key to velocity. If you do it twice, automate it.*
